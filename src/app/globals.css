@@ -8,26 +8,56 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+.slick-initialized {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .slick-initialized {
+    display: block;
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .slick-slide>div {
+    margin: 0 20px;
+  }
+  
+  .slick-slider {
+    z-index: 20;
+  }
+  
+  .slick-prev {
+    left: 0;
+    z-index: 20;
+  }
+  
+  .slick-next {
+    right: 25px;
+    z-index: 20;
+  }
+  
+  .slick-prev:before,
+  .slick-next:before {
+    font-family: 'slick';
+    font-size: 52px;
+    line-height: 1;
+    opacity: 1;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-shadow: 0px -1px 2px 1px black;
+    border-radius: 50%;
+  }
+  
+  .ytp-gradient-bottom {
+    height: 77px !important;
+    padding: 0 !important;
+    background: lightblue;
   }
 }
