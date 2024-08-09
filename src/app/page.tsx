@@ -3,6 +3,7 @@ import StatsSection from "./_landing/Stats/StatsSection";
 import CoursesSection from "./_landing/courses/CoursesSection";
 import TestimonialsSection from "./_landing/testimonials/TestimonialsSection";
 import About_Us from "./_landing/aboutus/About_Us";
+import FaqSection from "./_landing/faq/FaqSection";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <TestimonialsSection />
       <CoursesSection />
       <About_Us />
+      <FaqSection />
     </>
   );
 }
