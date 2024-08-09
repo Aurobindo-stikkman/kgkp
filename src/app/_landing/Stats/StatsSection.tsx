@@ -14,7 +14,7 @@ const StatsSection = () => {
           className="w-8 h-8 items-center justify-self-center self-center md:w-[130px] md:h-[130px]"
         />
         <div className="grid gap-2">
-          <div className="h-[22px] text-[18px] font-[400] leading-[21.6px] font-[PoetsenOne] text-center md:h-[58px] md:text-[48px] md:leading-[57.6px]">
+          <div className="h-[22px] text-[18px] font-[700] leading-[21.6px] font-poetsen text-center md:h-[58px] md:text-[48px] md:leading-[57.6px]">
             10K+
           </div>
           <div className="text-[10px] font-[400] leading-[14px] text-center tracking-[2%] text-[#1A2434] md:h-8 md:text-[18px] md:leading-[32.4px] opacity-[70%]">
@@ -29,7 +29,7 @@ const StatsSection = () => {
           className="w-8 h-8 justify-self-center self-center md:w-[130px] md:h-[130px]"
         />
         <div className="grid gap-2">
-          <div className="h-[22px] text-[18px] font-[400] leading-[21.6px] font-[PoetsenOne] text-center md:h-[58px] md:text-[48px] md:leading-[57.6px]">
+          <div className="h-[22px] text-[18px] font-[700] leading-[21.6px] font-poetsen text-center md:h-[58px] md:text-[48px] md:leading-[57.6px]">
             17+
           </div>
           <div className="text-[10px] font-[400] leading-[14px] text-center tracking-[2%] text-[#1A2434] md:h-8 md:text-[18px] md:leading-[32.4px] opacity-[70%]">
@@ -44,7 +44,7 @@ const StatsSection = () => {
           className="w-8 h-8 justify-self-center self-center md:w-[130px] md:h-[130px]"
         />
         <div className="grid gap-2">
-          <div className="h-[22px] text-[18px] font-[400] leading-[21.6px] font-[PoetsenOne] text-center md:h-[58px] md:text-[48px] md:leading-[57.6px]">
+          <div className="h-[22px] text-[18px] font-[700] leading-[21.6px] font-poetsen text-center md:h-[58px] md:text-[48px] md:leading-[57.6px]">
             200K+
           </div>
           <div className="text-[10px] font-[400] leading-[14px] text-center tracking-[2%] text-[#1A2434] md:h-8 md:text-[18px] md:leading-[32.4px] opacity-[70%]">
@@ -59,7 +59,7 @@ const StatsSection = () => {
           className="w-8 h-8 justify-self-center self-center md:w-[130px] md:h-[130px]"
         />
         <div className="grid gap-2">
-          <div className="h-[22px] text-[18px] font-[400] leading-[21.6px] font-[PoetsenOne] text-center md:h-[58px] md:text-[48px] md:leading-[57.6px]">
+          <div className="h-[22px] text-[18px] font-[700] leading-[21.6px] font-poetsen text-center md:h-[58px] md:text-[48px] md:leading-[57.6px]">
             30K+
           </div>
           <div className="text-[10px] font-[400] leading-[14px] text-center tracking-[2%] text-[#1A2434] md:h-8 md:text-[18px] md:leading-[32.4px] opacity-[70%]">

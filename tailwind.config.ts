@@ -15,6 +15,10 @@ const config: Config = {
       },
     },
   },
+  fontFamily: {
+    poetsen: ['"Poetsen One"', 'sans-serif'],
+    inter: ['"Inter"', 'sans-serif'],
+  },
   plugins: [],
 };
 export default config;

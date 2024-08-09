@@ -9,7 +9,7 @@ import Carousel from "./Curousel";
 
 const CoursesSection = () => {
   return (
-    <section className="h-[1245px] px-4 pt-[52px] lg:h-[1105px] lg:px-[80px] lg:py-[124px] ">
+    <section className="h-[1245px] px-4 pt-[52px] md:h-[800px] lg:h-[1105px] lg:px-[80px] lg:py-[124px] ">
       <section className="h-[58px] w-[282px] mx-auto text-[20px] font-[700] leading-[28.6px] text-center text-[#1A2434] lg:text-[32px] lg:font-[700] lg:leading-[38.4px] lg:w-[512px] lg:h-[76px] ">
         Select the Best Course to Unlock your Child's Genius
       </section>
@@ -119,7 +119,7 @@ const CoursesSection = () => {
         <Carousel />
       </section>
 
-      <section className="cursor-pointer bg-[#4D1435] h-[51px] w-[222px] px-6 py-4 flex gap-[14px] justify-center items-center rounded-[50px] mt-6 mx-auto lg:mt-[80px] lg:w-[385px] lg:h-[77px] lg:px-[80px] lg:py-[24px]">
+      <section className="cursor-pointer bg-[#4D1435] h-[51px] w-[222px] px-6 py-4 flex gap-[14px] justify-center items-center rounded-[50px] mt-6 mx-auto md:mt-14 lg:mt-[80px] lg:w-[385px] lg:h-[77px] lg:px-[80px] lg:py-[24px]">
         <div className="text-[16px] font-[700] leading-[19.2px] text-white lg:text-[23px] lg:leading-[28.8px] ">
           View all Courses
         </div>
