@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -11,7 +11,22 @@ import closeIcon from "./Close.svg";
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const isActive = (path: any) =>
     pathname === path
@@ -21,7 +36,11 @@ const Header = () => {
   const toggleMenu = () => setToggle(!toggle);
 
   return (
-    <header className="h-[80px] w-full bg-white sticky top-0 z-[999] lg:h-[102px]">
+    <header
+      className={`h-[80px] w-full bg-white sticky top-0 z-[999] lg:h-[102px] ${
+        scrolled ? "shadow-md" : ""
+      }`}
+    >
       <div className="w-full h-full flex justify-between px-[15px] items-center relative">
         <section className="w-[79px] h-[50.55px]">Logo</section>
 
