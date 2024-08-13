@@ -72,9 +72,9 @@ const Header = () => {
                 Home
               </Link>
               <Link
-                href="/kgkp"
+                href="/methods"
                 onClick={() => setToggle(false)}
-                className={isActive("/kgkp")}
+                className={isActive("/methods")}
               >
                 KGKP Method
               </Link>
