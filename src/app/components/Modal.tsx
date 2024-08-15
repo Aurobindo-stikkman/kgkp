@@ -14,14 +14,11 @@ const Modal = ({ isOpen, onClose, children }: any) => {
       ></div>
 
       {/* Modal Content */}
-      <div className="absolute top-0 left-0 right-0 bottom-0 bg-white flex flex-col overflow-auto">
+      {/* <div
+        className="absolute top-0 left-0 right-0 bottom-0 bg-white flex flex-col overflow-auto lg:w-[873px] lg:min-h-[688px] lg:mx-auto lg:top-8 lg:rounded-[100px] methods-container"
+      > */}
+      <div className="absolute top-0 left-0 right-0 bottom-0 bg-white flex flex-col overflow-auto lg:relative lg:max-h-full lg:w-[873px] lg:mx-auto lg:rounded-[100px] lg:top-8 methods-container">
         {children}
-        <button
-          onClick={onClose}
-          className="hidden sm:absolute sm:top-2 sm:right-2"
-        >
-          Close
-        </button>
       </div>
     </div>,
     document.body

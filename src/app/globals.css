@@ -62,6 +62,10 @@
     padding: 0 !important;
     background: lightblue;
   }
+
+  .methods-container {
+    max-height: calc(100% - 32px);
+  }
 }
 
 .scrollbar-custom::-webkit-scrollbar {
@@ -81,4 +85,20 @@
 .scrollbar-custom {
   scrollbar-width: auto;
   scrollbar-color: #4D1435 #f0f0f0;
+}
+
+/* Methods page */
+/* Hide scrollbar for Chrome, Safari, and Opera */
+.methods-container {
+  overflow-y: scroll;
+}
+
+.methods-container::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+.methods-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
