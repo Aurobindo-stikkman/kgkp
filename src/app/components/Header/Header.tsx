@@ -8,6 +8,7 @@ import shopping from "./icon-shopping-cart.svg";
 import hamburgMenu from "./icon-menu.svg";
 import arrowRight from "./icon-arrow-right.svg";
 import closeIcon from "./Close.svg";
+import logo from "./kgk_logo Open File 2.svg";
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
@@ -41,8 +42,10 @@ const Header = () => {
         scrolled ? "shadow-md" : ""
       }`}
     >
-      <div className="w-full h-full flex justify-between px-[15px] items-center relative">
-        <section className="w-[79px] h-[50.55px]">Logo</section>
+      <div className="w-full h-full flex justify-between px-[15px] items-center relative lg:px-20">
+        <section className="w-[79px] h-[50.55px] lg:h-[80.62px] lg:w-[126px] ">
+          <Image src={logo} alt="Company Logo" className="w-full h-full" />
+        </section>
 
         <section className="flex gap-6 items-center lg:gap-[38px] lg:h-[43px]">
           <section className="w-[24px] h-[24px] text-[#4D1435] lg:hidden">

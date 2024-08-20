@@ -28,7 +28,7 @@ const ModalView: React.FC<Props> = ({
   return (
     <Modal isOpen={isModalOpen} onClose={closeModal}>
       {/* Heading */}
-      <section className="sticky top-0 flex gap-3 py-3 pl-4 bg-white shadow-sm lg:px-[60px] lg:min-h-[120px] lg:justify-between lg:shadow-md items-end">
+      <section className="sticky top-0 flex gap-3 py-3 pl-4 bg-white shadow-sm lg:px-[60px] lg:min-h-[90px] lg:justify-between lg:shadow-md items-end">
         <Image
           src={closeIcon}
           onClick={closeModal}

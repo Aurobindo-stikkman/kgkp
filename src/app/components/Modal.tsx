@@ -9,7 +9,7 @@ const Modal = ({ isOpen, onClose, children }: any) => {
     <div className="fixed inset-0 z-[99999]">
       {/* Overlay */}
       <div
-        className="absolute top-0 left-0 right-0 bottom-0 bg-violet-500 opacity-50"
+        className="absolute top-0 left-0 right-0 bottom-0 bg-[#00000099] opacity-[60%]"
         onClick={onClose}
       ></div>
 

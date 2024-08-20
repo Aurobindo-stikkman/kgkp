@@ -19,19 +19,19 @@ const AboutFounder = () => {
   }, []);
 
   return (
-    <div className="bg-[#75C0B1] rounded-[40px] px-4 py-[52px] ">
-      <section className="text-[28px] font-[700] leading-[36.4px] text-[#1A2434] mx-auto text-center">
+    <div className="bg-[#75C0B1] rounded-[40px] px-4 py-[52px] lg:py-[124px] lg:px-[81px] lg:rounded-[100px] ">
+      <section className="text-[28px] font-[700] leading-[36.4px] text-[#1A2434] mx-auto text-center lg:text-[42px] lg:leading-[50.4px] ">
         Our Founder & CEO
       </section>
 
-      <section className="mt-8 text-[18px] font-[600] leading-[21.6px] text-[#1A2434] mx-auto text-center ">
+      <section className="mt-8 text-[18px] font-[600] leading-[21.6px] text-[#1A2434] mx-auto text-center lg:text-[36px] lg:leading-[43.2px] lg:text-left lg:mt-[86px]">
         Mr. Ramesh Chandra Partani
       </section>
 
-      <section className="flex flex-col gap-[49px]">
+      <section className="flex flex-col gap-[49px] lg:mt-4 lg:items-center lg:flex-row-reverse">
         <section
           style={{ borderRadius: "40% 60% 63% 37% / 26% 66% 34% 74%" }}
-          className="mt-8 bg-[#A16E5738] h-[257px] w-[251.79px] p-4 overflow-hidden mx-auto"
+          className="mt-8 bg-[#A16E5738] h-[257px] w-[251.79px] p-4 overflow-hidden mx-auto lg:basis-[432px] flex-shrink-0 lg:h-[443px] lg:p-6 "
         >
           <Image
             src={rameshPartani}
@@ -42,7 +42,7 @@ const AboutFounder = () => {
         </section>
 
         <section>
-          <section className="text-[14px] font-[400] leading-[19.6px] text-[#1A2434] text-justify">
+          <section className="text-[14px] font-[400] leading-[19.6px] text-[#1A2434] text-justify xl:text-[20px] xl:leading-[28px]">
             <span className="font-[700] ">Mr. Partani</span>
             is the chairman and director of Ru Education Pvt Ltd. He is an
             internationally acclaimed, eminent educationist, Spiritual and
@@ -53,7 +53,7 @@ const AboutFounder = () => {
           </section>
 
           <section
-            className={`text-[14px] font-[400] leading-[19.6px] text-[#1A2434] mt-3 text-justify ${
+            className={`text-[14px] font-[400] leading-[19.6px] text-[#1A2434] mt-3 text-justify xl:text-[20px] xl:leading-[28px] ${
               !isMobile
                 ? "h-auto"
                 : isOpen
@@ -96,13 +96,13 @@ const AboutFounder = () => {
 
       {(!isMobile || isOpen) && (
         <>
-          <section className="text-[14px] font-[400] leading-[19.6px] text-[#1A2434] mt-6 text-justify">
+          <section className="text-[14px] font-[400] leading-[19.6px] text-[#1A2434] mt-6 text-justify xl:text-[20px] xl:leading-[28px]">
             He has conducted over 4000 workshops within India and abroad for
             educational institutions, leading corporates in all sectors, banking
             and financial institutions and government departments.
           </section>
 
-          <section className="text-[14px] font-[400] leading-[19.6px] text-[#1A2434] mt-3 text-justify">
+          <section className="text-[14px] font-[400] leading-[19.6px] text-[#1A2434] mt-3 text-justify xl:text-[20px] xl:leading-[28px]">
             He has trained over 5,00,000 executives, parents, professionals and
             faculty members of leading training houses. Institutions like the
             Indian Airlines, Malaysia Airlines, Malaysia Airports, Reserve Bank
@@ -114,7 +114,7 @@ const AboutFounder = () => {
             basis, to name a few.
           </section>
 
-          <section className="text-[14px] font-[400] leading-[19.6px] text-[#1A2434] mt-3 text-justify">
+          <section className="text-[14px] font-[400] leading-[19.6px] text-[#1A2434] mt-3 text-justify xl:text-[20px] xl:leading-[28px]">
             He is a regular invitee to various forums like Federation of Indian
             Chambers of Commerce and Industries, Confederation of Indian
             Industries, AP Chambers of Commerce and Industries, Malaysian
