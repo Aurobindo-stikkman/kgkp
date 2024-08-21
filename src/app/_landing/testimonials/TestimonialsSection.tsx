@@ -1,5 +1,7 @@
 "use client";
+import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
+import chalkStroke from "../Chalk Stroke.png";
 
 const TestimonialsSection = () => {
   const [isScrollable, setIsScrollable] = useState(false);
@@ -44,8 +46,15 @@ const TestimonialsSection = () => {
 
   return (
     <section className="h-[412px] pt-[52px] bg-[#75C0B1] lg:h-[667px] lg:pt-[124px] ">
-      <section className="pl-[47px] pr-[66px] text-center text-[#1A2434] text-[20px] font-[700] leading-[28.6px] md:text-[32px] md:font-[700] md:leading-[38.4px] md:w-[645px] md:p-0 md:mx-auto ">
-        Real Experiences: Parents Testimonials and Child Outcomes
+      <section className="pl-[47px] pr-[66px] text-center text-[#1A2434] relative text-[20px] font-[700] leading-[28.6px] md:text-[32px] md:font-[700] md:leading-[38.4px] md:w-[645px] md:p-0 md:mx-auto">
+        <span className="z-10 relative">
+          Real Experiences: Parents Testimonials and Child Outcomes
+        </span>
+        <Image
+          src={chalkStroke}
+          alt="Chalk Icon"
+          className="absolute w-[235.08px] h-[60.94px] left-1/2 -bottom-7 translate-x-[-50%] z-0 lg:-bottom-11 lg:w-[397.11px] lg:h-[93.76px]"
+        />
       </section>
 
       {/* Video section */}

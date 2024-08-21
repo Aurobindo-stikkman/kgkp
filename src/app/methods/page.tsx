@@ -5,6 +5,7 @@ import rightIcon from "./assets/icon-arrow-right-white.svg";
 import strengthIcon from "./assets/motivation 1.svg";
 import brainIcon from "./assets/brain 1.svg";
 import growthIcon from "./assets/idea 1.svg";
+import chalkStroke from "./assets/Chalk Stroke.png";
 
 import eqImage from "./assets/EQ.png";
 import iqImage from "./assets/IQ.png";
@@ -21,19 +22,26 @@ const Methods = () => {
   return (
     <div className="overflow-x-hidden">
       {/* Method section */}
-      <section className="bg-[#F6E2D7] pt-6 pb-[52px] rounded-bl-[40px] rounded-br-[40px] lg:pt-[124px] lg:pb-[124px] lg:rounded-br-[100px] lg:rounded-bl-[100px] ">
-        <section className="mx-auto text-[28px] font-[700] leading-[36.4px] text-[#4D1435] text-center w-max lg:text-[42px] lg:leading-[50.4px] ">
-          The KGKP Method
+      <section className="bg-[#F6E2D7] pt-6 pb-[52px] rounded-bl-[40px] rounded-br-[40px] lg:pt-[124px] lg:pb-[124px] lg:rounded-br-[100px] lg:rounded-bl-[100px] xl:px-20 ">
+        <section className="relative mx-auto text-[28px] font-[700] leading-[36.4px] text-[#4D1435] text-center w-max lg:text-[42px] lg:leading-[50.4px]">
+          <span className="z-10 relative">The KGKP Method</span>
+          <Image
+            src={chalkStroke}
+            alt="Chalk Icon"
+            className="absolute w-[235.08px] h-[60.94px] left-1/2 top-[15%] translate-x-[-50%] z-0 lg:w-[397.11px] lg:h-[93.76px]"
+          />
         </section>
 
-        <section className="flex flex-col sm:justify-center lg:mt-[75px] lg:flex-row ">
-          <Image
-            src={methodImage}
-            alt="Method Landing image"
-            className="h-[273px] w-[485.33px] relative left-[-60px] sm:mx-auto xl:w-[760px] xl:left-[-140px] xl:basis-[45%] xl:flex-grow xl:flex-shrink xl:h-auto xl:overflow-hidden "
-          />
+        <section className="flex flex-col sm:justify-center lg:mt-[75px] lg:flex-row lg:gap-16 2xl:gap-24 ">
+          <section className="h-[273px] w-[485.33px] relative left-[-60px] sm:mx-auto lg:static lg:h-auto xl:w-[760px] xl:left-0 xl:flex-grow xl:overflow-hidden xl:h-[409px]">
+            <Image
+              src={methodImage}
+              alt="Method Landing image"
+              className="h-full w-full"
+            />
+          </section>
 
-          <section className="xl:basis-[55%] xl:flex-grow xl:flex-shrink">
+          <section className="lg:w-[545px]">
             <section className="text-center text-[#4D1435] font-semibold text-[16px] leading-[21.44px] mx-auto w-[274px] lg:w-auto lg:text-left lg:mx-4 xl:w-[504px] xl:text-[20px] xl:leading-[26.8px] ">
               From Potential to Prodigy: <br className="lg:hidden " />
               <span className="font-normal">
@@ -65,8 +73,15 @@ const Methods = () => {
           </section>
         </section>
 
-        <section className="mt-[52px] mx-7 text-[#4D1435] text-[28px] font-[700] leading-[36.4px] text-center xl:mt-[120.73px] xl:w-[639px] xl:text-[42px] xl:leading-[50.4px] xl:mx-auto ">
-          Learn How we Actualize the Genius of your Child
+        <section className="relative mt-[52px] mx-7 text-[#4D1435] text-[28px] font-[700] leading-[36.4px] text-center lg:w-[639px] lg:mx-auto xl:mt-[120.73px] xl:text-[42px] xl:leading-[50.4px]">
+          <span className="z-10 relative">
+            Learn How we Actualize the Genius of your Child
+          </span>
+          <Image
+            src={chalkStroke}
+            alt="Chalk Icon"
+            className="absolute w-[196.08px] h-[40.94px] left-1/2 top-[15%] translate-x-[-50%] z-0 sm:top-0 sm:w-[307.11px] sm:h-[83.76px] xl:top-1/2 xl:w-[468.21px] xl:h-24"
+          />
         </section>
 
         {/* Details */}
@@ -131,9 +146,16 @@ const Methods = () => {
       <Courses />
 
       <section className="bg-[#FAEFB6] py-[52px] flex flex-col lg:flex-row lg:items-center lg:px-[52px] lg:py-[86px] lg:justify-between xl:w-[1280px] xl:rounded-[100px] xl:mx-auto">
-        <section className="text-[#460C04] text-[20px] font-[700] leading-[26px] text-center mx-auto w-[315px] lg:text-left lg:m-0 lg:text-[32px] lg:font-[600] lg:leading-[38.4px] lg:basis-[60%] ">
-          Ready to Begin Your Child's Journey to Becoming a Genius{" "}
-          <span className="lg:hidden">Ready for the World</span>?
+        <section className="relative text-[#460C04] text-[20px] font-[700] leading-[26px] text-center mx-auto w-[315px] lg:text-left lg:m-0 lg:text-[32px] lg:font-[600] lg:leading-[38.4px] lg:basis-[60%] ">
+          <div className="z-10 relative">
+            Ready to Begin Your Child's Journey to Becoming a Genius{" "}
+            <span className="lg:hidden">Ready for the World</span>?
+          </div>
+          <Image
+            src={chalkStroke}
+            alt="Chalk Icon"
+            className="absolute w-[268.26px] h-[70.94px] left-1/2 bottom-[-35px] translate-x-[-50%] z-0 lg:w-[267px] lg:h-[72px] lg:left-[25%]"
+          />
         </section>
 
         <section className="mt-11 w-[254px] bg-[#4D1435] rounded-[50px] px-7 py-4 mx-auto flex gap-[14px] justify-center lg:m-0 lg:px-[80px] lg:py-6 lg:w-[385px] lg:h-[77px] lg:rounded-[50px]">
@@ -149,9 +171,14 @@ const Methods = () => {
       </section>
 
       {/* Cards section */}
-      <section className="my-[52px] px-3">
-        <section className="text-[20px] font-[700] leading-[26px] text-[#1A2434] text-center mx-auto md:text-[30px] md:leading-[30.8px] ">
-          Academic Excellence
+      <section className="my-[52px] px-3 lg:mt-24 lg:mb-[124px]">
+        <section className="text-[20px] relative font-[700] leading-[26px] text-[#1A2434] text-center mx-auto md:text-[30px] md:leading-[30.8px] ">
+          <span className="z-10 relative">Academic Excellence</span>
+          <Image
+            src={chalkStroke}
+            alt="Chalk Icon"
+            className="absolute w-[235.08px] h-[60.94px] left-1/2 top-0 translate-x-[-50%] z-0 lg:w-[397.11px] lg:h-[93.76px] lg:top-[-10px]"
+          />
         </section>
 
         <section className="mt-8 text-[14px] font-[500] leading-[19.6px] text-center text-[#1A2434] mx-auto md:text-[18px] md:leading-[25.2px] md:w-[551px] ">
@@ -223,8 +250,13 @@ const Methods = () => {
 
       {/* Milestone section */}
       <section className="rounded-[40px] bg-[#F6E2D7] py-[52px] px-4 lg:rounded-[100px] lg:py-[124px] lg:px-[88px] ">
-        <section className="text-[28px] font-[700] leading-[36.4px] text-center text-[#460C04] mx-auto w-[197px] lg:text-[42px] lg:font-[600] lg:leading-[50.4px] lg:w-fit ">
-          Milestones Acceleration
+        <section className="relative text-[28px] font-[700] leading-[36.4px] text-center text-[#460C04] mx-auto w-[197px] lg:text-[42px] lg:font-[600] lg:leading-[50.4px] lg:w-fit ">
+          <span className="z-10 relative">Milestones Acceleration</span>
+          <Image
+            src={chalkStroke}
+            alt="Chalk Icon"
+            className="absolute w-[235.08px] h-[60.94px] left-1/2 top-1/2 translate-x-[-50%] z-0 lg:w-[397.11px] lg:h-[93.76px] lg:top-0"
+          />
         </section>
 
         <Image
@@ -251,15 +283,20 @@ const Methods = () => {
           </div>
         </section>
 
-        <section className="mt-[52px] text-[28px] font-[700] leading-[36.4px] text-[#460C04] text-center mx-auto w-[191px] sm:w-fit lg:hidden">
-          Multiple Intelligence
+        <section className="relative mt-[52px] text-[28px] font-[700] leading-[36.4px] text-[#460C04] text-center mx-auto w-[191px] sm:w-fit lg:hidden">
+          <span className="z-10 relative">Multiple Intelligence</span>
+          <Image
+            src={chalkStroke}
+            alt="Chalk Icon"
+            className="absolute w-[235.08px] h-[60.94px] left-1/2 top-0 translate-x-[-50%] z-0 lg:w-[397.11px] lg:h-[93.76px] lg:top-0"
+          />
         </section>
 
-        <section className="flex flex-col md:flex-row md:justify-center lg:mt-[124px]">
+        <section className="flex flex-col md:flex-row md:justify-center lg:mt-[124px] lg:mx-auto xl:w-[1156px] xl:justify-around">
           <Image
             src={inteligenceImg}
             alt="Inteligence Image"
-            className="pt-8 rounded-[32.63px] mx-auto md:w-[321.42px] md:h-[310px] md:order-2"
+            className="pt-8 rounded-[32.63px] mx-auto md:w-[321.42px] md:h-[310px] md:order-2 xl:mx-0 "
           />
 
           <section className="mt-8 text-[14px] font-[400] leading-[22.4px] text-[#460C04] md:order-1 lg:w-[633px]">
@@ -287,61 +324,77 @@ const Methods = () => {
       </section>
 
       {/* Analysis section */}
-      <section className="py-[52px] px-4 ">
-        <section className="text-[28px] font-[700] leading-[36.4px] text-[#1A2434] mx-auto w-[203px] ">
-          Ridge Analysis
+      <section className="py-[52px] px-4 items-center flex flex-col lg:flex-row lg:py-[124px] lg:justify-evenly xl:gap-24 xl:justify-center">
+        <section className="relative text-[28px] font-[700] leading-[36.4px] text-[#1A2434] mx-auto w-[203px] lg:hidden">
+          <span className="z-10 relative">Ridge Analysis</span>
+          <Image
+            src={chalkStroke}
+            alt="Chalk Icon"
+            className="absolute w-[235.08px] h-[60.94px] left-1/2 top-[15%] translate-x-[-50%] z-0 lg:w-[373.8px] lg:h-[88.26px] lg:top-0"
+          />
         </section>
         <Image
           src={analysisImage}
           alt="Analysis image"
-          className="h-[318px] rounded-[20px] mt-8 "
+          className="h-[318px] rounded-[20px] mt-8 mx-auto xl:w-[568px] xl:h-[553px] xl:mx-0"
         />
 
-        <section className="mt-8 text-[14px] font-[400] leading-[19.6px] text-[#1A2434] ">
-          Ridge Analysis is a scientific method that helps to understand the
-          inborn intelligences and learning styles by analysing fingerprints.
-          The report gives clear information about:
-        </section>
+        <section className="max-w-[573px]">
+          <section className="hidden lg:block relative text-[42px] font-[700] leading-[50.4px] text-[#1A2434]">
+            <span className="z-10 relative">Ridge Analysis</span>
+            <Image
+              src={chalkStroke}
+              alt="Chalk Icon"
+              className="absolute w-[235.08px] h-[60.94px] left-0 top-[15%] z-0 lg:w-[373.8px] lg:h-[88.26px] lg:top-0"
+            />
+          </section>
 
-        <section className="mt-8 grid gap-6 ">
-          <section className="flex gap-6">
-            <Image
-              src={strengthIcon}
-              alt="Strength Icon"
-              className="w-[42px] h-[42px]"
-            />
-            <div className="text-[16px] font-[600] leading-[19.2px] text-[#1A2434] text-center ">
-              Strengths & weaknesses
-            </div>
+          <section className="mt-8 text-[14px] font-[400] leading-[19.6px] text-[#1A2434] xl:text-[16px] xl:leading-[22.4px] ">
+            Ridge Analysis is a scientific method that helps to understand the
+            inborn intelligences and learning styles by analysing fingerprints.
+            The report gives clear information about:
           </section>
-          <section className="flex gap-6">
-            <Image
-              src={brainIcon}
-              alt="Strength Icon"
-              className="w-[42px] h-[42px]"
-            />
-            <div className="text-[16px] font-[600] leading-[19.2px] text-[#1A2434] text-center ">
-              Growth rate of every brain lobe
-            </div>
-          </section>
-          <section className="flex gap-6">
-            <Image
-              src={growthIcon}
-              alt="Strength Icon"
-              className="w-[42px] h-[42px]"
-            />
-            <div className="text-[16px] font-[600] leading-[19.2px] text-[#1A2434] text-center ">
-              Learning style of the child
-            </div>
-          </section>
-        </section>
 
-        <section className="mt-8 text-[14px] font-[400] leading-[19.6px] text-[#1A2434] ">
-          Ridge Analysis report can be generated after a child is 1 year old to
-          identify the exact talent profile of the child. This report is then
-          used to identify where the highest potential genius of the child lies
-          and create a unique activity plan that parents can use to help their
-          child actualise their potential genius.
+          <section className="mt-8 grid gap-6 xl:mt-[52px]">
+            <section className="flex gap-6 items-center">
+              <Image
+                src={strengthIcon}
+                alt="Strength Icon"
+                className="w-[42px] h-[42px] xl:w-[52px] xl:h-[52px]"
+              />
+              <div className="text-[16px] font-[600] leading-[19.2px] text-[#1A2434] text-center xl:text-[18px] xl:leading-[21.6px]">
+                Strengths & weaknesses
+              </div>
+            </section>
+            <section className="flex gap-6">
+              <Image
+                src={brainIcon}
+                alt="Strength Icon"
+                className="w-[42px] h-[42px] xl:w-[52px] xl:h-[52px]"
+              />
+              <div className="text-[16px] font-[600] leading-[19.2px] text-[#1A2434] text-center xl:text-[18px] xl:leading-[21.6px]">
+                Growth rate of every brain lobe
+              </div>
+            </section>
+            <section className="flex gap-6">
+              <Image
+                src={growthIcon}
+                alt="Strength Icon"
+                className="w-[42px] h-[42px] xl:w-[52px] xl:h-[52px]"
+              />
+              <div className="text-[16px] font-[600] leading-[19.2px] text-[#1A2434] text-center xl:text-[18px] xl:leading-[21.6px]">
+                Learning style of the child
+              </div>
+            </section>
+          </section>
+
+          <section className="mt-8 text-[14px] font-[400] leading-[19.6px] text-[#1A2434] xl:mt-[52px] xl:text-[18px] xl:leading-[22.4px]">
+            Ridge Analysis report can be generated after a child is 1 year old
+            to identify the exact talent profile of the child. This report is
+            then used to identify where the highest potential genius of the
+            child lies and create a unique activity plan that parents can use to
+            help their child actualise their potential genius.
+          </section>
         </section>
       </section>
     </div>

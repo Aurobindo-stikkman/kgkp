@@ -1,12 +1,18 @@
 import Image from "next/image";
 import rameshPartani from "./Ramesh partani.png";
 import arrowRight from "./icon-arrow-right.svg";
+import chalkStroke from "../Chalk Stroke.png";
 
 const AboutFounder = () => {
   return (
     <div className="pt-[42px]">
-      <section className="text-[20px] font-[700] leading-[24px] text-[#F6E2D8] w-[213px] mx-auto sm:text-[32px] sm:leading-[38.4px] sm:w-[340px] ">
-        Get to know About Us
+      <section className="text-[20px] font-[700] leading-[24px] text-[#F6E2D8] relative w-[213px] mx-auto sm:text-[32px] sm:leading-[38.4px] sm:w-[340px]">
+        <span className="z-10 relative">Get to know About Us</span>
+        <Image
+          src={chalkStroke}
+          alt="Chalk Icon"
+          className="absolute w-[235.08px] h-[60.94px] top-1 right-0 z-0 lg:w-[250.4px] lg:-top-1 lg:h-[93.76px]"
+        />
       </section>
 
       <section className="flex flex-col xl:flex-row">

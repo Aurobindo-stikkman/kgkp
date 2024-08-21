@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import rightArrow from "./icon-arrow-right.svg";
+import chalkStroke from "../Chalk Stroke.png";
 
 const SuccessStory = () => {
   return (
@@ -10,8 +11,13 @@ const SuccessStory = () => {
         <div className="text-[20px] font-[700] leading-[24px] text-[#F6E2D8] mx-auto h-6 lg:mx-0 lg:text-[24px] lg:leading-[30.4px] xl:text-[32px] xl:leading-[38.4px]">
           Success Stories:
         </div>
-        <div className="text-[20px] font-[700] leading-[24px] text-[#F6E2D8] mx-auto h-6 lg:mx-0 lg:text-[24px] lg:leading-[30.4px] xl:text-[32px] xl:leading-[38.4px]">
-          Hear from our First Genius
+        <div className="text-[20px] font-[700] leading-[24px] text-[#F6E2D8] relative mx-auto h-6 lg:mx-0 lg:text-[24px] lg:leading-[30.4px] xl:text-[32px] xl:leading-[38.4px]">
+          <span className="z-10 relative">Hear from our First Genius</span>
+          <Image
+            src={chalkStroke}
+            alt="Chalk Icon"
+            className="absolute w-[235.08px] h-[60.94px] -top-1 right-0 z-0 lg:w-[330.4px] lg:h-[93.76px]"
+          />
         </div>
       </section>
 

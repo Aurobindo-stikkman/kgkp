@@ -4,12 +4,18 @@ import bulb from "./assets/science/bulb.png";
 import equation from "./assets/science/equation.png";
 import science from "./assets/science/science.png";
 import arrowIcon from "./assets/science/icon-arrow-right.svg";
+import chalkStroke from "../Chalk Stroke.png";
 
 const Science = () => {
   return (
     <div className="h-[2519px] bg-[#F6E2D7] rounded-[40px] pt-[52px] mt-[52px] md:pb-[52px] md:h-auto lg:pt-[124px] lg:rounded-[100px] lg:h-auto lg:pb-[124px] ">
-      <section className="text-[20px] font-[700] leading-[28.6px] text-[#460C04] w-[178px] h-[29px] mx-auto lg:text-[32px] lg:leading-[38.4px] lg:w-[285px]">
-        The KGKP Method
+      <section className="text-[20px] font-[700] relative leading-[28.6px] text-[#460C04] w-[178px] h-[29px] mx-auto lg:text-[32px] lg:leading-[38.4px] lg:w-[285px]">
+        <span className="z-10 relative">The KGKP Method</span>
+        <Image
+          src={chalkStroke}
+          alt="Chalk Icon"
+          className="absolute w-[235.08px] h-[60.94px] -top-1 right-0 z-0 lg:w-[250.4px] lg:h-[93.76px]"
+        />
       </section>
 
       <section className="flex flex-col gap-6 mt-6 px-4 items-center md:flex-row md:align-start lg:mt-[80px] lg:px-[40px] lg:justify-center xl:px-[80px] xl:gap-[106px] ">
@@ -144,7 +150,11 @@ const Science = () => {
         <div className="text-[16px] font-[700] leading-[19.2px] text-white lg:text-[24px] lg:leading-[28.8px]">
           Learn more
         </div>
-        <Image src={arrowIcon} alt="Arrow Icon right" className="w-4 h-4 lg:w-6 lg:h-6" />
+        <Image
+          src={arrowIcon}
+          alt="Arrow Icon right"
+          className="w-4 h-4 lg:w-6 lg:h-6"
+        />
       </section>
     </div>
   );

@@ -23,6 +23,7 @@ import longfootSteps2 from "./assets/longfootStep2.png";
 import longfootSteps3 from "./assets/longfootStep3.png";
 import longfootSteps4 from "./assets/longfootStep4.png";
 import singleStep from "./assets/singleStep.png";
+import chalkStroke from "./assets/Chalk Stroke.png";
 
 import ModalView from "./ModalView";
 
@@ -247,8 +248,13 @@ const Courses = () => {
 
   return (
     <section className="mt-9 mb-[52px] lg:mt-[143px] ">
-      <section className="mx-[65px] text-[28px] font-[700] leading-[36.4px] text-[#1A2434] text-center lg:text-[42px] lg:leading-[50.4px] ">
-        The KGKP Path to Genius
+      <section className="relative mx-[65px] text-[28px] font-[700] leading-[36.4px] text-[#1A2434] text-center lg:text-[42px] lg:leading-[50.4px]">
+        <span className="z-10 relative">The KGKP Path to Genius</span>
+        <Image
+          src={chalkStroke}
+          alt="Chalk Icon"
+          className="absolute w-[196.08px] h-[40.94px] left-1/2 top-[15%] translate-x-[-50%] z-0 sm:top-0 sm:w-[307.11px] sm:h-[83.76px] lg:left-[60%]"
+        />
       </section>
 
       <section className="hidden mt-6 w-[513px] text-[18px] font-[500] leading-[21.6px] text-center mx-auto text-[#1A2434] lg:block ">
@@ -286,7 +292,7 @@ const Courses = () => {
                 <section className="mt-4 flex gap-[10px] justify-end items-center">
                   <div
                     onClick={() => openModal(1, course1)}
-                    className="text-[14px] font-[600] leading-[16.94px] text-[#1A2434]"
+                    className="text-[14px] font-[600] leading-[16.94px] text-[#1A2434] cursor-pointer"
                   >
                     Learn More
                   </div>
@@ -329,18 +335,19 @@ const Courses = () => {
                   className="w-full object-cover h-[70px] z-0 rounded-tl-[20px] rounded-tr-[20px]"
                 />
                 <div className="text-[16px] font-[600] leading-[19.2px] absolute top-6 left-4 text-white">
-                  Pre-pregnancy (Beej Sanskar)
+                  Pregnancy (Garbh Sanskar)
                 </div>
               </section>
               <section className="px-5 pt-7 pb-5">
                 <div className="text-[14px] font-[500] leading-[16.8px] text-[#1A2434] ">
-                  3 Courses to prepare your body, mind and spirit to receive the
-                  highest quality of soul during conception.
+                  7 monthly courses to provide the ideal environment for
+                  foundational programming of the foetus at the cellular level
+                  in body, mind and spirit.
                 </div>
                 <section className="mt-4 flex gap-[10px] justify-end items-center">
                   <div
                     onClick={() => openModal(2, course2)}
-                    className="text-[14px] font-[600] leading-[16.94px] text-[#1A2434]"
+                    className="text-[14px] font-[600] leading-[16.94px] text-[#1A2434] cursor-pointer"
                   >
                     Learn More
                   </div>
@@ -383,18 +390,18 @@ const Courses = () => {
                   className="w-full object-cover h-[70px] z-0 rounded-tl-[20px] rounded-tr-[20px]"
                 />
                 <div className="text-[16px] font-[600] leading-[19.2px] absolute top-6 left-4 text-white">
-                  Pre-pregnancy (Beej Sanskar)
+                  Birth to 6 Years
                 </div>
               </section>
               <section className="px-5 pt-7 pb-5">
                 <div className="text-[14px] font-[500] leading-[16.8px] text-[#1A2434] ">
-                  3 Courses to prepare your body, mind and spirit to receive the
-                  highest quality of soul during conception.
+                  Monthly courses to raise the IQ of your child dramatically and
+                  sow the seeds of EQ & SQ.
                 </div>
                 <section className="mt-4 flex gap-[10px] justify-end items-center">
                   <div
                     onClick={() => openModal(3, course3)}
-                    className="text-[14px] font-[600] leading-[16.94px] text-[#1A2434]"
+                    className="text-[14px] font-[600] leading-[16.94px] text-[#1A2434] cursor-pointer"
                   >
                     Learn More
                   </div>
@@ -437,18 +444,17 @@ const Courses = () => {
                   className="w-full object-cover h-[70px] z-0 rounded-tl-[20px] rounded-tr-[20px]"
                 />
                 <div className="text-[16px] font-[600] leading-[19.2px] absolute top-6 left-4 text-white">
-                  Pre-pregnancy (Beej Sanskar)
+                  6 to 15 Years
                 </div>
               </section>
               <section className="px-5 pt-7 pb-5">
                 <div className="text-[14px] font-[500] leading-[16.8px] text-[#1A2434] ">
-                  3 Courses to prepare your body, mind and spirit to receive the
-                  highest quality of soul during conception.
+                  Courses designed to maximise IQ, EQ, and SQ.
                 </div>
                 <section className="mt-4 flex gap-[10px] justify-end items-center">
                   <div
                     onClick={() => openModal(4, course4)}
-                    className="text-[14px] font-[600] leading-[16.94px] text-[#1A2434]"
+                    className="text-[14px] font-[600] leading-[16.94px] text-[#1A2434] cursor-pointer"
                   >
                     Learn More
                   </div>
@@ -479,16 +485,29 @@ const Courses = () => {
             alt="course 1"
             className="h-full w-full xl:w-[385px] "
           />
-          <Image src={singleStep} alt="Single foot step" className="hidden xl:block absolute top-[49%] left-[-57%] " />
-          <Image src={singleStep} alt="Single foot step" className="hidden xl:block absolute top-[55%] left-[-30%] " />
+          <Image
+            src={singleStep}
+            alt="Single foot step"
+            className="hidden xl:block absolute top-[49%] left-[-57%] "
+          />
+          <Image
+            src={singleStep}
+            alt="Single foot step"
+            className="hidden xl:block absolute top-[55%] left-[-30%] "
+          />
         </section>
 
         <section className="mt-8 text-[28px] font-[700] leading-[36.4px] text-center text-[#4D1435] mx-auto xl:text-[32px] xl:font-[800] xl:leading-[44.8px] ">
           The KGKP Guarantee:
         </section>
 
-        <section className="text-[28px] mt-4 font-[700] leading-[39.2px] text-[#4D1435] text-center mx-[50px] xl:text-[32px] xl:font-[800] xl:leading-[44.8px] xl:mt-[6px]">
-          A Genius Ready for the World!
+        <section className="text-[28px] relative mt-4 font-[700] leading-[39.2px] text-[#4D1435] text-center mx-[50px] xl:text-[32px] xl:font-[800] xl:leading-[44.8px] xl:mt-[6px]">
+          <span className="z-10 relative">A Genius Ready for the World!</span>
+          <Image
+            src={chalkStroke}
+            alt="Chalk Icon"
+            className="absolute w-[196.08px] h-[40.94px] left-1/2 top-[15%] translate-x-[-50%] z-0 sm:top-0 sm:w-[307.11px] sm:h-[83.76px] lg:w-[267px] lg:h-[72px] lg:left-[42%]"
+          />
         </section>
 
         <section className="mt-6 mx-6 text-[14px] font-[500] leading-[19.6px] text-[#1A2434] text-center md:mt-9 md:w-[428px] md:mx-auto">

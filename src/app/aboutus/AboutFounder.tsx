@@ -3,6 +3,8 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 
 import rameshPartani from "./assets/Ramesh partani.png";
+import pointingArrow from "./assets/pointing-arrow.png";
+import chalkStroke from "./assets/Chalk Stroke.png";
 
 const AboutFounder = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,24 +22,34 @@ const AboutFounder = () => {
 
   return (
     <div className="bg-[#75C0B1] rounded-[40px] px-4 py-[52px] lg:py-[124px] lg:px-[81px] lg:rounded-[100px] ">
-      <section className="text-[28px] font-[700] leading-[36.4px] text-[#1A2434] mx-auto text-center lg:text-[42px] lg:leading-[50.4px] ">
-        Our Founder & CEO
+      <section className="relative text-[28px] font-[700] leading-[36.4px] text-[#1A2434] mx-auto text-center lg:text-[42px] lg:leading-[50.4px]">
+        <span className="relative z-10">Our Founder & CEO</span>
+        <Image
+          src={chalkStroke}
+          alt="Chalk Icon"
+          className="absolute w-[235.08px] h-[60.94px] left-1/2 top-[15%] translate-x-[-50%] z-0 lg:w-[397.11px] lg:h-[93.76px]"
+        />
       </section>
 
       <section className="mt-8 text-[18px] font-[600] leading-[21.6px] text-[#1A2434] mx-auto text-center lg:text-[36px] lg:leading-[43.2px] lg:text-left lg:mt-[86px]">
         Mr. Ramesh Chandra Partani
       </section>
 
-      <section className="flex flex-col gap-[49px] lg:mt-4 lg:items-center lg:flex-row-reverse">
+      <section className="flex flex-col gap-[49px] lg:mt-4 lg:items-center lg:flex-row-reverse xl:gap-[84px]">
         <section
           style={{ borderRadius: "40% 60% 63% 37% / 26% 66% 34% 74%" }}
-          className="mt-8 bg-[#A16E5738] h-[257px] w-[251.79px] p-4 overflow-hidden mx-auto lg:basis-[432px] flex-shrink-0 lg:h-[443px] lg:p-6 "
+          className="mt-8 bg-[#A16E5738] h-[257px] w-[251.79px] p-4 mx-auto lg:basis-[432px] flex-shrink-0 lg:h-[443px] lg:p-6 xl:relative"
         >
           <Image
             src={rameshPartani}
             alt="Ramesh Partani"
             className="w-full h-full bg-[#c9795438] object-fill"
             style={{ borderRadius: "40% 60% 63% 37% / 26% 66% 34% 74% " }}
+          />
+          <Image
+            src={pointingArrow}
+            alt="Pointing arrow"
+            className="hidden xl:block w-[214.43px] h-[214.43px] absolute left-[-114px] top-[-112px]"
           />
         </section>
 

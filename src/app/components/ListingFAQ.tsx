@@ -11,7 +11,7 @@ interface Props {
 
 const ListingFAQ: React.FC<Props> = ({ data }) => {
   return (
-    <div className="grid gap-4 ">
+    <div className="grid gap-4 md:gap-5 lg:gap-6">
       {data.map((ele: IData) => {
         return (
           <div key={ele.q}>

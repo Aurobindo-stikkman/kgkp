@@ -5,13 +5,21 @@ import playingItems from "./Rectangle 1461 (1).png";
 import arrowRight from "./icon-arrow-right.svg";
 import clock from "./Clock.svg";
 import whiteArrow from "./icon-arrow-right (1).svg";
+import chalkStroke from "../Chalk Stroke.png";
 import Carousel from "./Curousel";
 
 const CoursesSection = () => {
   return (
     <section className="h-[1245px] px-4 pt-[52px] md:h-[800px] lg:h-[1105px] lg:px-[80px] lg:py-[124px] ">
-      <section className="h-[58px] w-[282px] mx-auto text-[20px] font-[700] leading-[28.6px] text-center text-[#1A2434] lg:text-[32px] lg:font-[700] lg:leading-[38.4px] lg:w-[512px] lg:h-[76px] ">
-        Select the Best Course to Unlock your Child's Genius
+      <section className="h-[58px] w-[282px] mx-auto text-[20px] font-[700] leading-[28.6px] relative text-center text-[#1A2434] lg:text-[32px] lg:font-[700] lg:leading-[38.4px] lg:w-[512px] lg:h-[76px]">
+        <span className="z-10 relative">
+          Select the Best Course to Unlock your Child's Genius
+        </span>
+        <Image
+          src={chalkStroke}
+          alt="Chalk Icon"
+          className="absolute w-[235.08px] h-[60.94px] left-1/2 -bottom-7 translate-x-[-50%] z-0 lg:-bottom-11 lg:w-[330.4px] lg:h-[93.76px]"
+        />
       </section>
 
       <section className="mt-6 flex flex-wrap gap-2 justify-center lg:mt-[80px]">
