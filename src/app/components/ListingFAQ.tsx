@@ -2,7 +2,7 @@ import FAQ from "./Faq";
 
 interface IData {
   q: string;
-  ans: string;
+  ans: string | JSX.Element;
 }
 
 interface Props {

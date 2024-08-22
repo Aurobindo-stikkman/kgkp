@@ -7,7 +7,7 @@ import clearText from "./icon-x-circle.svg";
 
 interface Props {
   value: string;
-  data: { q: string; ans: string }[];
+  data: { q: string; ans: string | JSX.Element }[];
   handleSearch: (value: string) => void;
   handleModal: () => void;
   clearSearch: () => void;

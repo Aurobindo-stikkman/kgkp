@@ -6,7 +6,7 @@ import downArrow from "./icon-chevron-right.svg";
 interface Props {
   data: {
     q: string;
-    ans: string;
+    ans: string | JSX.Element;
   };
 }
 

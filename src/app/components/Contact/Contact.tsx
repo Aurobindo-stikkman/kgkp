@@ -8,7 +8,7 @@ import rope from "./assets/Vector 60.svg";
 
 const Contact = () => {
   return (
-    <section className="bg-[#FAEFB6] py-[52px] lg:py-[124px] ">
+    <section className="bg-[#FAEFB6] py-[52px] lg:py-[124px] overflow-hidden">
       <section className="text-[#460C04] relative text-[20px] font-[700] leading-[26px] text-center mx-auto w-[311px] lg:w-[564px] lg:text-[32px] lg:font-[600] lg:leading-[38.4px] ">
         <span className="z-10 relative">
           Ready to Begin Your Child's Journey to Becoming a Genius?

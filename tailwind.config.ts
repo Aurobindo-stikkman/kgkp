@@ -14,10 +14,17 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
+    listStyleType: {
+      none: "none",
+      disc: "disc",
+      decimal: "decimal",
+      circle: "circle",
+      lowerAlpha: "lower-alpha",
+    },
   },
   fontFamily: {
-    poetsen: ['"Poetsen One"', 'sans-serif'],
-    inter: ['"Inter"', 'sans-serif'],
+    poetsen: ['"Poetsen One"', "sans-serif"],
+    inter: ['"Inter"', "sans-serif"],
   },
   plugins: [],
 };
