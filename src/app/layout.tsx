@@ -4,6 +4,8 @@ import "slick-carousel/slick/slick-theme.css";
 
 import "./globals.css";
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import Contact from "./components/Contact/Contact";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,6 +22,8 @@ export default function RootLayout({
       <body>
         <Header />
         {children}
+        <Contact />
+        <Footer />
       </body>
     </html>
   );

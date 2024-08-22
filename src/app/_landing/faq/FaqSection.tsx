@@ -57,18 +57,6 @@ const FaqSection = () => {
           <Image src={arrowIcon} alt="Arrow Icon" className="w-4 h-4 lg:w-6 lg:h-6" />
         </section>
       </div>
-      <section className="bg-[#FAEFB6] py-[52px] ">
-        <section className="text-[#460C04] text-[20px] font-[700] leading-[26px] text-center mx-auto w-[311px] ">
-          Ready to Begin Your Child's Journey to Becoming a Genius?
-        </section>
-
-        <section className="mt-11 w-[254px] bg-[#4D1435] rounded-[50px] px-7 py-4 mx-auto flex gap-[14px] justify-center">
-          <section className="text-white text-[16px] font-[700] leading-[19.2px] ">
-            Explore Our Courses
-          </section>
-          <Image src={arrowIcon} alt="Arrow Icon mark" className="w-4 h-4" />
-        </section>
-      </section>
     </>
   );
 };

@@ -5,10 +5,18 @@ import equation from "./assets/science/equation.png";
 import science from "./assets/science/science.png";
 import arrowIcon from "./assets/science/icon-arrow-right.svg";
 import chalkStroke from "../Chalk Stroke.png";
+import rocketIcon from "./assets/science/rocket.png";
+import vector12 from "./assets/science/Vector 12.png";
+import vector13 from "./assets/science/Vector 13.png";
 
 const Science = () => {
   return (
-    <div className="h-[2519px] bg-[#F6E2D7] rounded-[40px] pt-[52px] mt-[52px] md:pb-[52px] md:h-auto lg:pt-[124px] lg:rounded-[100px] lg:h-auto lg:pb-[124px] ">
+    <div className="h-[2519px] relative bg-[#F6E2D7] rounded-[40px] pt-[52px] mt-[52px] md:pb-[52px] md:h-auto lg:pt-[124px] lg:rounded-[100px] lg:h-auto lg:pb-[124px]">
+      <Image
+        src={rocketIcon}
+        alt="Rocket Image"
+        className="hidden xl:block absolute left-0 top-0 w-[339px] h-[339px] z-0"
+      />
       <section className="text-[20px] font-[700] relative leading-[28.6px] text-[#460C04] w-[178px] h-[29px] mx-auto lg:text-[32px] lg:leading-[38.4px] lg:w-[285px]">
         <span className="z-10 relative">The KGKP Method</span>
         <Image
@@ -19,40 +27,66 @@ const Science = () => {
       </section>
 
       <section className="flex flex-col gap-6 mt-6 px-4 items-center md:flex-row md:align-start lg:mt-[80px] lg:px-[40px] lg:justify-center xl:px-[80px] xl:gap-[106px] ">
+        {/* Card 1 */}
         <section className="h-[420px] w-[328px] rounded-[40px] bg-white flex flex-col lg:h-[459px] lg:w-[356px] ">
           <Image
             src={bulb}
             alt="Bulb idea"
             className="h-[276px] rounded-tr-[40px] rounded-tl-[40px] w-full"
           />
-          <div className="flex-grow px-4 py-6 opacity--[70%] text-[#4D1435] text-center text-[14px] font-[500] leading-[25.2px] lg:text-[16px] lg:leading-[28.8px]">
+          <div className="flex-grow px-4 py-6 opacity--[70%] text-[#4D1435] text-center text-[14px] font-[500] leading-[25.2px] lg:text-[16px] lg:leading-[28.8px] lg:relative">
             Integration of cutting edge technologies such as milestone
             acceleration, brain development profile and multiple intelligences
             to create a truly genius child
+            <div className="absolute top-[-35px] left-[-35px] h-[70px] w-[70px] rounded-full bg-[linear-gradient(45deg, #ffffff, #b51e1e)] z-10 flex justify-center items-center border-4 border-red-200 ">
+              <div className="h-[100%] w-[100%] bg-white text-black rounded-full flex justify-center items-center ">
+                <div className="w-[17px] h-[50px] font-[400] text-[42px] leading-[50.4px] font-[PoetsenOne] ">
+                  1
+                </div>
+              </div>
+            </div>
           </div>
         </section>
+
+        {/* Card 2 */}
         <section className="h-[420px] w-[328px] rounded-[40px] bg-white flex flex-col lg:h-[459px] lg:w-[356px] ">
           <Image
             src={equation}
             alt="Equation"
             className="h-[276px] rounded-tr-[40px] rounded-tl-[40px] w-full"
           />
-          <div className="flex-grow px-4 py-6 opacity--[70%] text-[#4D1435] text-center text-[14px] font-[500] leading-[25.2px] lg:text-[16px] lg:leading-[28.8px]">
+          <div className="flex-grow px-4 py-6 opacity--[70%] text-[#4D1435] text-center text-[14px] font-[500] leading-[25.2px] lg:text-[16px] lg:leading-[28.8px] lg:relative">
             Nurture a complete genius with high IQ, EQ & SQ through an
             intellectually stimulating environment, emotional awareness,
             spiritual values & positive parenting
+            <div className="absolute top-[-35px] left-[-35px] h-[70px] w-[70px] rounded-full bg-[linear-gradient(45deg, #ffffff, #b51e1e)] z-10 flex justify-center items-center border-4 border-red-200 ">
+              <div className="h-[100%] w-[100%] bg-white text-black rounded-full flex justify-center items-center ">
+                <div className="w-[17px] h-[50px] font-[400] text-[42px] leading-[50.4px] font-[PoetsenOne] ">
+                  2
+                </div>
+              </div>
+            </div>
           </div>
         </section>
+
+        {/* Card 3 */}
         <section className="h-[420px] w-[328px] rounded-[40px] bg-white flex flex-col lg:h-[459px] lg:w-[356px] ">
           <Image
             src={science}
             alt="Science"
             className="h-[276px] rounded-tr-[40px] rounded-tl-[40px] w-full"
           />
-          <div className="flex-grow px-4 py-6 opacity--[70%] text-[#4D1435] text-center text-[14px] font-[500] leading-[25.2px] lg:text-[16px] lg:leading-[28.8px]">
+          <div className="flex-grow px-4 py-6 opacity--[70%] text-[#4D1435] text-center text-[14px] font-[500] leading-[25.2px] lg:text-[16px] lg:leading-[28.8px] lg:relative">
             Personalized activity plan based on your child’s talent profile,
             brain development & learning style found through the scientific
             method of ridge analysis
+            <div className="absolute top-[-35px] left-[-35px] h-[70px] w-[70px] rounded-full bg-[linear-gradient(45deg, #ffffff, #b51e1e)] z-10 flex justify-center items-center border-4 border-red-200 ">
+              <div className="h-[100%] w-[100%] bg-white text-black rounded-full flex justify-center items-center ">
+                <div className="w-[17px] h-[50px] font-[400] text-[42px] leading-[50.4px] font-[PoetsenOne] ">
+                  3
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </section>
@@ -63,7 +97,19 @@ const Science = () => {
 
       <section className="flex flex-col md:flex-row md:items-center xl:pl-[160px] xl:pr-[125px] xl:gap-[130px]">
         {/* Video section */}
-        <section className="mt-6 mx-4 rounded-[40px] h-[209px] bg-[#1A24348C] md:basis-1/2 lg:w-[546px] lg:h-[365px] xl:basis-[546px] "></section>
+        <section className="mt-6 mx-4 relative rounded-[40px] h-[209px] bg-[#1A24348C] md:basis-1/2 lg:w-[546px] lg:h-[365px] xl:basis-[546px]">
+          <div className="relative h-full w-full z-10"></div>
+          <Image
+            src={vector12}
+            alt="Vector 12"
+            className="hidden xl:block w-[566px] h-[500px] absolute z-0 top-[-50px] left-[60px]"
+          />
+          <Image
+            src={vector13}
+            alt="Vector 13"
+            className="hidden xl:block w-[406px] h-[500px] absolute z-0 top-[-60px] left-6"
+          />
+        </section>
 
         {/* Button */}
         <section className="mt-6 w-[178px] h-[51px] rounded-[50px] px-7 py-4 mx-auto flex gap-[14px] bg-[#4D1435] md:hidden">
