@@ -166,7 +166,7 @@ const TestimonialsSection = () => {
 
       <section
         ref={scrollContainerRef}
-        className="mt-8 px-4 flex overflow-x-scroll overflow-y-visible gap-3 relative lg:mt-[57px] lg:justify-around lg:h-[352px] lg:items-center lg:overflow-x-hidden xl:gap-[112px] xl:justify-center xl:pl-[67px] xl:pr-[74px] 2xl:justify-around "
+        className="mt-8 px-4 flex overflow-x-scroll overflow-y-hidden gap-3 relative lg:mt-[57px] lg:justify-around lg:h-[352px] lg:items-center lg:overflow-x-hidden xl:gap-[112px] xl:justify-center xl:pl-[67px] xl:pr-[74px] 2xl:justify-around "
       >
         {/* Video section */}
         <section
@@ -183,13 +183,15 @@ const TestimonialsSection = () => {
                 2 years old recognising words after 30 days of KGKP
               </div>
 
-              <div className="mt-[10px] flex items-center px-2 gap-5 ">
+              <div className="mt-[10px] flex items-center gap-5 ">
                 <div
                   onClick={() => setVideoPlay(!videoPlay)}
                   className="cursor-pointer text-sm"
                 >
                   {videoPlay ? (
-                    "Pause"
+                    <span className="w-[14.11px] h-[14.11px] lg:w-4 lg:h-4">
+                      &#9616;&#9616;
+                    </span>
                   ) : (
                     <>
                       <Image
@@ -201,7 +203,9 @@ const TestimonialsSection = () => {
                   )}
                 </div>
 
-                <div className="flex-grow text-[10px] font-[500] leading-[14px]">{timeRemaining}</div>
+                <div className="flex-grow text-[10px] font-[500] leading-[14px]">
+                  {timeRemaining}
+                </div>
 
                 <div className="relative volume-control group flex items-center">
                   <input

@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poetsen+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poetsen+One:wght@400&display=swap');
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -15,6 +15,12 @@
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
+}
+
+.poetsen-one-regular {
+  font-family: "Poetsen One", sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 .slick-initialized {

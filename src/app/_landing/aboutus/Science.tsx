@@ -38,7 +38,7 @@ const Science = () => {
             Integration of cutting edge technologies such as milestone
             acceleration, brain development profile and multiple intelligences
             to create a truly genius child
-            <div className="absolute top-[-35px] left-[-35px] h-[70px] w-[70px] rounded-full bg-[linear-gradient(45deg, #ffffff, #b51e1e)] z-10 flex justify-center items-center border-4 border-red-200 ">
+            <div className="hidden lg:block absolute top-[-35px] left-[-35px] h-[70px] w-[70px] rounded-full bg-[linear-gradient(45deg, #ffffff, #b51e1e)] z-10 flex justify-center items-center border-4 border-red-200 ">
               <div className="h-[100%] w-[100%] bg-white text-black rounded-full flex justify-center items-center ">
                 <div className="w-[17px] h-[50px] font-[400] text-[42px] leading-[50.4px] font-[PoetsenOne] ">
                   1
@@ -59,7 +59,7 @@ const Science = () => {
             Nurture a complete genius with high IQ, EQ & SQ through an
             intellectually stimulating environment, emotional awareness,
             spiritual values & positive parenting
-            <div className="absolute top-[-35px] left-[-35px] h-[70px] w-[70px] rounded-full bg-[linear-gradient(45deg, #ffffff, #b51e1e)] z-10 flex justify-center items-center border-4 border-red-200 ">
+            <div className="hidden lg:block absolute top-[-35px] left-[-35px] h-[70px] w-[70px] rounded-full bg-[linear-gradient(45deg, #ffffff, #b51e1e)] z-10 flex justify-center items-center border-4 border-red-200 ">
               <div className="h-[100%] w-[100%] bg-white text-black rounded-full flex justify-center items-center ">
                 <div className="w-[17px] h-[50px] font-[400] text-[42px] leading-[50.4px] font-[PoetsenOne] ">
                   2
@@ -80,7 +80,7 @@ const Science = () => {
             Personalized activity plan based on your child’s talent profile,
             brain development & learning style found through the scientific
             method of ridge analysis
-            <div className="absolute top-[-35px] left-[-35px] h-[70px] w-[70px] rounded-full bg-[linear-gradient(45deg, #ffffff, #b51e1e)] z-10 flex justify-center items-center border-4 border-red-200 ">
+            <div className="hidden lg:block absolute top-[-35px] left-[-35px] h-[70px] w-[70px] rounded-full bg-[linear-gradient(45deg, #ffffff, #b51e1e)] z-10 flex justify-center items-center border-4 border-red-200 ">
               <div className="h-[100%] w-[100%] bg-white text-black rounded-full flex justify-center items-center ">
                 <div className="w-[17px] h-[50px] font-[400] text-[42px] leading-[50.4px] font-[PoetsenOne] ">
                   3
@@ -98,7 +98,12 @@ const Science = () => {
       <section className="flex flex-col md:flex-row md:items-center xl:pl-[160px] xl:pr-[125px] xl:gap-[130px]">
         {/* Video section */}
         <section className="mt-6 mx-4 relative rounded-[40px] h-[209px] bg-[#1A24348C] md:basis-1/2 lg:w-[546px] lg:h-[365px] xl:basis-[546px]">
-          <div className="relative h-full w-full z-10"></div>
+          <div className="relative h-full w-full z-10">
+            <iframe
+              className="w-full h-full rounded-[24.56px]"
+              src="https://www.youtube.com/embed/tgbNymZ7vqY"
+            ></iframe>
+          </div>
           <Image
             src={vector12}
             alt="Vector 12"
