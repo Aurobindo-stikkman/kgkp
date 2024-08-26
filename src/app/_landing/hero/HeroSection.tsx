@@ -45,7 +45,7 @@ const HeroSection = () => {
       </section>
 
       <section className="w-full h-[369.34px] flex-grow flex-shrink relative md:flex-shrink md:basis-1/2 lg:h-[651px]">
-        <section className="w-[236.97px] h-[218.92px] absolute top-[27.99px] left-0 md:left-[15%] lg:w-[524.98px] lg:h-[485px] lg:top-0">
+        <section className="w-[236.97px] h-[218.92px] absolute top-[27.99px] left-0 sm:left-1/2 sm:-translate-x-1/2 md:translate-x-0 md:left-[15%] lg:w-[524.98px] lg:h-[485px] lg:top-0">
           <div className="w-full h-full relative md:left-[-10px] lg:top-0 lg:left-[-30px]">
             <Image
               src={bg}
@@ -77,10 +77,15 @@ const HeroSection = () => {
               alt="Kite img"
               className="w-[54.84px] h-[67.03px] absolute top-[-14px] left-[221.43px] lg:w-[121.5px] lg:h-[148.5px] lg:top-[-30px] lg:left-[375px] "
             />
+            <Image
+              src={vector71}
+              alt="Vector 71"
+              className="h-[27.69px] w-[23.02px] absolute top-16 right-12 z-0 lg:top-[150px] lg:right-[195px] lg:h-[61.34px] lg:w-[61.73px] "
+            />
           </div>
         </section>
 
-        <section className="w-1/2 min-w-[360px] h-[240.24px] absolute top-[129.09px] left-[74.93px] md:left-[45%] lg:w-[576px] lg:h-[532.24px] lg:top-[224px] lg:left-[166px]">
+        <section className="w-1/2 min-w-[360px] h-[240.24px] absolute top-[129.09px] left-[74.93px] sm:left-[70%] sm:-translate-x-1/2 md:translate-x-0 md:left-[45%] lg:w-[576px] lg:h-[532.24px] lg:top-[224px] lg:left-[166px]">
           <div className="w-full h-full relative">
             <Image
               src={bg2}
@@ -95,7 +100,17 @@ const HeroSection = () => {
             <Image
               src={girlPlaying}
               alt="Girl playing"
-              className="h-[175.66px] w-[240.55px] absolute top-[-60.23px] left-[67.45px] z-40 lg:w-[550px] lg:h-[440px] lg:top-[-135px] lg:left-36"
+              className="h-[175.66px] w-[240.55px] absolute top-[-60.23px] left-[67.45px] z-40 lg:w-[575px] lg:h-[440px] lg:top-[-135px] lg:left-36"
+            />
+            <Image
+              src={vector65}
+              alt="Vector 65"
+              className="h-[33.65px] absolute -top-3 left-[118px] z-0 lg:top-0 lg:left-[48%] lg:h-[74.55px] lg:w-[26.82px] "
+            />
+            <Image
+              src={vector68}
+              alt="Vetor 68"
+              className="h-[12.64px] w-[23.02px] absolute top-[47%] left-3 z-0 lg:top-[250px] lg:left-[30px] lg:h-[89.55px] lg:w-[51.82px] "
             />
           </div>
         </section>

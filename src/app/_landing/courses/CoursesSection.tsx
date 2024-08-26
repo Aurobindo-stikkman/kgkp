@@ -6,11 +6,13 @@ import arrowRight from "./icon-arrow-right.svg";
 import clock from "./Clock.svg";
 import whiteArrow from "./icon-arrow-right (1).svg";
 import chalkStroke from "../Chalk Stroke.png";
+import handSticker from "./hand-sticker.svg";
+import blueKite from "./blue kite.svg";
 import Carousel from "./Curousel";
 
 const CoursesSection = () => {
   return (
-    <section className="h-[1245px] px-4 pt-[52px] md:h-[800px] lg:h-[1105px] lg:px-[80px] lg:py-[124px] ">
+    <section className="px-4 py-[52px] lg:px-[80px] lg:py-[124px] ">
       <section className="h-[58px] w-[282px] mx-auto text-[20px] font-[700] leading-[28.6px] relative text-center text-[#1A2434] lg:text-[32px] lg:font-[700] lg:leading-[38.4px] lg:w-[512px] lg:h-[76px]">
         <span className="z-10 relative">
           Select the Best Course to Unlock your Child's Genius
@@ -123,8 +125,18 @@ const CoursesSection = () => {
         </section>
       </section>
 
-      <section className="hidden lg:block">
+      <section className="hidden lg:block relative">
+        <Image
+          src={handSticker}
+          alt="Hand-sticker"
+          className="absolute -top-36 right-0 "
+        />
         <Carousel />
+        <Image
+          src={blueKite}
+          alt="Blue Kite"
+          className="absolute bottom-[-45%] left-7 "
+        />
       </section>
 
       <section className="cursor-pointer bg-[#4D1435] h-[51px] w-[222px] px-6 py-4 flex gap-[14px] justify-center items-center rounded-[50px] mt-6 mx-auto md:mt-14 lg:mt-[80px] lg:w-[385px] lg:h-[77px] lg:px-[80px] lg:py-[24px]">

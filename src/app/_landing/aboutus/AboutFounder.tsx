@@ -5,7 +5,7 @@ import chalkStroke from "../Chalk Stroke.png";
 
 const AboutFounder = () => {
   return (
-    <div className="pt-[42px]">
+    <div className="py-[42px] lg:py-[120px] xl:py-[173px]">
       <section className="text-[20px] font-[700] leading-[24px] text-[#F6E2D8] relative w-[213px] mx-auto sm:text-[32px] sm:leading-[38.4px] sm:w-[340px]">
         <span className="z-10 relative">Get to know About Us</span>
         <Image
@@ -15,7 +15,7 @@ const AboutFounder = () => {
         />
       </section>
 
-      <section className="flex flex-col xl:flex-row">
+      <section className="flex flex-col mt-28 xl:flex-row">
         <section
           style={{ borderRadius: "40% 60% 63% 37% / 26% 66% 34% 74%" }}
           className="mt-[56px] bg-[#A16E5738] h-[257px] w-[251.79px] p-6 overflow-hidden mx-auto xl:h-[520.24px] xl:w-[520.24px] xl:order-2 "

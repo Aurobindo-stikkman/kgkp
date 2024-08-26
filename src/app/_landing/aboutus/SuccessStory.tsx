@@ -1,11 +1,14 @@
 "use client";
 import Image from "next/image";
 import rightArrow from "./icon-arrow-right.svg";
+import trophy from "./assets/success-story/trophy.png";
+import vector12 from "./assets/success-story/Vector 12.png";
+import vector13 from "./assets/success-story/Vector 13.png";
 import chalkStroke from "../Chalk Stroke.png";
 
 const SuccessStory = () => {
   return (
-    <section className="h-[698px] bg-[#4D1435] pt-[52px] md:h-[550px] lg:h-[800px] lg:pt-[100px] xl:h-[1082px] xl:pt-[150px]">
+    <section className="bg-[#4D1435] pt-[52px] lg:relative lg:overflow-x-hidden lg:pt-[100px] xl:pt-[150px]">
       {/* Title section */}
       <section className="flex flex-col gap-[6px] lg:flex-row lg:w-[650px] lg:mx-auto justify-center xl:w-[681px]">
         <div className="text-[20px] font-[700] leading-[24px] text-[#F6E2D8] mx-auto h-6 lg:mx-0 lg:text-[24px] lg:leading-[30.4px] xl:text-[32px] xl:leading-[38.4px]">
@@ -23,10 +26,24 @@ const SuccessStory = () => {
 
       {/* Video section */}
       <section className="flex flex-col items-center md:flex-row md:p-4 lg:px-[100px] lg:gap-8 xl:mt-[160px] xl:pl-[157px] xl:pr-[120px] xl:mr-auto xl:gap-[128px] ">
-        <iframe
-          className="w-[90%] h-[207.52px] rounded-[24.56px] mt-8 mx-auto border md:basis-1/2 lg:w-[520px] lg:basis-auto lg:h-[300px] xl:w-[520px] xl:flex-shrink-0 xl:basis-[520px] xl:h-[329px] xl:rounded-[40px] "
-          src="https://www.youtube.com/embed/tgbNymZ7vqY"
-        ></iframe>
+        <section className="w-[90%] h-[207.52px] rounded-[24.56px] mt-8 mx-auto border md:basis-1/2 lg:w-[520px] lg:basis-auto lg:h-[300px] xl:w-[520px] xl:flex-shrink-0 xl:basis-[520px] xl:h-[329px] xl:rounded-[40px]">
+          <div className="relative h-full w-full z-10">
+            <iframe
+              className="w-full h-full rounded-[24.56px]"
+              src="https://www.youtube.com/embed/tgbNymZ7vqY"
+            ></iframe>
+          </div>
+          <Image
+            src={vector12}
+            alt="Vector 12"
+            className="hidden xl:block w-[376.66px] h-[411.91px] absolute z-0 top-[21rem] left-36"
+          />
+          <Image
+            src={vector13}
+            alt="Vector 13"
+            className="hidden xl:block w-[376.66px] h-[411.91px] absolute z-0 top-[21rem] left-56"
+          />
+        </section>
 
         <section className="italic text-[17px] font-[500] leading-[21.8px] text-[#F6E2D8] text-center w-[328px] mx-4 relative mt-[54px] font-inter md:basis-1/2 lg:text-left xl:w-[508px] xl:h-[120px] xl:text-[20px] xl:leading-[24.4px] ">
           14 years ago, I was exactly where you are today. This simple program,
@@ -56,6 +73,12 @@ const SuccessStory = () => {
           className="w-4 h-4 xl:w-6 xl:h-6"
         />
       </section>
+
+      <Image
+        src={trophy}
+        alt="Trophy image"
+        className="hidden lg:block absolute -right-3 -top-6 h-[283.56px] w-[197px] "
+      />
     </section>
   );
 };

@@ -4,6 +4,7 @@ import facebookLogo from "./assets/Facebook.svg";
 import instagramLogo from "./assets/Instagram.svg";
 import youtubeLogo from "./assets/Youtube.svg";
 import copyrightImage from "./assets/copyright 1.svg";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -54,7 +55,7 @@ const Footer = () => {
                 Courses
               </section>
               <section className="text-[12px] font-[400] leading-[21.6px] text-[#4D1435] lg:text-[20px] lg:leading-[28px] cursor-pointer">
-                About us
+                <Link href="/aboutus">About us</Link>
               </section>
               <section className="text-[12px] font-[400] leading-[21.6px] text-[#4D1435] lg:text-[20px] lg:leading-[28px] cursor-pointer">
                 Blog

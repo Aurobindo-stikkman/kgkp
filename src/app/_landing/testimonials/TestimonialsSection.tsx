@@ -6,7 +6,11 @@ import speaker from "./assets/icon-volume-2.svg";
 import chalkStroke from "../Chalk Stroke.png";
 import fullScreen from "./assets/full-screen.png";
 import pauseButton from "./assets/Polygon 2.svg";
-import vector8 from "./assets/Vector 8.svg";
+import vector3 from "./assets/Vector 3.png";
+import vector4 from "./assets/Vector 4.svg";
+import group from "./assets/Group.svg";
+import image1 from "./assets/image1.png";
+import image2 from "./assets/image2.png";
 
 import "./style.css";
 
@@ -152,7 +156,7 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section className="h-[412px] pt-[52px] bg-[#75C0B1] lg:h-[667px] lg:pt-[124px] ">
+    <section className="h-[412px] relative pt-[52px] bg-[#75C0B1] lg:h-[667px] lg:pt-[124px] ">
       <section className="pl-[47px] pr-[66px] text-center text-[#1A2434] relative text-[20px] font-[700] leading-[28.6px] md:text-[32px] md:font-[700] md:leading-[38.4px] md:w-[645px] md:p-0 md:mx-auto">
         <span className="z-10 relative">
           Real Experiences: Parents Testimonials and Child Outcomes
@@ -166,11 +170,11 @@ const TestimonialsSection = () => {
 
       <section
         ref={scrollContainerRef}
-        className="mt-8 px-4 flex overflow-x-scroll overflow-y-hidden gap-3 relative lg:mt-[57px] lg:justify-around lg:h-[352px] lg:items-center lg:overflow-x-hidden xl:gap-[112px] xl:justify-center xl:pl-[67px] xl:pr-[74px] 2xl:justify-around "
+        className="mt-8 px-4 flex overflow-x-scroll overflow-y-hidden gap-3 relative lg:mt-[57px] lg:justify-around lg:h-[352px] lg:items-center lg:overflow-x-hidden xl:gap-[112px] xl:justify-center xl:pl-[67px] xl:pr-[74px]"
       >
         {/* Video section */}
         <section
-          className="w-[296px] h-[189px] flex-grow-0 flex-shrink-0 rounded-[12px] relative lg:rotate-[-6.52deg] lg:order-2 xl:w-[335.35px] xl:h-[214.28px] 2xl:w-[400px] 2xl:h-[250px]"
+          className="w-[296px] h-[189px] flex-grow-0 flex-shrink-0 rounded-[12px] relative lg:rotate-[-6.52deg] lg:order-2 lg:w-[335.35px] lg:h-[214.28px] 2xl:w-[400px] 2xl:h-[250px]"
           data-volume-level="high"
         >
           <section
@@ -260,16 +264,62 @@ const TestimonialsSection = () => {
             onTimeUpdate={updateProgress}
           ></video>
 
+          <section className="absolute -bottom-5 -right-5 z-10 rotate-[0.92deg] rounded-br-3xl border-b-4 border-r-4 h-[104px] w-[166px] border-[#F6D94A]"></section>
+        </section>
+
+        <section className="w-[296px] lg:relative py-4 px-4 grid gap-4 bg-slate-50 flex-grow-0 flex-shrink-0 rounded-[12px] lg:rotate-[9.88deg] lg:order-1 xl:p-8 xl:w-[335.35px] 2xl:w-[400px] 2xl:h-[250px]">
+          <section className="flex gap-4 items-center">
+            <Image src={image1} alt="Image 1" className="w-[74px] h-[74px] " />
+            <section className="grid gap-1 ">
+              <div className="text-[16.55px] font-[700] leading-[19.86px] text-[#1A2434] ">
+                Sahana
+              </div>
+              <div className="text-[13.24px] font-[500] leading-[15.89px] text-[#1A2434] ">
+                Mother of 4 years old
+              </div>
+            </section>
+          </section>
+
+          <section className="text-[13.24px] font-[400] leading-[18.53px] text-[#1A2434] ">
+            I find it very good. When I see other kids, I can make out the
+            difference in her. Her reading is much better.
+          </section>
+
+          <section className="absolute -bottom-5 -left-5 z-10 rotate-[0.92deg] rounded-bl-3xl border-b-4 border-l-4 h-[104px] w-[166px] border-[#F6D94A]"></section>
+        </section>
+
+        <section className="w-[296px] lg:relative py-4 px-4 grid gap-4 bg-slate-50 flex-grow-0 flex-shrink-0 rounded-[12px] lg:rotate-[4.92deg] lg:order-3 xl:p-8 xl:w-[335.35px] 2xl:w-[400px] 2xl:h-[250px]">
+          <section className="flex gap-4 items-center">
+            <Image src={image2} alt="Image 2" className="w-[74px] h-[74px] " />
+            <section className="grid gap-1 ">
+              <div className="text-[16.55px] font-[700] leading-[19.86px] text-[#1A2434] ">
+                Archana
+              </div>
+              <div className="text-[13.24px] font-[500] leading-[15.89px] text-[#1A2434] ">
+                Mother of 7 years old
+              </div>
+            </section>
+          </section>
+
+          <section className="text-[13.24px] font-[400] leading-[18.53px] text-[#1A2434] ">
+            She came to know so many country names and their capitals. She also
+            asks me inquisitive questions.
+          </section>
+
+          <section className="absolute -top-5 -right-5 z-10 rotate-[0.92deg] rounded-tr-3xl border-t-4 border-r-4 h-[104px] w-[166px] border-[#F6D94A]"></section>
+
           <Image
-            src={vector8}
-            alt="Vector 8"
-            className="absolute -bottom-5 -right-5"
+            src={vector4}
+            alt="Vector 4 "
+            className="hidden lg:block absolute bottom-[-73px] right-[-5.25rem]"
           />
         </section>
 
-        <section className="w-[296px] h-[189px] bg-slate-50 flex-grow-0 flex-shrink-0 rounded-[12px] lg:rotate-[9.88deg] lg:order-1 xl:h-[196.08px] xl:w-[335.35px] 2xl:w-[400px] 2xl:h-[250px]"></section>
-
-        <section className="w-[296px] h-[189px] bg-slate-50 flex-grow-0 flex-shrink-0 rounded-[12px] lg:rotate-[4.92deg] lg:order-3 xl:w-[335.35px] xl:h-[198.21px] 2xl:w-[400px] 2xl:h-[250px]"></section>
+        <Image
+          src={vector3}
+          alt="Vector 3"
+          className="hidden xl:block absolute top-1/2 -translate-y-1/2"
+        />
 
         {isScrollable && !isScrolledToEnd && (
           <div
@@ -293,6 +343,12 @@ const TestimonialsSection = () => {
           </div>
         )}
       </section>
+
+      <Image
+        src={group}
+        alt="Group Sticker "
+        className="hidden lg:block absolute top-9 left-10"
+      />
     </section>
   );
 };

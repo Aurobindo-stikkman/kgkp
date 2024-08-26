@@ -6,12 +6,16 @@ import science from "./assets/science/science.png";
 import arrowIcon from "./assets/science/icon-arrow-right.svg";
 import chalkStroke from "../Chalk Stroke.png";
 import rocketIcon from "./assets/science/rocket.png";
+import vector9 from "./assets/science/Vector 9.png";
+import vector10 from "./assets/science/Vector 10.png";
+import vectorSVG10 from "./assets/science/Vector 10.svg";
+import vector11 from "./assets/science/Vector 11.svg";
 import vector12 from "./assets/science/Vector 12.png";
 import vector13 from "./assets/science/Vector 13.png";
 
 const Science = () => {
   return (
-    <div className="h-[2519px] relative bg-[#F6E2D7] rounded-[40px] pt-[52px] mt-[52px] md:pb-[52px] md:h-auto lg:pt-[124px] lg:rounded-[100px] lg:h-auto lg:pb-[124px]">
+    <div className="relative bg-[#F6E2D7] rounded-[40px] py-[52px] mt-[52px] lg:py-[124px] lg:rounded-[100px]">
       <Image
         src={rocketIcon}
         alt="Rocket Image"
@@ -28,13 +32,13 @@ const Science = () => {
 
       <section className="flex flex-col gap-6 mt-6 px-4 items-center md:flex-row md:align-start lg:mt-[80px] lg:px-[40px] lg:justify-center xl:px-[80px] xl:gap-[106px] ">
         {/* Card 1 */}
-        <section className="h-[420px] w-[328px] rounded-[40px] bg-white flex flex-col lg:h-[459px] lg:w-[356px] ">
+        <section className="h-[420px] w-[328px] rounded-[40px] bg-white flex flex-col lg:h-[459px] lg:w-[356px] xl:relative ">
           <Image
             src={bulb}
             alt="Bulb idea"
             className="h-[276px] rounded-tr-[40px] rounded-tl-[40px] w-full"
           />
-          <div className="flex-grow px-4 py-6 opacity--[70%] text-[#4D1435] text-center text-[14px] font-[500] leading-[25.2px] lg:text-[16px] lg:leading-[28.8px] lg:relative">
+          <div className="flex-grow px-4 py-6 text-[#4D1435] rounded-bl-[40px] rounded-br-[40px] bg-white z-10 text-center text-[14px] font-[500] leading-[25.2px] lg:text-[16px] lg:leading-[28.8px] lg:relative">
             Integration of cutting edge technologies such as milestone
             acceleration, brain development profile and multiple intelligences
             to create a truly genius child
@@ -46,16 +50,26 @@ const Science = () => {
               </div>
             </div>
           </div>
+          <Image
+            src={vector9}
+            alt="Vector 9"
+            className="hidden xl:block absolute -bottom-8 -right-1/2 z-0"
+          />
+          <Image
+            src={vectorSVG10}
+            alt="Vector 9"
+            className="hidden xl:block absolute -bottom-4 -right-1/2 z-0"
+          />
         </section>
 
         {/* Card 2 */}
-        <section className="h-[420px] w-[328px] rounded-[40px] bg-white flex flex-col lg:h-[459px] lg:w-[356px] ">
+        <section className="h-[420px] w-[328px] rounded-[40px] bg-white flex z-10 flex-col lg:h-[459px] lg:w-[356px] lg:relative">
           <Image
             src={equation}
             alt="Equation"
-            className="h-[276px] rounded-tr-[40px] rounded-tl-[40px] w-full"
+            className="h-[276px] rounded-tr-[40px] rounded-tl-[40px] z-10 w-full"
           />
-          <div className="flex-grow px-4 py-6 opacity--[70%] text-[#4D1435] text-center text-[14px] font-[500] leading-[25.2px] lg:text-[16px] lg:leading-[28.8px] lg:relative">
+          <div className="flex-grow px-4 py-6 text-[#4D1435] text-center text-[14px] font-[500] leading-[25.2px] lg:text-[16px] lg:leading-[28.8px] lg:relative">
             Nurture a complete genius with high IQ, EQ & SQ through an
             intellectually stimulating environment, emotional awareness,
             spiritual values & positive parenting
@@ -67,16 +81,27 @@ const Science = () => {
               </div>
             </div>
           </div>
+
+          <Image
+            src={vector10}
+            alt="Vector 10"
+            className="hidden xl:block absolute -top-8 -right-[40%]"
+          />
+          <Image
+            src={vector11}
+            alt="Vector 11"
+            className="hidden xl:block absolute -top-4 -right-[40%]"
+          />
         </section>
 
         {/* Card 3 */}
-        <section className="h-[420px] w-[328px] rounded-[40px] bg-white flex flex-col lg:h-[459px] lg:w-[356px] ">
+        <section className="h-[420px] w-[328px] rounded-[40px] bg-white flex z-10 flex-col lg:h-[459px] lg:w-[356px] ">
           <Image
             src={science}
             alt="Science"
             className="h-[276px] rounded-tr-[40px] rounded-tl-[40px] w-full"
           />
-          <div className="flex-grow px-4 py-6 opacity--[70%] text-[#4D1435] text-center text-[14px] font-[500] leading-[25.2px] lg:text-[16px] lg:leading-[28.8px] lg:relative">
+          <div className="flex-grow px-4 py-6 text-[#4D1435] text-center text-[14px] font-[500] leading-[25.2px] lg:text-[16px] lg:leading-[28.8px] lg:relative">
             Personalized activity plan based on your child’s talent profile,
             brain development & learning style found through the scientific
             method of ridge analysis
@@ -107,12 +132,12 @@ const Science = () => {
           <Image
             src={vector12}
             alt="Vector 12"
-            className="hidden xl:block w-[566px] h-[500px] absolute z-0 top-[-50px] left-[60px]"
+            className="hidden xl:block w-[448px] h-[500px] absolute z-0 top-[-50px] left-[82px]"
           />
           <Image
             src={vector13}
             alt="Vector 13"
-            className="hidden xl:block w-[406px] h-[500px] absolute z-0 top-[-60px] left-6"
+            className="hidden xl:block w-[389px] h-[500px] absolute z-0 top-[-60px] left-6"
           />
         </section>
 
@@ -197,7 +222,7 @@ const Science = () => {
         </section>
       </section>
 
-      <section className="hidden mt-6 w-[178px] h-[51px] rounded-[50px] px-7 py-4 mx-auto md:flex gap-[14px] bg-[#4D1435] lg:w-[375px] lg:h-[77px] lg:px-[80px] lg:py-[24px] cursor-pointer lg:mt-[152px]">
+      <section className="hidden mt-6 w-[178px] h-[51px] rounded-[50px] px-7 py-4 justify-evenly items-center mx-auto md:flex gap-[14px] bg-[#4D1435] lg:w-[375px] lg:h-[77px] lg:px-[80px] lg:py-[24px] cursor-pointer lg:mt-[152px]">
         <div className="text-[16px] font-[700] leading-[19.2px] text-white lg:text-[24px] lg:leading-[28.8px]">
           Learn more
         </div>

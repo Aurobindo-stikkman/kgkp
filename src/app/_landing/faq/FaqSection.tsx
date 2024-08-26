@@ -3,6 +3,7 @@ import Image from "next/image";
 import ListingFAQ from "@/app/components/ListingFAQ";
 import arrowIcon from "../hero/icon-arrow-right.svg";
 import chalkStroke from "../Chalk Stroke.png";
+import questionMark from "./question-mark 1.svg";
 
 interface IData {
   q: string;
@@ -89,7 +90,7 @@ const FaqSection = () => {
 
   return (
     <>
-      <div className="py-[52px] lg:py-[124px] ">
+      <div className="py-[52px] lg:py-[124px] lg:relative">
         <section className="text-[20px] font-[700] leading-[24px] mx-auto text-[#1A2434] text-center lg:text-[32px] lg:leading-[38.4px]">
           <span className="relative">
             <span className="z-10 relative">Frequently Asked Questions</span>
@@ -115,6 +116,12 @@ const FaqSection = () => {
             className="w-4 h-4 lg:w-6 lg:h-6"
           />
         </section>
+
+        <Image
+          src={questionMark}
+          alt="Question Mark"
+          className="hidden lg:block absolute left-0 top-0"
+        />
       </div>
     </>
   );
