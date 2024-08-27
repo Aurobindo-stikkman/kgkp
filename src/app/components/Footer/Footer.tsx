@@ -61,7 +61,7 @@ const Footer = () => {
                 Blog
               </section>
               <section className="text-[12px] font-[400] leading-[21.6px] text-[#4D1435] lg:text-[20px] lg:leading-[28px] cursor-pointer">
-                Contact us
+                <Link href="/contact">Contact us</Link>
               </section>
             </section>
           </section>
