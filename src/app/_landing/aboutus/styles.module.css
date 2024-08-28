@@ -1,0 +1,41 @@
+.custom-shape-divider-bottom-1724765798 {
+    position: absolute;
+    top: -37px;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotateX(180deg);
+}
+
+.custom-shape-divider-bottom-1724765798 svg {
+    position: relative;
+    display: block;
+    width: calc(134% + 1.3px);
+    height: 105px;
+}
+
+.custom-shape-divider-bottom-1724765798 .shape-fill {
+    fill: white;
+}
+
+@media (max-width: 1024px) {
+    .custom-shape-divider-bottom-1724765798 {
+        height: 80px;
+    }
+
+    .custom-shape-divider-bottom-1724765798 svg {
+        height: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .custom-shape-divider-bottom-1724765798 {
+        height: 75px;
+    }
+
+    .custom-shape-divider-bottom-1724765798 svg {
+        height: 40px;
+    }
+}

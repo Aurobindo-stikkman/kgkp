@@ -1,9 +1,9 @@
 import Image from "next/image";
 
 import ListingFAQ from "@/app/components/ListingFAQ";
-import arrowIcon from "../hero/icon-arrow-right.svg";
 import chalkStroke from "../Chalk Stroke.png";
 import questionMark from "./question-mark 1.svg";
+import Link from "next/link";
 
 interface IData {
   q: string;
@@ -90,7 +90,7 @@ const FaqSection = () => {
 
   return (
     <>
-      <div className="py-[52px] lg:py-[124px] lg:relative">
+      <div className="pt-[72px] pb-[52px] lg:pt-[140px] lg:pb-[124px] lg:relative">
         <section className="text-[20px] font-[700] leading-[24px] mx-auto text-[#1A2434] text-center lg:text-[32px] lg:leading-[38.4px]">
           <span className="relative">
             <span className="z-10 relative">Frequently Asked Questions</span>
@@ -106,15 +106,29 @@ const FaqSection = () => {
           <ListingFAQ data={obj[Object.keys(obj)[0]]} />
         </section>
 
-        <section className="px-7 py-4 mt-6 rounded-[50px] bg-[#4D1435] mx-auto w-[189px] flex gap-[14px] justify-center lg:mt-[60px] lg:px-20 lg:py-6 lg:w-[345px]">
-          <section className="text-white text-[16px] font-[700] leading-[19.2px] lg:text-[23px] lg:leading-[28.8px] ">
-            See All FAQs
-          </section>
-          <Image
-            src={arrowIcon}
-            alt="Arrow Icon"
-            className="w-4 h-4 lg:w-6 lg:h-6"
-          />
+        <section className="w-fit h-[77px] mt-6 rounded-[50px] bg-[#4D1435] mx-auto lg:mt-[60px] cursor-pointer custom-black-button">
+          <Link
+            className="w-[189px] h-[77px] px-7 py-4 flex gap-[14px] items-center justify-between lg:px-20 lg:py-6 lg:w-[345px]"
+            href="/faq"
+          >
+            <section className="text-white text-[16px] font-[700] leading-[19.2px] lg:text-[23px] lg:leading-[28.8px] custom-button-icon">
+              See All FAQs
+            </section>
+            <svg
+              className="w-4 h-4 lg:w-6 lg:h-6 custom-button-icon"
+              viewBox="0 0 17 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="icon-arrow-right">
+                <path
+                  id="Shape"
+                  d="M8.02843 3.36177C8.28878 3.10142 8.71089 3.10142 8.97124 3.36177L13.6379 8.02843C13.8983 8.28878 13.8983 8.71089 13.6379 8.97124L8.97124 13.6379C8.71089 13.8983 8.28878 13.8983 8.02843 13.6379C7.76808 13.3776 7.76808 12.9554 8.02843 12.6951L11.557 9.1665H3.83317C3.46498 9.1665 3.1665 8.86803 3.1665 8.49984C3.1665 8.13165 3.46498 7.83317 3.83317 7.83317H11.557L8.02843 4.30457C7.76808 4.04423 7.76808 3.62212 8.02843 3.36177Z"
+                  className="fill-current text-white"
+                />
+              </g>
+            </svg>
+          </Link>
         </section>
 
         <Image

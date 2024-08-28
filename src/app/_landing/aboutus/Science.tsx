@@ -3,7 +3,6 @@ import Image from "next/image";
 import bulb from "./assets/science/bulb.png";
 import equation from "./assets/science/equation.png";
 import science from "./assets/science/science.png";
-import arrowIcon from "./assets/science/icon-arrow-right.svg";
 import chalkStroke from "../Chalk Stroke.png";
 import rocketIcon from "./assets/science/rocket.png";
 import vector9 from "./assets/science/Vector 9.png";
@@ -12,6 +11,8 @@ import vectorSVG10 from "./assets/science/Vector 10.svg";
 import vector11 from "./assets/science/Vector 11.svg";
 import vector12 from "./assets/science/Vector 12.png";
 import vector13 from "./assets/science/Vector 13.png";
+
+import "./science.css";
 
 const Science = () => {
   return (
@@ -42,8 +43,14 @@ const Science = () => {
             Integration of cutting edge technologies such as milestone
             acceleration, brain development profile and multiple intelligences
             to create a truly genius child
-            <div className="hidden lg:block absolute top-[-35px] left-[-35px] h-[70px] w-[70px] rounded-full bg-[linear-gradient(45deg, #ffffff, #b51e1e)] z-10 flex justify-center items-center border-4 border-red-200 ">
-              <div className="h-[100%] w-[100%] bg-white text-black rounded-full flex justify-center items-center ">
+            <div
+              style={{
+                background: "linear-gradient(to bottom right, white, #4D1435)",
+                animation: `scaleUp 0.5s ease-out forwards`,
+              }}
+              className="hidden absolute top-[-35px] left-[-35px] h-[70px] w-[70px] rounded-full z-10 lg:flex justify-center items-center "
+            >
+              <div className="h-[85%] w-[85%] bg-white text-black rounded-full flex justify-center items-center ">
                 <div className="w-[17px] h-[50px] font-[400] text-[42px] leading-[50.4px] font-[PoetsenOne] ">
                   1
                 </div>
@@ -73,8 +80,14 @@ const Science = () => {
             Nurture a complete genius with high IQ, EQ & SQ through an
             intellectually stimulating environment, emotional awareness,
             spiritual values & positive parenting
-            <div className="hidden lg:block absolute top-[-35px] left-[-35px] h-[70px] w-[70px] rounded-full bg-[linear-gradient(45deg, #ffffff, #b51e1e)] z-10 flex justify-center items-center border-4 border-red-200 ">
-              <div className="h-[100%] w-[100%] bg-white text-black rounded-full flex justify-center items-center ">
+            <div
+              style={{
+                background: "linear-gradient(to bottom right, white, #4D1435)",
+                animation: `scaleUp 0.5s ease-out forwards`,
+              }}
+              className="hidden absolute top-[-35px] left-[-35px] h-[70px] w-[70px] rounded-full z-10 lg:flex justify-center items-center "
+            >
+              <div className="h-[85%] w-[85%] bg-white text-black rounded-full flex justify-center items-center ">
                 <div className="w-[17px] h-[50px] font-[400] text-[42px] leading-[50.4px] font-[PoetsenOne] ">
                   2
                 </div>
@@ -105,8 +118,14 @@ const Science = () => {
             Personalized activity plan based on your child’s talent profile,
             brain development & learning style found through the scientific
             method of ridge analysis
-            <div className="hidden lg:block absolute top-[-35px] left-[-35px] h-[70px] w-[70px] rounded-full bg-[linear-gradient(45deg, #ffffff, #b51e1e)] z-10 flex justify-center items-center border-4 border-red-200 ">
-              <div className="h-[100%] w-[100%] bg-white text-black rounded-full flex justify-center items-center ">
+            <div
+              style={{
+                background: "linear-gradient(to bottom right, white, #4D1435)",
+                animation: `scaleUp 0.5s ease-out forwards`,
+              }}
+              className="hidden absolute top-[-35px] left-[-35px] h-[70px] w-[70px] rounded-full z-10 lg:flex justify-center items-center "
+            >
+              <div className="h-[85%] w-[85%] bg-white text-black rounded-full flex justify-center items-center ">
                 <div className="w-[17px] h-[50px] font-[400] text-[42px] leading-[50.4px] font-[PoetsenOne] ">
                   3
                 </div>
@@ -142,11 +161,24 @@ const Science = () => {
         </section>
 
         {/* Button */}
-        <section className="mt-6 w-[178px] h-[51px] rounded-[50px] px-7 py-4 mx-auto flex gap-[14px] bg-[#4D1435] md:hidden">
-          <div className="text-[16px] font-[700] leading-[19.2px] text-white">
+        <section className="cursor-pointer group hover:bg-[#F6E2D7] hover:border-2 hover:border-[#4D1435] mt-6 w-[178px] h-[51px] rounded-[50px] px-7 py-4 mx-auto flex items-center justify-center gap-[14px] bg-[#4D1435] md:hidden">
+          <div className="text-[16px] font-[700] leading-[19.2px] text-white group-hover:text-[#4D1435]">
             Learn more
           </div>
-          <Image src={arrowIcon} alt="Arrow Icon right" className="w-4 h-4" />
+          <svg
+            className="w-4 h-4 lg:w-6 lg:h-6"
+            viewBox="0 0 17 17"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="icon-arrow-right">
+              <path
+                id="Shape"
+                d="M8.02843 3.36177C8.28878 3.10142 8.71089 3.10142 8.97124 3.36177L13.6379 8.02843C13.8983 8.28878 13.8983 8.71089 13.6379 8.97124L8.97124 13.6379C8.71089 13.8983 8.28878 13.8983 8.02843 13.6379C7.76808 13.3776 7.76808 12.9554 8.02843 12.6951L11.557 9.1665H3.83317C3.46498 9.1665 3.1665 8.86803 3.1665 8.49984C3.1665 8.13165 3.46498 7.83317 3.83317 7.83317H11.557L8.02843 4.30457C7.76808 4.04423 7.76808 3.62212 8.02843 3.36177Z"
+                className="fill-current text-white group-hover:text-[#4D1435]"
+              />
+            </g>
+          </svg>
         </section>
 
         {/* Bullet points */}
@@ -222,15 +254,24 @@ const Science = () => {
         </section>
       </section>
 
-      <section className="hidden mt-6 w-[178px] h-[51px] rounded-[50px] px-7 py-4 justify-evenly items-center mx-auto md:flex gap-[14px] bg-[#4D1435] lg:w-[375px] lg:h-[77px] lg:px-[80px] lg:py-[24px] cursor-pointer lg:mt-[152px]">
-        <div className="text-[16px] font-[700] leading-[19.2px] text-white lg:text-[24px] lg:leading-[28.8px]">
+      <section className="custom-black-button hidden mt-6 w-[178px] h-[51px] rounded-[50px] px-7 py-4 justify-evenly items-center mx-auto md:flex gap-[14px] bg-[#4D1435] lg:w-[375px] lg:h-[77px] lg:px-[80px] lg:py-[24px] cursor-pointer lg:mt-[152px]">
+        <div className="text-[16px] font-[700] leading-[19.2px] text-white lg:text-[24px] lg:leading-[28.8px] custom-button-icon">
           Learn more
         </div>
-        <Image
-          src={arrowIcon}
-          alt="Arrow Icon right"
-          className="w-4 h-4 lg:w-6 lg:h-6"
-        />
+        <svg
+          className="w-4 h-4 lg:w-6 lg:h-6 custom-button-icon"
+          viewBox="0 0 17 17"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="icon-arrow-right">
+            <path
+              id="Shape"
+              d="M8.02843 3.36177C8.28878 3.10142 8.71089 3.10142 8.97124 3.36177L13.6379 8.02843C13.8983 8.28878 13.8983 8.71089 13.6379 8.97124L8.97124 13.6379C8.71089 13.8983 8.28878 13.8983 8.02843 13.6379C7.76808 13.3776 7.76808 12.9554 8.02843 12.6951L11.557 9.1665H3.83317C3.46498 9.1665 3.1665 8.86803 3.1665 8.49984C3.1665 8.13165 3.46498 7.83317 3.83317 7.83317H11.557L8.02843 4.30457C7.76808 4.04423 7.76808 3.62212 8.02843 3.36177Z"
+              className="fill-current text-white"
+            />
+          </g>
+        </svg>
       </section>
     </div>
   );

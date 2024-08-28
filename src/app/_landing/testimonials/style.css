@@ -59,3 +59,41 @@ input[type="range"]::-ms-track {
     border-color: transparent;
     color: transparent;
 }
+
+/*  */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-500px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        transform: rotate(9.88deg);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(500px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        transform: rotate(4.92deg);
+        opacity: 1;
+    }
+}
+
+/* Apply the animation only on screens 1024px and wider */
+@media (min-width: 1024px) {
+    .animate-slide-in-left {
+        animation: slideInFromLeft 1s ease-out forwards;
+    }
+
+    .animate-slide-in-right {
+        animation: slideInFromRight 1s ease-out forwards;
+    }
+}

@@ -1,14 +1,29 @@
 "use client";
 import Image from "next/image";
-import rightArrow from "./icon-arrow-right.svg";
 import trophy from "./assets/success-story/trophy.png";
 import vector12 from "./assets/success-story/Vector 12.png";
 import vector13 from "./assets/success-story/Vector 13.png";
 import chalkStroke from "../Chalk Stroke.png";
+import styles from "./styles.module.css";
 
 const SuccessStory = () => {
   return (
-    <section className="bg-[#4D1435] pt-[52px] lg:relative lg:overflow-x-hidden lg:pt-[100px] xl:pt-[150px]">
+    <section className="bg-[#4D1435] pt-[62px] relative lg:overflow-x-hidden lg:pt-[120px] xl:pt-[160px]">
+      <div className={`${styles["custom-shape-divider-bottom-1724765798"]}`}>
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,0 C150,100 350,0 600,0 C850,0 1050,100 1200,0 L1200,120 L0,120 Z"
+            className="shape-fill"
+            fill="white"
+          ></path>
+        </svg>
+      </div>
+
       {/* Title section */}
       <section className="flex flex-col gap-[6px] lg:flex-row lg:w-[650px] lg:mx-auto justify-center xl:w-[681px]">
         <div className="text-[20px] font-[700] leading-[24px] text-[#F6E2D8] mx-auto h-6 lg:mx-0 lg:text-[24px] lg:leading-[30.4px] xl:text-[32px] xl:leading-[38.4px]">
@@ -63,15 +78,24 @@ const SuccessStory = () => {
         Ready to give your child the gift of a brighter future?
       </section>
 
-      <section className="mt-4 w-[219px] h-[51px] px-7 py-4 rounded-[50px] bg-[#F6E2D8] flex gap-[14px] mx-auto lg:mt-[70px] xl:mt-6 xl:w-[385px] xl:h-[77px] xl:px-[80px] xl:py-6 ">
-        <section className="text-[16px] font-[700] leading-[19.2px] text-[#460C04] xl:text-[24px] xl:leading-[28.8px] ">
+      <section className="cursor-pointer custom-white-button mt-4 w-[219px] h-[51px] px-7 py-4 rounded-[50px] bg-[#F6E2D8] flex gap-[14px] justify-center items-center mx-auto lg:mt-[70px] xl:mt-6 xl:w-[385px] xl:h-[77px] xl:px-[80px] xl:py-6 ">
+        <section className="text-[16px] font-[700] leading-[19.2px] text-[#460C04] xl:text-[24px] xl:leading-[28.8px] custom-button-icon">
           View all courses
         </section>
-        <Image
-          src={rightArrow}
-          alt="Right arrow icon"
-          className="w-4 h-4 xl:w-6 xl:h-6"
-        />
+        <svg
+          className="w-4 h-4 lg:w-6 lg:h-6 custom-button-icon"
+          viewBox="0 0 17 17"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="icon-arrow-right">
+            <path
+              id="Shape"
+              d="M8.02843 3.36177C8.28878 3.10142 8.71089 3.10142 8.97124 3.36177L13.6379 8.02843C13.8983 8.28878 13.8983 8.71089 13.6379 8.97124L8.97124 13.6379C8.71089 13.8983 8.28878 13.8983 8.02843 13.6379C7.76808 13.3776 7.76808 12.9554 8.02843 12.6951L11.557 9.1665H3.83317C3.46498 9.1665 3.1665 8.86803 3.1665 8.49984C3.1665 8.13165 3.46498 7.83317 3.83317 7.83317H11.557L8.02843 4.30457C7.76808 4.04423 7.76808 3.62212 8.02843 3.36177Z"
+              className="fill-current text-[#4D1435]"
+            />
+          </g>
+        </svg>
       </section>
 
       <Image

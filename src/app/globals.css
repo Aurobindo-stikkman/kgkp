@@ -17,6 +17,27 @@
   font-optical-sizing: auto;
 }
 
+/* black button */
+.custom-black-button:hover {
+  background-color: #F6E2D7;
+  border: 2px solid #4D1435;
+}
+
+.custom-black-button:hover .custom-button-icon path,
+.custom-black-button:hover .custom-button-icon {
+  color: #4D1435;
+}
+
+/* white button */
+.custom-white-button:hover {
+  background-color: #460C04;
+}
+
+.custom-white-button:hover .custom-button-icon path,
+.custom-white-button:hover .custom-button-icon {
+  color: white;
+}
+
 .poetsen-one-regular {
   font-family: "Poetsen One", sans-serif;
   font-weight: 700;

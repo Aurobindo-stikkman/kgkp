@@ -1,0 +1,8 @@
+/* Custom CSS */
+.custom-svg path {
+    transition: fill 0.3s ease-in-out;
+}
+
+.group:hover .custom-svg path {
+    fill: red;
+}

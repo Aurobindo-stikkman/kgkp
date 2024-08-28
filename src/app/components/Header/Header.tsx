@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 
 import shopping from "./icon-shopping-cart.svg";
 import hamburgMenu from "./icon-menu.svg";
-import arrowRight from "./icon-arrow-right.svg";
 import closeIcon from "./Close.svg";
 import logo from "./kgk_logo Open File 2.svg";
 
@@ -49,7 +48,11 @@ const Header = () => {
 
         <section className="flex gap-6 items-center lg:gap-[38px] lg:h-[43px]">
           <section className="w-[24px] h-[24px] text-[#4D1435] lg:hidden">
-            <Image src={shopping} alt="shopping icon" objectFit="contain" />
+            <Image
+              src={shopping}
+              alt="shopping icon"
+              className="object-contain"
+            />
           </section>
 
           {/* Mobile version: Hamburg menu toggle */}
@@ -97,13 +100,24 @@ const Header = () => {
               </Link>
 
               <div className="w-full border-[1px] lg:hidden"></div>
-              <section className="w-[131px] h-[51px] rounded-[50px] px-[16px] py-[28px] flex gap-[14px] bg-[#4D1435] items-center justify-center cursor-pointer lg:hidden">
-                <div className="w-[45px] h-[19px] text-[16px] leading-[19.2px] font-[700] text-[#FFFFFF] ">
+              <section className="w-[131px] h-[51px] rounded-[50px] px-[16px] py-[28px] flex gap-[14px] bg-[#4D1435] items-center justify-center cursor-pointer custom-black-button lg:hidden">
+                <div className="w-[45px] h-[19px] text-[16px] leading-[19.2px] font-[700] text-[#FFFFFF] custom-button-icon">
                   Login
                 </div>
-                <div className="w-4 h-4 ">
-                  <Image src={arrowRight} alt="arrow-right" />
-                </div>
+                <svg
+                  className="w-4 h-4 lg:w-6 lg:h-6 custom-button-icon"
+                  viewBox="0 0 17 17"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g id="icon-arrow-right">
+                    <path
+                      id="Shape"
+                      d="M8.02843 3.36177C8.28878 3.10142 8.71089 3.10142 8.97124 3.36177L13.6379 8.02843C13.8983 8.28878 13.8983 8.71089 13.6379 8.97124L8.97124 13.6379C8.71089 13.8983 8.28878 13.8983 8.02843 13.6379C7.76808 13.3776 7.76808 12.9554 8.02843 12.6951L11.557 9.1665H3.83317C3.46498 9.1665 3.1665 8.86803 3.1665 8.49984C3.1665 8.13165 3.46498 7.83317 3.83317 7.83317H11.557L8.02843 4.30457C7.76808 4.04423 7.76808 3.62212 8.02843 3.36177Z"
+                      className="fill-current text-white"
+                    />
+                  </g>
+                </svg>
               </section>
               <section
                 onClick={toggleMenu}
@@ -116,15 +130,30 @@ const Header = () => {
 
           {/* Desktop specific elements */}
           <section className="hidden lg:block w-[24px] h-[24px] text-[#4D1435]">
-            <Image src={shopping} alt="shopping icon" objectFit="contain" />
+            <Image
+              src={shopping}
+              alt="shopping icon"
+              className="object-contain"
+            />
           </section>
-          <section className="hidden lg:flex w-[131px] h-[51px] rounded-[50px] px-[16px] py-[28px] gap-[14px] bg-[#4D1435] items-center justify-center cursor-pointer">
-            <div className="w-[45px] h-[19px] text-[16px] leading-[19.2px] font-[700] text-[#FFFFFF]">
+          <section className="hidden lg:flex w-[131px] h-[51px] rounded-[50px] px-[16px] py-[28px] gap-[14px] bg-[#4D1435] items-center justify-center cursor-pointer custom-black-button">
+            <div className="w-[45px] h-[19px] text-[16px] leading-[19.2px] font-[700] text-[#FFFFFF] custom-button-icon">
               Login
             </div>
-            <div className="w-4 h-4">
-              <Image src={arrowRight} alt="arrow-right" />
-            </div>
+            <svg
+              className="w-4 h-4 custom-button-icon"
+              viewBox="0 0 17 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="icon-arrow-right">
+                <path
+                  id="Shape"
+                  d="M8.02843 3.36177C8.28878 3.10142 8.71089 3.10142 8.97124 3.36177L13.6379 8.02843C13.8983 8.28878 13.8983 8.71089 13.6379 8.97124L8.97124 13.6379C8.71089 13.8983 8.28878 13.8983 8.02843 13.6379C7.76808 13.3776 7.76808 12.9554 8.02843 12.6951L11.557 9.1665H3.83317C3.46498 9.1665 3.1665 8.86803 3.1665 8.49984C3.1665 8.13165 3.46498 7.83317 3.83317 7.83317H11.557L8.02843 4.30457C7.76808 4.04423 7.76808 3.62212 8.02843 3.36177Z"
+                  className="fill-current text-white"
+                />
+              </g>
+            </svg>
           </section>
         </section>
       </div>

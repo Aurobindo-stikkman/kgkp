@@ -4,7 +4,6 @@ import Slider from "react-slick";
 import Image from "next/image";
 
 import prePregnancy from "./pre-pregnancy.png";
-import arrowRight from "./icon-arrow-right.svg";
 import clock from "./Clock.svg";
 
 export default function SimpleSlider() {
@@ -49,7 +48,20 @@ export default function SimpleSlider() {
             <div className="text-[14px] font-[600] leading-[19.6px] text-[#1A2434]">
               Pre-Pregnancy
             </div>
-            <Image src={arrowRight} alt="Arrow mark" className="h-4 w-4 " />
+            <svg
+              className="w-4 h-4 lg:w-6 lg:h-6 custom-button-icon"
+              viewBox="0 0 17 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="icon-arrow-right">
+                <path
+                  id="Shape"
+                  d="M8.02843 3.36177C8.28878 3.10142 8.71089 3.10142 8.97124 3.36177L13.6379 8.02843C13.8983 8.28878 13.8983 8.71089 13.6379 8.97124L8.97124 13.6379C8.71089 13.8983 8.28878 13.8983 8.02843 13.6379C7.76808 13.3776 7.76808 12.9554 8.02843 12.6951L11.557 9.1665H3.83317C3.46498 9.1665 3.1665 8.86803 3.1665 8.49984C3.1665 8.13165 3.46498 7.83317 3.83317 7.83317H11.557L8.02843 4.30457C7.76808 4.04423 7.76808 3.62212 8.02843 3.36177Z"
+                  className="fill-current text-[#4D1435]"
+                />
+              </g>
+            </svg>
           </div>
 
           <div className="text-[12px] font-[400] leading-[14.4px] text-[#1A2434] ">
@@ -83,7 +95,20 @@ export default function SimpleSlider() {
             <div className="text-[14px] font-[600] leading-[19.6px] text-[#1A2434]">
               Pre-Pregnancy
             </div>
-            <Image src={arrowRight} alt="Arrow mark" className="h-4 w-4 " />
+            <svg
+          className="w-4 h-4 lg:w-6 lg:h-6 custom-button-icon"
+          viewBox="0 0 17 17"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="icon-arrow-right">
+            <path
+              id="Shape"
+              d="M8.02843 3.36177C8.28878 3.10142 8.71089 3.10142 8.97124 3.36177L13.6379 8.02843C13.8983 8.28878 13.8983 8.71089 13.6379 8.97124L8.97124 13.6379C8.71089 13.8983 8.28878 13.8983 8.02843 13.6379C7.76808 13.3776 7.76808 12.9554 8.02843 12.6951L11.557 9.1665H3.83317C3.46498 9.1665 3.1665 8.86803 3.1665 8.49984C3.1665 8.13165 3.46498 7.83317 3.83317 7.83317H11.557L8.02843 4.30457C7.76808 4.04423 7.76808 3.62212 8.02843 3.36177Z"
+              className="fill-current text-[#4D1435]"
+            />
+          </g>
+        </svg>
           </div>
 
           <div className="text-[12px] font-[400] leading-[14.4px] text-[#1A2434] ">
@@ -117,7 +142,20 @@ export default function SimpleSlider() {
             <div className="text-[14px] font-[600] leading-[19.6px] text-[#1A2434]">
               Pre-Pregnancy
             </div>
-            <Image src={arrowRight} alt="Arrow mark" className="h-4 w-4 " />
+            <svg
+          className="w-4 h-4 lg:w-6 lg:h-6 custom-button-icon"
+          viewBox="0 0 17 17"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="icon-arrow-right">
+            <path
+              id="Shape"
+              d="M8.02843 3.36177C8.28878 3.10142 8.71089 3.10142 8.97124 3.36177L13.6379 8.02843C13.8983 8.28878 13.8983 8.71089 13.6379 8.97124L8.97124 13.6379C8.71089 13.8983 8.28878 13.8983 8.02843 13.6379C7.76808 13.3776 7.76808 12.9554 8.02843 12.6951L11.557 9.1665H3.83317C3.46498 9.1665 3.1665 8.86803 3.1665 8.49984C3.1665 8.13165 3.46498 7.83317 3.83317 7.83317H11.557L8.02843 4.30457C7.76808 4.04423 7.76808 3.62212 8.02843 3.36177Z"
+              className="fill-current text-[#4D1435]"
+            />
+          </g>
+        </svg>
           </div>
 
           <div className="text-[12px] font-[400] leading-[14.4px] text-[#1A2434] ">
@@ -151,7 +189,20 @@ export default function SimpleSlider() {
             <div className="text-[14px] font-[600] leading-[19.6px] text-[#1A2434]">
               Pre-Pregnancy
             </div>
-            <Image src={arrowRight} alt="Arrow mark" className="h-4 w-4 " />
+            <svg
+          className="w-4 h-4 lg:w-6 lg:h-6 custom-button-icon"
+          viewBox="0 0 17 17"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="icon-arrow-right">
+            <path
+              id="Shape"
+              d="M8.02843 3.36177C8.28878 3.10142 8.71089 3.10142 8.97124 3.36177L13.6379 8.02843C13.8983 8.28878 13.8983 8.71089 13.6379 8.97124L8.97124 13.6379C8.71089 13.8983 8.28878 13.8983 8.02843 13.6379C7.76808 13.3776 7.76808 12.9554 8.02843 12.6951L11.557 9.1665H3.83317C3.46498 9.1665 3.1665 8.86803 3.1665 8.49984C3.1665 8.13165 3.46498 7.83317 3.83317 7.83317H11.557L8.02843 4.30457C7.76808 4.04423 7.76808 3.62212 8.02843 3.36177Z"
+              className="fill-current text-[#4D1435]"
+            />
+          </g>
+        </svg>
           </div>
 
           <div className="text-[12px] font-[400] leading-[14.4px] text-[#1A2434] ">
@@ -185,7 +236,20 @@ export default function SimpleSlider() {
             <div className="text-[14px] font-[600] leading-[19.6px] text-[#1A2434]">
               Pre-Pregnancy
             </div>
-            <Image src={arrowRight} alt="Arrow mark" className="h-4 w-4 " />
+            <svg
+          className="w-4 h-4 lg:w-6 lg:h-6 custom-button-icon"
+          viewBox="0 0 17 17"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="icon-arrow-right">
+            <path
+              id="Shape"
+              d="M8.02843 3.36177C8.28878 3.10142 8.71089 3.10142 8.97124 3.36177L13.6379 8.02843C13.8983 8.28878 13.8983 8.71089 13.6379 8.97124L8.97124 13.6379C8.71089 13.8983 8.28878 13.8983 8.02843 13.6379C7.76808 13.3776 7.76808 12.9554 8.02843 12.6951L11.557 9.1665H3.83317C3.46498 9.1665 3.1665 8.86803 3.1665 8.49984C3.1665 8.13165 3.46498 7.83317 3.83317 7.83317H11.557L8.02843 4.30457C7.76808 4.04423 7.76808 3.62212 8.02843 3.36177Z"
+              className="fill-current text-[#4D1435]"
+            />
+          </g>
+        </svg>
           </div>
 
           <div className="text-[12px] font-[400] leading-[14.4px] text-[#1A2434] ">
@@ -219,7 +283,20 @@ export default function SimpleSlider() {
             <div className="text-[14px] font-[600] leading-[19.6px] text-[#1A2434]">
               Pre-Pregnancy
             </div>
-            <Image src={arrowRight} alt="Arrow mark" className="h-4 w-4 " />
+            <svg
+          className="w-4 h-4 lg:w-6 lg:h-6 custom-button-icon"
+          viewBox="0 0 17 17"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="icon-arrow-right">
+            <path
+              id="Shape"
+              d="M8.02843 3.36177C8.28878 3.10142 8.71089 3.10142 8.97124 3.36177L13.6379 8.02843C13.8983 8.28878 13.8983 8.71089 13.6379 8.97124L8.97124 13.6379C8.71089 13.8983 8.28878 13.8983 8.02843 13.6379C7.76808 13.3776 7.76808 12.9554 8.02843 12.6951L11.557 9.1665H3.83317C3.46498 9.1665 3.1665 8.86803 3.1665 8.49984C3.1665 8.13165 3.46498 7.83317 3.83317 7.83317H11.557L8.02843 4.30457C7.76808 4.04423 7.76808 3.62212 8.02843 3.36177Z"
+              className="fill-current text-[#4D1435]"
+            />
+          </g>
+        </svg>
           </div>
 
           <div className="text-[12px] font-[400] leading-[14.4px] text-[#1A2434] ">
