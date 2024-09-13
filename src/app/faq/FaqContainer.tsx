@@ -794,7 +794,7 @@ const faq: Props = {
 const FaqContainer = () => {
   const [search, setSearch] = useState("");
   const [showModal, setShowModal] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 640);
+  const [isMobile, setIsMobile] = useState(false);
   const [category, setCategory] = useState(Object.keys(faq)[0]);
   const [data, setData] = useState<IData[] | []>([]);
 
@@ -807,6 +807,7 @@ const FaqContainer = () => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 640);
     };
+    handleResize();
     window.addEventListener("resize", handleResize);
 
     return () => {
