@@ -1,0 +1,14 @@
+.chalkMark rect {
+    animation: reveal .5s linear forwards;
+}
+
+@keyframes reveal {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 345px;
+        /* Adjust to match the width of your SVG's viewBox */
+    }
+}

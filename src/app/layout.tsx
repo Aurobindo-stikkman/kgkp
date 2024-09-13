@@ -6,6 +6,8 @@ import "./globals.css";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Contact from "./components/Contact/Contact";
+import ScrollToTopButton from "./components/scroll-to-top/ScrollToTop";
+import WhatsApp from "./components/whats-app/WhatsApp";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -22,6 +24,8 @@ export default function RootLayout({
       <body>
         <Header />
         {children}
+        <ScrollToTopButton />
+        <WhatsApp />
         <Contact />
         <Footer />
       </body>

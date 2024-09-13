@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image, { StaticImageData } from "next/image";
 
 import vector83 from "./assets/Vector 83.png";
@@ -229,9 +229,14 @@ const arr: Course[] = [
 ];
 
 const Courses = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
   const [content, setContent] = useState<number | null>(null);
   const [image, setImage] = useState<StaticImageData | null>(null);
   const [isModalOpen, setModalOpen] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true); // Set true when the page has loaded
+  }, []);
 
   const openModal = (number: number, image?: StaticImageData) => {
     setContent(number);
@@ -269,7 +274,9 @@ const Courses = () => {
             <Image
               src={course1}
               alt="course 1"
-              className="h-full w-full xl:w-[240px]"
+              className={`h-full w-full xl:w-[240px] transform transition-transform duration-500 ease-in-out ${
+                isLoaded ? "scale-100" : "scale-75"
+              }`}
             />
           </section>
           <section className="w-[330px] xl:order-1 xl:basis-[45%] xl:flex xl:justify-end">
@@ -323,7 +330,9 @@ const Courses = () => {
             <Image
               src={course2}
               alt="course 2"
-              className="h-full w-full xl:w-[240px]"
+              className={`h-full w-full xl:w-[240px] transform transition-transform duration-500 ease-in-out ${
+                isLoaded ? "scale-100" : "scale-75"
+              }`}
             />
           </section>
           <section className="w-[330px] xl:basis-[55%]">
@@ -378,7 +387,9 @@ const Courses = () => {
             <Image
               src={course3}
               alt="course 3"
-              className="h-full w-full xl:w-[385px]"
+              className={`h-full w-full xl:w-[385px] transform transition-transform duration-500 ease-in-out ${
+                isLoaded ? "scale-100" : "scale-75"
+              }`}
             />
           </section>
           <section className="w-[330px] xl:order-1 xl:basis-[45%] xl:flex xl:justify-end">
@@ -432,7 +443,9 @@ const Courses = () => {
             <Image
               src={course4}
               alt="course 4"
-              className="h-full w-full xl:w-[385px]"
+              className={`h-full w-full xl:w-[385px] transform transition-transform duration-500 ease-in-out ${
+                isLoaded ? "scale-100" : "scale-75"
+              }`}
             />
           </section>
           <section className="w-[330px] xl:basis-1/2">
