@@ -2,6 +2,7 @@ import Image from "next/image";
 import rameshPartani from "./Ramesh partani.png";
 import chalkStroke from "../Chalk Stroke.png";
 import styles from "./aboutus.module.css";
+import Link from "next/link";
 
 const AboutFounder = () => {
   return (
@@ -91,25 +92,27 @@ const AboutFounder = () => {
         </section>
       </section>
 
-      <section className="hidden w-[385px] h-[77px] rounded-[50px] px-[80px] py-6 bg-[#F6E2D8] sm:flex gap-[14px] mx-auto mt-12 justify-center xl:mt-[140px] cursor-pointer custom-white-button">
-        <div className="text-[24px] font-[700] leading-[28.8px] text-[#4D1435] custom-button-icon">
-          Read More
-        </div>
-        <svg
-          className="w-4 h-4 lg:w-6 lg:h-6 custom-button-icon"
-          viewBox="0 0 17 17"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g id="icon-arrow-right">
-            <path
-              id="Shape"
-              d="M8.02843 3.36177C8.28878 3.10142 8.71089 3.10142 8.97124 3.36177L13.6379 8.02843C13.8983 8.28878 13.8983 8.71089 13.6379 8.97124L8.97124 13.6379C8.71089 13.8983 8.28878 13.8983 8.02843 13.6379C7.76808 13.3776 7.76808 12.9554 8.02843 12.6951L11.557 9.1665H3.83317C3.46498 9.1665 3.1665 8.86803 3.1665 8.49984C3.1665 8.13165 3.46498 7.83317 3.83317 7.83317H11.557L8.02843 4.30457C7.76808 4.04423 7.76808 3.62212 8.02843 3.36177Z"
-              className="fill-current text-[#4D1435]"
-            />
-          </g>
-        </svg>
-      </section>
+      <Link className="cursor-pointer" href="/aboutus">
+        <section className="hidden w-[385px] h-[77px] rounded-[50px] px-[80px] py-6 bg-[#F6E2D8] sm:flex gap-[14px] mx-auto mt-12 justify-center xl:mt-[140px] cursor-pointer custom-white-button">
+          <div className="text-[24px] font-[700] leading-[28.8px] text-[#4D1435] custom-button-icon">
+            Read More
+          </div>
+          <svg
+            className="w-4 h-4 lg:w-6 lg:h-6 custom-button-icon"
+            viewBox="0 0 17 17"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="icon-arrow-right">
+              <path
+                id="Shape"
+                d="M8.02843 3.36177C8.28878 3.10142 8.71089 3.10142 8.97124 3.36177L13.6379 8.02843C13.8983 8.28878 13.8983 8.71089 13.6379 8.97124L8.97124 13.6379C8.71089 13.8983 8.28878 13.8983 8.02843 13.6379C7.76808 13.3776 7.76808 12.9554 8.02843 12.6951L11.557 9.1665H3.83317C3.46498 9.1665 3.1665 8.86803 3.1665 8.49984C3.1665 8.13165 3.46498 7.83317 3.83317 7.83317H11.557L8.02843 4.30457C7.76808 4.04423 7.76808 3.62212 8.02843 3.36177Z"
+                className="fill-current text-[#4D1435]"
+              />
+            </g>
+          </svg>
+        </section>
+      </Link>
       <div className={`${styles["custom-shape-divider-bottom-1724765798"]}`}>
         <svg
           data-name="Layer 1"

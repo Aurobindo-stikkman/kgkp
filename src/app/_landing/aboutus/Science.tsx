@@ -145,7 +145,7 @@ const Science = () => {
           <div className="relative h-full w-full z-10">
             <iframe
               className="w-full h-full rounded-[24.56px]"
-              src="https://www.youtube.com/embed/i6HkeRyHEmE?autoplay=0"
+              src="https://www.youtube.com/embed/4jpD-OWHjz4?si=62HUXvS69d6aY944"
               allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>

@@ -53,7 +53,7 @@ const Header = () => {
             <Image
               src={shopping}
               alt="shopping icon"
-              className="object-contain"
+              className="object-contain cursor-pointer"
             />
           </section>
 
@@ -86,13 +86,9 @@ const Header = () => {
               >
                 KGKP Method
               </Link>
-              <Link
-                href="/courses"
-                onClick={() => setToggle(false)}
-                className={isActive("/courses")}
-              >
+              <a className="text-[#4D1435] font-[500] text-[16px] leading-[19.36px] cursor-pointer">
                 Courses
-              </Link>
+              </a>
               <Link
                 href="/faq"
                 onClick={() => setToggle(false)}
@@ -135,7 +131,7 @@ const Header = () => {
             <Image
               src={shopping}
               alt="shopping icon"
-              className="object-contain"
+              className="object-contain cursor-pointer"
             />
           </section>
           <section className="hidden lg:flex w-[131px] h-[51px] rounded-[50px] px-[16px] py-[28px] gap-[14px] bg-[#4D1435] items-center justify-center cursor-pointer custom-black-button">

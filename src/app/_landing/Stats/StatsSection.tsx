@@ -50,7 +50,7 @@ const StatsSection = () => {
           className="w-8 h-8 mx-auto md:w-14 md:h-14 lg:w-20 lg:h-20 xl:w-[130px] xl:h-[130px]"
         />
         <div className="w-[68px] grid gap-2 lg:w-auto">
-          <div className="text-[18px] font-[700] leading-[21.6px] poetsen-one-regularfont text-center lg:h-[58px] lg:text-[48px] lg:leading-[57.6px]">
+          <div className="text-[18px] font-[700] leading-[21.6px] poetsen-one-regular text-center lg:h-[58px] lg:text-[48px] lg:leading-[57.6px]">
             {childrenCount}K<span className="text-red-600">+</span>
           </div>
           <div className="text-[10px] font-[400] leading-[14px] text-center tracking-[2%] text-[#1A2434] lg:h-8 lg:text-[18px] lg:leading-[32.4px] opacity-[70%]">
