@@ -52,13 +52,13 @@ const Footer = () => {
             </section>
             <section className="grid gap-2 ">
               <section className="text-[12px] font-[400] leading-[21.6px] text-[#4D1435] lg:text-[20px] lg:leading-[28px] cursor-pointer">
-                Courses
+                <Link href="/courses">Courses</Link>
               </section>
               <section className="text-[12px] font-[400] leading-[21.6px] text-[#4D1435] lg:text-[20px] lg:leading-[28px] cursor-pointer">
                 <Link href="/aboutus">About us</Link>
               </section>
               <section className="text-[12px] font-[400] leading-[21.6px] text-[#4D1435] lg:text-[20px] lg:leading-[28px] cursor-pointer">
-                Blog
+                <Link href="/blog">Blog</Link>
               </section>
               <section className="text-[12px] font-[400] leading-[21.6px] text-[#4D1435] lg:text-[20px] lg:leading-[28px] cursor-pointer">
                 <Link href="/contact">Contact us</Link>
@@ -69,20 +69,20 @@ const Footer = () => {
           {/* Second */}
           <section className="w-[92px] grid gap-6 lg:w-[138px]">
             <section className="text-[17.5px] font-[600] leading-[25.2px] text-[#4D1435] lg:text-[27px] lg:leading-[37.8px]">
-              Resources
+              <Link href="/resourses">Resourses</Link>
             </section>
             <section className="grid gap-2 ">
               <section className="text-[12px] font-[400] leading-[21.6px] text-[#4D1435] lg:text-[20px] lg:leading-[28px] cursor-pointer">
-                FAQ
+                <Link href="/faq">FAQ</Link>
               </section>
               <section className="text-[12px] font-[400] leading-[21.6px] text-[#4D1435] lg:text-[20px] lg:leading-[28px] cursor-pointer">
-                Refund Policy
+                <Link href="/refund-policy">Refund Policy</Link>
               </section>
               <section className="text-[12px] font-[400] leading-[21.6px] text-[#4D1435] lg:text-[20px] lg:leading-[28px] cursor-pointer">
-                Privacy Policy
+                <Link href="/privacy-policy">Privacy Policy</Link>
               </section>
               <section className="text-[12px] font-[400] leading-[21.6px] text-[#4D1435] lg:text-[20px] lg:leading-[28px] cursor-pointer">
-                Terms & Use
+                <Link href="/terms">Terms & Use</Link>
               </section>
             </section>
           </section>
@@ -94,10 +94,10 @@ const Footer = () => {
             </section>
             <section className="grid gap-2 ">
               <section className="text-[12px] font-[400] leading-[21.6px] text-[#4D1435] lg:text-[20px] lg:leading-[28px] cursor-pointer">
-                Affiliate Programs
+                <Link href="/affiliate">Affiliate Programs</Link>
               </section>
               <section className="text-[12px] font-[400] leading-[21.6px] text-[#4D1435] lg:text-[20px] lg:leading-[28px] cursor-pointer">
-                B2B Offerings
+                <Link href="/b2b">B2B Offerings</Link>
               </section>
             </section>
           </section>

@@ -5,9 +5,9 @@ import brainIcon from "./assets/brain 1.svg";
 import growthIcon from "./assets/idea 1.svg";
 import chalkStroke from "./assets/Chalk Stroke.png";
 
-import eqImage from "./assets/EQ.png";
-import iqImage from "./assets/IQ.png";
-import sqImage from "./assets/SQ.png";
+import eqImage from "./assets/EQ.svg";
+import iqImage from "./assets/IQ.svg";
+import sqImage from "./assets/SQ.svg";
 import card1 from "./assets/card-1.png";
 import card2 from "./assets/card-2.png";
 import card3 from "./assets/card3.png";
@@ -1948,7 +1948,7 @@ const Methods = () => {
             <Image
               src={iqImage}
               alt="IQ Image"
-              className="w-[211px] h-[177px] mx-auto lg:h-[300px] lg:w-full lg:order-2 "
+              className="w-[211px] h-[177px] mx-auto lg:h-[337px] lg:w-full lg:order-2 lg:object-fill lg:overflow-visible xl:object-cover"
             />
             <section className="grid gap-3 lg:order-1 lg:self-start xl:w-[380px] ">
               <div className="text-[18px] font-[600] leading-[21.6px] text-[#4D1435] lg:text-[24px] lg:leading-[28.8px] ">
@@ -1962,11 +1962,11 @@ const Methods = () => {
               </div>
             </section>
           </section>
-          <section className="flex flex-col mx-[29px] gap-8 lg:mx-0 lg:h-[600px] xl:h-[550px] lg:justify-end ">
+          <section className="flex flex-col mx-[29px] gap-8 lg:mx-0 lg:h-[670px] lg:justify-end ">
             <Image
               src={eqImage}
               alt="IQ Image"
-              className="w-[211px] h-[177px] mx-auto lg:h-[300px] lg:w-full lg:self-end "
+              className="w-[211px] h-[177px] mx-auto lg:h-[337px] lg:w-full lg:self-end lg:object-cover lg:overflow-visible "
             />
             <section className="grid gap-3 lg:self-end xl:w-[380px] ">
               <div className="text-[18px] font-[600] leading-[21.6px] text-[#4D1435] lg:text-[24px] lg:leading-[28.8px] ">
@@ -1984,7 +1984,7 @@ const Methods = () => {
             <Image
               src={sqImage}
               alt="IQ Image"
-              className="w-[211px] h-[177px] mx-auto lg:h-[300px] lg:w-full lg:order-2 "
+              className="w-[211px] h-[177px] mx-auto lg:h-[337px] lg:w-full lg:order-2 lg:object-fill lg:overflow-visible xl:object-cover"
             />
             <section className="grid gap-3 lg:order-1 lg:self-start xl:w-[380px] ">
               <div className="text-[18px] font-[600] leading-[21.6px] text-[#4D1435] lg:text-[24px] lg:leading-[28.8px] ">
@@ -2274,7 +2274,7 @@ const Methods = () => {
       <Image
         src={whiteRock}
         alt="White Rock"
-        className="hidden xl:block absolute right-[-310px] bottom-[487px] w-[630px] h-[630px]"
+        className="hidden xl:block absolute right-[-370px] bottom-[487px] w-[630px] h-[630px]"
       />
     </div>
   );

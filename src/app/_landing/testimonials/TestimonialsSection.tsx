@@ -287,7 +287,7 @@ const TestimonialsSection = () => {
             onTimeUpdate={updateProgress}
           ></video>
 
-          <section className="absolute -bottom-5 -right-5 z-10 rotate-[0.92deg] rounded-br-3xl border-b-4 border-r-4 h-[104px] w-[166px] border-[#F6D94A]"></section>
+          <section className="hidden lg:block absolute -bottom-5 -right-5 z-10 rotate-[0.92deg] rounded-br-3xl border-b-4 border-r-4 h-[104px] w-[166px] border-[#F6D94A]"></section>
         </section>
 
         <section className="w-[296px] lg:relative py-4 px-4 grid gap-4 bg-slate-50 flex-grow-0 flex-shrink-0 rounded-[12px] animate-slide-in-left lg:rotate-[9.88deg] lg:order-1 xl:p-8 xl:w-[335.35px] 2xl:w-[400px] 2xl:h-[250px] ">
@@ -308,7 +308,7 @@ const TestimonialsSection = () => {
             difference in her. Her reading is much better.
           </section>
 
-          <section className="absolute -bottom-5 -left-5 z-10 rotate-[0.92deg] rounded-bl-3xl border-b-4 border-l-4 h-[104px] w-[166px] border-[#F6D94A]"></section>
+          <section className="hidden lg:block absolute -bottom-5 -left-5 z-10 rotate-[0.92deg] rounded-bl-3xl border-b-4 border-l-4 h-[104px] w-[166px] border-[#F6D94A]"></section>
         </section>
 
         <section className="w-[296px] lg:relative py-4 px-4 grid gap-4 bg-slate-50 flex-grow-0 flex-shrink-0 rounded-[12px] animate-slide-in-right lg:rotate-[4.92deg] lg:order-3 xl:p-8 xl:w-[335.35px] 2xl:w-[400px] 2xl:h-[250px] ">
@@ -329,7 +329,7 @@ const TestimonialsSection = () => {
             asks me inquisitive questions.
           </section>
 
-          <section className="absolute -top-5 -right-5 z-10 rotate-[0.92deg] rounded-tr-3xl border-t-4 border-r-4 h-[104px] w-[166px] border-[#F6D94A]"></section>
+          <section className="hidden lg:block absolute -top-5 -right-5 z-10 rotate-[0.92deg] rounded-tr-3xl border-t-4 border-r-4 h-[104px] w-[166px] border-[#F6D94A]"></section>
 
           <Image
             src={vector4}

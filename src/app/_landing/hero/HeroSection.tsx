@@ -55,8 +55,8 @@ const HeroSection = () => {
           till the age of 15 years and beyond
         </div>
 
-        <section className="hidden w-[254px] h-[51px] absolute bottom-[66px] rounded-[50px] bg-[#4D1435] md:flex gap-[14px] px-4 py-[28px] justify-center translate-x-[-50%] left-1/2 md:static md:translate-x-0 md:mt-10 cursor-pointer mt-[42px] lg:w-[385px] lg:h-[77px] lg:px-[80px] lg:py-[24px] custom-black-button">
-          <div className="text-[16px] font-[700] leading-[19.2px] text-white w-[248px] lg:text-[19px] lg:leading-[28.8px] custom-button-icon">
+        <section className="hidden w-[254px] h-[51px] absolute bottom-[66px] rounded-[50px] bg-[#4D1435] md:flex items-center gap-[14px] px-4 py-[28px] justify-center translate-x-[-50%] left-1/2 md:static md:translate-x-0 md:mt-10 cursor-pointer mt-[42px] lg:w-[385px] lg:h-[77px] lg:px-[80px] lg:py-[24px] custom-black-button">
+          <div className="text-[16px] font-[700] leading-[19.2px] text-white lg:w-[248px] lg:text-[18.8px] lg:leading-[28.8px] custom-button-icon">
             Explore Our Courses
           </div>
           <svg

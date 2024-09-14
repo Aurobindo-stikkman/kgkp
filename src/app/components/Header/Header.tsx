@@ -30,8 +30,8 @@ const Header = () => {
 
   const isActive = (path: any) =>
     pathname === path
-      ? "text-[#FF6347] underline underline-offset-4"
-      : "text-[#4D1435]";
+      ? "text-[#FF6347] underline underline-offset-4 font-[500] text-[16px] leading-[19.36px]"
+      : "text-[#4D1435] font-[500] text-[16px] leading-[19.36px]";
 
   const toggleMenu = () => setToggle(!toggle);
 
@@ -43,7 +43,9 @@ const Header = () => {
     >
       <div className="w-full h-full flex justify-between px-[15px] items-center relative lg:px-20">
         <section className="w-[79px] h-[50.55px] lg:h-[80.62px] lg:w-[126px] ">
-          <Image src={logo} alt="Company Logo" className="w-full h-full" />
+          <Link href="/">
+            <Image src={logo} alt="Company Logo" className="w-full h-full" />
+          </Link>
         </section>
 
         <section className="flex gap-6 items-center lg:gap-[38px] lg:h-[43px]">

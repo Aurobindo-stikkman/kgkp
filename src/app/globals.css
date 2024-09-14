@@ -61,29 +61,6 @@
     z-index: 20;
   }
 
-  .slick-prev {
-    left: 0;
-    z-index: 20;
-  }
-
-  .slick-next {
-    right: 25px;
-    z-index: 20;
-  }
-
-  .slick-prev:before,
-  .slick-next:before {
-    font-family: 'slick';
-    font-size: 52px;
-    line-height: 1;
-    opacity: 1;
-    color: white;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    box-shadow: 0px -1px 2px 1px black;
-    border-radius: 50%;
-  }
-
   .ytp-gradient-bottom {
     height: 77px !important;
     padding: 0 !important;

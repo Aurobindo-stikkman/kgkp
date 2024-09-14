@@ -13,12 +13,48 @@ const AboutFounder = () => {
           alt="Chalk Icon"
           className="absolute w-[235.08px] h-[60.94px] top-1 right-0 z-0 lg:w-[250.4px] lg:-top-1 lg:h-[93.76px]"
         />
+        <svg
+          className="hidden lg:block w-14 h-14 absolute -top-4 -left-16 "
+          viewBox="0 0 51 51"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            id="Star 9"
+            d="M15.2177 0.115597L25.4794 22.7225L36.1342 0.298131L27.4049 23.5398L50.7953 15.2174L28.1885 25.4792L50.6128 36.1339L27.3712 27.4046L35.6935 50.7951L25.4317 28.1882L14.777 50.6125L23.5063 27.3709L0.115848 35.6933L22.7227 25.4315L0.298383 14.7767L23.54 23.506L15.2177 0.115597Z"
+            fill="#D9D9D9"
+          />
+        </svg>
+        <svg
+          className="hidden lg:block w-6 h-6 absolute bottom-[-2rem] left-[-1.5rem] "
+          viewBox="0 0 51 51"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            id="Star 9"
+            d="M15.2177 0.115597L25.4794 22.7225L36.1342 0.298131L27.4049 23.5398L50.7953 15.2174L28.1885 25.4792L50.6128 36.1339L27.3712 27.4046L35.6935 50.7951L25.4317 28.1882L14.777 50.6125L23.5063 27.3709L0.115848 35.6933L22.7227 25.4315L0.298383 14.7767L23.54 23.506L15.2177 0.115597Z"
+            fill="#D9D9D9"
+          />
+        </svg>
+        <svg
+          className="hidden lg:block w-6 h-6 absolute top-[-2rem] left-[-1.5rem] "
+          viewBox="0 0 51 51"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            id="Star 9"
+            d="M15.2177 0.115597L25.4794 22.7225L36.1342 0.298131L27.4049 23.5398L50.7953 15.2174L28.1885 25.4792L50.6128 36.1339L27.3712 27.4046L35.6935 50.7951L25.4317 28.1882L14.777 50.6125L23.5063 27.3709L0.115848 35.6933L22.7227 25.4315L0.298383 14.7767L23.54 23.506L15.2177 0.115597Z"
+            fill="#D9D9D9"
+          />
+        </svg>
       </section>
 
-      <section className="flex flex-col mt-14 lg:mt-28 xl:flex-row">
+      <section className="flex flex-col mt-14 lg:mt-28 xl:flex-row justify-center">
         <section
           style={{ borderRadius: "40% 60% 63% 37% / 26% 66% 34% 74%" }}
-          className="mt-[56px] bg-[#A16E5738] h-[257px] w-[251.79px] p-6 overflow-hidden mx-auto xl:h-[520.24px] xl:w-[520.24px] xl:order-2 "
+          className="mt-[56px] bg-[#A16E5738] h-[257px] w-[251.79px] p-6 overflow-hidden mx-auto xl:h-[520.24px] xl:mx-0 xl:w-[520.24px] xl:order-2 "
         >
           <Image
             src={rameshPartani}

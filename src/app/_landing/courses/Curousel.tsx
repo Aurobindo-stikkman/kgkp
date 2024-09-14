@@ -6,6 +6,63 @@ import Image from "next/image";
 import prePregnancy from "./pre-pregnancy.png";
 import clock from "./Clock.svg";
 
+// Type definition for arrow props
+interface ArrowProps {
+  onClick?: () => void; // The onClick handler is optional
+}
+
+// Custom next arrow component
+const NextArrow: React.FC<ArrowProps> = ({ onClick }) => {
+  return (
+    <div
+      className="absolute top-1/2 right-0 z-10 rounded-full w-[52px] h-[52px] bg-white shadow-lg flex items-center justify-center cursor-pointer"
+      onClick={onClick}
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M9 18l6-6-6-6"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  );
+};
+
+// Custom previous arrow component
+const PrevArrow: React.FC<ArrowProps> = ({ onClick }) => {
+  return (
+    <div
+      className="absolute top-1/2 left-0 z-10 rounded-full w-[52px] h-[52px] bg-white shadow-lg flex items-center justify-center cursor-pointer"
+      onClick={onClick}
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M15 18l-6-6 6-6"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  );
+};
+
 export default function SimpleSlider() {
   const settings = {
     dots: true,
@@ -13,6 +70,8 @@ export default function SimpleSlider() {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
     responsive: [
       {
         breakpoint: 1350, // Tailwind's 'xl' starts at 1280px
@@ -96,19 +155,19 @@ export default function SimpleSlider() {
               Pre-Pregnancy
             </div>
             <svg
-          className="w-4 h-4 lg:w-6 lg:h-6 custom-button-icon"
-          viewBox="0 0 17 17"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g id="icon-arrow-right">
-            <path
-              id="Shape"
-              d="M8.02843 3.36177C8.28878 3.10142 8.71089 3.10142 8.97124 3.36177L13.6379 8.02843C13.8983 8.28878 13.8983 8.71089 13.6379 8.97124L8.97124 13.6379C8.71089 13.8983 8.28878 13.8983 8.02843 13.6379C7.76808 13.3776 7.76808 12.9554 8.02843 12.6951L11.557 9.1665H3.83317C3.46498 9.1665 3.1665 8.86803 3.1665 8.49984C3.1665 8.13165 3.46498 7.83317 3.83317 7.83317H11.557L8.02843 4.30457C7.76808 4.04423 7.76808 3.62212 8.02843 3.36177Z"
-              className="fill-current text-[#4D1435]"
-            />
-          </g>
-        </svg>
+              className="w-4 h-4 lg:w-6 lg:h-6 custom-button-icon"
+              viewBox="0 0 17 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="icon-arrow-right">
+                <path
+                  id="Shape"
+                  d="M8.02843 3.36177C8.28878 3.10142 8.71089 3.10142 8.97124 3.36177L13.6379 8.02843C13.8983 8.28878 13.8983 8.71089 13.6379 8.97124L8.97124 13.6379C8.71089 13.8983 8.28878 13.8983 8.02843 13.6379C7.76808 13.3776 7.76808 12.9554 8.02843 12.6951L11.557 9.1665H3.83317C3.46498 9.1665 3.1665 8.86803 3.1665 8.49984C3.1665 8.13165 3.46498 7.83317 3.83317 7.83317H11.557L8.02843 4.30457C7.76808 4.04423 7.76808 3.62212 8.02843 3.36177Z"
+                  className="fill-current text-[#4D1435]"
+                />
+              </g>
+            </svg>
           </div>
 
           <div className="text-[12px] font-[400] leading-[14.4px] text-[#1A2434] ">
@@ -143,19 +202,19 @@ export default function SimpleSlider() {
               Pre-Pregnancy
             </div>
             <svg
-          className="w-4 h-4 lg:w-6 lg:h-6 custom-button-icon"
-          viewBox="0 0 17 17"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g id="icon-arrow-right">
-            <path
-              id="Shape"
-              d="M8.02843 3.36177C8.28878 3.10142 8.71089 3.10142 8.97124 3.36177L13.6379 8.02843C13.8983 8.28878 13.8983 8.71089 13.6379 8.97124L8.97124 13.6379C8.71089 13.8983 8.28878 13.8983 8.02843 13.6379C7.76808 13.3776 7.76808 12.9554 8.02843 12.6951L11.557 9.1665H3.83317C3.46498 9.1665 3.1665 8.86803 3.1665 8.49984C3.1665 8.13165 3.46498 7.83317 3.83317 7.83317H11.557L8.02843 4.30457C7.76808 4.04423 7.76808 3.62212 8.02843 3.36177Z"
-              className="fill-current text-[#4D1435]"
-            />
-          </g>
-        </svg>
+              className="w-4 h-4 lg:w-6 lg:h-6 custom-button-icon"
+              viewBox="0 0 17 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="icon-arrow-right">
+                <path
+                  id="Shape"
+                  d="M8.02843 3.36177C8.28878 3.10142 8.71089 3.10142 8.97124 3.36177L13.6379 8.02843C13.8983 8.28878 13.8983 8.71089 13.6379 8.97124L8.97124 13.6379C8.71089 13.8983 8.28878 13.8983 8.02843 13.6379C7.76808 13.3776 7.76808 12.9554 8.02843 12.6951L11.557 9.1665H3.83317C3.46498 9.1665 3.1665 8.86803 3.1665 8.49984C3.1665 8.13165 3.46498 7.83317 3.83317 7.83317H11.557L8.02843 4.30457C7.76808 4.04423 7.76808 3.62212 8.02843 3.36177Z"
+                  className="fill-current text-[#4D1435]"
+                />
+              </g>
+            </svg>
           </div>
 
           <div className="text-[12px] font-[400] leading-[14.4px] text-[#1A2434] ">
@@ -190,19 +249,19 @@ export default function SimpleSlider() {
               Pre-Pregnancy
             </div>
             <svg
-          className="w-4 h-4 lg:w-6 lg:h-6 custom-button-icon"
-          viewBox="0 0 17 17"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g id="icon-arrow-right">
-            <path
-              id="Shape"
-              d="M8.02843 3.36177C8.28878 3.10142 8.71089 3.10142 8.97124 3.36177L13.6379 8.02843C13.8983 8.28878 13.8983 8.71089 13.6379 8.97124L8.97124 13.6379C8.71089 13.8983 8.28878 13.8983 8.02843 13.6379C7.76808 13.3776 7.76808 12.9554 8.02843 12.6951L11.557 9.1665H3.83317C3.46498 9.1665 3.1665 8.86803 3.1665 8.49984C3.1665 8.13165 3.46498 7.83317 3.83317 7.83317H11.557L8.02843 4.30457C7.76808 4.04423 7.76808 3.62212 8.02843 3.36177Z"
-              className="fill-current text-[#4D1435]"
-            />
-          </g>
-        </svg>
+              className="w-4 h-4 lg:w-6 lg:h-6 custom-button-icon"
+              viewBox="0 0 17 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="icon-arrow-right">
+                <path
+                  id="Shape"
+                  d="M8.02843 3.36177C8.28878 3.10142 8.71089 3.10142 8.97124 3.36177L13.6379 8.02843C13.8983 8.28878 13.8983 8.71089 13.6379 8.97124L8.97124 13.6379C8.71089 13.8983 8.28878 13.8983 8.02843 13.6379C7.76808 13.3776 7.76808 12.9554 8.02843 12.6951L11.557 9.1665H3.83317C3.46498 9.1665 3.1665 8.86803 3.1665 8.49984C3.1665 8.13165 3.46498 7.83317 3.83317 7.83317H11.557L8.02843 4.30457C7.76808 4.04423 7.76808 3.62212 8.02843 3.36177Z"
+                  className="fill-current text-[#4D1435]"
+                />
+              </g>
+            </svg>
           </div>
 
           <div className="text-[12px] font-[400] leading-[14.4px] text-[#1A2434] ">
@@ -237,19 +296,19 @@ export default function SimpleSlider() {
               Pre-Pregnancy
             </div>
             <svg
-          className="w-4 h-4 lg:w-6 lg:h-6 custom-button-icon"
-          viewBox="0 0 17 17"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g id="icon-arrow-right">
-            <path
-              id="Shape"
-              d="M8.02843 3.36177C8.28878 3.10142 8.71089 3.10142 8.97124 3.36177L13.6379 8.02843C13.8983 8.28878 13.8983 8.71089 13.6379 8.97124L8.97124 13.6379C8.71089 13.8983 8.28878 13.8983 8.02843 13.6379C7.76808 13.3776 7.76808 12.9554 8.02843 12.6951L11.557 9.1665H3.83317C3.46498 9.1665 3.1665 8.86803 3.1665 8.49984C3.1665 8.13165 3.46498 7.83317 3.83317 7.83317H11.557L8.02843 4.30457C7.76808 4.04423 7.76808 3.62212 8.02843 3.36177Z"
-              className="fill-current text-[#4D1435]"
-            />
-          </g>
-        </svg>
+              className="w-4 h-4 lg:w-6 lg:h-6 custom-button-icon"
+              viewBox="0 0 17 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="icon-arrow-right">
+                <path
+                  id="Shape"
+                  d="M8.02843 3.36177C8.28878 3.10142 8.71089 3.10142 8.97124 3.36177L13.6379 8.02843C13.8983 8.28878 13.8983 8.71089 13.6379 8.97124L8.97124 13.6379C8.71089 13.8983 8.28878 13.8983 8.02843 13.6379C7.76808 13.3776 7.76808 12.9554 8.02843 12.6951L11.557 9.1665H3.83317C3.46498 9.1665 3.1665 8.86803 3.1665 8.49984C3.1665 8.13165 3.46498 7.83317 3.83317 7.83317H11.557L8.02843 4.30457C7.76808 4.04423 7.76808 3.62212 8.02843 3.36177Z"
+                  className="fill-current text-[#4D1435]"
+                />
+              </g>
+            </svg>
           </div>
 
           <div className="text-[12px] font-[400] leading-[14.4px] text-[#1A2434] ">
@@ -284,19 +343,19 @@ export default function SimpleSlider() {
               Pre-Pregnancy
             </div>
             <svg
-          className="w-4 h-4 lg:w-6 lg:h-6 custom-button-icon"
-          viewBox="0 0 17 17"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g id="icon-arrow-right">
-            <path
-              id="Shape"
-              d="M8.02843 3.36177C8.28878 3.10142 8.71089 3.10142 8.97124 3.36177L13.6379 8.02843C13.8983 8.28878 13.8983 8.71089 13.6379 8.97124L8.97124 13.6379C8.71089 13.8983 8.28878 13.8983 8.02843 13.6379C7.76808 13.3776 7.76808 12.9554 8.02843 12.6951L11.557 9.1665H3.83317C3.46498 9.1665 3.1665 8.86803 3.1665 8.49984C3.1665 8.13165 3.46498 7.83317 3.83317 7.83317H11.557L8.02843 4.30457C7.76808 4.04423 7.76808 3.62212 8.02843 3.36177Z"
-              className="fill-current text-[#4D1435]"
-            />
-          </g>
-        </svg>
+              className="w-4 h-4 lg:w-6 lg:h-6 custom-button-icon"
+              viewBox="0 0 17 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="icon-arrow-right">
+                <path
+                  id="Shape"
+                  d="M8.02843 3.36177C8.28878 3.10142 8.71089 3.10142 8.97124 3.36177L13.6379 8.02843C13.8983 8.28878 13.8983 8.71089 13.6379 8.97124L8.97124 13.6379C8.71089 13.8983 8.28878 13.8983 8.02843 13.6379C7.76808 13.3776 7.76808 12.9554 8.02843 12.6951L11.557 9.1665H3.83317C3.46498 9.1665 3.1665 8.86803 3.1665 8.49984C3.1665 8.13165 3.46498 7.83317 3.83317 7.83317H11.557L8.02843 4.30457C7.76808 4.04423 7.76808 3.62212 8.02843 3.36177Z"
+                  className="fill-current text-[#4D1435]"
+                />
+              </g>
+            </svg>
           </div>
 
           <div className="text-[12px] font-[400] leading-[14.4px] text-[#1A2434] ">

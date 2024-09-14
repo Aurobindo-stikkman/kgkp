@@ -9,12 +9,17 @@ const WhatsApp = () => {
   if (pathname === "/contact") return null;
 
   return (
-    <div className="cursor-pointer fixed w-9 h-9 bottom-10 right-8 lg:w-16 lg:h-16 z-[9999]">
+    <div className="cursor-pointer fixed w-[52px] h-[52px] bottom-10 right-12 z-[9999]">
       <Link
         href="https://wa.me/+919394360040"
         className="flex gap-[14px] justify-center items-center w-full h-full "
       >
-        <svg viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg
+          viewBox="0 0 16 17"
+          className="w-full h-full"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <g id="Group">
             <path
               id="Vector"
