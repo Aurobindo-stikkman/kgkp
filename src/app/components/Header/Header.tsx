@@ -86,9 +86,9 @@ const Header = () => {
               >
                 KGKP Method
               </Link>
-              <a className="text-[#4D1435] font-[500] text-[16px] leading-[19.36px] cursor-pointer">
+              <span className="text-[#4D1435] font-[500] text-[16px] leading-[19.36px] cursor-pointer">
                 Courses
-              </a>
+              </span>
               <Link
                 href="/faq"
                 onClick={() => setToggle(false)}

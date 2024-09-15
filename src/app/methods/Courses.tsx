@@ -495,7 +495,7 @@ const Courses = () => {
         <section className="h-[330px] mt-[126px] self-center justify-self-center relative ">
           <Image
             src={course5}
-            alt="course 1"
+            alt="course 5"
             className="h-full w-full xl:w-[385px] "
           />
           <Image

@@ -87,3 +87,18 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+@keyframes animate-idea {
+  0% {
+    transform: scale(.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-idea-svg {
+  animation: animate-idea 1s;
+  transform-origin: center center;
+}

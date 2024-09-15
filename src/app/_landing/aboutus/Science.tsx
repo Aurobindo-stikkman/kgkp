@@ -13,6 +13,7 @@ import vector12 from "./assets/science/Vector 12.png";
 import vector13 from "./assets/science/Vector 13.png";
 
 import "./science.css";
+import Link from "next/link";
 
 const Science = () => {
   return (
@@ -256,25 +257,27 @@ const Science = () => {
         </section>
       </section>
 
-      <section className="custom-black-button hidden mt-6 w-[178px] h-[51px] rounded-[50px] px-7 py-4 justify-evenly items-center mx-auto md:flex gap-[14px] bg-[#4D1435] lg:w-[375px] lg:h-[77px] lg:px-[80px] lg:py-[24px] cursor-pointer lg:mt-[152px]">
-        <div className="text-[16px] font-[700] leading-[19.2px] text-white lg:text-[24px] lg:leading-[28.8px] custom-button-icon">
-          Learn more
-        </div>
-        <svg
-          className="w-4 h-4 lg:w-6 lg:h-6 custom-button-icon"
-          viewBox="0 0 17 17"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g id="icon-arrow-right">
-            <path
-              id="Shape"
-              d="M8.02843 3.36177C8.28878 3.10142 8.71089 3.10142 8.97124 3.36177L13.6379 8.02843C13.8983 8.28878 13.8983 8.71089 13.6379 8.97124L8.97124 13.6379C8.71089 13.8983 8.28878 13.8983 8.02843 13.6379C7.76808 13.3776 7.76808 12.9554 8.02843 12.6951L11.557 9.1665H3.83317C3.46498 9.1665 3.1665 8.86803 3.1665 8.49984C3.1665 8.13165 3.46498 7.83317 3.83317 7.83317H11.557L8.02843 4.30457C7.76808 4.04423 7.76808 3.62212 8.02843 3.36177Z"
-              className="fill-current text-white"
-            />
-          </g>
-        </svg>
-      </section>
+      <Link href="/methods">
+        <section className="custom-black-button hidden mt-6 w-[178px] h-[51px] rounded-[50px] px-7 py-4 justify-evenly items-center mx-auto md:flex gap-[14px] bg-[#4D1435] lg:w-[375px] lg:h-[77px] lg:px-[80px] lg:py-[24px] cursor-pointer lg:mt-[152px]">
+          <div className="text-[16px] font-[700] leading-[19.2px] text-white lg:text-[24px] lg:leading-[28.8px] custom-button-icon">
+            Learn more
+          </div>
+          <svg
+            className="w-4 h-4 lg:w-6 lg:h-6 custom-button-icon"
+            viewBox="0 0 17 17"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="icon-arrow-right">
+              <path
+                id="Shape"
+                d="M8.02843 3.36177C8.28878 3.10142 8.71089 3.10142 8.97124 3.36177L13.6379 8.02843C13.8983 8.28878 13.8983 8.71089 13.6379 8.97124L8.97124 13.6379C8.71089 13.8983 8.28878 13.8983 8.02843 13.6379C7.76808 13.3776 7.76808 12.9554 8.02843 12.6951L11.557 9.1665H3.83317C3.46498 9.1665 3.1665 8.86803 3.1665 8.49984C3.1665 8.13165 3.46498 7.83317 3.83317 7.83317H11.557L8.02843 4.30457C7.76808 4.04423 7.76808 3.62212 8.02843 3.36177Z"
+                className="fill-current text-white"
+              />
+            </g>
+          </svg>
+        </section>
+      </Link>
     </div>
   );
 };

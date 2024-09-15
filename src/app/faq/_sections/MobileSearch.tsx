@@ -21,7 +21,7 @@ const MobileSearch: React.FC<Props> = ({
   clearSearch,
 }) => {
   return (
-    <div className="absolute top-0 left-0 right-0 bottom-0 z-[9999] bg-white">
+    <div className="fixed inset-0 bg-white z-[9999] overflow-auto">
       <section className="flex gap04 items-center px-4 py-[14px]">
         <Image
           src={backButton}
