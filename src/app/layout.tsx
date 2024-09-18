@@ -25,7 +25,7 @@ export default function RootLayout({
         <Header />
         {children}
         <ScrollToTopButton />
-        <WhatsApp />
+        {/* <WhatsApp /> */}
         <Contact />
         <Footer />
       </body>
