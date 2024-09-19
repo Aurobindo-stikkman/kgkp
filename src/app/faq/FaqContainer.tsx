@@ -25,31 +25,31 @@ interface Props {
 const faq: Props = {
   generalInfo: [
     {
-      q: "4.	What is the Kaushalya Genius Kid Program (KGKP)?",
+      q: "What is the Kaushalya Genius Kid Program (KGKP)?",
       ans: `The Kaushalya Genius Kid Program (KGKP) is a unique online program designed to make every child a genius. "Kaushalya" means an expert or genius whose body, mind, and spirit are perfectly aligned. The programme is inspired by the Bhagavad Gita's teaching that says “ yogah karmasu kaushalam ” implies "yoga is excellence in action," KGKP helps children achieve excellence by aligning their body, mind, and spirit with their actions.`,
     },
     {
-      q: "5.	Who is the KGKP designed for?",
+      q: "Who is the KGKP designed for?",
       ans: `The Kaushalya Genius Kid Program (KGKP) is designed for parents and children over a comprehensive 16-year period. The first year is for parents who are planning or expecting a child. The next six years are for infants, babies, toddlers, and preschoolers. The following nine years cater to children from primary school to high school, up to 15 years of age.`,
     },
     {
-      q: "6.	What are the main goals of the KGKP?",
+      q: "What are the main goals of the KGKP?",
       ans: `The main goals of the Kaushalya Genius Kid Program (KGKP) are to contribute to creating an enlightened society and to become a world-class educational program.`,
     },
     {
-      q: "7.	How does KGKP differ from other online learning programs?",
+      q: "How does KGKP differ from other online learning programs?",
       ans: `The Kaushalya Genius Kid Program (KGKP) differs from other online learning programs by being both holistic and affordable. It is a home-schooling program that any parent anywhere in the world can use to help their child achieve the highest possible IQ (intelligence and physical fitness), EQ (mental faculties like thoughts, emotions, knowledge, and skills), and SQ (intent, values, and purpose).`,
     },
     {
-      q: "8.	What is the duration of each course in the KGKP?",
+      q: "What is the duration of each course in the KGKP?",
       ans: `Each course in the Kaushalya Genius Kid Program (KGKP) lasts one month and includes daily activities to be done for 30 days.  The only exception is the high schooler's course, which has two sessions per week.`,
     },
     {
-      q: "9.	What are the scientific principles behind the program?",
+      q: "What are the scientific principles behind the program?",
       ans: `KGKP uses cutting edge technologies such as Ridge Analysis, Brain Development Profile, Multiple Intelligences Theory, IQ, EQ, & SQ enhancement and so on. These principles are crucial in developing a child's overall brain to help them become a genius. To learn more about these principles, you can refer to our Method Page.`,
     },
     {
-      q: "10.	What subjects are covered in the KGKP?",
+      q: "What subjects are covered in the KGKP?",
       ans: (
         <>
           <div>
@@ -84,7 +84,7 @@ const faq: Props = {
       ),
     },
     {
-      q: "11.	What age groups is the KGKP suitable for?",
+      q: "What age groups is the KGKP suitable for?",
       ans: (
         <>
           <div>
@@ -104,19 +104,19 @@ const faq: Props = {
       ),
     },
     {
-      q: "12.	Can KGKP be used as a supplementary education tool?",
+      q: "Can KGKP be used as a supplementary education tool?",
       ans: `Yes, KGKP can be used as a supplementary education tool. It is a home-schooling program that covers all aspects of child development comprehensively.`,
     },
     {
-      q: "13.	Are there any prerequisites for enrolling in KGKP courses?",
+      q: "Are there any prerequisites for enrolling in KGKP courses?",
       ans: `Yes, there are a few prerequisites for enrolling in KGKP courses. The most important is a 100% commitment to creating a genius child. Additionally, as the program is currently in English, you should have a working knowledge of the English language. Also, you will need a good Wi-Fi connection and a smart TV or laptop.`,
     },
     {
-      q: "14.	Should I start the program at birth, or wait until my baby is 6 months or 1 year old?",
+      q: "Should I start the program at birth, or wait until my baby is 6 months or 1 year old?",
       ans: `The earlier you start on the 16-year timeline, the more impactful results you will achieve. Beginning the program at birth maximises the benefits for your child's development. It will provide a stronger foundation for their future growth and learning. Starting early ensures your child gets the full advantage of the program's comprehensive approach to enhancing IQ, EQ, and SQ.`,
     },
     {
-      q: "15.	What are the key benefits of the program for children?",
+      q: "What are the key benefits of the program for children?",
       ans: (
         <div>
           The key benefits of the KGKP program for children are:
@@ -162,7 +162,7 @@ const faq: Props = {
       ),
     },
     {
-      q: "16.	How does the program support pregnant parents?",
+      q: "How does the program support pregnant parents?",
       ans: (
         <>
           <div>
@@ -183,11 +183,11 @@ const faq: Props = {
       ),
     },
     {
-      q: "17.	Do I need any particular apps, devices, or technical skills to use the program effectively?",
+      q: "Do I need any particular apps, devices, or technical skills to use the program effectively?",
       ans: `To use the Kaushalya Genius Kid Program (KGKP) effectively, you will need a smartphone, smart TV or a laptop and a good internet connection. No technical skills or additional apps are required.`,
     },
     {
-      q: "18.	How much time do I need to commit to the courses each day?",
+      q: "How much time do I need to commit to the courses each day?",
       ans: (
         <div>
           The time commitment for the Kaushalya Genius Kid Program (KGKP) varies
@@ -220,7 +220,7 @@ const faq: Props = {
       ),
     },
     {
-      q: "19.	How can I find out which course to select next for my child?",
+      q: "How can I find out which course to select next for my child?",
       ans: (
         <>
           <div>
@@ -246,13 +246,13 @@ const faq: Props = {
       ),
     },
     {
-      q: "20.	Does KGKP offer content in multiple languages?",
+      q: "Does KGKP offer content in multiple languages?",
       ans: "Currently, KGKP is offering content only in English language.",
     },
   ],
   courseStructureAndContent: [
     {
-      q: "1.	What types of learning activities are included in the KGKP",
+      q: "What types of learning activities are included in the KGKP",
       ans: (
         <div>
           The Kaushalya Genius Kid Program (KGKP) includes a variety of learning
@@ -273,7 +273,7 @@ const faq: Props = {
       ),
     },
     {
-      q: "2.	How are the courses structured?",
+      q: "How are the courses structured?",
       ans: (
         <div>
           The KGKP is a 16-year program divided into 192 monthly courses,
@@ -318,7 +318,7 @@ const faq: Props = {
       ),
     },
     {
-      q: "3.	How does the program enhance emotional (EQ), intellectual (IQ), and spiritual (SQ) quotients?",
+      q: "How does the program enhance emotional (EQ), intellectual (IQ), and spiritual (SQ) quotients?",
       ans: (
         <>
           <div>
@@ -356,11 +356,11 @@ const faq: Props = {
       ),
     },
     {
-      q: "4.	Are the courses interactive?",
+      q: "Are the courses interactive?",
       ans: "The courses in the KGKP are pre-recorded and can be completed at any time during the course period, allowing parents and children to learn at their convenience.",
     },
     {
-      q: "5.	How often is new content added to the KGKP?",
+      q: "How often is new content added to the KGKP?",
       ans: (
         <>
           <div>
@@ -376,19 +376,19 @@ const faq: Props = {
       ),
     },
     {
-      q: "6.	How will I know when new content is added?",
+      q: "How will I know when new content is added?",
       ans: "New content in the KGKP is designed to enhance the program without altering its structure or impact. Since the updates do not require repeating completed courses, and they ensure the child receives the best content available at that time, no notifications are given for these additions or amendments.",
     },
     {
-      q: "7.	Are there any assessments or quizzes included in the courses?",
+      q: "Are there any assessments or quizzes included in the courses?",
       ans: `In the KGKP, the child is not to be tested or assessed during the 0-6 years segment of the program. The reasons for this are explained clearly in the booklet ‘Creating a Genius Child’ at the start of the 0-6 years segment. However, parents can assess the growth of the child from time to time by doing a ‘problem-solving’ activity with the child. Guidance for this activity is given at the appropriate stage in the program. For children aged 6-15 years, growth is typically observed by the behaviour and lifestyle of the child. Parents are also given guidance on how to notice specific improvements over time.`,
     },
     {
-      q: "8.	Can children progress at their own pace?",
+      q: "Can children progress at their own pace?",
       ans: `The KGKP is designed to match the typical growth rate for most children, with each course lasting 30 days. However, parents can slow down the pace by requesting for extension in the course duration and extending the course duration beyond 30 days if needed. This allows their children to progress at a more comfortable pace. `,
     },
     {
-      q: "9.	How do I evaluate my child’s progress?",
+      q: "How do I evaluate my child’s progress?",
       ans: (
         <>
           <div>
@@ -405,21 +405,21 @@ const faq: Props = {
       ),
     },
     {
-      q: "10.	Are there certificates or rewards for completing courses?",
+      q: "Are there certificates or rewards for completing courses?",
       ans: `There are no certificates or rewards for completing the courses, however, a certificate will be shared after completing the entire program until the child is age 15.`,
     },
     {
-      q: "11.	Why is the content similar and/or repetitive in every course?",
+      q: "Why is the content similar and/or repetitive in every course?",
       ans: `The learning process in the KGKP is scientifically designed to reinforce knowledge through repeated exposure. While the videos may seem repetitive, each one includes subtle variations, such as shuffled content or the introduction of new information. This method ensures that your child receives the necessary repetitions to solidify their understanding, without simply watching the same video twice. This approach is carefully crafted to enhance learning effectiveness and is explained in more detail in the booklet ‘Creating a Genius Child.’`,
     },
     {
-      q: "12.	Is it okay if my child does all the activities together every day?",
+      q: "Is it okay if my child does all the activities together every day?",
       ans: `No, it is not recommended. The KGKP is scientifically designed with a specific flow and pace to maximise learning outcomes. The procedure is clearly explained in the introductory slides and videos at the start of each course. Deviating from this flow by doing all activities together can dilute and compromise the effectiveness of the learning outcomes. `,
     },
   ],
   parentalInvolvementAndSupport: [
     {
-      q: "1.	How involved do parents need to be in the learning process?",
+      q: "How involved do parents need to be in the learning process?",
       ans: (
         <>
           <div>
@@ -443,15 +443,15 @@ const faq: Props = {
       ),
     },
     {
-      q: "2.	Is it okay if I do the course with my kids only on weekends?",
+      q: "Is it okay if I do the course with my kids only on weekends?",
       ans: "No, doing the course only on weekends would significantly dilute the results. Each KGKP course is designed as a one-month program with daily schedules from day 1 to day 30. You can achieve the best results only when the schedule is followed consistently. While small deviations and extensions are acceptable, major disruptions in the schedule can drastically affect the learning outcomes.",
     },
     {
-      q: "3.	Are there resources available for parents to support their child’s learning?",
+      q: "Are there resources available for parents to support their child’s learning?",
       ans: "Yes, necessary guidance and resources are available for parents to support their child's learning throughout the KGKP program.",
     },
     {
-      q: "4.	How does KGKP communicate progress to parents?",
+      q: "How does KGKP communicate progress to parents?",
       ans: (
         <>
           <div>
@@ -468,11 +468,11 @@ const faq: Props = {
       ),
     },
     {
-      q: "5.	Are there any parent-expert conferences or feedback sessions?",
+      q: "Are there any parent-expert conferences or feedback sessions?",
       ans: "Yes, the experts conduct an annual review session for each child with their parents. This review assesses the implementation of the KGKP, evaluates the program's impact, and provides parents with advice on how to achieve improved results moving forward.",
     },
     {
-      q: "6.	What kind of support is available if my child struggles with the content?",
+      q: "What kind of support is available if my child struggles with the content?",
       ans: (
         <>
           <div>
@@ -496,21 +496,21 @@ const faq: Props = {
       ),
     },
     {
-      q: "7.	How can I contact customer support?",
+      q: "How can I contact customer support?",
       ans: "You can contact customer support by calling the helpline at +91 9394360040. The helpline is available from 11 am to 5 pm IST on all working days.",
     },
     {
-      q: "8.	Are there any live sessions or webinars for parents?",
+      q: "Are there any live sessions or webinars for parents?",
       ans: "Yes, interactive live sessions and webinars are conducted periodically on specific subjects to help parents resolve their queries and enhance their understanding.",
     },
     {
-      q: "9.	Can I contact the course experts for personalised guidance?",
+      q: "Can I contact the course experts for personalised guidance?",
       ans: "Yes, you can arrange personalised guidance from course experts by scheduling an appointment at a mutually convenient date and time.	",
     },
   ],
   outcomesAndBenefits: [
     {
-      q: "1.	What are the expected outcomes for children who complete the KGKP?",
+      q: "What are the expected outcomes for children who complete the KGKP?",
       ans: (
         <div>
           Children who complete the KGKP as prescribed can achieve remarkable
@@ -560,7 +560,7 @@ const faq: Props = {
       ),
     },
     {
-      q: "2.	How does KGKP help in the overall development of a child?",
+      q: "How does KGKP help in the overall development of a child?",
       ans: (
         <>
           <div>
@@ -585,7 +585,7 @@ const faq: Props = {
       ),
     },
     {
-      q: "3.	Are there any success stories or testimonials from other parents?",
+      q: "Are there any success stories or testimonials from other parents?",
       ans: (
         <>
           <div>
@@ -605,7 +605,7 @@ const faq: Props = {
       ),
     },
     {
-      q: "4.	What evidence is there to show that KGKP improves academic performance?",
+      q: "What evidence is there to show that KGKP improves academic performance?",
       ans: (
         <>
           <div>
@@ -626,7 +626,7 @@ const faq: Props = {
       ),
     },
     {
-      q: "5.	What kind of skills, apart from academics, does KGKP focus on?",
+      q: "What kind of skills, apart from academics, does KGKP focus on?",
       ans: (
         <>
           <div>
@@ -652,11 +652,11 @@ const faq: Props = {
   ],
   paymentAccess: [
     {
-      q: "1. How do I enrol my child in the program?",
+      q: "How do I enrol my child in the program?",
       ans: "To enrol your child in the program you have to select the first course of the current age of your child. After selecting the course, you have to make the payment and get enrolled. ",
     },
     {
-      q: "2. Are there different levels of the program?",
+      q: "Are there different levels of the program?",
       ans: (
         <>
           <div>
@@ -701,7 +701,7 @@ const faq: Props = {
       ),
     },
     {
-      q: "3. How long does each program level last?",
+      q: "How long does each program level last?",
       ans: (
         <>
           <div>The program duration is as follows for different segments:</div>
@@ -744,27 +744,27 @@ const faq: Props = {
       ),
     },
     {
-      q: "4. What is the refund policy if I am not satisfied with the program?",
+      q: "What is the refund policy if I am not satisfied with the program?",
       ans: "The KGKP program is divided into several monthly courses. You have to make the payments every month for the purchase of the courses. KGKP does not ask for a long-term financial commitment at any stage of the program. As such, there is no refund policy. The parents can discontinue the program at any time after joining if they are not satisfied with the results.",
     },
     {
-      q: "5. How can I make a payment for the program?",
+      q: "How can I make a payment for the program?",
       ans: "The initial registration fees for the course can be transferred to the bank account of the company through banking channels or Gpay. All other subsequent payments for buying the monthly courses are submitted online through the payment gateway of KGKP.",
     },
     {
-      q: "6. Are there any discounts or special offers available?",
+      q: "Are there any discounts or special offers available?",
       ans: "The discounts / promotional offers are given for community groups, schools, defence personnel, etc. after the contract is finalised. ",
     },
     {
-      q: "7.How do I access the course after enrolment?",
+      q: "How do I access the course after enrolment?",
       ans: "Once you successfully register for the course with KGKP, ⁠you will be able to access the course in your login dashboard on the website directly. Additionally, a step-by-step guidance for accessing the course will be provided via WhatsApp.",
     },
     {
-      q: "8. Can multiple children use the same account?",
+      q: "Can multiple children use the same account?",
       ans: "Yes, the course can be accessed through any two devices from the same IP address. If multiple children at the same location are in the same phase of the course, they can use the same account to go through the course.",
     },
     {
-      q: "9. Is the KGKP available on mobile devices?",
+      q: "Is the KGKP available on mobile devices?",
       ans: (
         <>
           <div>
@@ -781,11 +781,11 @@ const faq: Props = {
       ),
     },
     {
-      q: "10. Is internet access required to use KGKP?",
+      q: "Is internet access required to use KGKP?",
       ans: "As KGKP is an online digital brain development program, you will require internet access to conveniently explore the program at each stage.",
     },
     {
-      q: "11. Is there a customer support team I can contact for help?",
+      q: "Is there a customer support team I can contact for help?",
       ans: " ⁠Yes, customer support is available from 11 am to 5 pm IST, Monday to Friday. You can reach us by calling +91 9394360040. Outside of these hours, you can leave a WhatsApp or text message, and our support team will respond as soon as possible.",
     },
   ],

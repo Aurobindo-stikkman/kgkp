@@ -1,12 +1,13 @@
 "use client";
 import Image from "next/image";
 
-import { useState, useEffect, Dispatch, SetStateAction } from "react";
+import { useState, useEffect, Dispatch, SetStateAction, useRef } from "react";
 
 import playtime1 from "./playtime.svg";
 import trophy from "./trophy.svg";
 import virtualClass from "./virtual-class.svg";
 import handPrint from "./hand-print.svg";
+import useInView from "@/app/components/useInView";
 
 const StatsSection = () => {
   const [childrenCount, setChildrenCount] = useState(0);
@@ -14,34 +15,42 @@ const StatsSection = () => {
   const [parentsCount, setParentsCount] = useState(0);
   const [counsellingCount, setCounsellingCount] = useState(0);
 
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef);
+
   useEffect(() => {
-    const incrementCounter = (
-      target: number,
-      setValue: Dispatch<SetStateAction<number>>,
-      duration: number
-    ) => {
-      let start = 0;
-      const increment = target / (duration / 10);
+    if (isInView) {
+      const incrementCounter = (
+        target: number,
+        setValue: React.Dispatch<React.SetStateAction<number>>,
+        duration: number
+      ) => {
+        let start = 0;
+        const increment = target / (duration / 10);
 
-      const timer = setInterval(() => {
-        start += increment;
-        if (start >= target) {
-          setValue(target);
-          clearInterval(timer);
-        } else {
-          setValue(Math.round(start));
-        }
-      }, 0);
-    };
+        const timer = setInterval(() => {
+          start += increment;
+          if (start >= target) {
+            setValue(target);
+            clearInterval(timer);
+          } else {
+            setValue(Math.round(start));
+          }
+        }, 10);
+      };
 
-    incrementCounter(10, setChildrenCount, 500);
-    incrementCounter(17, setYearsCount, 700);
-    incrementCounter(200, setParentsCount, 1500);
-    incrementCounter(30, setCounsellingCount, 1000);
-  }, []);
+      incrementCounter(10, setChildrenCount, 1500);
+      incrementCounter(17, setYearsCount, 1500);
+      incrementCounter(200, setParentsCount, 1500);
+      incrementCounter(30, setCounsellingCount, 1500);
+    }
+  }, [isInView]);
 
   return (
-    <section className="my-[52px] pl-4 pr-3 flex items-start justify-between sm:justify-evenly md:justify-around md:overflow-hidden xl:gap-[133px] xl:my-[107px] xl:justify-center xl:px-[85px] ">
+    <section
+      ref={sectionRef}
+      className="my-[52px] pl-4 pr-3 flex items-start justify-between sm:justify-evenly md:justify-around md:overflow-hidden xl:gap-[133px] xl:my-[107px] xl:justify-center xl:px-[85px] "
+    >
       {/* Card 1 */}
       <section className="grid gap-4 lg:w-[208px] lg:h-[278px] ">
         <Image

@@ -11,11 +11,11 @@ const CoursesSection = () => {
   return (
     <section className="px-4 py-[52px] lg:px-[80px] lg:py-[124px] ">
       <section className="h-[58px] w-[282px] mx-auto text-[20px] font-[700] leading-[28.6px] relative text-center text-[#1A2434] lg:text-[32px] lg:font-[700] lg:leading-[38.4px] lg:w-[512px] lg:h-[76px]">
-        <span className="z-10 relative">
+        <span className="z-10 relative w-[282px] h-[58px] text-center block lg:w-[512px] lg:h-[76px] lg:px-3 ">
           Select the Best Course to Unlock your Child's Genius
         </span>
         <svg
-          className="absolute w-[235.08px] h-[60.94px] left-1/2 -bottom-7 translate-x-[-50%] z-0 lg:-bottom-11 lg:w-[330.4px] lg:h-[93.76px]"
+          className="absolute w-[152.08px] h-[60.94px] left-[70%] bottom-[-29px] translate-x-[-50%] z-0 lg:bottom-[-49px] lg:left-[65%] lg:w-[303.4px] lg:h-[93.76px]"
           viewBox="0 0 345 41"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -187,8 +187,8 @@ const CoursesSection = () => {
       </section>
 
       <section className="custom-black-button cursor-pointer bg-[#4D1435] h-[51px] w-[222px] px-6 py-4 flex gap-[14px] justify-center items-center rounded-[50px] mt-6 mx-auto md:mt-14 lg:mt-[80px] lg:w-[385px] lg:h-[77px] lg:px-[80px] lg:py-[24px]">
-        <div className="text-[16px] font-[700] leading-[19.2px] text-white lg:text-[23px] lg:leading-[28.8px] custom-button-icon">
-          View all Courses
+        <div className="text-[16px] font-[700] leading-[19.2px] text-white lg:text-[22.5px] lg:leading-[28.8px] custom-button-icon">
+          View All Courses
         </div>
         <svg
           className="w-4 h-4 lg:w-6 lg:h-6 custom-button-icon"

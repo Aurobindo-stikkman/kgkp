@@ -9,7 +9,7 @@ const WhatsApp = () => {
   if (pathname === "/contact") return null;
 
   return (
-    <div className="cursor-pointer fixed w-[52px] h-[52px] bottom-10 right-12 z-[9999]">
+    <div className="cursor-pointer fixed w-9 h-9 right-[3.3rem] lg:w-[52px] lg:h-[52px] bottom-10 lg:right-12 z-[9999]">
       <Link
         href="https://wa.me/+919394360040"
         className="flex gap-[14px] justify-center items-center w-full h-full "
