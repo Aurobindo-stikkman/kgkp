@@ -1,17 +1,10 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
 
 import ListingFAQ from "@/app/components/ListingFAQ";
 
 import MobileSearch from "./_sections/MobileSearch";
 import SearchHeader from "./_sections/SearchHeader";
-
-import generalInfo from "./_sections/general-info.svg";
-import contentMarketing from "./_sections/content-marketing.svg";
-import chatIcon from "./_sections/chat.svg";
-import badgeIcon from "./_sections/badge.svg";
-import creditCardIcon from "./_sections/credit-card.svg";
 
 interface IData {
   q: string;
@@ -816,6 +809,8 @@ const FaqContainer = () => {
   }, []);
 
   useEffect(() => {
+    if (!scrollContainerRef.current) return;
+
     const scrollContainer = scrollContainerRef.current;
     const checkScrollable = () => {
       if (scrollContainer.scrollWidth > scrollContainer.clientWidth) {
@@ -848,7 +843,7 @@ const FaqContainer = () => {
       scrollContainer.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", checkScrollable);
     };
-  }, []);
+  }, [scrollContainerRef.current]);
 
   useEffect(() => {
     if (search.length) {
@@ -884,155 +879,361 @@ const FaqContainer = () => {
         clearSearch={clearSearch}
       />
 
-      <section
-        ref={scrollContainerRef}
-        className="mt-6 px-4 mx-auto flex justify-between gap-6 pb-2 relative overflow-x-auto h-20 md:h-[130px] md:gap-16 md:mt-[57px] lg:justify-start xl:gap-[96px] xl:justify-center"
-      >
-        {/* Category 1 */}
+      {(!isMobile || !showModal) && data.length ? (
         <section
-          onClick={() => toggleCategory(Object.keys(faq)[0])}
-          className={`pb-2 grid gap-2 cursor-pointer ${
-            category === "generalInfo" ? "border-b-[4px] border-[#4D1435]" : ""
-          } w-[80px] shrink-0 md:gap-4 md:basis-[158px]`}
+          ref={scrollContainerRef}
+          className="mt-6 px-4 mx-auto flex justify-between gap-6 pb-2 relative overflow-x-auto h-20 md:h-[130px] md:gap-16 md:mt-[57px] lg:justify-start xl:gap-[96px] xl:justify-center"
         >
-          <Image
-            src={generalInfo}
-            alt="General Info icon"
-            className="w-6 h-6 justify-self-center md:w-14 md:h-14 lg:w-[60px] lg:h-[60px]"
-          />
+          {/* Category 1 */}
           <section
-            className={`${
+            onClick={() => toggleCategory(Object.keys(faq)[0])}
+            className={`pb-2 grid gap-2 cursor-pointer ${
               category === "generalInfo"
-                ? "text-[#4D1435] font-[600]"
-                : "text-[#3C4553] font-[500]"
-            } text-[12px] leading-[14.4px] text-center md:text-[18px] md:leading-[21.6px]`}
+                ? "border-b-[4px] border-[#4D1435]"
+                : ""
+            } w-[80px] shrink-0 md:gap-4 md:basis-[158px]`}
           >
-            General Information
-          </section>
-        </section>
+            <svg
+              className="w-6 h-6 justify-self-center md:w-14 md:h-14 lg:w-[60px] lg:h-[60px]"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="about-us 2" clip-path="url(#clip0_1762_2787)">
+                <g id="Layer 2">
+                  <path
+                    id="Vector"
+                    fill={category === "generalInfo" ? "#4D1435" : "#3C4553"}
+                    d="M20.4523 24H12C5.38286 24 0 18.6166 0 12C0 5.38337 5.38286 0 12 0C18.6171 0 24 5.38337 24 12C23.9976 14.8622 22.9851 17.6223 21.1577 19.7483L21.8434 20.4674C22.1191 20.7566 22.3068 21.125 22.3827 21.526C22.4587 21.9271 22.4196 22.3428 22.2704 22.7205C22.1211 23.0982 21.8684 23.421 21.5441 23.6482C21.2199 23.8753 20.8388 23.9965 20.4489 23.9964L20.4523 24ZM12 1.79775C6.32829 1.79775 1.71429 6.37483 1.71429 12C1.71429 17.6252 6.32829 22.2022 12 22.2022H20.4523C20.5032 22.2024 20.553 22.1867 20.5954 22.1571C20.6377 22.1275 20.6708 22.0854 20.6903 22.0362C20.7099 21.9869 20.715 21.9326 20.7052 21.8803C20.6953 21.8279 20.6708 21.7798 20.6349 21.742L19.3491 20.3937C19.2688 20.3094 19.2052 20.2092 19.1621 20.0989C19.119 19.9886 19.0973 19.8704 19.0981 19.7512C19.099 19.632 19.1225 19.5142 19.1672 19.4046C19.2119 19.295 19.277 19.1958 19.3586 19.1128C20.2788 18.1956 21.0125 17.0926 21.5156 15.8702C22.0186 14.6478 22.2806 13.3314 22.2857 12C22.2857 6.37483 17.6717 1.79775 12 1.79775Z"
+                  />
+                  <path
+                    id="Vector_2"
+                    fill={category === "generalInfo" ? "#4D1435" : "#3C4553"}
+                    d="M13.125 18.0001H10.875C10.6761 18.0001 10.4853 17.9139 10.3447 17.7605C10.204 17.6071 10.125 17.3989 10.125 17.182C10.125 16.965 10.204 16.7568 10.3447 16.6034C10.4853 16.45 10.6761 16.3638 10.875 16.3638H13.125C13.3239 16.3638 13.5147 16.45 13.6553 16.6034C13.796 16.7568 13.875 16.965 13.875 17.182C13.875 17.3989 13.796 17.6071 13.6553 17.7605C13.5147 17.9139 13.3239 18.0001 13.125 18.0001Z"
+                  />
+                  <path
+                    id="Vector_3"
+                    fill={category === "generalInfo" ? "#4D1435" : "#3C4553"}
+                    d="M12 17.9999C11.8011 17.9999 11.6103 17.9137 11.4696 17.7602C11.329 17.6068 11.25 17.3987 11.25 17.1817V12.163C11.107 12.0729 10.9953 11.9339 10.9321 11.7675C10.8689 11.6011 10.8578 11.4166 10.9006 11.2426C10.9433 11.0687 11.0374 10.915 11.1684 10.8053C11.2994 10.6957 11.4599 10.6362 11.625 10.6362H12C12.1989 10.6362 12.3896 10.7224 12.5303 10.8759C12.671 11.0293 12.75 11.2374 12.75 11.4544V17.1817C12.75 17.3987 12.671 17.6068 12.5303 17.7602C12.3896 17.9137 12.1989 17.9999 12 17.9999Z"
+                  />
+                  <path
+                    id="Vector_4"
+                    fill={category === "generalInfo" ? "#4D1435" : "#3C4553"}
+                    d="M12 9.40914C12.6213 9.40914 13.125 8.85967 13.125 8.18186C13.125 7.50406 12.6213 6.95459 12 6.95459C11.3787 6.95459 10.875 7.50406 10.875 8.18186C10.875 8.85967 11.3787 9.40914 12 9.40914Z"
+                  />
+                </g>
+              </g>
+              <defs>
+                <clipPath id="clip0_1762_2787">
+                  <rect width="24" height="24" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
 
-        {/* Category 2 */}
-        <section
-          onClick={() => toggleCategory(Object.keys(faq)[1])}
-          className={`pb-2 grid gap-2 cursor-pointer ${
-            category === "courseStructureAndContent"
-              ? "border-b-[4px] border-[#4D1435]"
-              : ""
-          } w-[121px] shrink-0 md:gap-4 md:basis-[179px]`}
-        >
-          <Image
-            src={contentMarketing}
-            alt="General Info icon"
-            className="w-6 h-6 justify-self-center md:w-14 md:h-14 lg:w-[60px] lg:h-[60px]"
-          />
+            <section
+              className={`${
+                category === "generalInfo"
+                  ? "text-[#4D1435] font-[600]"
+                  : "text-[#3C4553] font-[500]"
+              } text-[12px] leading-[14.4px] text-center md:text-[18px] md:leading-[21.6px]`}
+            >
+              General Information
+            </section>
+          </section>
+
+          {/* Category 2 */}
           <section
-            className={`${
+            onClick={() => toggleCategory(Object.keys(faq)[1])}
+            className={`pb-2 grid gap-2 cursor-pointer ${
               category === "courseStructureAndContent"
-                ? "text-[#4D1435] font-[600]"
-                : "text-[#3C4553] font-[500]"
-            } text-[12px] leading-[14.4px] text-center md:text-[18px] md:leading-[21.6px]`}
+                ? "border-b-[4px] border-[#4D1435]"
+                : ""
+            } w-[121px] shrink-0 md:gap-4 md:basis-[179px]`}
           >
-            Course Structure and Content
-          </section>
-        </section>
+            <svg
+              className="w-6 h-6 justify-self-center md:w-14 md:h-14 lg:w-[60px] lg:h-[60px]"
+              viewBox="0 0 61 60"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="content-marketing 1" clip-path="url(#clip0_1762_2739)">
+                <path
+                  id="Vector"
+                  fill={
+                    category === "courseStructureAndContent"
+                      ? "#4D1435"
+                      : "#3C4553"
+                  }
+                  d="M36.8281 60H14.5625C6.80844 60 0.5 53.6916 0.5 45.9375V14.0625C0.5 6.30844 6.80844 0 14.5625 0H46.4375C54.1916 0 60.5 6.30844 60.5 14.0625V36.5039C60.5 37.7984 59.4507 38.8477 58.1562 38.8477C56.8618 38.8477 55.8125 37.7984 55.8125 36.5039V14.0625C55.8125 8.89313 51.6069 4.6875 46.4375 4.6875H14.5625C9.39313 4.6875 5.1875 8.89313 5.1875 14.0625V45.9375C5.1875 51.1069 9.39313 55.3125 14.5625 55.3125H36.8281C38.1226 55.3125 39.1719 56.3618 39.1719 57.6562C39.1719 58.9507 38.1226 60 36.8281 60ZM48.7812 14.7656C48.7812 13.4712 47.732 12.4219 46.4375 12.4219H24.9922C23.6977 12.4219 22.6484 13.4712 22.6484 14.7656C22.6484 16.0601 23.6977 17.1094 24.9922 17.1094H46.4375C47.732 17.1094 48.7812 16.0601 48.7812 14.7656ZM48.7812 24.1406C48.7812 22.8462 47.732 21.7969 46.4375 21.7969H14.5625C13.268 21.7969 12.2188 22.8462 12.2188 24.1406C12.2188 25.4351 13.268 26.4844 14.5625 26.4844H46.4375C47.732 26.4844 48.7812 25.4351 48.7812 24.1406ZM25.3438 33.5156C25.3438 32.2212 24.2945 31.1719 23 31.1719H14.5625C13.268 31.1719 12.2188 32.2212 12.2188 33.5156C12.2188 34.8101 13.268 35.8594 14.5625 35.8594H23C24.2945 35.8594 25.3438 34.8101 25.3438 33.5156ZM12.2188 14.5312C12.2188 16.1493 13.5304 17.4609 15.1484 17.4609C16.7664 17.4609 18.0781 16.1493 18.0781 14.5312C18.0781 12.9132 16.7664 11.6016 15.1484 11.6016C13.5304 11.6016 12.2188 12.9132 12.2188 14.5312ZM57.9944 57.4943C61.3298 54.1589 61.3298 48.7317 57.9944 45.3962L49.7785 37.1804C47.4039 34.8057 44.4082 33.2029 41.1153 32.5446L34.475 31.2173C33.707 31.0635 32.9124 31.3043 32.3584 31.8584C31.8043 32.4125 31.5638 33.2067 31.7173 33.9751L33.0446 40.6154C33.7029 43.9084 35.3059 46.9039 37.6803 49.2786L45.8962 57.4944C47.512 59.1101 49.6603 60 51.9453 60C54.2304 60 56.3786 59.1101 57.9944 57.4943ZM40.1966 37.1412C42.5789 37.6173 44.746 38.7769 46.4639 40.4948L54.6798 48.7106C56.1876 50.2185 56.1876 52.6719 54.6798 54.1798C53.9495 54.9102 52.9782 55.3125 51.9453 55.3125C50.9124 55.3125 49.9412 54.9102 49.2109 54.1798L40.995 45.964C39.2771 44.246 38.1174 42.0789 37.6413 39.6967L37.003 36.503L40.1966 37.1412Z"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_1762_2739">
+                  <rect
+                    width="60"
+                    height="60"
+                    fill="white"
+                    transform="translate(0.5)"
+                  />
+                </clipPath>
+              </defs>
+            </svg>
 
-        {/* Category 3 */}
-        <section
-          onClick={() => toggleCategory(Object.keys(faq)[2])}
-          className={`pb-2 grid gap-2 cursor-pointer ${
-            category === "parentalInvolvementAndSupport"
-              ? "border-b-[4px] border-[#4D1435]"
-              : ""
-          } shrink-0 w-[122px] md:gap-4 md:basis-[206px]`}
-        >
-          <Image
-            src={chatIcon}
-            alt="General Info icon"
-            className="w-6 h-6 justify-self-center md:w-14 md:h-14 lg:w-[60px] lg:h-[60px]"
-          />
+            <section
+              className={`${
+                category === "courseStructureAndContent"
+                  ? "text-[#4D1435] font-[600]"
+                  : "text-[#3C4553] font-[500]"
+              } text-[12px] leading-[14.4px] text-center md:text-[18px] md:leading-[21.6px]`}
+            >
+              Course Structure and Content
+            </section>
+          </section>
+
+          {/* Category 3 */}
           <section
-            className={`${
+            onClick={() => toggleCategory(Object.keys(faq)[2])}
+            className={`pb-2 grid gap-2 cursor-pointer ${
               category === "parentalInvolvementAndSupport"
-                ? "text-[#4D1435] font-[600]"
-                : "text-[#3C4553] font-[500]"
-            } text-[12px] leading-[14.4px] text-center md:text-[18px] md:leading-[21.6px]`}
+                ? "border-b-[4px] border-[#4D1435]"
+                : ""
+            } shrink-0 w-[122px] md:gap-4 md:basis-[206px]`}
           >
-            Parental Involvement and Support
-          </section>
-        </section>
+            <svg
+              className="w-6 h-6 justify-self-center md:w-14 md:h-14 lg:w-[60px] lg:h-[60px]"
+              viewBox="0 0 60 60"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="chat 1" clip-path="url(#clip0_1762_2744)">
+                <g id="Group">
+                  <g id="Group_2">
+                    <path
+                      id="Vector"
+                      fill={
+                        category === "parentalInvolvementAndSupport"
+                          ? "#4D1435"
+                          : "#3C4553"
+                      }
+                      d="M41.25 0H7.5C3.36375 0 0 3.36375 0 7.5V30C0 34.1362 3.36375 37.5 7.5 37.5V46.875C7.5 47.6063 7.9275 48.2738 8.59125 48.5775C8.8425 48.6938 9.10875 48.75 9.375 48.75C9.81375 48.75 10.2487 48.5962 10.5938 48.2962L23.1938 37.5H41.25C45.3862 37.5 48.75 34.1362 48.75 30V7.5C48.75 3.36375 45.3862 0 41.25 0ZM45 30C45 32.0662 43.3162 33.75 41.25 33.75H22.5C22.0537 33.75 21.6188 33.9075 21.2812 34.2038L11.25 42.7988V35.625C11.25 34.59 10.41 33.75 9.375 33.75H7.5C5.43375 33.75 3.75 32.0662 3.75 30V7.5C3.75 5.43375 5.43375 3.75 7.5 3.75H41.25C43.3162 3.75 45 5.43375 45 7.5V30Z"
+                    />
+                  </g>
+                </g>
+                <g id="Group_3">
+                  <g id="Group_4">
+                    <path
+                      id="Vector_2"
+                      fill={
+                        category === "parentalInvolvementAndSupport"
+                          ? "#4D1435"
+                          : "#3C4553"
+                      }
+                      d="M54.9855 11.6886C54.003 11.3511 52.9417 11.8686 52.6005 12.8511C52.263 13.8298 52.7805 14.8948 53.763 15.2361C55.248 15.7461 56.2492 17.1598 56.2492 18.7498V41.2498C56.2492 43.3161 54.5655 44.9998 52.4992 44.9998H50.6242C49.5892 44.9998 48.7492 45.8398 48.7492 46.8748V54.0486L38.718 45.4536C38.3805 45.1573 37.9455 44.9998 37.4992 44.9998H20.8867C19.8517 44.9998 19.0117 45.8398 19.0117 46.8748C19.0117 47.9098 19.848 48.7498 20.8867 48.7498H36.8055L49.4055 59.5461C49.7505 59.8461 50.1855 59.9998 50.6242 59.9998C50.8905 59.9998 51.1567 59.9436 51.408 59.8273C52.0717 59.5236 52.4992 58.8561 52.4992 58.1248V48.7498C56.6355 48.7498 59.9992 45.3861 59.9992 41.2498V18.7498C59.9992 15.5623 57.9855 12.7236 54.9855 11.6886Z"
+                    />
+                  </g>
+                </g>
+                <g id="Group_5">
+                  <g id="Group_6">
+                    <path
+                      id="Vector_3"
+                      fill={
+                        category === "parentalInvolvementAndSupport"
+                          ? "#4D1435"
+                          : "#3C4553"
+                      }
+                      d="M35.625 11.25H13.125C12.09 11.25 11.25 12.09 11.25 13.125C11.25 14.16 12.09 15 13.125 15H35.625C36.66 15 37.5 14.16 37.5 13.125C37.5 12.09 36.66 11.25 35.625 11.25Z"
+                    />
+                  </g>
+                </g>
+                <g id="Group_7">
+                  <g id="Group_8">
+                    <path
+                      id="Vector_4"
+                      fill={
+                        category === "parentalInvolvementAndSupport"
+                          ? "#4D1435"
+                          : "#3C4553"
+                      }
+                      d="M28.125 18.75H13.125C12.09 18.75 11.25 19.59 11.25 20.625C11.25 21.66 12.09 22.5 13.125 22.5H28.125C29.16 22.5 30 21.66 30 20.625C30 19.59 29.16 18.75 28.125 18.75Z"
+                    />
+                  </g>
+                </g>
+              </g>
+              <defs>
+                <clipPath id="clip0_1762_2744">
+                  <rect width="60" height="60" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
 
-        {/* Category 4 */}
-        <section
-          onClick={() => toggleCategory(Object.keys(faq)[3])}
-          className={`pb-2 grid gap-2 cursor-pointer ${
-            category === "outcomesAndBenefits"
-              ? "border-b-[4px] border-[#4D1435]"
-              : ""
-          } shrink-0 w-[122px] md:gap-4 md:basis-[153px]`}
-        >
-          <Image
-            src={badgeIcon}
-            alt="General Info icon"
-            className="w-6 h-6 justify-self-center md:w-14 md:h-14 lg:w-[60px] lg:h-[60px]"
-          />
+            <section
+              className={`${
+                category === "parentalInvolvementAndSupport"
+                  ? "text-[#4D1435] font-[600]"
+                  : "text-[#3C4553] font-[500]"
+              } text-[12px] leading-[14.4px] text-center md:text-[18px] md:leading-[21.6px]`}
+            >
+              Parental Involvement and Support
+            </section>
+          </section>
+
+          {/* Category 4 */}
           <section
-            className={`${
+            onClick={() => toggleCategory(Object.keys(faq)[3])}
+            className={`pb-2 grid gap-2 cursor-pointer ${
               category === "outcomesAndBenefits"
-                ? "text-[#4D1435] font-[600]"
-                : "text-[#3C4553] font-[500]"
-            } text-[12px] leading-[14.4px] text-center md:text-[18px] md:leading-[21.6px]`}
+                ? "border-b-[4px] border-[#4D1435]"
+                : ""
+            } shrink-0 w-[122px] md:gap-4 md:basis-[153px]`}
           >
-            Outcomes and Benefits
+            <svg
+              className="w-6 h-6 justify-self-center md:w-14 md:h-14 lg:w-[60px] lg:h-[60px]"
+              viewBox="0 0 61 60"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="badge 1" clip-path="url(#clip0_1762_2760)">
+                <path
+                  id="Vector"
+                  fill={
+                    category === "outcomesAndBenefits" ? "#4D1435" : "#3C4553"
+                  }
+                  d="M56.6503 49.9246L49.2116 35.0459C51.6465 31.4548 53.0706 27.1252 53.0706 22.4689C53.0706 10.0795 42.9911 0 30.6017 0C18.2123 0 8.13282 10.0795 8.13282 22.4689C8.13282 27.1252 9.55692 31.4552 11.9922 35.0468L4.55265 49.9246C4.28028 50.4698 4.30958 51.1166 4.62955 51.6348C4.94999 52.153 5.51578 52.4689 6.12507 52.4689H14.6601L19.7811 59.2969C20.1152 59.7418 20.6371 60 21.1873 60C21.9165 60 22.491 59.5651 22.7597 59.0282L29.813 44.9222C30.0748 44.9313 30.3376 44.9377 30.6017 44.9377C30.8658 44.9377 31.1286 44.9313 31.3904 44.9222L38.4436 59.0282C38.7114 59.5642 39.2864 60 40.0161 60C40.5658 60 41.0881 59.7418 41.4218 59.2969L46.5433 52.4689H55.0783C55.6876 52.4689 56.2534 52.153 56.5734 51.6348C56.8938 51.1166 56.9231 50.4698 56.6503 49.9246ZM20.8875 54.912L16.9452 49.6564C16.6133 49.2137 16.0924 48.9532 15.539 48.9532H8.96915L14.4239 38.0447C17.5211 41.2601 21.5641 43.5585 26.101 44.4846L20.8875 54.912ZM11.6484 22.4689C11.6484 12.0181 20.1509 3.51562 30.6017 3.51562C41.0524 3.51562 49.5549 12.0181 49.5549 22.4689C49.5549 32.9196 41.0524 41.4221 30.6017 41.4221C20.1509 41.4221 11.6484 32.9196 11.6484 22.4689ZM45.6639 48.9532C45.111 48.9532 44.59 49.2137 44.2577 49.6564L40.3159 54.912L35.102 44.4846C39.6393 43.558 43.6827 41.2601 46.78 38.0438L52.2338 48.9528H45.6639V48.9532Z"
+                />
+                <path
+                  id="Vector_2"
+                  fill={
+                    category === "outcomesAndBenefits" ? "#4D1435" : "#3C4553"
+                  }
+                  d="M39.5753 25.3845L44.4843 19.5251C44.8734 19.0609 44.9961 18.4292 44.8089 17.8534C44.6217 17.277 44.1511 16.838 43.5638 16.6911L36.1485 14.8362L32.0922 8.3566C31.7709 7.84299 31.2078 7.53125 30.6022 7.53125C29.9966 7.53125 29.4335 7.84299 29.1122 8.3566L25.0568 14.8362L17.642 16.6911C17.0542 16.838 16.5836 17.277 16.3964 17.8529C16.2096 18.4292 16.3319 19.0609 16.721 19.5251L21.63 25.3845L21.1018 33.0095C21.0601 33.6137 21.332 34.1969 21.8218 34.553C22.5657 35.0937 23.3224 34.8378 23.5124 34.7613L30.6022 31.904L37.692 34.7618C38.2537 34.9879 38.8923 34.9092 39.3821 34.5535C39.8724 34.1974 40.1443 33.6142 40.1026 33.0099L39.5753 25.3845ZM36.4254 23.6697C36.1334 24.0185 35.9878 24.4662 36.0194 24.9199L36.4016 30.451L31.2595 28.3783C30.6896 28.1485 30.1897 28.2794 29.9453 28.3783L24.8032 30.451L25.1864 24.9203C25.2175 24.4667 25.072 24.0185 24.7799 23.6697L21.2194 19.4203L26.5977 18.0749C27.039 17.9646 27.4198 17.6877 27.6611 17.3022L30.6027 12.6024L33.5447 17.3022C33.7859 17.6877 34.1668 17.9646 34.6081 18.0749L39.9864 19.4203L36.4254 23.6697Z"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_1762_2760">
+                  <rect
+                    width="60"
+                    height="60"
+                    fill="white"
+                    transform="translate(0.5)"
+                  />
+                </clipPath>
+              </defs>
+            </svg>
+            <section
+              className={`${
+                category === "outcomesAndBenefits"
+                  ? "text-[#4D1435] font-[600]"
+                  : "text-[#3C4553] font-[500]"
+              } text-[12px] leading-[14.4px] text-center md:text-[18px] md:leading-[21.6px]`}
+            >
+              Outcomes and Benefits
+            </section>
           </section>
-        </section>
 
-        {/* Category 5 */}
-        <section
-          onClick={() => toggleCategory(Object.keys(faq)[4])}
-          className={`pb-2 grid gap-2 cursor-pointer ${
-            category === "paymentAccess"
-              ? "border-b-[4px] border-[#4D1435]"
-              : ""
-          } shrink-0 w-[122px] md:gap-4 md:basis-[208px]`}
-        >
-          <Image
+          {/* Category 5 */}
+          <section
+            onClick={() => toggleCategory(Object.keys(faq)[4])}
+            className={`pb-2 grid gap-2 cursor-pointer ${
+              category === "paymentAccess"
+                ? "border-b-[4px] border-[#4D1435]"
+                : ""
+            } shrink-0 w-[122px] md:gap-4 md:basis-[208px]`}
+          >
+            {/* <Image
             src={creditCardIcon}
             alt="General Info icon"
             className="w-6 h-6 justify-self-center md:w-14 md:h-14 lg:w-[60px] lg:h-[60px]"
-          />
-          <section
-            className={`${
-              category === "paymentAccess"
-                ? "text-[#4D1435] font-[600]"
-                : "text-[#3C4553] font-[500]"
-            } text-[12px] leading-[14.4px] text-center md:text-[18px] md:leading-[21.6px]`}
-          >
-            Enrolment, Payment and Access
-          </section>
-        </section>
+            /> */}
 
-        {isScrollable && !isScrolledToEnd && (
-          <div
-            className="absolute top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2"
-            style={{ right: `calc(${-arrowPosition}px + 5%)` }}
-          >
             <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 text-gray-800"
+              className="w-6 h-6 justify-self-center md:w-14 md:h-14 lg:w-[60px] lg:h-[60px]"
+              viewBox="0 0 60 60"
               fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M9 5l7 7-7 7"
-              />
+              <g id="credit-card 1">
+                <g id="Group">
+                  <g id="Group_2">
+                    <path
+                      id="Vector"
+                      fill={
+                        category === "paymentAccess" ? "#4D1435" : "#3C4553"
+                      }
+                      d="M58.125 37.4995C57.09 37.4995 56.25 38.3395 56.25 39.3745V52.4995H3.75V29.9995H24.375C25.41 29.9995 26.25 29.1595 26.25 28.1245C26.25 27.0895 25.41 26.2495 24.375 26.2495H3.75V18.7495H24.375C25.41 18.7495 26.25 17.9095 26.25 16.8745C26.25 15.8395 25.41 14.9995 24.375 14.9995H3.75C1.68 14.9995 0 16.6795 0 18.7495V52.4995C0 54.5695 1.68 56.2495 3.75 56.2495H56.25C58.32 56.2495 60 54.5695 60 52.4995V39.3745C60 38.3395 59.16 37.4995 58.125 37.4995Z"
+                    />
+                  </g>
+                </g>
+                <g id="Group_3">
+                  <g id="Group_4">
+                    <path
+                      id="Vector_2"
+                      fill={
+                        category === "paymentAccess" ? "#4D1435" : "#3C4553"
+                      }
+                      d="M16.875 37.4995H9.375C8.34 37.4995 7.5 38.3395 7.5 39.3745C7.5 40.4095 8.34 41.2495 9.375 41.2495H16.875C17.91 41.2495 18.75 40.4095 18.75 39.3745C18.75 38.3395 17.91 37.4995 16.875 37.4995Z"
+                    />
+                  </g>
+                </g>
+                <g id="Group_5">
+                  <g id="Group_6">
+                    <path
+                      id="Vector_3"
+                      fill={
+                        category === "paymentAccess" ? "#4D1435" : "#3C4553"
+                      }
+                      d="M58.8637 9.52455L45.7387 3.89955C45.2625 3.7008 44.7338 3.7008 44.2575 3.89955L31.1325 9.52455C30.4463 9.8208 30 10.4996 30 11.2496V18.7496C30 29.0658 33.8138 35.0958 44.0663 41.002C44.355 41.167 44.6775 41.2495 45 41.2495C45.3225 41.2495 45.645 41.167 45.9337 41.002C56.1862 35.1108 60 29.0808 60 18.7496V11.2496C60 10.4996 59.5537 9.8208 58.8637 9.52455ZM56.25 18.7496C56.25 27.4083 53.385 32.1745 45 37.1996C36.615 32.1633 33.75 27.397 33.75 18.7496V12.4871L45 7.66455L56.25 12.4871V18.7496Z"
+                    />
+                  </g>
+                </g>
+                <g id="Group_7">
+                  <g id="Group_8">
+                    <path
+                      id="Vector_4"
+                      fill={
+                        category === "paymentAccess" ? "#4D1435" : "#3C4553"
+                      }
+                      d="M51.7994 15.4083C50.9931 14.7708 49.8156 14.8946 49.1631 15.7008L43.2681 23.0733L40.9356 19.5858C40.3544 18.7233 39.1881 18.4946 38.3369 19.0646C37.4781 19.6383 37.2419 20.8046 37.8156 21.6633L41.5656 27.2883C41.8994 27.7871 42.4469 28.0946 43.0469 28.1246C43.0731 28.1246 43.1031 28.1246 43.1256 28.1246C43.6919 28.1246 44.2319 27.8696 44.5919 27.4196L52.0919 18.0446C52.7369 17.2346 52.6094 16.0571 51.7994 15.4083Z"
+                    />
+                  </g>
+                </g>
+              </g>
             </svg>
-          </div>
-        )}
-      </section>
+
+            <section
+              className={`${
+                category === "paymentAccess"
+                  ? "text-[#4D1435] font-[600]"
+                  : "text-[#3C4553] font-[500]"
+              } text-[12px] leading-[14.4px] text-center md:text-[18px] md:leading-[21.6px]`}
+            >
+              Enrolment, Payment and Access
+            </section>
+          </section>
+
+          {isScrollable && !isScrolledToEnd && (
+            <div
+              className="shadow-md h-7 w-7 flex justify-center items-center absolute top-1/2 transform -translate-y-1/2 bg-white rounded-full lg:hidden"
+              style={{ right: `calc(${-arrowPosition}px + 10%)` }}
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="icon-chevron-right">
+                  <path
+                    id="Shape"
+                    d="M6.47157 3.52851C6.21122 3.26816 5.78911 3.26816 5.52876 3.52851C5.26841 3.78886 5.26841 4.21097 5.52876 4.47132L9.05735 7.99992L5.52876 11.5285C5.26841 11.7889 5.26841 12.211 5.52876 12.4713C5.78911 12.7317 6.21122 12.7317 6.47157 12.4713L10.4716 8.47132C10.7319 8.21097 10.7319 7.78886 10.4716 7.52851L6.47157 3.52851Z"
+                    fill="#460C04"
+                  />
+                </g>
+              </svg>
+            </div>
+          )}
+        </section>
+      ) : null}
 
       {(!isMobile || !showModal) && (
         <section className="w-[90%] mt-6 mb-[52px] mx-auto grid gap-4 lg:my-[52px] xl:w-[1280px]">
@@ -1041,9 +1242,9 @@ const FaqContainer = () => {
               <ListingFAQ data={data} />
             </>
           ) : (
-            <section className="mt-6 grid gap-4 mx-auto w-auto">
+            <section className="my-[77px] grid gap-4 mx-auto w-auto">
               <div className="text-[18px] font-[600] leading-[21.6px] text-center text-[#1A2434]">
-                We couldn’t find anything related to {search}
+                We couldn’t find anything related to "{search}"
               </div>
               <div className="text-[16px] font-[400] leading-[19.2px] text-[#1A2434] text-center">
                 Please check the spelling or try another word
