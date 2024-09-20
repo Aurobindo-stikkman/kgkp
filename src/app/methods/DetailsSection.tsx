@@ -1,18 +1,27 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import useInView from "../components/useInView";
 
 const DetailsSection = () => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef);
 
   useEffect(() => {
-    setIsLoaded(true);
-  }, []);
+    if (isInView) {
+      setIsLoaded(true);
+    }
+  }, [isInView]);
 
   return (
-    <section className="flex flex-col mt-8 gap-8 lg:flex-row lg:mt-[103px] lg:gap-0 lg:px-[70px] xl:px-[150px] xl:mx-auto xl:justify-center ">
-      <section className="flex flex-col mx-[29px] gap-8 lg:mx-0 lg:h-[600px] xl:h-[550px] ">
+    <section
+      ref={sectionRef}
+      className="flex flex-col mt-8 gap-8 xl:flex-row xl:mt-[103px] xl:gap-0 xl:px-[150px] xl:mx-auto xl:justify-center "
+    >
+      {/* Card - 1 */}
+      <section className="flex flex-col mx-[29px] gap-8 xl:gap-0 xl:mx-0 xl:w-[365px] xl:h-[550px] ">
         <svg
-          className={`w-[211px] h-[177px] mx-auto lg:h-[376px] lg:w-full lg:order-2 lg:object-fill lg:overflow-visible xl:object-cover`}
+          className={`w-[211px] h-[177px] mx-auto lg:h-[376px] lg:w-[365px] xl:order-2 lg:overflow-visible xl:object-cover`}
           viewBox="0 0 365 365"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -92,9 +101,9 @@ const DetailsSection = () => {
           </defs>
         </svg>
 
-        <section className="grid gap-3 lg:order-1 lg:self-start xl:w-[380px] ">
+        <section className="grid gap-3 mx-auto w-[302px] xl:order-1 lg:self-start lg:w-[378px] xl:w-auto ">
           <div className="text-[18px] font-[600] leading-[21.6px] text-[#4D1435] lg:text-[24px] lg:leading-[28.8px] ">
-            IQ | Intelligence quotient
+            IQ <span className="font-[200]">| Intelligence quotient</span>
           </div>
           <div className="text-[14px] font-[400] leading-[19.6px] text-[#4D1435] ">
             Our program boosts IQ through ridge analysis and brain development
@@ -105,9 +114,10 @@ const DetailsSection = () => {
         </section>
       </section>
 
-      <section className="flex flex-col mx-[29px] gap-8 lg:mx-0 lg:h-[670px] lg:justify-end ">
+      {/* Card - 2 */}
+      <section className="flex flex-col mx-[29px] gap-8 xl:gap-0 xl:pb-14 xl:mx-0 xl:w-[365px] xl:h-[670px] xl:justify-end ">
         <svg
-          className="w-[211px] h-[177px] mx-auto lg:h-auto lg:w-full lg:self-end lg:object-cover lg:overflow-visible "
+          className="w-[211px] h-[177px] mx-auto lg:h-auto lg:w-[365px] lg:self-end lg:object-cover lg:overflow-visible "
           viewBox="0 0 365 365"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -119,21 +129,21 @@ const DetailsSection = () => {
           <circle cx="238" cy="171" r="126.5" fill="white" stroke="#4D1435" />
           <path
             fill-rule="evenodd"
-            clip-rule="evenodd"
+            clipRule="evenodd"
             className={`relative ${isLoaded ? "animate-idea-svg" : ""}`}
             d="M202.484 206.137H256.388V194.474C262.747 195.447 276.256 191.651 275.778 188.087C275.778 188.087 275.262 181.437 274.232 168.136C280.42 167.067 283.954 167.879 287.19 166.981C291.279 165.846 291.757 162.904 290.128 160.252C286.846 154.908 280.393 146.266 280.502 138.49C280.642 128.436 277.85 118.514 272.406 109.966C259.973 89.8623 233.892 85.5325 212.908 93.8841C195.662 100.748 181.951 115.978 185.589 139.139C187.142 149.025 192.273 160.852 202.695 174.935L202.484 206.137Z"
             fill="#FFD2A7"
           />
           <path
             fill-rule="evenodd"
-            clip-rule="evenodd"
+            clipRule="evenodd"
             className={`relative ${isLoaded ? "animate-idea-svg" : ""}`}
             d="M232.926 206.137H256.388V194.474C262.747 195.447 276.256 191.651 275.778 188.087C275.778 188.087 275.262 181.437 274.232 168.135C280.419 167.067 283.954 167.879 287.19 166.981C291.279 165.846 291.757 162.904 290.128 160.252C286.846 154.908 280.393 146.265 280.501 138.489C280.641 128.436 277.85 118.513 272.406 109.965C263.752 95.9719 248.484 89.6237 232.926 89.8728V206.137Z"
             fill="#FFC186"
           />
           <path
             fill-rule="evenodd"
-            clip-rule="evenodd"
+            clipRule="evenodd"
             className={`relative ${isLoaded ? "animate-idea-svg" : ""}`}
             d="M203.951 159.31C203.167 159.31 202.533 158.675 202.533 157.892C202.533 157.108 203.167 156.474 203.951 156.474H262.685C263.468 156.474 264.103 157.108 264.103 157.892C264.103 158.675 263.468 159.31 262.685 159.31H203.951ZM212.113 150.059V141.118C212.113 140.335 212.748 139.701 213.531 139.701C214.315 139.701 214.949 140.335 214.949 141.118V150.059H231.9V130.679C231.9 129.896 232.535 129.261 233.318 129.261C234.101 129.261 234.736 129.896 234.736 130.679V150.059H251.686V141.118C251.686 140.335 252.321 139.701 253.104 139.701C253.887 139.701 254.522 140.335 254.522 141.118V150.059H262.685C263.468 150.059 264.103 150.694 264.103 151.477C264.103 152.26 263.468 152.895 262.685 152.895H203.951C203.167 152.895 202.533 152.26 202.533 151.477C202.533 150.694 203.167 150.059 203.951 150.059H212.113ZM251.686 106.343V131.166C251.686 131.949 252.321 132.584 253.104 132.584C253.887 132.584 254.522 131.949 254.522 131.166V106.343C254.522 105.56 253.887 104.926 253.104 104.926C252.321 104.926 251.686 105.56 251.686 106.343ZM231.9 106.343C231.9 105.56 232.535 104.926 233.318 104.926C234.101 104.926 234.736 105.56 234.736 106.343V120.727C234.736 121.51 234.101 122.145 233.318 122.145C232.535 122.145 231.9 121.51 231.9 120.727V106.343ZM214.949 131.166V106.343C214.949 105.56 214.315 104.925 213.531 104.925C212.748 104.925 212.113 105.56 212.113 106.343V131.166C212.113 131.949 212.748 132.584 213.531 132.584C214.315 132.584 214.949 131.949 214.949 131.166Z"
             fill="#4F4F4F"
@@ -159,9 +169,9 @@ const DetailsSection = () => {
           />
         </svg>
 
-        <section className="grid gap-3 lg:self-end xl:w-[380px] ">
+        <section className="grid gap-3 mx-auto w-[302px] lg:self-end lg:w-[381px] xl:w-auto ">
           <div className="text-[18px] font-[600] leading-[21.6px] text-[#4D1435] lg:text-[24px] lg:leading-[28.8px] ">
-            EQ | Emotional quotient
+            EQ <span className="font-[200]">| Emotional quotient</span>
           </div>
           <div className="text-[14px] font-[400] leading-[19.6px] text-[#4D1435] ">
             We build your child’s EQ by sowing seeds of emotional intelligence
@@ -172,9 +182,10 @@ const DetailsSection = () => {
         </section>
       </section>
 
-      <section className="flex flex-col mx-[29px] gap-8 lg:mx-0 lg:h-[600px] xl:h-[550px] ">
+      {/* Card - 3 */}
+      <section className="flex flex-col mx-[29px] gap-8 xl:gap-0 xl:mx-0 xl:w-[365px] xl:h-[550px] ">
         <svg
-          className="w-[211px] h-[177px] mx-auto lg:h-[376px] lg:w-full lg:order-2 lg:object-fill lg:overflow-visible xl:object-cover"
+          className="w-[211px] h-[177px] mx-auto lg:h-[376px] lg:w-[365px] xl:order-2 lg:overflow-visible xl:object-cover"
           viewBox="0 0 365 365"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -269,9 +280,9 @@ const DetailsSection = () => {
           </defs>
         </svg>
 
-        <section className="grid gap-3 lg:order-1 lg:self-start xl:w-[380px] ">
+        <section className="grid gap-3 mx-auto w-[302px] xl:order-1 lg:self-start lg:w-[382px] xl:w-auto">
           <div className="text-[18px] font-[600] leading-[21.6px] text-[#4D1435] lg:text-[24px] lg:leading-[28.8px] ">
-            SQ | Spiritual quotient
+            SQ <span className="font-[200]">| Spiritual quotient</span>
           </div>
           <div className="text-[14px] font-[400] leading-[19.6px] text-[#4D1435] ">
             Our weekly sessions of SQ enhance values and mindfulness, creating

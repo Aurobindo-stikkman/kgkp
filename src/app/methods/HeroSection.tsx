@@ -2,8 +2,8 @@ import React from "react";
 
 const HeroSection = () => {
   return (
-    <section className="mt-11 flex flex-col sm:justify-center lg:mt-[75px] lg:flex-row lg:gap-16 2xl:gap-24 ">
-      <section className="mx-auto relative sm:mx-auto md:h-[273px] md:w-[485.33px] lg:relative lg:basis-1/2 lg:h-auto xl:w-[760px] xl:left-0 xl:flex-grow xl:overflow-hidden xl:h-[409px]">
+    <section className="mt-11 mx-auto flex flex-col sm:justify-center lg:mt-[75px] lg:flex-row lg:gap-5 max-w-[1440px] xl:gap-0">
+      <section className="mx-auto relative -left-9 h-[273px] w-[392.33px] lg:relative lg:h-[409px] lg:w-[640px] lg:mx-0 xl:top-6 xl:grow-0 xl:basis-auto xl:shrink-0 xl:overflow-hidden">
         <svg
           width="707"
           height="482"
@@ -1837,15 +1837,15 @@ const HeroSection = () => {
         </svg>
       </section>
 
-      <section className="lg:basis-1/2 lg:relative">
-        <section className="text-center text-[#4D1435] mt-11 font-semibold text-[16px] leading-[21.44px] mx-auto w-[274px] lg:w-auto lg:text-left lg:mx-4 xl:w-[504px] xl:text-[20px] xl:leading-[26.8px] ">
+      <section className="lg:w-fit lg:relative">
+        <section className="text-center text-[#4D1435] mt-11 font-semibold text-[16px] leading-[21.44px] mx-auto w-[274px] lg:mx-0 lg:w-[504px] lg:text-left xl:w-[504px] xl:text-[20px] xl:leading-[26.8px] ">
           From Potential to Prodigy: <br className="lg:hidden " />
           <span className="font-normal">A Proven Programme for Raising a </span>
           <br className="lg:hidden " />
           World-Ready Genius
         </section>
 
-        <section className="mt-8 text-[14px] font-[400] leading-[22.4px] text-[#4D1435] mx-4 lg:w-[545px] xl:mt-6 xl:text-[16px] xl:leading-[25.6px] xl:inline-block ">
+        <section className="w-[328px] mx-auto mt-8 text-[14px] font-[400] leading-[22.4px] text-[#4D1435] lg:w-[545px] xl:mt-6 xl:text-[16px] xl:leading-[25.6px] max-w-[545px] xl:inline-block ">
           The Kaushalya Genius Kid Program (KGKP) uses a scientifically designed
           approach to enhance your child's IQ, EQ, and SQ, unlocking his/her
           full potential.
