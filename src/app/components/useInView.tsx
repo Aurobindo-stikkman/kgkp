@@ -13,7 +13,7 @@ function useInView(ref: any) {
             observer.disconnect();
           }
         },
-        { threshold: 0.1 }
+        { threshold: 0.2 }
       );
       observer.observe(ref.current);
 

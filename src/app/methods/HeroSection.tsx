@@ -32,571 +32,571 @@ const HeroSection = () => {
               <path
                 d="M626.494 476.892V2.06445"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M596.514 476.892V2.06396"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M566.537 476.892V2.06445"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M536.561 476.892V2.06445"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M506.578 476.892V2.06445"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M476.6 476.892V2.06445"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M446.621 476.892V2.06396"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M416.643 476.892V2.06396"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M386.662 476.892V2.06445"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M356.686 476.892V2.06396"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M326.703 476.892V2.06396"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M296.727 476.892V2.06445"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M266.748 476.892V2.06445"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M236.771 476.892V2.06396"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M215.849 465.979H219.208"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
               />
               <path
                 d="M225.849 465.979H700.687"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M215.849 436H219.208"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
               />
               <path
                 d="M225.849 436H700.687"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M215.849 406.021H219.208"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
               />
               <path
                 d="M225.849 406.021H700.687"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M215.849 376.042H219.208"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
               />
               <path
                 d="M225.849 376.042H700.687"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M215.849 346.063H219.208"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
               />
               <path
                 d="M225.849 346.063H700.687"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M215.849 316.084H219.208"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
               />
               <path
                 d="M225.849 316.084H700.687"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M215.849 286.105H219.208"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
               />
               <path
                 d="M225.849 286.105H700.687"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M215.849 256.127H219.208"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
               />
               <path
                 d="M225.849 256.127H700.687"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M215.849 226.148H219.208"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
               />
               <path
                 d="M225.849 226.148H700.687"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M215.849 196.169H219.208"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
               />
               <path
                 d="M225.849 196.169H700.687"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M215.849 166.19H219.208"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
               />
               <path
                 d="M225.849 166.19H700.687"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M215.849 136.211H219.208"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
               />
               <path
                 d="M225.849 136.211H700.687"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M215.849 106.232H219.208"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
               />
               <path
                 d="M225.849 106.232H700.687"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M215.849 76.2534H219.208"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
               />
               <path
                 d="M225.849 76.2534H700.687"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M215.849 46.2749H219.208"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
               />
               <path
                 d="M225.849 46.2749H700.687"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M215.85 16.2959H219.208"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
               />
               <path
                 d="M225.85 16.2959H700.688"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M215.847 476.891V2.06348"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M185.871 476.892V2.06396"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M155.891 476.892V2.06396"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M125.916 476.891V2.06348"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M95.9355 476.892V2.06396"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M65.9551 476.892V2.06396"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M35.9766 476.892V2.06396"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M5.99805 476.892V2.06396"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M-244.75 465.979H230.088"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M233.408 465.979H236.767"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
               />
               <path
                 d="M-244.75 436H230.088"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M233.408 436H236.767"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
               />
               <path
                 d="M-244.75 406.021H230.088"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M233.408 406.021H236.767"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
               />
               <path
                 d="M-244.75 376.043H230.088"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M233.408 376.043H236.767"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
               />
               <path
                 d="M-244.75 346.063H230.088"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M233.408 346.063H236.767"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
               />
               <path
                 d="M-244.75 316.085H230.088"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M233.408 316.085H236.767"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
               />
               <path
                 d="M-244.75 286.106H230.088"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M233.408 286.106H236.767"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
               />
               <path
                 d="M-244.75 256.127H230.088"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M233.408 256.127H236.767"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
               />
               <path
                 d="M-244.75 226.148H230.088"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M233.408 226.148H236.767"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
               />
               <path
                 d="M-244.75 196.169H230.088"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M233.408 196.169H236.767"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
               />
               <path
                 d="M-244.75 166.19H230.088"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M233.408 166.19H236.767"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
               />
               <path
                 d="M-244.75 136.212H230.088"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M233.408 136.212H236.767"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
               />
               <path
                 d="M-244.75 106.232H230.088"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M233.408 106.232H236.767"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
               />
               <path
                 d="M-244.75 76.2544H230.088"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M233.408 76.2544H236.767"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
               />
               <path
                 d="M-244.75 46.2749H230.088"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M233.408 46.2749H236.767"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
               />
               <path
                 d="M-244.75 16.2959H230.088"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
-                stroke-dasharray="6.64 6.64"
+                strokeDasharray="6.64 6.64"
               />
               <path
                 d="M233.408 16.2959H236.767"
                 stroke="#E4E4FD"
-                stroke-width="0.646024"
+                strokeWidth="0.646024"
                 stroke-miterlimit="10"
               />
             </g>
@@ -615,7 +615,7 @@ const HeroSection = () => {
             <path
               d="M568.018 135.854V142.965"
               stroke="#302017"
-              stroke-width="0.870416"
+              strokeWidth="0.870416"
               stroke-miterlimit="10"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -623,7 +623,7 @@ const HeroSection = () => {
             <path
               d="M589.232 144.641L584.203 149.67"
               stroke="#302017"
-              stroke-width="0.870416"
+              strokeWidth="0.870416"
               stroke-miterlimit="10"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -631,7 +631,7 @@ const HeroSection = () => {
             <path
               d="M598.019 165.855H590.908"
               stroke="#302017"
-              stroke-width="0.870416"
+              strokeWidth="0.870416"
               stroke-miterlimit="10"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -639,7 +639,7 @@ const HeroSection = () => {
             <path
               d="M589.232 187.07L584.203 182.042"
               stroke="#302017"
-              stroke-width="0.870416"
+              strokeWidth="0.870416"
               stroke-miterlimit="10"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -647,7 +647,7 @@ const HeroSection = () => {
             <path
               d="M568.018 195.857V188.745"
               stroke="#302017"
-              stroke-width="0.870416"
+              strokeWidth="0.870416"
               stroke-miterlimit="10"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -655,7 +655,7 @@ const HeroSection = () => {
             <path
               d="M546.803 187.07L551.831 182.042"
               stroke="#302017"
-              stroke-width="0.870416"
+              strokeWidth="0.870416"
               stroke-miterlimit="10"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -663,7 +663,7 @@ const HeroSection = () => {
             <path
               d="M538.016 165.855H545.127"
               stroke="#302017"
-              stroke-width="0.870416"
+              strokeWidth="0.870416"
               stroke-miterlimit="10"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -671,7 +671,7 @@ const HeroSection = () => {
             <path
               d="M546.803 144.641L551.831 149.67"
               stroke="#302017"
-              stroke-width="0.870416"
+              strokeWidth="0.870416"
               stroke-miterlimit="10"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -679,13 +679,13 @@ const HeroSection = () => {
             <path
               d="M572.271 124.224C572.271 126.192 570.675 127.788 568.706 127.788C566.738 127.788 565.143 126.192 565.143 124.224C565.143 122.255 566.739 120.659 568.706 120.659C570.675 120.659 572.271 122.255 572.271 124.224Z"
               stroke="#8BA026"
-              stroke-width="1.74083"
+              strokeWidth="1.74083"
               stroke-miterlimit="10"
             />
             <path
               d="M568.016 166.744H578.264"
               stroke="#F7478F"
-              stroke-width="1.74083"
+              strokeWidth="1.74083"
               stroke-miterlimit="10"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -693,7 +693,7 @@ const HeroSection = () => {
             <path
               d="M568.016 152.077V166.745"
               stroke="#F7478F"
-              stroke-width="3.48171"
+              strokeWidth="3.48171"
               stroke-miterlimit="10"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -713,7 +713,7 @@ const HeroSection = () => {
             <path
               d="M425.384 103.944C425.384 103.944 430.388 122.177 417.75 123.439"
               stroke="#A7B82C"
-              stroke-width="1.03095"
+              strokeWidth="1.03095"
               stroke-miterlimit="10"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -754,13 +754,13 @@ const HeroSection = () => {
               d="M426.434 92.7671C426.434 94.5939 424.953 96.0747 423.126 96.0747C421.299 96.0747 419.818 94.5939 419.818 92.7671C419.818 90.9402 421.299 89.4595 423.126 89.4595C424.953 89.4595 426.434 90.9402 426.434 92.7671Z"
               fill="#EEBC33"
               stroke="#EEBC33"
-              stroke-width="0.681391"
+              strokeWidth="0.681391"
               stroke-miterlimit="10"
             />
             <path
               d="M426 115.536C434.405 116.001 434.703 106.842 434.703 106.842C427.781 107.123 426.197 114.322 426.197 114.322C426.197 114.322 429.002 114.042 431.714 109.741"
               stroke="#A7B82C"
-              stroke-width="1.03095"
+              strokeWidth="1.03095"
               stroke-miterlimit="10"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -820,7 +820,7 @@ const HeroSection = () => {
             <path
               d="M339.497 99.8711L339.443 105.99"
               stroke="#BD366D"
-              stroke-width="0.593957"
+              strokeWidth="0.593957"
               stroke-miterlimit="10"
             />
             <path
@@ -1070,7 +1070,7 @@ const HeroSection = () => {
               <path
                 d="M480.174 -24.8198C480.174 -24.8198 537.479 60.3699 679.228 54.1272"
                 stroke="#8C5D43"
-                stroke-width="1.16277"
+                strokeWidth="1.16277"
                 stroke-miterlimit="10"
               />
             </g>
@@ -1285,7 +1285,7 @@ const HeroSection = () => {
             <path
               d="M376.243 257.973C376.243 257.973 376.243 257.973 376.225 257.973"
               stroke="#5F2A18"
-              stroke-width="1.80371"
+              strokeWidth="1.80371"
               stroke-miterlimit="10"
             />
             <path
@@ -1309,7 +1309,7 @@ const HeroSection = () => {
             <path
               d="M395.718 437.539C395.718 437.539 391.066 437.685 389.631 440.025"
               stroke="white"
-              stroke-width="0.591411"
+              strokeWidth="0.591411"
               stroke-miterlimit="10"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -1317,7 +1317,7 @@ const HeroSection = () => {
             <path
               d="M399.146 439.064C399.146 439.064 394.493 439.211 393.059 441.552"
               stroke="white"
-              stroke-width="0.591411"
+              strokeWidth="0.591411"
               stroke-miterlimit="10"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -1325,7 +1325,7 @@ const HeroSection = () => {
             <path
               d="M402.525 440.309C402.525 440.309 397.872 440.455 396.438 442.795"
               stroke="white"
-              stroke-width="0.591411"
+              strokeWidth="0.591411"
               stroke-miterlimit="10"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -1333,7 +1333,7 @@ const HeroSection = () => {
             <path
               d="M392.675 438.051C392.675 438.051 392.047 433.784 394.236 434.011C396.426 434.237 392.675 438.051 392.675 438.051Z"
               stroke="white"
-              stroke-width="0.591411"
+              strokeWidth="0.591411"
               stroke-miterlimit="10"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -1341,7 +1341,7 @@ const HeroSection = () => {
             <path
               d="M392.676 438.051C392.676 438.051 389.7 434.397 388.349 435.75C386.562 437.539 392.676 438.051 392.676 438.051Z"
               stroke="white"
-              stroke-width="0.591411"
+              strokeWidth="0.591411"
               stroke-miterlimit="10"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -1357,7 +1357,7 @@ const HeroSection = () => {
             <path
               d="M343.273 437.539C343.273 437.539 338.62 437.686 337.185 440.026"
               stroke="white"
-              stroke-width="0.591411"
+              strokeWidth="0.591411"
               stroke-miterlimit="10"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -1365,7 +1365,7 @@ const HeroSection = () => {
             <path
               d="M346.698 439.065C346.698 439.065 342.045 439.211 340.611 441.552"
               stroke="white"
-              stroke-width="0.591411"
+              strokeWidth="0.591411"
               stroke-miterlimit="10"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -1373,7 +1373,7 @@ const HeroSection = () => {
             <path
               d="M350.079 440.309C350.079 440.309 345.426 440.455 343.992 442.796"
               stroke="white"
-              stroke-width="0.591411"
+              strokeWidth="0.591411"
               stroke-miterlimit="10"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -1381,7 +1381,7 @@ const HeroSection = () => {
             <path
               d="M340.23 438.052C340.23 438.052 339.601 433.785 341.791 434.012C343.98 434.238 340.23 438.052 340.23 438.052Z"
               stroke="white"
-              stroke-width="0.591411"
+              strokeWidth="0.591411"
               stroke-miterlimit="10"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -1389,7 +1389,7 @@ const HeroSection = () => {
             <path
               d="M340.23 438.051C340.23 438.051 337.255 434.398 335.903 435.751C334.116 437.539 340.23 438.051 340.23 438.051Z"
               stroke="white"
-              stroke-width="0.591411"
+              strokeWidth="0.591411"
               stroke-miterlimit="10"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -1425,7 +1425,7 @@ const HeroSection = () => {
             <path
               d="M332.027 325.291C332.027 325.291 356.414 335.373 386.999 325.706"
               stroke="#F74D92"
-              stroke-width="1.4349"
+              strokeWidth="1.4349"
               stroke-miterlimit="10"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -1505,7 +1505,7 @@ const HeroSection = () => {
             <path
               d="M574.281 428.644C574.281 428.644 571.894 424.953 572.941 422.582"
               stroke="white"
-              stroke-width="0.558322"
+              strokeWidth="0.558322"
               stroke-miterlimit="10"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -1513,7 +1513,7 @@ const HeroSection = () => {
             <path
               d="M577.306 430.483C577.306 430.483 574.92 426.793 575.966 424.421"
               stroke="white"
-              stroke-width="0.558322"
+              strokeWidth="0.558322"
               stroke-miterlimit="10"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -1521,7 +1521,7 @@ const HeroSection = () => {
             <path
               d="M580.085 432.438C580.085 432.438 577.699 428.747 578.745 426.376"
               stroke="white"
-              stroke-width="0.558322"
+              strokeWidth="0.558322"
               stroke-miterlimit="10"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -1529,7 +1529,7 @@ const HeroSection = () => {
             <path
               d="M573.043 426.005C573.043 426.005 569.393 427.81 570.745 429.388C572.098 430.966 573.043 426.005 573.043 426.005Z"
               stroke="white"
-              stroke-width="0.558322"
+              strokeWidth="0.558322"
               stroke-miterlimit="10"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -1537,7 +1537,7 @@ const HeroSection = () => {
             <path
               d="M573.043 426.006C573.043 426.006 568.608 425.659 568.932 423.883C569.361 421.535 573.043 426.006 573.043 426.006Z"
               stroke="white"
-              stroke-width="0.558322"
+              strokeWidth="0.558322"
               stroke-miterlimit="10"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -1689,7 +1689,7 @@ const HeroSection = () => {
             <path
               d="M524.072 309.98C524.072 309.98 524.072 309.98 524.091 309.98"
               stroke="#5F2A18"
-              stroke-width="1.88891"
+              strokeWidth="1.88891"
               stroke-miterlimit="10"
             />
             <path
@@ -1751,7 +1751,7 @@ const HeroSection = () => {
             <path
               d="M586.13 433.714C586.13 433.714 583.483 429.619 584.643 426.989"
               stroke="white"
-              stroke-width="0.619365"
+              strokeWidth="0.619365"
               stroke-miterlimit="10"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -1759,7 +1759,7 @@ const HeroSection = () => {
             <path
               d="M589.487 435.754C589.487 435.754 586.84 431.66 588.001 429.03"
               stroke="white"
-              stroke-width="0.619365"
+              strokeWidth="0.619365"
               stroke-miterlimit="10"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -1767,7 +1767,7 @@ const HeroSection = () => {
             <path
               d="M592.572 437.923C592.572 437.923 589.924 433.828 591.085 431.199"
               stroke="white"
-              stroke-width="0.619365"
+              strokeWidth="0.619365"
               stroke-miterlimit="10"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -1775,7 +1775,7 @@ const HeroSection = () => {
             <path
               d="M584.757 430.788C584.757 430.788 580.708 432.789 582.208 434.54C583.708 436.29 584.757 430.788 584.757 430.788Z"
               stroke="white"
-              stroke-width="0.619365"
+              strokeWidth="0.619365"
               stroke-miterlimit="10"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -1783,7 +1783,7 @@ const HeroSection = () => {
             <path
               d="M584.759 430.787C584.759 430.787 579.839 430.403 580.198 428.432C580.674 425.827 584.759 430.787 584.759 430.787Z"
               stroke="white"
-              stroke-width="0.619365"
+              strokeWidth="0.619365"
               stroke-miterlimit="10"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -1791,7 +1791,7 @@ const HeroSection = () => {
             <path
               d="M562.34 395.385C562.688 397.863 562.85 401.256 563.132 403.742C563.779 409.452 564.843 415.811 559.213 419.284C555.209 421.754 550.455 422.825 546.66 425.662C545.608 426.448 542.748 428.468 543.856 430.03C544.702 431.221 547.201 431.204 548.483 431.215C552.082 431.244 555.607 430.34 559.118 429.666C561.89 429.132 564.652 428.534 567.391 427.851"
               stroke="#5549FA"
-              stroke-width="0.751366"
+              strokeWidth="0.751366"
               stroke-miterlimit="10"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -1799,7 +1799,7 @@ const HeroSection = () => {
             <path
               d="M547.506 398.062C547.506 398.062 552.595 408.668 563.181 404.167"
               stroke="#5549FA"
-              stroke-width="0.751366"
+              strokeWidth="0.751366"
               stroke-miterlimit="10"
               stroke-linecap="round"
               stroke-linejoin="round"
