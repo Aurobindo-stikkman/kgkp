@@ -8,7 +8,24 @@
   from {
     width: 0;
   }
+
   to {
-    width: 423px; /* Adjust to match the width of your SVG's viewBox */
+    width: 423px;
+    /* Adjust to match the width of your SVG's viewBox */
   }
+}
+
+.animate,
+.animate2,
+.animate3 {
+  opacity: 1;
+  transition: opacity 1s linear;
+}
+
+.animate2 {
+  transition-delay: 1000ms;
+}
+
+.animate3 {
+  transition-delay: 2000ms;
 }

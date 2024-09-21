@@ -1,4 +1,8 @@
+"use client";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
+
+import useInView from "@/app/components/useInView";
 
 import bulb from "./assets/science/bulb.svg";
 import equation from "./assets/science/equation.svg";
@@ -15,6 +19,18 @@ import "./science.css";
 import Link from "next/link";
 
 const Science = () => {
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef);
+
+  useEffect(() => {
+    if (isInView) {
+      const clipRect = document.getElementById("clipRect");
+      if (clipRect) {
+        clipRect.classList.add("revealed");
+      }
+    }
+  }, [isInView]);
+
   return (
     <div className="relative bg-[#F6E2D7] rounded-[40px] py-[52px] lg:py-[124px] lg:rounded-[100px]">
       <section className="text-[20px] font-[700] relative leading-[28.6px] text-[#460C04] w-[178px] h-[29px] mx-auto lg:text-[32px] lg:leading-[38.4px] lg:w-[285px]">
@@ -39,7 +55,10 @@ const Science = () => {
         </svg>
       </section>
 
-      <section className="relative flex flex-col gap-6 mt-6 px-4 items-center lg:flex-row lg:align-start lg:mt-[80px] lg:px-[40px] lg:justify-center xl:px-[80px] xl:justify-between max-w-[1440px] xl:mx-auto ">
+      <section
+        ref={sectionRef}
+        className="relative flex flex-col gap-6 mt-6 px-4 items-center lg:flex-row lg:align-start lg:mt-[80px] lg:px-[40px] lg:justify-center xl:px-[80px] xl:justify-between max-w-[1440px] xl:mx-auto "
+      >
         {/* Card 1 */}
         <section className="h-[420px] w-[328px] rounded-[40px] bg-white flex flex-col lg:h-auto lg:w-[356px] xl:relative ">
           <Image
@@ -56,7 +75,9 @@ const Science = () => {
                 style={{
                   background:
                     "linear-gradient(to bottom right, white, #4D1435)",
-                  animation: `scaleUp 0.5s ease-out forwards`,
+                  animation: `${
+                    isInView ? "scaleUp 0.5s ease-out forwards" : ""
+                  }`,
                 }}
                 className="hidden absolute top-[-35px] left-[-60px] h-[70px] w-[70px] rounded-full z-10 xl:flex justify-center items-center "
               >
@@ -99,7 +120,9 @@ const Science = () => {
             <div
               style={{
                 background: "linear-gradient(to bottom right, white, #4D1435)",
-                animation: `scaleUp 0.5s ease-out forwards`,
+                animation: `${
+                  isInView ? "scaleUp 0.5s ease-out forwards" : ""
+                }`,
               }}
               className="hidden absolute top-[-35px] left-[-60px] h-[70px] w-[70px] rounded-full z-10 xl:flex justify-center items-center "
             >
@@ -137,7 +160,9 @@ const Science = () => {
             <div
               style={{
                 background: "linear-gradient(to bottom right, white, #4D1435)",
-                animation: `scaleUp 0.5s ease-out forwards`,
+                animation: `${
+                  isInView ? "scaleUp 0.5s ease-out forwards" : ""
+                }`,
               }}
               className="hidden absolute top-[-35px] left-[-60px] h-[70px] w-[70px] rounded-full z-10 xl:flex justify-center items-center "
             >
