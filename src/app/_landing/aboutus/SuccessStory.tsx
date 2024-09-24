@@ -78,7 +78,7 @@ const SuccessStory = () => {
           the reading cards, the dot cards and my parents continuous efforts
           have upped my game. Until today, I've read about 7,000 books on
           various subjects...
-          <section className="mt-4 mx-auto text-[#F6E2D8] text-[12px] font-[600] leading-[14.4px] w-[147px] lg:text-[16px] lg:leading-[17.7px] lg:w-auto text-left xl:text-[18px] xl:leading-[21.6px] ">
+          <section className="mt-4 mx-auto text-[#F6E2D8] text-[11.8px] font-[600] leading-[14.4px] w-[147px] lg:text-[16px] lg:leading-[17.7px] lg:w-auto text-left xl:text-[18px] xl:leading-[21.6px] ">
             17 years old, Mitra Malani
           </section>
           <svg
@@ -101,12 +101,32 @@ const SuccessStory = () => {
         Ready to give your child the gift of a brighter future?
       </section>
 
-      <section className="cursor-pointer custom-white-button mt-4 w-[219px] h-[51px] px-7 py-4 rounded-[50px] bg-[#F6E2D8] flex gap-[14px] justify-center items-center mx-auto lg:mt-6 xl:w-[385px] xl:h-[77px] xl:px-[80px] xl:py-6 ">
-        <section className="text-[16px] font-[700] leading-[19.2px] text-[#460C04] xl:text-[22.5px] xl:leading-[28.8px] custom-button-icon">
+      <section className="cursor-pointer custom-white-button mt-4 w-[219px] h-[51px] px-7 py-4 rounded-[50px] bg-[#F6E2D8] flex gap-[14px] justify-center items-center mx-auto lg:hidden">
+        <section className="text-[15.5px] font-[700] leading-[19.2px] text-[#460C04] xl:text-[22.5px] xl:leading-[28.8px] custom-button-icon">
           View All Courses
         </section>
         <svg
           className="w-4 h-4 lg:w-6 lg:h-6 custom-button-icon"
+          viewBox="0 0 17 17"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="icon-arrow-right">
+            <path
+              id="Shape"
+              d="M8.02843 3.36177C8.28878 3.10142 8.71089 3.10142 8.97124 3.36177L13.6379 8.02843C13.8983 8.28878 13.8983 8.71089 13.6379 8.97124L8.97124 13.6379C8.71089 13.8983 8.28878 13.8983 8.02843 13.6379C7.76808 13.3776 7.76808 12.9554 8.02843 12.6951L11.557 9.1665H3.83317C3.46498 9.1665 3.1665 8.86803 3.1665 8.49984C3.1665 8.13165 3.46498 7.83317 3.83317 7.83317H11.557L8.02843 4.30457C7.76808 4.04423 7.76808 3.62212 8.02843 3.36177Z"
+              className="fill-current text-[#4D1435]"
+            />
+          </g>
+        </svg>
+      </section>
+
+      <section className="hidden lg:flex cursor-pointer custom-white-button w-[385px] h-[77px] px-20 py-6 rounded-[50px] bg-[#F6E2D8] gap-[14px] justify-between items-center mx-auto lg:mt-6 ">
+        <section className="font-[700] text-[#460C04] text-[18px] leading-[28.8px] custom-button-icon">
+          Explore Our Courses
+        </section>
+        <svg
+          className="lg:w-6 lg:h-6 custom-button-icon"
           viewBox="0 0 17 17"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

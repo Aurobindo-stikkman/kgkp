@@ -67,7 +67,7 @@ const Science = () => {
             className="h-[276px] rounded-tr-[40px] rounded-tl-[40px] w-full z-10 object-cover"
           />
           <div className="h-full w-full z-10 rounded-bl-[40px] rounded-br-[40px] bg-white">
-            <div className="w-[296px] h-auto mx-auto flex flex-grow px-4 py-6 text-[#4D1435] z-10 text-center text-[14px] font-[500] leading-[25.2px] lg:text-[16px] lg:leading-[28.8px] lg:relative lg:px-6 lg:max-w-[307px] lg:h-max lg:mx-auto ">
+            <div className="w-[296px] h-auto mx-auto flex flex-grow py-6 text-[#4D1435] z-10 text-center text-[14px] font-[500] leading-[25.2px] lg:text-[16px] lg:leading-[28.8px] lg:relative lg:px-6 lg:max-w-[307px] lg:h-max lg:mx-auto ">
               Integration of cutting edge technologies such as milestone
               acceleration, brain development profile and multiple intelligences
               to create a truly genius child
@@ -75,14 +75,13 @@ const Science = () => {
                 style={{
                   background:
                     "linear-gradient(to bottom right, white, #4D1435)",
-                  animation: `${
-                    isInView ? "scaleUp 0.5s ease-out forwards" : ""
-                  }`,
                 }}
-                className="hidden absolute top-[-35px] left-[-60px] h-[70px] w-[70px] rounded-full z-10 xl:flex justify-center items-center "
+                className={`hidden absolute top-[-35px] left-[-60px] h-[70px] w-[70px] rounded-full z-10 xl:flex justify-center items-center ${
+                  isInView ? "scaleUp" : ""
+                } `}
               >
                 <div className="h-[85%] w-[85%] bg-white text-black rounded-full flex justify-center items-center ">
-                  <div className="w-[17px] h-[50px] font-[400] text-[42px] leading-[50.4px] font-[PoetsenOne] ">
+                  <div className="w-[17px] h-[50px] font-[400] text-[42px] leading-[50.4px] poetsen-one-regular ">
                     1
                   </div>
                 </div>
@@ -113,21 +112,20 @@ const Science = () => {
             alt="Equation"
             className="h-[276px] rounded-tr-[40px] rounded-tl-[40px] z-10 w-full object-cover"
           />
-          <div className="w-[296px] h-auto mx-auto flex flex-grow px-4 py-6 text-[#4D1435] text-center text-[14px] font-[500] leading-[25.2px] lg:text-[16px] lg:leading-[28.8px] lg:max-w-[309px] lg:h-max lg:mx-auto lg:relative">
+          <div className="w-[296px] h-auto mx-auto flex flex-grow px-4 py-6 text-[#4D1435] text-center text-[14px] font-[500] leading-[25.2px] lg:text-[16px] lg:px-0 lg:leading-[28.8px] lg:max-w-[309px] lg:h-auto lg:mx-auto lg:relative">
             Nurture a complete genius with high IQ, EQ & SQ through an
             intellectually stimulating environment, emotional awareness,
             spiritual values & positive parenting
             <div
               style={{
                 background: "linear-gradient(to bottom right, white, #4D1435)",
-                animation: `${
-                  isInView ? "scaleUp 0.5s ease-out forwards" : ""
-                }`,
               }}
-              className="hidden absolute top-[-35px] left-[-60px] h-[70px] w-[70px] rounded-full z-10 xl:flex justify-center items-center "
+              className={`hidden absolute top-[-35px] left-[-60px] h-[70px] w-[70px] rounded-full z-10 xl:flex justify-center items-center ${
+                isInView ? "scaleUp" : ""
+              }`}
             >
               <div className="h-[85%] w-[85%] bg-white text-black rounded-full flex justify-center items-center ">
-                <div className="w-[17px] h-[50px] font-[400] text-[42px] leading-[50.4px] font-[PoetsenOne] ">
+                <div className="w-[17px] h-[50px] font-[400] text-[42px] leading-[50.4px] poetsen-one-regular ">
                   2
                 </div>
               </div>
@@ -153,21 +151,20 @@ const Science = () => {
             alt="Science"
             className="h-[276px] rounded-tr-[40px] rounded-tl-[40px] w-full object-cover"
           />
-          <div className="w-[296px] h-auto mx-auto flex flex-grow px-4 py-6 text-[#4D1435] text-center text-[14px] font-[500] leading-[25.2px] lg:text-[16px] lg:leading-[28.8px] lg:max-w-[309px] lg:h-max lg:mx-auto lg:relative">
+          <div className="w-[296px] h-auto mx-auto flex flex-grow py-6 text-[#4D1435] text-center text-[14px] font-[500] leading-[25.2px] lg:text-[16px] lg:leading-[28.8px] lg:max-w-[309px] lg:h-max lg:mx-auto lg:relative">
             Personalized activity plan based on your child’s talent profile,
             brain development & learning style found through the scientific
             method of ridge analysis
             <div
               style={{
                 background: "linear-gradient(to bottom right, white, #4D1435)",
-                animation: `${
-                  isInView ? "scaleUp 0.5s ease-out forwards" : ""
-                }`,
               }}
-              className="hidden absolute top-[-35px] left-[-60px] h-[70px] w-[70px] rounded-full z-10 xl:flex justify-center items-center "
+              className={`hidden absolute top-[-35px] left-[-60px] h-[70px] w-[70px] rounded-full z-10 xl:flex justify-center items-center ${
+                isInView ? "scaleUp" : ""
+              }`}
             >
               <div className="h-[85%] w-[85%] bg-white text-black rounded-full flex justify-center items-center ">
-                <div className="w-[17px] h-[50px] font-[400] text-[42px] leading-[50.4px] font-[PoetsenOne] ">
+                <div className="w-[17px] h-[50px] font-[400] text-[42px] leading-[50.4px] poetsen-one-regular ">
                   3
                 </div>
               </div>

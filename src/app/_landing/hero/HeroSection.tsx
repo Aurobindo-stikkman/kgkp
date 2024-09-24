@@ -228,7 +228,7 @@ const HeroSection = () => {
                 </defs>
               </svg>
 
-              <section className="w-[171px] text-[14px] font-[500] leading-[16.8px] text-[#460C04] ">
+              <section className="w-[171px] text-[13.8px] font-[500] leading-[16.8px] text-[#460C04] ">
                 Boosts Cognitive Abilities
               </section>
             </section>
@@ -276,7 +276,7 @@ const HeroSection = () => {
                 </defs>
               </svg>
               <svg
-                className="absolute w-[167px] top-[-2.7rem] left-8 lg:top-[6.5rem] lg:left-20 lg:w-[380px] "
+                className="absolute w-[176px] top-[-2.7rem] left-4 lg:top-[6.5rem] lg:left-20 lg:w-[380px] "
                 width="409"
                 height="317"
                 viewBox="0 0 409 317"
@@ -359,13 +359,13 @@ const HeroSection = () => {
                   </defs>
                 </svg>
 
-                <section className="w-[129px] h-[17px] text-[14px] font-[500] leading-[16.8px] text-[#460C04] ">
+                <section className="w-[129px] h-[17px] text-[13.8px] font-[500] leading-[16.8px] text-[#460C04] ">
                   Spiritual Grounding
                 </section>
               </section>
 
               <section
-                className={`hidden w-[254px] h-[58px] absolute bottom-48 right-[110px] z-50 xl:flex gap-4 items-center shadow-md bg-white border-2 rounded-[20px] px-6 py-2 opacity-0 ${
+                className={`hidden w-[254px] h-[58px] absolute bottom-48 right-[110px] z-50 xl:flex gap-4 items-center shadow-md bg-white border-[1px] rounded-[20px] px-6 py-2 opacity-0 ${
                   isInView ? styles.animate3 : ""
                 }`}
               >
@@ -403,7 +403,7 @@ const HeroSection = () => {
                   </defs>
                 </svg>
 
-                <section className="w-[148px] h-[17px] text-[14px] font-[500] leading-[16.8px] text-[#460C04] ">
+                <section className="w-[148px] h-[17px] text-[13.8px] font-[500] leading-[16.8px] text-[#460C04] ">
                   Emotional Intelligence
                 </section>
               </section>

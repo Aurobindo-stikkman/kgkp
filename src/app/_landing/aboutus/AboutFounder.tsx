@@ -78,7 +78,7 @@ const AboutFounder = () => {
           />
         </section>
 
-        <section className="w-[380px] mx-auto mt-14 text-center md:w-[704px] lg:text-justify xl:mx-0 xl:order-1">
+        <section className="w-[360px] mx-auto mt-14 text-center md:w-[704px] lg:text-justify xl:mx-0 xl:order-1">
           <div className="text-[#F6E2D8] font-[700] text-[14px] leading-[19.6px] inline mr-1 sm:text-[18px] lg:text-[24px] lg:leading-[33.12px] ">
             Kaushalya Genius Kid Program
           </div>{" "}

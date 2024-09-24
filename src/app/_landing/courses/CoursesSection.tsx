@@ -46,28 +46,26 @@ const CoursesSection = () => {
       </section>
 
       <section className="mt-6 flex flex-wrap gap-2 justify-center lg:mt-[80px]">
-        <div className="h-[33] w-[51px] rounded-[40px] px-4 py-2 bg-[#EF816C45]">
-          <div className="text-[14px] font-[700] leading-[16.8px] text-[#4D1435] ">
-            All
-          </div>
+        <div className="h-[33px] w-[51px] rounded-[40px] px-4 py-2 bg-[#EF816C45] text-[14px] font-[700] leading-[16.8px] text-[#4D1435] flex items-center">
+          All
         </div>
-        <div className="h-[33] w-[143px] rounded-[40px] px-4 py-2 border ">
-          <div className="text-[14px] font-[500] leading-[16.8px] text-[#3C4553] ">
+        <div className="h-[33px] w-[143px] rounded-[40px] px-4 py-2 border">
+          <div className="w-[111px] h-[17px] text-[14px] font-[500] leading-[16.8px] text-[#3C4553]">
             Pre & Pregnancy
           </div>
         </div>
-        <div className="h-[33] w-[117px] rounded-[40px] px-4 py-2 border ">
-          <div className="text-[14px] font-[500] leading-[16.8px] text-[#3C4553] ">
+        <div className="h-[33px] w-[117px] rounded-[40px] px-4 py-2 border ">
+          <div className="w-[85px] h-[17px] text-[14px] font-[500] leading-[16.8px] text-[#3C4553] ">
             0-12 months
           </div>
         </div>
-        <div className="h-[33] w-[95px] rounded-[40px] px-4 py-2 border ">
-          <div className="text-[14px] font-[500] leading-[16.8px] text-[#3C4553] ">
+        <div className="h-[33px] w-[95px] rounded-[40px] px-4 py-2 border ">
+          <div className="w-[63px] h-[17px] text-[14px] font-[500] leading-[16.8px] text-[#3C4553] ">
             1-6 years
           </div>
         </div>
-        <div className="h-[33] w-[104px] rounded-[40px] px-4 py-2 border ">
-          <div className="text-[14px] font-[500] leading-[16.8px] text-[#3C4553] ">
+        <div className="h-[33px] w-[104px] rounded-[40px] px-4 py-2 border ">
+          <div className="w-[72px] h-[17px] text-[14px] font-[500] leading-[16.8px] text-[#3C4553] ">
             6-15 years
           </div>
         </div>
