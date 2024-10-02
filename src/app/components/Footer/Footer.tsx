@@ -164,7 +164,7 @@ const Footer = () => {
               >
                 <Image
                   src={instagramLogo}
-                  alt="Facebook Logo"
+                  alt="Instagram Logo"
                   className="w-8 h-8 lg:w-12 lg:h-12 cursor-pointer"
                 />
               </a>
@@ -174,7 +174,7 @@ const Footer = () => {
               >
                 <Image
                   src={youtubeLogo}
-                  alt="Facebook Logo"
+                  alt="Youtube Logo"
                   className="w-8 h-8 lg:w-12 lg:h-12 cursor-pointer"
                 />
               </a>

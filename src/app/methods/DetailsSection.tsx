@@ -115,7 +115,7 @@ const DetailsSection = () => {
       </section>
 
       {/* Card - 2 */}
-      <section className="flex flex-col mx-[29px] gap-8 xl:gap-0 xl:pb-14 xl:mx-0 xl:w-[365px] xl:h-[670px] xl:justify-end ">
+      <section className="flex flex-col mx-[29px] gap-8 xl:gap-0 xl:pb-[1.8rem] xl:mx-0 xl:w-[365px] xl:h-[670px] xl:justify-end ">
         <svg
           className="w-[211px] h-[177px] mx-auto lg:h-auto lg:w-[365px] lg:self-end lg:object-cover lg:overflow-visible "
           viewBox="0 0 365 365"

@@ -6,7 +6,7 @@ interface TermsOfUseProps {
 
 const TermsOfUse = ({ toggleTerms }: TermsOfUseProps) => {
   return (
-    <div className="px-6 py-11 text-[14px] font-[400] leading-[19.6px] text-[#1A2434] lg:py-[95px] lg:px-40 lg:text-[18px] lg:leading-[21.6px] ">
+    <div className="px-6 py-11 text-[14px] font-[400] leading-[19.6px] text-[#1A2434] lg:py-[95px] lg:px-40 lg:text-[18px] lg:leading-[21.6px] max-w-[1440px] mx-auto ">
       <section className="relative flex gap-1 items-center lg:justify-center">
         <svg
           onClick={toggleTerms}
