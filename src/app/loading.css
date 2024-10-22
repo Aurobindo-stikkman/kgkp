@@ -1,0 +1,44 @@
+.dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    animation: bounce 2.8s infinite ease-in;
+    transform: scale(1);
+}
+
+.dot-1 {
+    animation-delay: 0s;
+}
+
+.dot-2 {
+    animation-delay: 0.7s;
+    /* 0.5s for the first dot + 0.2s gap */
+}
+
+.dot-3 {
+    animation-delay: 1.4s;
+    /* 0.5s for the second dot + 0.2s gap */
+}
+
+.dot-4 {
+    animation-delay: 2.1s;
+    /* 0.5s for the third dot + 0.2s gap */
+}
+
+@keyframes bounce {
+
+    0%,
+    28% {
+        transform: scale(1);
+    }
+
+    40%,
+    60% {
+        transform: scale(1.5);
+    }
+
+    72%,
+    90% {
+        transform: scale(1);
+    }
+}
