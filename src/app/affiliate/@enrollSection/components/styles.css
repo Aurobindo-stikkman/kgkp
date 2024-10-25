@@ -1,0 +1,33 @@
+@keyframes drawCircle {
+    from {
+        stroke-dashoffset: 300;
+        /* Start with the full path hidden */
+    }
+
+    to {
+        stroke-dashoffset: 0;
+        /* Fully reveal the path */
+    }
+}
+
+@keyframes drawTick {
+    from {
+        stroke-dashoffset: 100;
+        /* Start with the full path hidden */
+    }
+
+    to {
+        stroke-dashoffset: 0;
+        /* Fully reveal the path */
+    }
+}
+
+/* Apply animations to paths */
+.animate-success-tick #Vector {
+    animation: drawCircle 1s ease forwards;
+}
+
+.animate-success-tick #Vector_2 {
+    animation: drawTick 0.5s ease forwards 1s;
+    /* Starts after the circle is drawn */
+}
