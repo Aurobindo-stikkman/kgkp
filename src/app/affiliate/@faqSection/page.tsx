@@ -1,4 +1,5 @@
 import ListingFAQ from "@/app/components/ListingFAQ";
+import Link from "next/link";
 import React from "react";
 
 interface IData {
@@ -83,39 +84,45 @@ const allFaqs: IFaq = {
   ],
 };
 
-const page = () => {
+const Page = () => {
   return (
-    <div className="py-[52px] mx-4 ">
-      <div className="w-[278px] h-6 mx-auto text-xl font-bold leading-6 text-[#1A2434] text-center ">
-        Frequently Asked Questions
+    <div className="py-[52px] mx-4 lg:px-10 xl:px-20 xl:mx-auto xl:pt-[149px] xl:pb-[124px] ">
+      <div className="w-[278px] h-6 mx-auto text-xl font-bold leading-6 text-[#1A2434] text-center xl:w-auto xl:text-[32px] xl:leading-[38.4px] ">
+        Frequently Asked Questions{" "}
+        <span className="hidden xl:inline "> (FAQs)</span>
       </div>
 
-      <section className="grid gap-4 mt-8 ">
+      <section className="grid gap-4 mt-8 xl:mt-[52px] ">
         <ListingFAQ data={allFaqs[Object.keys(allFaqs)[0]]} />
       </section>
 
-      <button className="custom-black-button mt-6 mx-auto w-[189px] h-[51px] bg-[#4D1435] rounded-[50px] flex justify-center items-center gap-3.5 ">
-        <span className="text-base font-bold leading-[19.2px] text-white custom-button-icon ">
-          See All FAQs
-        </span>
-
-        <svg
-          className="custom-button-icon w-4 h-4"
-          viewBox="0 0 16 17"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
+      <button className="custom-black-button mt-6 block mx-auto w-[189px] h-[51px] bg-[#4D1435] rounded-[50px] xl:mt-[60px] xl:w-[390px] xl:h-[77px]">
+        <Link
+          className="h-full w-full rounded-[50px] flex justify-center items-center gap-3.5 xl:px-[60px] xl:py-6 "
+          href="/faq"
         >
-          <g id="icon-arrow-right">
-            <path
-              id="Shape"
-              className="fill-current text-white"
-              d="M7.5299 3.36177C7.79025 3.10142 8.21236 3.10142 8.47271 3.36177L13.1394 8.02843C13.3997 8.28878 13.3997 8.71089 13.1394 8.97124L8.47271 13.6379C8.21236 13.8983 7.79025 13.8983 7.5299 13.6379C7.26955 13.3776 7.26955 12.9554 7.5299 12.6951L11.0585 9.1665H3.33464C2.96645 9.1665 2.66797 8.86803 2.66797 8.49984C2.66797 8.13165 2.96645 7.83317 3.33464 7.83317H11.0585L7.5299 4.30457C7.26955 4.04423 7.26955 3.62212 7.5299 3.36177Z"
-            />
-          </g>
-        </svg>
+          <span className="text-base font-bold leading-[19.2px] text-white custom-button-icon xl:text-2xl xl:leading-[28.8px] ">
+            See All FAQs
+          </span>
+
+          <svg
+            className="custom-button-icon w-4 h-4 xl:w-6 xl:h-6"
+            viewBox="0 0 16 17"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="icon-arrow-right">
+              <path
+                id="Shape"
+                className="fill-current text-white"
+                d="M7.5299 3.36177C7.79025 3.10142 8.21236 3.10142 8.47271 3.36177L13.1394 8.02843C13.3997 8.28878 13.3997 8.71089 13.1394 8.97124L8.47271 13.6379C8.21236 13.8983 7.79025 13.8983 7.5299 13.6379C7.26955 13.3776 7.26955 12.9554 7.5299 12.6951L11.0585 9.1665H3.33464C2.96645 9.1665 2.66797 8.86803 2.66797 8.49984C2.66797 8.13165 2.96645 7.83317 3.33464 7.83317H11.0585L7.5299 4.30457C7.26955 4.04423 7.26955 3.62212 7.5299 3.36177Z"
+              />
+            </g>
+          </svg>
+        </Link>
       </button>
     </div>
   );
 };
 
-export default page;
+export default Page;

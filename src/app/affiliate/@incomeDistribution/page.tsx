@@ -2,30 +2,30 @@ import Image from "next/image";
 
 import incomeImg from "./assets/indian-rupee-investment-concept 1.png";
 
-const page = () => {
+const Page = () => {
   return (
-    <div className="my-[52px] w-[360px] mx-auto px-[19px] ">
-      <div className="w-[292px] mx-auto h-[29px] text-[20px] font-[700] leading-[28.6px] text-[#1A2434] text-center ">
+    <div className="my-[52px] w-[360px] mx-auto px-[19px] md:w-auto xl:py-[124px] ">
+      <div className="w-[292px] mx-auto h-[29px] text-[20px] font-[700] leading-[28.6px] text-[#1A2434] text-center xl:text-[38px] xl:leading-[45.99px] xl:w-auto ">
         Steps to Multiply Your Income
       </div>
 
-      <div className="mt-6 w-[283px] mx-auto h-[76px] text-[16px] font-[400] leading-[19.36px] text-[#1A2434] text-center ">
+      <div className="mt-6 w-[283px] mx-auto h-[76px] text-[16px] font-[400] leading-[19.36px] text-[#1A2434] text-center xl:mt-6 xl:text-lg xl:leading-[25.2px] xl:w-[666px] ">
         Affiliates can track their performance through a dedicated dashboard,
         ensuring full transparency and control over their earnings.
       </div>
 
-      <section className="mt-10 flex flex-col gap-[50px] ">
+      <section className="mt-10 flex flex-col gap-[50px] md:flex-row md:justify-center xl:gap-12 xl:items-center ">
         <Image
           src={incomeImg}
           alt="Income Image"
-          className="w-[312px] h-[256px] object-cover "
+          className="w-[312px] h-[256px] object-cover md:order-2 xl:w-[363px] xl:h-[279px] "
         />
 
-        <section className="grid gap-8 justify-center relative ">
+        <section className="grid gap-8 justify-center relative md:order-1 ">
           {/* Card - 1 */}
-          <section className="z-10 relative w-[285px] h-[72px] bg-[#F6E2D7] rounded-[24px] py-4 px-7 flex justify-center items-center gap-4 ">
+          <section className="z-10 relative w-[285px] h-[72px] bg-[#F6E2D7] rounded-[24px] py-4 px-7 flex justify-center items-center gap-4 xl:px-14 xl:py-6 xl:w-[624px] xl:h-[148px] xl:justify-start xl:gap-6 ">
             <svg
-              className="w-8 h-8 shrink-0 "
+              className="w-8 h-8 shrink-0 xl:w-10 xl:h-10"
               viewBox="0 0 32 32"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -56,19 +56,19 @@ const page = () => {
               </g>
             </svg>
 
-            <div className="w-[181px] h-10 text-[14px] font-[500] leading-[19.6px] text-[#4D1435] ">
+            <div className="w-[181px] h-10 text-[14px] font-[500] leading-[19.6px] text-[#4D1435] xl:text-xl xl:leading-6 xl:w-auto content-center ">
               Sign Up and Get Your Unique Referral Code
             </div>
 
             <div
-              className="absolute w-9 h-9 bg-purple-300 -top-4 -left-4 rounded-full flex justify-center items-center"
+              className="absolute w-9 h-9 bg-purple-300 -top-4 -left-4 rounded-full flex justify-center items-center xl:w-[51px] xl:h-[51px] xl:-left-5 xl:top-4 "
               style={{
                 background:
                   "linear-gradient(to right, white, #d8ced4, #4D1435)",
               }}
             >
-              <div className="w-3/4 h-3/4 bg-white rounded-full flex justify-center items-start ">
-                <div className="w-[12.75px] relative top-0.5 text-center text-[18px] font-[400] leading-[21.6px] text-[#4D1435] poetsen-one-regular ">
+              <div className="w-3/4 h-3/4 bg-white rounded-full flex justify-center items-start xl:w-5/6 xl:h-5/6 ">
+                <div className="w-[12.75px] relative top-0.5 text-center text-[18px] font-[400] leading-[21.6px] text-[#4D1435] poetsen-one-regular xl:w-3 xl:h-9 xl:text-2xl xl:leading-7 xl:top-2 ">
                   1
                 </div>
               </div>
@@ -76,9 +76,9 @@ const page = () => {
           </section>
 
           {/* Card - 2 */}
-          <section className="z-10 relative w-[285px] h-[72px] bg-[#F6E2D7] rounded-[24px] py-4 px-5 flex justify-center items-center gap-4 ">
+          <section className="z-10 relative w-[285px] h-[72px] bg-[#F6E2D7] rounded-[24px] py-4 px-5 flex justify-center items-center gap-4 xl:px-14 xl:py-6 xl:w-[624px] xl:h-[148px] xl:justify-start xl:gap-6 ">
             <svg
-              className="w-8 h-8 shrink-0"
+              className="w-8 h-8 shrink-0 xl:w-10 xl:h-10"
               viewBox="0 0 32 32"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -92,19 +92,19 @@ const page = () => {
               </g>
             </svg>
 
-            <div className="h-10 text-[14px] font-[500] leading-[19.6px] text-[#4D1435] ">
+            <div className="h-10 text-[14px] font-[500] leading-[19.6px] text-[#4D1435] xl:text-xl xl:leading-6 xl:w-auto content-center ">
               Share the KGKP Program with Your Network
             </div>
 
             <div
-              className="absolute w-9 h-9 bg-purple-300 -top-4 -left-4 rounded-full flex justify-center items-center"
+              className="absolute w-9 h-9 bg-purple-300 -top-4 -left-4 rounded-full flex justify-center items-center xl:w-[51px] xl:h-[51px] xl:-left-5 xl:top-4"
               style={{
                 background:
                   "linear-gradient(to right, white, #d8ced4, #4D1435)",
               }}
             >
-              <div className="w-3/4 h-3/4 bg-white rounded-full flex justify-center items-start ">
-                <div className="w-[12.75px] relative top-0.5 text-center text-[18px] font-[400] leading-[21.6px] text-[#4D1435] poetsen-one-regular ">
+              <div className="w-3/4 h-3/4 bg-white rounded-full flex justify-center items-start xl:w-5/6 xl:h-5/6 ">
+                <div className="w-[12.75px] relative top-0.5 text-center text-[18px] font-[400] leading-[21.6px] text-[#4D1435] poetsen-one-regular xl:w-3 xl:h-9 xl:text-2xl xl:leading-7 xl:top-2 ">
                   2
                 </div>
               </div>
@@ -112,9 +112,9 @@ const page = () => {
           </section>
 
           {/* Card - 3 */}
-          <section className="z-10 relative w-[285px] h-[72px] bg-[#F6E2D7] rounded-[24px] p-4 flex justify-center items-center gap-4 ">
+          <section className="z-10 relative w-[285px] h-[72px] bg-[#F6E2D7] rounded-[24px] p-4 flex justify-center items-center gap-4 xl:px-14 xl:py-6 xl:w-[624px] xl:h-[148px] xl:justify-start xl:gap-6 ">
             <svg
-              className="w-8 h-8 shrink-0"
+              className="w-8 h-8 shrink-0 xl:w-10 xl:h-10"
               viewBox="0 0 32 32"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -128,19 +128,19 @@ const page = () => {
               </g>
             </svg>
 
-            <div className="w-[197px] h-10 text-[14px] font-[500] leading-[19.6px] text-[#4D1435] ">
+            <div className="w-[197px] h-10 text-[14px] font-[500] leading-[19.6px] text-[#4D1435] xl:text-xl xl:leading-6 xl:w-auto content-center ">
               Earn Monthly Referral Fees for Every Successful Referral
             </div>
 
             <div
-              className="absolute w-9 h-9 bg-purple-300 -top-4 -left-4 rounded-full flex justify-center items-center"
+              className="absolute w-9 h-9 bg-purple-300 -top-4 -left-4 rounded-full flex justify-center items-center xl:w-[51px] xl:h-[51px] xl:-left-5 xl:top-4 "
               style={{
                 background:
                   "linear-gradient(to right, white, #d8ced4, #4D1435)",
               }}
             >
-              <div className="w-3/4 h-3/4 bg-white rounded-full flex justify-center items-start ">
-                <div className="w-[12.75px] relative top-0.5 text-center text-[18px] font-[400] leading-[21.6px] text-[#4D1435] poetsen-one-regular ">
+              <div className="w-3/4 h-3/4 bg-white rounded-full flex justify-center items-start xl:w-5/6 xl:h-5/6 ">
+                <div className="w-[12.75px] relative top-0.5 text-center text-[18px] font-[400] leading-[21.6px] text-[#4D1435] poetsen-one-regular xl:w-3 xl:h-9 xl:text-2xl xl:leading-7 xl:top-2 ">
                   3
                 </div>
               </div>
@@ -148,9 +148,7 @@ const page = () => {
           </section>
 
           <svg
-            width="38"
-            height="193"
-            className="absolute left-[-11px] top-[5px] z-0 "
+            className="absolute w-[38px] h-[193px] left-[-11px] top-[5px] z-0 xl:w-20 xl:h-[312px] xl:-left-10 xl:top-16 "
             viewBox="0 0 38 193"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -163,8 +161,29 @@ const page = () => {
           </svg>
         </section>
       </section>
+
+      <button className="custom-black-button hidden mx-auto mt-20 w-[390px] h-[77px] rounded-[50px] bg-[#4D1435] xl:flex gap-3.5 justify-center items-center px-[60px] py-6 ">
+        <span className="custom-button-icon text-2xl leading-[29px] font-semibold text-white ">
+          Become An Affiliate
+        </span>
+
+        <svg
+          className="custom-button-icon w-4 h-4 xl:w-6 xl:h-6"
+          viewBox="0 0 16 17"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="icon-arrow-right">
+            <path
+              id="Shape"
+              className="fill-current text-white"
+              d="M7.5299 3.36177C7.79025 3.10142 8.21236 3.10142 8.47271 3.36177L13.1394 8.02843C13.3997 8.28878 13.3997 8.71089 13.1394 8.97124L8.47271 13.6379C8.21236 13.8983 7.79025 13.8983 7.5299 13.6379C7.26955 13.3776 7.26955 12.9554 7.5299 12.6951L11.0585 9.1665H3.33464C2.96645 9.1665 2.66797 8.86803 2.66797 8.49984C2.66797 8.13165 2.96645 7.83317 3.33464 7.83317H11.0585L7.5299 4.30457C7.26955 4.04423 7.26955 3.62212 7.5299 3.36177Z"
+            />
+          </g>
+        </svg>
+      </button>
     </div>
   );
 };
 
-export default page;
+export default Page;

@@ -1,11 +1,9 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-import BlackButton from "@/app/components/Button/BlackButton";
 import "./styles.css";
 
 const engageType = [
@@ -21,11 +19,30 @@ const professions = ["Teacher", "Paediatrician", "Gynaecologist", "Other"];
 const approxClients = ["0 - 1", "10 - 50", "100 - 200", "200 - 500", "500+"];
 
 const AffiliateForm = () => {
-  const router = useRouter();
   const [toggle, setToggle] = useState(false);
   const [fileSubmitted, setFileSubmitted] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [preventReload, setPreventReload] = useState(false);
+  const [biggerScreen, setbiggerScreen] = useState(false);
+  const [professionDropdown, setProfessionDropdown] = useState({
+    isOpen: false,
+    value: "",
+  });
+  const [approxClientsDropdown, setapproxClientsDropdown] = useState({
+    isOpen: false,
+    value: "",
+  });
+
+  useEffect(() => {
+    function toggleBiggerScreen() {
+      setbiggerScreen(window.innerWidth > 1280);
+    }
+    toggleBiggerScreen();
+
+    window.addEventListener("resize", toggleBiggerScreen);
+
+    return () => window.removeEventListener("resize", toggleBiggerScreen);
+  }, []);
 
   // Handle browser refresh/close
   useEffect(() => {
@@ -158,10 +175,85 @@ const AffiliateForm = () => {
     }
   };
 
+  const toggleDropdown = () => {
+    if (!professionDropdown.isOpen) {
+      setProfessionDropdown((prev) => ({ ...prev, isOpen: true }));
+      return;
+    }
+
+    if (!formik.values.profession) {
+      formik.handleBlur({ target: { name: "profession" } });
+    }
+
+    setProfessionDropdown((prev) => ({
+      ...prev,
+      isOpen: false,
+    }));
+  };
+
+  const selectProfession = (event: React.MouseEvent, value: string) => {
+    event.stopPropagation();
+
+    setProfessionDropdown({
+      isOpen: false,
+      value: value,
+    });
+
+    formik.setFieldValue("profession", value);
+    formik.setFieldTouched("profession", true, true);
+
+    if (value) {
+      setTimeout(() => {
+        formik.setFieldError("profession", "");
+      }, 0);
+    } else {
+      formik.setFieldError("profession", "Please select a profession.");
+    }
+  };
+
+  const toggleapproxClientsDropdown = () => {
+    if (!professionDropdown.isOpen) {
+      setapproxClientsDropdown((prev) => ({ ...prev, isOpen: true }));
+      return;
+    }
+
+    if (!formik.values.profession) {
+      formik.handleBlur({ target: { name: "profession" } });
+    }
+
+    setapproxClientsDropdown((prev) => ({
+      ...prev,
+      isOpen: false,
+    }));
+  };
+
+  const selectApproxClientsDropdown = (
+    event: React.MouseEvent,
+    value: string
+  ) => {
+    event.stopPropagation();
+
+    setapproxClientsDropdown({
+      isOpen: false,
+      value: value,
+    });
+
+    formik.setFieldValue("profession", value);
+    formik.setFieldTouched("profession", true, true);
+
+    if (value) {
+      setTimeout(() => {
+        formik.setFieldError("profession", "");
+      }, 0);
+    } else {
+      formik.setFieldError("profession", "Please select a profession.");
+    }
+  };
+
   return (
     <>
       {toggle ? (
-        <div className="fixed inset-0 z-[99999] bg-white overflow-y-auto overflow-x-hidden ">
+        <div className="fixed inset-0 z-[99999] bg-white overflow-y-auto overflow-x-hidden xl:z-[990] xl:top-[102px] ">
           {fileSubmitted ? (
             <section className="relative h-full w-full flex flex-col justify-center items-center lg:h-[488px] ">
               <svg
@@ -262,12 +354,13 @@ const AffiliateForm = () => {
               </button>
             </section>
           ) : (
-            <>
-              <section className="flex gap-3 border-b px-4 py-3 ">
+            <div className="max-w-[1440px] xl:mx-auto ">
+              <section className="flex gap-3 border-b px-4 py-3 xl:mt-8 xl:ml-[118px] xl:border-none ">
                 <svg
                   onClick={handleBackButton}
                   width="16"
                   height="16"
+                  className="w-4 h-4 xl:w-6 xl:h-6 cursor-pointer"
                   viewBox="0 0 16 16"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -281,18 +374,33 @@ const AffiliateForm = () => {
                   </g>
                 </svg>
 
-                <div className="text-base font-[600] leading-[19.2px] text-[#1A2434] ">
+                <div className="text-base font-[600] leading-[19.2px] text-[#1A2434] xl:hidden ">
                   Affiliate Application Form
+                </div>
+
+                <div
+                  onClick={handleBackButton}
+                  className="cursor-pointer text-base font-[600] leading-[19.2px] text-[#1A2434] hidden xl:inline "
+                >
+                  Back
                 </div>
               </section>
 
+              <h1 className="hidden xl:block w-[600px] mx-auto text-2xl font-bold leading-7 text-[#1A2434] text-center mt-[26px] ">
+                Affiliate Application Form:
+              </h1>
               <form
                 onSubmit={formik.handleSubmit}
-                className="max-w-[600px] mx-auto mt-4 grid gap-4 "
+                className="max-w-[600px] mx-auto mt-4 grid gap-4 xl:mt-6 "
               >
                 {/* Full Name */}
                 <div className="mx-4">
-                  <label htmlFor="fullName">Full Name*</label>
+                  <label
+                    className="text-base font-medium leading-[18px] text-[#1A2434] "
+                    htmlFor="fullName"
+                  >
+                    Full Name*
+                  </label>
                   <div className="relative mt-2">
                     <input
                       type="text"
@@ -340,7 +448,12 @@ const AffiliateForm = () => {
 
                 {/* DOB */}
                 <div className="mx-4">
-                  <label htmlFor="dob">Date Of Birth*</label>
+                  <label
+                    className="text-base font-medium leading-[18px] text-[#1A2434] "
+                    htmlFor="dob"
+                  >
+                    Date Of Birth*
+                  </label>
                   <div className="relative mt-2">
                     <input
                       type="date"
@@ -388,7 +501,12 @@ const AffiliateForm = () => {
 
                 {/* Email */}
                 <div className="mx-4">
-                  <label htmlFor="email">Email Address*</label>
+                  <label
+                    className="text-base font-medium leading-[18px] text-[#1A2434] "
+                    htmlFor="email"
+                  >
+                    Email Address*
+                  </label>
                   <div className="relative mt-2">
                     <input
                       type="text"
@@ -436,7 +554,12 @@ const AffiliateForm = () => {
 
                 {/* Phone */}
                 <div className="mx-4">
-                  <label htmlFor="phone">Phone Number*</label>
+                  <label
+                    className="text-base font-medium leading-[18px] text-[#1A2434] "
+                    htmlFor="phone"
+                  >
+                    Phone Number*
+                  </label>
                   <div className="relative mt-2">
                     <input
                       type="text"
@@ -484,7 +607,12 @@ const AffiliateForm = () => {
 
                 {/* Location */}
                 <div className="mx-4">
-                  <label htmlFor="location">Location*</label>
+                  <label
+                    className="text-base font-medium leading-[18px] text-[#1A2434] "
+                    htmlFor="location"
+                  >
+                    Location*
+                  </label>
                   <div className="relative mt-2">
                     <input
                       type="text"
@@ -532,30 +660,62 @@ const AffiliateForm = () => {
 
                 {/* Profession */}
                 <div className="mx-4">
-                  <label htmlFor="profession">Profession*</label>
-                  <div className="relative mt-2">
-                    <select
-                      name="profession"
-                      id="profession"
-                      className="w-full appearance-none px-4 py-2 rounded-lg border border-[#1A24341A] text-sm font-normal leading-6 text-[#1A2434] placeholder:text-[#1A243454] placeholder:text-sm placeholder:font-normal placeholder:leading-6 "
-                      value={formik.values.profession}
-                      onChange={formik.handleChange}
-                      onBlur={formik.handleBlur}
+                  <label className="text-base font-medium leading-[18px] text-[#1A2434] ">
+                    Profession*
+                  </label>
+                  <div
+                    onClick={toggleDropdown}
+                    className={`h-[42px] mt-2 rounded-lg border border-[#1A24341A] px-[13px] py-3 flex justify-between items-center relative cursor-pointer ${
+                      professionDropdown.isOpen
+                        ? "rounded-b-none border-[3px] border-[#75C0B1]"
+                        : ""
+                    }`}
+                  >
+                    <span
+                      className={` ${
+                        approxClientsDropdown.value
+                          ? "text-black"
+                          : "text-[#1A243454]"
+                      }`}
                     >
-                      <option selected disabled value="">
-                        Select One
-                      </option>
-                      {professions.map((profession) => {
-                        return (
-                          <option key={profession} value={profession}>
+                      {professionDropdown.value
+                        ? professionDropdown.value
+                        : "Select One"}
+                    </span>
+                    {professionDropdown.isOpen && (
+                      <ul className="absolute bottom-[-160px] bg-white border border-t-0 border-[#1A24341A] left-[-3px] right-[-3px] z-10 rounded-b-lg overflow-hidden ">
+                        {professions.map((profession) => (
+                          <li
+                            onClick={(event) =>
+                              selectProfession(event, profession)
+                            }
+                            className="h-10 px-[13px] py-[11px] text-[#1A2434] text-sm font-normal leading-6 hover:bg-[#75C0B1] hover:text-white cursor-pointer border-t border-t-[#1A24341A]"
+                            key={profession}
+                          >
                             {profession}
-                          </option>
-                        );
-                      })}
-                    </select>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+
+                    {professionDropdown.isOpen && (
+                      <svg
+                        className="w-3 h-3 absolute top-1/2 -translate-y-1/2 right-4 rotate-180 "
+                        viewBox="0 0 12 8"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          id="Vector"
+                          d="M1.41 8L6 3.05533L10.59 8L12 6.47773L6 0L0 6.47773L1.41 8Z"
+                          fill="#75C0B1"
+                        />
+                      </svg>
+                    )}
 
                     {formik.touched.profession &&
-                      typeof formik.errors.profession === "string" && (
+                      typeof formik.errors.profession === "string" &&
+                      !professionDropdown.value && (
                         <svg
                           width="24"
                           height="24"
@@ -589,7 +749,12 @@ const AffiliateForm = () => {
 
                 {/* Education */}
                 <div className="mx-4">
-                  <label htmlFor="education">Educational Qualification*</label>
+                  <label
+                    className="text-base font-medium leading-[18px] text-[#1A2434] "
+                    htmlFor="education"
+                  >
+                    Educational Qualification*
+                  </label>
                   <div className="relative mt-2">
                     <input
                       type="text"
@@ -637,7 +802,10 @@ const AffiliateForm = () => {
 
                 {/* Organization */}
                 <div className="mx-4">
-                  <label htmlFor="organizationName">
+                  <label
+                    className="text-base font-medium leading-[18px] text-[#1A2434] "
+                    htmlFor="organizationName"
+                  >
                     Institution or Organization Name
                   </label>
                   <div className="relative mt-2">
@@ -686,8 +854,11 @@ const AffiliateForm = () => {
                 </div>
 
                 {/* ApproxClients */}
-                <div className="mx-4">
-                  <label htmlFor="approxClients">
+                {/* <div className="mx-4">
+                  <label
+                    className="text-base font-medium leading-[18px] text-[#1A2434] "
+                    htmlFor="approxClients"
+                  >
                     Approximate Number of Clients/Parents in Your Network*
                   </label>
                   <div className="relative mt-2">
@@ -722,6 +893,93 @@ const AffiliateForm = () => {
 
                     {formik.touched.approxClients &&
                       typeof formik.errors.approxClients === "string" && (
+                        <svg
+                          width="24"
+                          height="24"
+                          className="absolute top-1/2 -translate-y-1/2 right-4 pointer-events-none "
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <g id="icon" clip-path="url(#clip0_3355_4697)">
+                            <path
+                              id="Vector"
+                              d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z"
+                              fill="#D61D25"
+                            />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_3355_4697">
+                              <rect width="24" height="24" fill="white" />
+                            </clipPath>
+                          </defs>
+                        </svg>
+                      )}
+                  </div>
+                  {formik.touched.approxClients &&
+                  typeof formik.errors.approxClients === "string" ? (
+                    <div className="mt-2 text-xs font-normal leading-[18px] text-[#D61D25]">
+                      {formik.errors.approxClients}
+                    </div>
+                  ) : null}
+                </div> */}
+                <div className="mx-4">
+                  <label className="text-base font-medium leading-[18px] text-[#1A2434] ">
+                    Approximate Number of Clients/Parents in Your Network*
+                  </label>
+                  <div
+                    onClick={toggleapproxClientsDropdown}
+                    className={`h-[42px] mt-2 rounded-lg border border-[#1A24341A] px-[13px] py-3 flex justify-between items-center relative cursor-pointer ${
+                      approxClientsDropdown.isOpen
+                        ? "rounded-b-none border-[3px] border-[#75C0B1]"
+                        : ""
+                    }`}
+                  >
+                    <span
+                      className={` ${
+                        approxClientsDropdown.value
+                          ? "text-black"
+                          : "text-[#1A243454]"
+                      }`}
+                    >
+                      {approxClientsDropdown.value
+                        ? approxClientsDropdown.value
+                        : "Select One"}
+                    </span>
+                    {approxClientsDropdown.isOpen && (
+                      <ul className="absolute bottom-[-200px] bg-white border border-t-0 border-[#1A24341A] left-[-3px] right-[-3px] z-10 rounded-b-lg overflow-hidden ">
+                        {approxClients.map((approxClient) => (
+                          <li
+                            onClick={(event) =>
+                              selectApproxClientsDropdown(event, approxClient)
+                            }
+                            className="h-10 px-[13px] py-[11px] text-[#1A2434] text-sm font-normal leading-6 hover:bg-[#75C0B1] hover:text-white cursor-pointer border-t border-t-[#1A24341A]"
+                            key={approxClient}
+                          >
+                            {approxClient}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+
+                    {approxClientsDropdown.isOpen && (
+                      <svg
+                        className="w-3 h-3 absolute top-1/2 -translate-y-1/2 right-4 rotate-180 "
+                        viewBox="0 0 12 8"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          id="Vector"
+                          d="M1.41 8L6 3.05533L10.59 8L12 6.47773L6 0L0 6.47773L1.41 8Z"
+                          fill="#75C0B1"
+                        />
+                      </svg>
+                    )}
+
+                    {formik.touched.approxClients &&
+                      typeof formik.errors.approxClients === "string" &&
+                      !approxClientsDropdown.value && (
                         <svg
                           width="24"
                           height="24"
@@ -884,7 +1142,10 @@ const AffiliateForm = () => {
 
                 {/* Full Name */}
                 <div className="mx-4">
-                  <label htmlFor="message">
+                  <label
+                    className="text-base font-medium leading-[18px] text-[#1A2434] "
+                    htmlFor="message"
+                  >
                     How did you find out about the KGKP Affiliate Program?{" "}
                   </label>
                   <div className="relative mt-2">
@@ -932,16 +1193,30 @@ const AffiliateForm = () => {
                   ) : null}
                 </div>
 
-                <section className="mt-8 py-4 border-t border-t-[#DCDCDC] ">
-                  <BlackButton
+                <section className="mt-8 py-4 border-t border-t-[#DCDCDC] xl:border-none ">
+                  <button
                     type="submit"
-                    styles={{
-                      width: "144px",
-                      height: "42px",
-                      margin: "0 auto",
-                    }}
-                    text="Submit"
-                  />
+                    className="custom-black-button mx-auto w-[144px] h-[42px] flex items-center justify-center gap-3.5 px-7 py-4 rounded-[50px] bg-[#4D1435] xl:mx-0 justify-self-end "
+                  >
+                    <span className="custom-button-icon text-[16px] font-[700] leading-[19.2px] text-white ">
+                      Submit
+                    </span>
+
+                    <svg
+                      className="custom-button-icon w-4 h-4"
+                      viewBox="0 0 16 17"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g id="icon-arrow-right">
+                        <path
+                          id="Shape"
+                          className="fill-current text-white"
+                          d="M7.5299 3.36177C7.79025 3.10142 8.21236 3.10142 8.47271 3.36177L13.1394 8.02843C13.3997 8.28878 13.3997 8.71089 13.1394 8.97124L8.47271 13.6379C8.21236 13.8983 7.79025 13.8983 7.5299 13.6379C7.26955 13.3776 7.26955 12.9554 7.5299 12.6951L11.0585 9.1665H3.33464C2.96645 9.1665 2.66797 8.86803 2.66797 8.49984C2.66797 8.13165 2.96645 7.83317 3.33464 7.83317H11.0585L7.5299 4.30457C7.26955 4.04423 7.26955 3.62212 7.5299 3.36177Z"
+                        />
+                      </g>
+                    </svg>
+                  </button>
                 </section>
               </form>
 
@@ -974,18 +1249,33 @@ const AffiliateForm = () => {
                   </section>
                 </div>
               )}
-            </>
+            </div>
           )}
         </div>
       ) : (
-        <BlackButton
+        <button
           onClick={handleToggle}
-          text="Explore Our Courses"
-          styles={{
-            margin: "44px auto 0 auto",
-            width: "255px",
-          }}
-        />
+          className="custom-black-button mt-11 mx-auto w-[247px] h-[51px] flex items-center justify-center gap-3.5 px-7 py-4 rounded-[50px] bg-[#4D1435] xl:w-[390px] xl:h-[77px] xl:px-[60px] xl:py-6 "
+        >
+          <span className="custom-button-icon text-[16px] font-[700] leading-[19.2px] text-white xl:text-2xl xl:leading-[29.05px] ">
+            {biggerScreen ? "Sign Up Now" : "Explore Our Courses"}
+          </span>
+
+          <svg
+            className="custom-button-icon w-4 h-4 xl:w-6 xl:h-6"
+            viewBox="0 0 16 17"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="icon-arrow-right">
+              <path
+                id="Shape"
+                className="fill-current text-white"
+                d="M7.5299 3.36177C7.79025 3.10142 8.21236 3.10142 8.47271 3.36177L13.1394 8.02843C13.3997 8.28878 13.3997 8.71089 13.1394 8.97124L8.47271 13.6379C8.21236 13.8983 7.79025 13.8983 7.5299 13.6379C7.26955 13.3776 7.26955 12.9554 7.5299 12.6951L11.0585 9.1665H3.33464C2.96645 9.1665 2.66797 8.86803 2.66797 8.49984C2.66797 8.13165 2.96645 7.83317 3.33464 7.83317H11.0585L7.5299 4.30457C7.26955 4.04423 7.26955 3.62212 7.5299 3.36177Z"
+              />
+            </g>
+          </svg>
+        </button>
       )}
     </>
   );

@@ -1,4 +1,6 @@
 "use client";
+
+import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
 import useInView from "../useInView";
 
@@ -12,6 +14,11 @@ import styles from "./styles.module.css";
 const Contact = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef);
+  const pathName = usePathname();
+
+  if (pathName === "/contact" || pathName === "/affiliate") {
+    return null;
+  }
 
   useEffect(() => {
     if (isInView) {
