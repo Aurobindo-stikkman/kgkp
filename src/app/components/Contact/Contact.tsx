@@ -16,18 +16,18 @@ const Contact = () => {
   const isInView = useInView(sectionRef);
   const pathName = usePathname();
 
-  if (pathName === "/contact" || pathName === "/affiliate") {
-    return null;
-  }
-
   useEffect(() => {
-    if (isInView) {
+    if (pathName !== "/contact" && pathName !== "/affiliate" && isInView) {
       const clipRect = document.getElementById("clipRect");
       if (clipRect) {
         clipRect.classList.add("revealed");
       }
     }
-  }, [isInView]);
+  }, [isInView, pathName]);
+
+  if (pathName === "/contact" || pathName === "/affiliate") {
+    return null;
+  }
 
   return (
     <section className="bg-[#FAEFB6] py-[52px] lg:py-[124px] overflow-hidden relative">
