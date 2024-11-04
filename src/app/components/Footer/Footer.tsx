@@ -80,7 +80,7 @@ const Footer = () => {
                 type="text"
                 name="email"
                 placeholder="Email Id"
-                className="w-full bg-transparent h-[22px] text-base font-normal leading-[22.4px] text-[#4D1435] placeholder:text-base border-b border-b-white focus:outline-none placeholder:font-normal placeholder:leading-[22.4px] placeholder:text-[#4D1435] "
+                className="w-full bg-transparent h-[22px] text-base font-normal leading-[22.4px] text-[#4D1435] placeholder:text-base border-b border-b-[#FFFFFF] focus:outline-none placeholder:font-normal placeholder:leading-[22.4px] placeholder:text-[#4D1435] "
               />
               <input
                 value={formData.message}
@@ -88,7 +88,7 @@ const Footer = () => {
                 type="text"
                 name="message"
                 placeholder="Describe your issues"
-                className="mt-6 w-full bg-transparent h-[22px] text-base font-normal leading-[22.4px] text-[#4D1435] placeholder:text-base border-b border-b-white focus:outline-none placeholder:font-normal placeholder:leading-[22.4px] placeholder:text-[#4D1435] "
+                className="mt-6 w-full bg-transparent h-[22px] text-base font-normal leading-[22.4px] text-[#4D1435] placeholder:text-base border-b border-b-[#FFFFFF] focus:outline-none placeholder:font-normal placeholder:leading-[22.4px] placeholder:text-[#4D1435] "
               />
 
               <button

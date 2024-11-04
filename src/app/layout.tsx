@@ -8,6 +8,7 @@ import Footer from "./components/Footer/Footer";
 import Contact from "./components/Contact/Contact";
 import ScrollToTopButton from "./components/scroll-to-top/ScrollToTop";
 import WhatsApp from "./components/whats-app/WhatsApp";
+import ActionButton from "./components/ActionButton/ActionButton";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -42,6 +43,7 @@ export default function RootLayout({
         <Header />
         {children}
         <ScrollToTopButton />
+        <ActionButton />
         <WhatsApp />
         <Contact />
         <Footer />
