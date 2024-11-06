@@ -88,8 +88,8 @@ const Contact = () => {
         className="hidden lg:block absolute right-[-50px] top-[196px] h-[161px] w-[335.89px] "
       />
 
-      <section className="mt-11 w-[254px] h-[51px] bg-[#4D1435] rounded-[50px] px-7 py-4 mx-auto flex gap-[14px] justify-center items-center lg:w-[385px] lg:h-[77px] lg:mt-10 lg:px-20 lg:py-6 cursor-pointer custom-black-button">
-        <section className="text-white text-[16px] font-[700] leading-[19.2px] lg:text-[18px] lg:leading-[28.8px] custom-button-icon">
+      <button className="mt-11 w-[254px] h-[51px] bg-[#4D1435] rounded-[50px] px-7 py-4 mx-auto flex gap-[14px] justify-center items-center lg:w-[395px] lg:h-[77px] lg:mt-10 lg:px-[60px] lg:py-6  custom-black-button">
+        <section className="text-white text-[16px] font-[700] leading-[19.2px] lg:text-[18px] lg:leading-[28.8px] xl:text-2xl custom-button-icon">
           Explore Our Courses
         </section>
         <svg
@@ -106,7 +106,7 @@ const Contact = () => {
             />
           </g>
         </svg>
-      </section>
+      </button>
     </section>
   );
 };

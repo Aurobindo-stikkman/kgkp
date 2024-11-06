@@ -88,8 +88,8 @@ const Methods = () => {
           </svg>
         </section>
 
-        <section className="cursor-pointer custom-black-button mt-11 w-[254px] bg-[#4D1435] rounded-[50px] px-7 py-4 mx-auto flex gap-[14px] justify-center lg:m-0 lg:px-[80px] lg:py-6 lg:w-[385px] lg:h-[77px] lg:rounded-[50px]">
-          <section className="text-white text-[16px] font-[700] leading-[19.2px] lg:text-[18px] lg:font-[600] lg:leading-[28.8px] custom-button-icon">
+        <button className="custom-black-button mt-11 w-[254px] bg-[#4D1435] rounded-[50px] px-7 py-4 mx-auto flex gap-[14px] justify-center items-center lg:m-0 lg:px-[60px] lg:py-6 lg:w-[395px] lg:h-[77px] lg:rounded-[50px]">
+          <section className="text-white text-[16px] font-[700] leading-[19.2px] lg:text-[18px] lg:font-[600] lg:leading-[28.8px] xl:text-2xl custom-button-icon">
             Explore Our Courses
           </section>
           <svg
@@ -106,7 +106,7 @@ const Methods = () => {
               />
             </g>
           </svg>
-        </section>
+        </button>
       </section>
 
       {/* Cards section */}
@@ -235,7 +235,7 @@ const Methods = () => {
           className="h-[164px] w-[325px] mx-auto rounded-[20px] mt-8 lg:h-[300px] lg:w-[600px] xl:w-[1265px] xl:h-[634px] "
         />
 
-        <section className="w-[328px] h-[418px] mx-auto mt-8 text-[14px] font-[400] leading-[22.4px] text-[#460C04] md:w-[633px] md:mx-auto md:text-center lg:mt-[52px] lg:w-[633px] lg:h-[219px] ">
+        <section className="w-[328px] h-[418px] mx-auto mt-8 text-[14px] font-[400] leading-[22.4px] text-[#460C04] md:w-[633px] md:h-auto md:mx-auto md:text-center lg:mt-[52px] lg:w-[633px] lg:h-[219px] ">
           Milestones Acceleration is a structured approach that enhances your
           child's brain development during the first six crucial years. In these
           first six years, there are 7 stages of brain development and in each

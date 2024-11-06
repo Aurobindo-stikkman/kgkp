@@ -4,6 +4,7 @@ import CoursesSection from "./_landing/courses/CoursesSection";
 import TestimonialsSection from "./_landing/testimonials/TestimonialsSection";
 import About_Us from "./_landing/aboutus/About_Us";
 import FaqSection from "./_landing/faq/FaqSection";
+import CallbackContainer from "./components/RequestCallback/CallbackContainer";
 
 export default function Home() {
   return (
@@ -12,6 +13,9 @@ export default function Home() {
       <StatsSection />
       <TestimonialsSection />
       <CoursesSection />
+      <div className="mb-[52px] xl:mb-20 ">
+        <CallbackContainer />
+      </div>
       <About_Us />
       <FaqSection />
     </>

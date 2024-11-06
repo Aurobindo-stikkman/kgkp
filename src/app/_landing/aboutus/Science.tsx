@@ -200,7 +200,7 @@ const Science = () => {
         </section>
 
         {/* Button */}
-        <section className="custom-black-button mt-6 rounded-[50px] mx-auto bg-[#4D1435] md:hidden">
+        <button className="custom-black-button mt-6 rounded-[50px] mx-auto bg-[#4D1435] md:hidden">
           <Link
             className="cursor-pointer w-[178px] h-[51px] flex items-center justify-center gap-[14px] px-7 py-4"
             href="/methods"
@@ -223,7 +223,7 @@ const Science = () => {
               </g>
             </svg>
           </Link>
-        </section>
+        </button>
 
         <section>
           <section className="hidden lg:block text-[#460C04] text-[28px] font-[700] leading-[33.6px] w-[459px] h-[68px] mt-[126px] ">
@@ -304,9 +304,9 @@ const Science = () => {
         </section>
       </section>
 
-      <section className="custom-black-button hidden w-[178px] h-[51px] mt-6 rounded-[50px] mx-auto md:block bg-[#4D1435] lg:w-[375px] lg:h-[77px] lg:mt-[152px]">
+      <button className="custom-black-button hidden w-[178px] h-[51px] mt-6 rounded-[50px] mx-auto md:block bg-[#4D1435] lg:w-[385px] lg:h-[77px] lg:mt-[152px]">
         <Link
-          className="w-full h-full px-7 py-4 justify-evenly items-center rounded-[50px] flex gap-[14px] lg:px-[80px] lg:py-[24px] cursor-pointer"
+          className="w-full h-full px-7 py-4 justify-center items-center rounded-[50px] flex gap-[14px] lg:px-[60px] lg:py-[24px] cursor-pointer"
           href="/methods"
         >
           <div className="text-[16px] font-[700] leading-[19.2px] text-white lg:text-[24px] lg:leading-[28.8px] custom-button-icon">
@@ -327,7 +327,7 @@ const Science = () => {
             </g>
           </svg>
         </Link>
-      </section>
+      </button>
     </div>
   );
 };

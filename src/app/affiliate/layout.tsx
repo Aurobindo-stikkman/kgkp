@@ -1,3 +1,5 @@
+import CallbackContainer from "../components/RequestCallback/CallbackContainer";
+
 const AffiliateLayout = ({
   children,
   cardsSection,
@@ -5,7 +7,7 @@ const AffiliateLayout = ({
   incomeDistribution,
   successStory,
   enrollSection,
-  faqSection
+  faqSection,
 }: Readonly<{
   children: React.ReactNode;
   cardsSection: React.ReactNode;
@@ -21,6 +23,9 @@ const AffiliateLayout = ({
       {cardsSection}
       {detailsSection}
       {incomeDistribution}
+      <div className="pb-[52px] xl:pb-[124px] ">
+        <CallbackContainer hideAgeField={true} />
+      </div>
       {successStory}
       {enrollSection}
       {faqSection}
