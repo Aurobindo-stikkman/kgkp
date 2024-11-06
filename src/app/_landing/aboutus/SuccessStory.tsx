@@ -118,8 +118,8 @@ const SuccessStory = () => {
         </svg>
       </section>
 
-      <section className="hidden lg:flex cursor-pointer custom-white-button w-[385px] h-[77px] px-20 py-6 rounded-[50px] bg-[#F6E2D8] gap-[14px] justify-between items-center mx-auto lg:mt-6 ">
-        <section className="font-[700] text-[#460C04] text-[18px] leading-[28.8px] custom-button-icon">
+      <button className="hidden lg:flex custom-white-button w-[395px] h-[77px] px-[60px] py-6 rounded-[50px] bg-[#F6E2D8] gap-[14px] justify-between items-center mx-auto lg:mt-6 ">
+        <section className="font-[700] text-[#460C04] text-2xl leading-[28.8px] custom-button-icon">
           Explore Our Courses
         </section>
         <svg
@@ -136,7 +136,7 @@ const SuccessStory = () => {
             />
           </g>
         </svg>
-      </section>
+      </button>
 
       <Image
         src={trophy}

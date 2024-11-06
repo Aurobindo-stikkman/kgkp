@@ -15,6 +15,7 @@ import arrowIcon from "./assets/icon-arrow-right.svg";
 
 import VisionSection from "./VisionSection";
 import TitleSection from "./TitleSection";
+import CallbackContainer from "../components/RequestCallback/CallbackContainer";
 
 const About = () => {
   return (
@@ -122,6 +123,10 @@ const About = () => {
 
       <VisionSection />
 
+      <div className="pb-[52px] xl:pb-20 ">
+        <CallbackContainer />
+      </div>
+
       <AboutFounder />
 
       <section className="py-[52px] px-[15px] lg:py-[90px] xl:py-[124px] ">
@@ -170,12 +175,6 @@ const About = () => {
 
         <section className="mt-[52px] text-[28px] relative font-[700] leading-[36.4px] text-[#1A2434] text-center mx-auto lg:mt-[124px] lg:text-[42px] lg:leading-[50.4px]">
           <span className="relative z-10">Other Programs</span>
-          {/* <Image
-            src={chalkStroke}
-            alt="Chalk Icon"
-            className="absolute w-[235.08px] h-[60.94px] left-1/2 top-[15%] translate-x-[-50%] z-0 lg:w-[397.11px] lg:h-[93.76px]"
-            /> */}
-
           <svg
             className="absolute w-[235.08px] h-[60.94px] left-1/2 top-[15%] translate-x-[-50%] z-0 lg:w-[397.11px] lg:h-[93.76px]"
             viewBox="0 0 158 34"

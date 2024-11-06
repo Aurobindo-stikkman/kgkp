@@ -2,7 +2,15 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-const CallbackForm = () => {
+interface CallbackFormProps {
+  isFooter?: boolean;
+  hideAgeField?: boolean;
+}
+
+const CallbackForm: React.FC<CallbackFormProps> = ({
+  isFooter,
+  hideAgeField = false,
+}) => {
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -15,7 +23,6 @@ const CallbackForm = () => {
         .min(2, "Name must be at least 2 characters")
         .max(50, "Name cannot exceed 50 characters")
         .required("Name is required"),
-      age: Yup.string().required("Age is required"),
       phone: Yup.string()
         .matches(/^[0-9]{10}$/, "Phone number must be exactly 10 digits")
         .required("Phone number is required"),
@@ -23,8 +30,11 @@ const CallbackForm = () => {
         .min(10, "Message must be at least 10 characters")
         .max(200, "Message cannot exceed 200 characters")
         .required("Message is required"),
+      ...(hideAgeField
+        ? {}
+        : { age: Yup.string().required("Age is required") }),
     }),
-    onSubmit: (values, {resetForm}) => {
+    onSubmit: (values, { resetForm }) => {
       console.log(values);
       resetForm();
     },
@@ -40,14 +50,16 @@ const CallbackForm = () => {
         value={formik.values.name}
         onChange={formik.handleChange}
       />
-      <input
-        type="text"
-        name="age"
-        placeholder="Your Child’s Age"
-        className={`h-[22px] w-full bg-white outline-none focus:appearance-none border-b border-b-[#4D143536] text-base font-normal leading-[22.4px] text-[#4D1435] placeholder:text-base placeholder:font-normal placeholder:leading-[22.4px] placeholder:text-[#4D1435] `}
-        value={formik.values.age}
-        onChange={formik.handleChange}
-      />
+      {!hideAgeField ? (
+        <input
+          type="text"
+          name="age"
+          placeholder="Your Child’s Age"
+          className={`h-[22px] w-full bg-white outline-none focus:appearance-none border-b border-b-[#4D143536] text-base font-normal leading-[22.4px] text-[#4D1435] placeholder:text-base placeholder:font-normal placeholder:leading-[22.4px] placeholder:text-[#4D1435] `}
+          value={formik.values.age}
+          onChange={formik.handleChange}
+        />
+      ) : null}
       <input
         type="text"
         name="phone"
@@ -67,13 +79,25 @@ const CallbackForm = () => {
 
       <button
         type="submit"
-        className="custom-black-button w-[217px] h-[43px] mx-auto rounded-[40px] px-[18px] py-3 flex gap-2.5 justify-center items-center bg-[#4D1435] lg:w-[230px] xl:w-[390px] xl:h-[77px] xl:px-[60px] xl:py-6 xl:gap-3.5 "
+        className={`custom-black-button w-[217px] h-[43px] mx-auto rounded-[40px] px-[18px] py-3 flex gap-2.5 justify-center items-center bg-[#4D1435] ${
+          isFooter
+            ? "lg:w-[224px] lg:mr-0 lg:ml-auto "
+            : "lg:w-[230px] xl:w-[390px] xl:h-[77px] xl:px-[60px] xl:py-6 xl:gap-3.5"
+        }`}
       >
-        <span className="custom-button-icon text-base font-semibold leading-[19.36px] text-white xl:text-2xl xl:leading-[28.8px] ">
+        <span
+          className={`custom-button-icon text-base font-semibold leading-[19.36px] text-white  ${
+            isFooter
+              ? "lg:text-base lg:leading-[19.36px] "
+              : "xl:text-2xl xl:leading-[28.8px]"
+          }`}
+        >
           Request A Callback
         </span>
         <svg
-          className="custom-button-icon w-4 h-4 lg:w-6 lg:h-6 "
+          className={`custom-button-icon w-4 h-4 ${
+            isFooter ? "lg:w-4 lg:h-4" : "lg:w-6 lg:h-6"
+          }`}
           viewBox="0 0 17 17"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
