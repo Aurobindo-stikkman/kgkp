@@ -17,6 +17,8 @@ import Courses from "./Courses";
 import snakeFrame from "./assets/snake-frame.svg";
 import whiteRock from "./assets/white-rock.svg";
 import TitleSection from "./TitleSection";
+import TreeSection from "./TreeSection";
+import CallbackContainer from "../components/RequestCallback/CallbackContainer";
 
 const Methods = () => {
   return (
@@ -53,6 +55,12 @@ const Methods = () => {
         {/* Details */}
         <DetailsSection />
       </section>
+
+      <TreeSection />
+
+      <div className="xl:px-20 ">
+        <CallbackContainer />
+      </div>
 
       {/* courses secton */}
       <Courses />
