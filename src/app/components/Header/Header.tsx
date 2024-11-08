@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import shopping from "./icon-shopping-cart.svg";
 import hamburgMenu from "./icon-menu.svg";
 import closeIcon from "./Close.svg";
-import logo from "./kgk_logo Open File 2.svg";
+import logo from "./KGK logo SVG (2).svg";
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);

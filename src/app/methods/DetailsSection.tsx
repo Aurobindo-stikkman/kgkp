@@ -103,7 +103,7 @@ const DetailsSection = () => {
 
         <section className="grid gap-3 mx-auto w-[302px] xl:order-1 lg:self-start lg:w-[378px] xl:w-auto ">
           <div className="text-[18px] font-[600] leading-[21.6px] text-[#4D1435] lg:text-[24px] lg:leading-[28.8px] ">
-            IQ <span className="font-[200]">| Intelligence quotient</span>
+            IQ <span className="font-[400]">| Intelligence quotient</span>
           </div>
           <div className="text-[14px] font-[400] leading-[19.6px] text-[#4D1435] ">
             Our program boosts IQ through ridge analysis and brain development
@@ -171,7 +171,7 @@ const DetailsSection = () => {
 
         <section className="grid gap-3 mx-auto w-[302px] lg:self-end lg:w-[381px] xl:w-auto ">
           <div className="text-[18px] font-[600] leading-[21.6px] text-[#4D1435] lg:text-[24px] lg:leading-[28.8px] ">
-            EQ <span className="font-[200]">| Emotional quotient</span>
+            EQ <span className="font-[400]">| Emotional quotient</span>
           </div>
           <div className="text-[14px] font-[400] leading-[19.6px] text-[#4D1435] ">
             We build your child’s EQ by sowing seeds of emotional intelligence
@@ -282,7 +282,7 @@ const DetailsSection = () => {
 
         <section className="grid gap-3 mx-auto w-[302px] xl:order-1 lg:self-start lg:w-[382px] xl:w-auto">
           <div className="text-[18px] font-[600] leading-[21.6px] text-[#4D1435] lg:text-[24px] lg:leading-[28.8px] ">
-            SQ <span className="font-[200]">| Spiritual quotient</span>
+            SQ <span className="font-[400]">| Spiritual quotient</span>
           </div>
           <div className="text-[14px] font-[400] leading-[19.6px] text-[#4D1435] ">
             Our weekly sessions of SQ enhance values and mindfulness, creating
