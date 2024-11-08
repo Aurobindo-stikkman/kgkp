@@ -72,7 +72,7 @@ const Methods = () => {
             <span className="lg:hidden">Ready for the World</span>?
           </div>
           <svg
-            className="absolute w-[259.26px] h-[70.94px] left-1/2 -bottom-10 translate-x-[-50%] z-0 lg:w-[213px] lg:-bottom-8 lg:h-[61px] lg:left-[34%]"
+            className="absolute w-[259.26px] h-[70.94px] left-1/2 -bottom-10 translate-x-[-50%] z-0 lg:w-[213px] lg:-bottom-8 lg:h-[61px] lg:left-[32%]"
             width="269"
             height="50"
             viewBox="0 0 269 50"
@@ -114,7 +114,7 @@ const Methods = () => {
         <section className="text-[20px] relative font-[700] leading-[26px] text-[#1A2434] text-center mx-auto w-[209px] lg:text-[30px] lg:leading-[30.8px] lg:w-[438px] lg:h-[50px]">
           <span className="z-10 relative">Academic Excellence</span>
           <svg
-            className="absolute w-[251.08px] h-[60.94px] left-1/2 top-[1px] translate-x-[-50%] z-0 lg:w-[217.11px] lg:h-[60.76px] lg:top-1 lg:left-[66%]"
+            className="absolute w-[251.08px] h-[60.94px] left-1/2 top-[1px] translate-x-[-50%] z-0 lg:w-[206.11px] lg:h-[60.76px] lg:top-1 lg:left-[66%]"
             width="269"
             height="50"
             viewBox="0 0 269 50"
@@ -143,15 +143,15 @@ const Methods = () => {
 
         <section className="mt-6 flex gap-6 flex-col items-center lg:flex-row lg:pt-20 lg:justify-between lg:mx-auto xl:mx-20 2xl:mx-auto 2xl:w-[1280px] ">
           {/* Card-1 */}
-          <section className="bg-white w-[335px] grid gap-6 rounded-[40px] border pb-6 overflow-hidden lg:w-[356px] lg:hover:transition-transform lg:hover:duration-500 lg:hover:scale-105">
+          <section className="bg-white w-[335px] grid gap-6 rounded-[40px] border pb-6 overflow-hidden lg:w-[356px] lg:hover:transition-transform lg:hover:duration-500 lg:hover:scale-105 lg:h-[530px]">
             <section className="w-full bg-[#c3ca31] h-[272px] flex justify-center items-center">
               <Image src={card1} alt="Card - 1" className="w-3/4 h-auto" />
             </section>
             <div className="basis-1/2 grid gap-3 ">
-              <div className="text-[16px] font-[600] leading-[19.2px] text-[#1A2434] text-center ">
+              <div className="text-[16px] font-[600] leading-[19.2px] text-[#1A2434] text-center lg:text-[18px] lg:leading-[21.6px] ">
                 Reading Program
               </div>
-              <div className="text-[12px] w-[303px] mx-auto font-[400] leading-[19.2px] text-[#1A2434] text-center ">
+              <div className="text-[12px] w-[303px] mx-auto font-[400] leading-[19.2px] text-[#1A2434] text-center lg:text-sm lg:h-[176px] lg:leading-[22.4px] ">
                 We use short videos daily to teach children to recognize and
                 pronounce words, phrases, and sentences, gradually enabling them
                 to read and comprehend a newspaper by age six. This fosters a
@@ -162,15 +162,15 @@ const Methods = () => {
           </section>
 
           {/* Card-2 */}
-          <section className="bg-white w-[335px] grid gap-6 rounded-[40px] border pb-6 overflow-hidden lg:w-[356px] lg:hover:transition-transform lg:hover:duration-500 lg:hover:scale-105">
+          <section className="bg-white w-[335px] grid gap-6 rounded-[40px] border pb-6 overflow-hidden lg:w-[356px] lg:hover:transition-transform lg:hover:duration-500 lg:hover:scale-105 lg:h-[530px]">
             <section className="w-full bg-[#fcd0ad] h-[272px] flex items-center justify-center">
               <Image src={card2} alt="Card - 2" className="w-3/4 h-auto" />
             </section>
             <div className="basis-1/2 grid gap-3 ">
-              <div className="text-[16px] font-[600] leading-[19.2px] text-[#1A2434] text-center ">
+              <div className="text-[16px] font-[600] leading-[19.2px] text-[#1A2434] text-center lg:text-[18px] lg:leading-[21.6px] ">
                 Math Program
               </div>
-              <div className="text-[12px] w-[303px] mx-auto font-[400] leading-[19.2px] text-[#1A2434] text-center ">
+              <div className="text-[12px] w-[303px] mx-auto font-[400] leading-[19.2px] text-[#1A2434] text-center lg:text-sm lg:h-[176px] lg:leading-[22.4px] ">
                 Our math program employs short videos that use dot cards to
                 teach quantity recognition, addition, subtraction,
                 multiplication, division, equations and mixed equations in the
@@ -182,21 +182,20 @@ const Methods = () => {
           </section>
 
           {/* Card-3 */}
-          <section className="bg-white w-[335px] grid gap-6 rounded-[40px] border pb-6 overflow-hidden lg:w-[356px] lg:hover:transition-transform lg:hover:duration-500 lg:hover:scale-105">
+          <section className="bg-white w-[335px] rounded-[40px] border pb-6 overflow-hidden lg:w-[356px] lg:hover:transition-transform lg:hover:duration-500 lg:hover:scale-105 lg:h-[530px]">
             <section className="w-full bg-[#a7dbf2] h-[272px] flex items-center justify-center">
               <Image src={card3} alt="Card - 3" className="w-3/4 h-auto" />
             </section>
-            <div className="basis-1/2 grid gap-3">
-              <div className="text-[16px] font-[600] leading-[19.2px] text-[#1A2434] text-center ">
-                Math Program
+            <div className="mt-6 basis-1/2 grid gap-3">
+              <div className="text-[16px] font-[600] leading-[19.2px] text-[#1A2434] text-center lg:text-[18px] lg:leading-[21.6px] ">
+                Encyclopaedic Knowledge Program
               </div>
-              <div className="text-[12px] w-[303px] mx-auto font-[400] leading-[19.2px] text-[#1A2434] text-center ">
-                Our math program employs short videos that use dot cards to
-                teach quantity recognition, addition, subtraction,
-                multiplication, division, equations and mixed equations in the
-                first 12 months and further continues with advanced math and
-                arithmetic. This nurtures high math ability and consequently,
-                quick decision-making capabilities.
+              <div className="text-[12px] w-[303px] mx-auto font-[400] leading-[19.2px] text-balance text-[#1A2434] text-center lg:text-sm lg:leading-[22.4px] ">
+                Our Encyclopedic Knowledge Program equips children with
+                abundance of knowledge in various streams like geography,
+                history, culture, tradition, philosophy, sciences, etc. This
+                ensures clarity of thought and a broad, modern worldview,
+                fostering a multifaceted and highly capable personality
               </div>
             </div>
           </section>
@@ -235,7 +234,7 @@ const Methods = () => {
           className="h-[164px] w-[325px] mx-auto rounded-[20px] mt-8 lg:h-[300px] lg:w-[600px] xl:w-[1265px] xl:h-[634px] "
         />
 
-        <section className="w-[328px] h-[418px] mx-auto mt-8 text-[14px] font-[400] leading-[22.4px] text-[#460C04] md:w-[633px] md:h-auto md:mx-auto md:text-center lg:mt-[52px] lg:w-[633px] lg:h-[219px] ">
+        <section className="w-[328px] h-[418px] mx-auto mt-8 text-[14px] font-[400] leading-[22.4px] text-[#1A2434] md:w-[633px] md:h-auto md:mx-auto md:text-center lg:mt-[52px] lg:w-[633px] lg:h-[219px] ">
           Milestones Acceleration is a structured approach that enhances your
           child's brain development during the first six crucial years. In these
           first six years, there are 7 stages of brain development and in each
@@ -244,7 +243,7 @@ const Methods = () => {
           that are critical for boosting your child's IQ and overall cognitive
           abilities. The faster your child achieves these milestones, the higher
           will be the IQ of your child for the rest of his/her life.
-          <div className="mt-6 text-[14px] font-[400] leading-[22.4px] text-[#460C04]">
+          <div className="mt-6 text-[14px] font-[400] leading-[22.4px] ">
             Our structured program focuses on accelerating these developmental
             milestones by guiding parents to do specific activities with the
             child and assess their development. The early and accelerated
@@ -253,7 +252,7 @@ const Methods = () => {
           </div>
         </section>
 
-        <section className="relative mt-[52px] text-[28px] font-[700] leading-[36.4px] text-[#460C04] text-center mx-auto w-[191px] lg:hidden">
+        <section className="relative mt-[52px] text-[28px] font-[700] leading-[36.4px] text-[#1A2434] text-center mx-auto w-[191px] lg:hidden">
           <span className="z-10 relative">Multiple Intelligence</span>
           <svg
             className="absolute w-[235.08px] h-[60.94px] left-1/2 top-10 translate-x-[-50%] z-0 "
@@ -272,15 +271,15 @@ const Methods = () => {
           </svg>
         </section>
 
-        <section className="flex flex-col lg:flex-row lg:justify-center lg:mt-[124px] lg:mx-auto xl:justify-around max-w-[1156px]">
+        <section className="flex flex-col lg:flex-row lg:justify-between lg:mt-[124px] lg:mx-auto max-w-[1156px]">
           <Image
             src={inteligenceImg}
             alt="Inteligence Image"
-            className="w-[321px] h-[310px] pt-8 rounded-[32.63px] mx-auto md:w-[321.42px] md:h-[310px] lg:order-2 xl:mx-0 "
+            className="w-[321px] h-[310px] pt-8 rounded-[32.63px] mx-auto md:w-[321.42px] md:h-[310px] lg:order-2 lg:pt-0 lg:mx-0 xl:mx-0 "
           />
 
-          <section className="w-[328px] mx-auto mt-8 text-[14px] font-[400] leading-[22.4px] text-[#460C04] lg:order-1 lg:h-[220px] lg:w-[633px]">
-            <section className="hidden lg:block text-[42px] font-[600] leading-[50.4px] text-[#1A2434] ">
+          <section className="w-[328px] mx-auto mt-8 text-[14px] font-[400] leading-[22.4px] text-[#1A2434] lg:order-1 lg:h-[220px] lg:mx-0 lg:mt-0 lg:w-[633px]">
+            <section className="hidden lg:block text-[42px] font-[600] mb-3.5 leading-[50.4px] text-[#1A2434] ">
               Multiple Intelligence
             </section>
             The concept of multiple intelligences is a theory proposed by Howard
@@ -291,7 +290,7 @@ const Methods = () => {
             intelligences. Every child at the moment of birth has the potential
             intelligence to become a genius in onr or more of these
             intelligences.
-            <div className="mt-6 text-[14px] font-[400] leading-[22.4px] text-[#460C04]">
+            <div className="mt-6 text-[14px] font-[400] leading-[22.4px] text-[#1A2434]">
               These intelligences are functions of different lobes in the brain
               and our Ridge Analysis report mentions critical information about
               the intelligence profile of the child. This information is used in
@@ -304,7 +303,7 @@ const Methods = () => {
       </section>
 
       {/* Analysis section */}
-      <section className="py-[52px] px-4 items-center flex flex-col lg:flex-row lg:py-[124px] lg:justify-evenly xl:gap-24 max-w-[1440px] mx-auto xl:justify-center">
+      <section className="py-[52px] px-4 items-center flex flex-col lg:flex-row lg:items-end lg:py-[124px] lg:justify-evenly xl:gap-24 max-w-[1440px] mx-auto xl:justify-center">
         <section className="relative text-[28px] font-[700] leading-[36.4px] text-[#1A2434] mx-auto w-[203px] lg:hidden">
           <span className="z-10 relative">Ridge Analysis</span>
           <svg
@@ -326,14 +325,14 @@ const Methods = () => {
         <Image
           src={analysisImage}
           alt="Analysis image"
-          className="h-[318px] w-[326px] rounded-[20px] mt-8 mx-auto xl:w-[568px] xl:h-[553px] xl:mx-0"
+          className="h-[318px] w-[326px] rounded-[20px] mt-8 mx-auto lg:mt-0 xl:w-[568px] xl:h-[553px] xl:mx-0"
         />
 
-        <section className="max-w-[573px]">
+        <section className="max-w-[573px] lg:pb-[34px]">
           <section className="hidden lg:block relative text-[42px] font-[700] leading-[50.4px] text-[#1A2434]">
             <span className="z-10 relative">Ridge Analysis</span>
             <svg
-              className="absolute z-0 lg:w-[373.8px] h-[88.26px] top-[10px] left-[-2rem]"
+              className="absolute z-0 lg:w-[373.8px] h-[88.26px] top-[10px] left-[-2.5rem]"
               width="269"
               height="50"
               viewBox="0 0 269 50"
@@ -349,7 +348,7 @@ const Methods = () => {
             </svg>
           </section>
 
-          <section className="mt-8 w-[328px] mx-auto text-[14px] font-[400] leading-[19.6px] text-[#1A2434] lg:w-[573px] lg:h-[66px] xl:text-[16px] xl:leading-[22.4px] ">
+          <section className="mt-8 w-[328px] mx-auto text-[14px] font-[400] leading-[19.6px] text-[#1A2434] lg:mt-[52px] lg:w-[573px] lg:h-[66px] xl:text-[16px] xl:leading-[22.4px] ">
             Ridge Analysis is a scientific method that helps to understand the
             inborn intelligences and learning styles by analysing fingerprints.
             The report gives clear information about:
@@ -390,7 +389,7 @@ const Methods = () => {
             </section>
           </section>
 
-          <section className="w-[328px] mx-auto mt-8 text-[14px] font-[400] leading-[19.6px] text-[#1A2434] lg:w-[515px] lg:mx-0 xl:mt-[52px] xl:text-[18px] xl:leading-[22.4px]">
+          <section className="w-[328px] mx-auto mt-8 text-[14px] font-[400] leading-[19.6px] text-[#1A2434] lg:w-[515px] lg:mx-0 xl:mt-[52px] xl:text-[16px] xl:leading-[22.4px]">
             Ridge Analysis report can be generated after a child is 1 year old
             to identify the exact talent profile of the child. This report is
             then used to identify where the highest potential genius of the
@@ -403,7 +402,7 @@ const Methods = () => {
       <Image
         src={whiteRock}
         alt="White Rock"
-        className="hidden xl:block absolute right-[-460px] bottom-[487px] w-[630px] h-[630px]"
+        className="hidden xl:block absolute right-[-460px] bottom-[445px] w-[630px] h-[630px]"
       />
     </div>
   );

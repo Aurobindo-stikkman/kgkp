@@ -21,11 +21,11 @@ import footSteps2 from "./assets/footStep2.png";
 import footSteps3 from "./assets/footSteps3.png";
 import footSteps4 from "./assets/footSteps4.png";
 
-import longfootSteps1 from "./assets/longfootStep1.png";
-import longfootSteps2 from "./assets/longfootStep2.png";
-import longfootSteps3 from "./assets/longfootStep3.png";
-import longfootSteps4 from "./assets/longfootStep4.png";
-import singleStep from "./assets/singleStep.png";
+import longfootSteps1 from "./assets/long-foot-1.png";
+import longfootSteps2 from "./assets/long-foot-2.png";
+import longfootSteps3 from "./assets/long-foot-3.png";
+import longfootSteps4 from "./assets/long-foot-4.png";
+import singleStep from "./assets/single-step.png";
 
 import { Course } from "./interface";
 
@@ -289,7 +289,10 @@ const Courses = () => {
         </svg>
       </section>
 
-      <section ref={sectionRef} className="hidden mt-6 w-[513px] text-[18px] font-[500] leading-[21.6px] text-center mx-auto text-[#1A2434] lg:block ">
+      <section
+        ref={sectionRef}
+        className="hidden mt-6 w-[513px] text-[18px] font-[500] leading-[21.6px] text-center mx-auto text-[#1A2434] lg:block "
+      >
         At birth your child is ready for KGK Program. In a few years, a genius
         will be ready for the world.
       </section>
@@ -307,7 +310,10 @@ const Courses = () => {
             />
           </section>
           <section className="w-[330px] xl:order-1 xl:basis-[45%] xl:flex xl:justify-end">
-            <div className="h-full w-full relative bg-[#edf7f5] shadow-md rounded-[20px] xl:w-[330px] xl:after:absolute xl:after:top-[48%] xl:after:-right-1 xl:after:translate-x-1/2 xl:after:rounded-full xl:after:w-1 xl:after:h-1 xl:after:p-[2px] xl:after:border-[3px] xl:after:border-[#edf7f5] xl:after:shadow-md xl:before:absolute xl:before:top-1/2 xl:before:-right-14 xl:before:w-12 xl:before:h-[2px] xl:before:bg-[#edf7f5] ">
+            <div
+              onClick={() => openModal(1, course1)}
+              className="h-full w-full relative bg-[#edf7f5] shadow-md rounded-[20px] cursor-pointer xl:w-[330px] xl:after:absolute xl:after:top-[48%] xl:after:-right-1 xl:after:translate-x-1/2 xl:after:rounded-full xl:after:w-1 xl:after:h-1 xl:after:p-[2px] xl:after:border-[3px] xl:after:border-[#edf7f5] xl:after:shadow-md xl:before:absolute xl:before:top-1/2 xl:before:-right-14 xl:before:w-12 xl:before:h-[2px] xl:before:bg-[#edf7f5] "
+            >
               <section className="relative">
                 <Image
                   src={vector83}
@@ -319,15 +325,12 @@ const Courses = () => {
                 </div>
               </section>
               <section className="px-5 pt-7 pb-5">
-                <div className="text-[14px] font-[500] leading-[16.8px] text-[#1A2434] ">
+                <div className="text-[14px] font-[500] leading-[16.8px] text-[#1A2434] lg:leading-[19.6px] ">
                   3 Courses to prepare your body, mind and spirit to receive the
                   highest quality of soul during conception.
                 </div>
                 <section className="mt-4 flex gap-[10px] justify-end items-center">
-                  <div
-                    onClick={() => openModal(1, course1)}
-                    className="text-[14px] font-[600] leading-[16.94px] text-[#1A2434] cursor-pointer"
-                  >
+                  <div className="text-[14px] font-[600] leading-[16.94px] text-[#1A2434] ">
                     Learn More
                   </div>
                   <Image
@@ -340,12 +343,12 @@ const Courses = () => {
               <Image
                 src={footSteps1}
                 alt="Foot Steps"
-                className="absolute bottom-[-78%] left-[40px] z-10 xl:hidden "
+                className="pointer-events-none absolute bottom-[-78%] left-[40px] z-10 xl:hidden "
               />
               <Image
                 src={longfootSteps1}
                 alt="Long Foot Step1"
-                className="hidden xl:block xl:absolute xl:w-[351.13px] xl:h-[479.18px] top-[30%] right-[-200%] "
+                className="pointer-events-none hidden xl:block xl:absolute xl:w-[351.13px] xl:h-[479.18px] top-[30%] right-[-200%] "
               />
             </div>
           </section>
@@ -366,7 +369,10 @@ const Courses = () => {
             />
           </section>
           <section className="w-[330px] xl:basis-[55%]">
-            <div className="h-full w-full relative bg-[#F6E2D799] shadow-md rounded-[20px] xl:w-[330px] xl:after:absolute xl:after:top-[48%] xl:after:-left-4 xl:after:translate-x-1/2 xl:after:rounded-full xl:after:w-1 xl:after:h-1 xl:after:p-[2px] xl:after:border-[3px] xl:after:border-[#F6E2D799] xl:after:shadow-md xl:before:absolute xl:before:top-1/2 xl:before:-left-14 xl:before:w-12 xl:before:h-[2px] xl:before:bg-[#F6E2D799]">
+            <div
+              onClick={() => openModal(2, course2)}
+              className="cursor-pointer h-full w-full relative bg-[#F6E2D799] shadow-md rounded-[20px] xl:w-[330px] xl:after:absolute xl:after:top-[48%] xl:after:-left-4 xl:after:translate-x-1/2 xl:after:rounded-full xl:after:w-1 xl:after:h-1 xl:after:p-[2px] xl:after:border-[3px] xl:after:border-[#F6E2D799] xl:after:shadow-md xl:before:absolute xl:before:top-1/2 xl:before:-left-14 xl:before:w-12 xl:before:h-[2px] xl:before:bg-[#F6E2D799]"
+            >
               <section className="relative">
                 <Image
                   src={vector84}
@@ -378,16 +384,13 @@ const Courses = () => {
                 </div>
               </section>
               <section className="px-5 pt-7 pb-5">
-                <div className="text-[14px] font-[500] leading-[16.8px] text-[#1A2434] ">
+                <div className="text-[14px] font-[500] leading-[16.8px] text-[#1A2434] lg:leading-[19.6px] ">
                   7 monthly courses to provide the ideal environment for
                   foundational programming of the foetus at the cellular level
                   in body, mind and spirit.
                 </div>
                 <section className="mt-4 flex gap-[10px] justify-end items-center">
-                  <div
-                    onClick={() => openModal(2, course2)}
-                    className="text-[14px] font-[600] leading-[16.94px] text-[#1A2434] cursor-pointer"
-                  >
+                  <div className="text-[14px] font-[600] leading-[16.94px] text-[#1A2434] ">
                     Learn More
                   </div>
                   <Image
@@ -400,12 +403,12 @@ const Courses = () => {
               <Image
                 src={footSteps2}
                 alt="Foot Steps 2"
-                className="absolute bottom-[-78%] left-[35px] xl:hidden"
+                className="pointer-events-none absolute bottom-[-78%] left-[35px] xl:hidden"
               />
               <Image
                 src={longfootSteps2}
                 alt="Long Foot Steps 2"
-                className="hidden xl:block xl:absolute xl:w-[351.13px] xl:h-[479.18px] top-[40%] left-[-175%] "
+                className="pointer-events-none hidden xl:block xl:absolute xl:w-[351.13px] xl:h-[479.18px] top-[40%] left-[-175%] "
               />
             </div>
           </section>
@@ -426,7 +429,10 @@ const Courses = () => {
             />
           </section>
           <section className="w-[330px] xl:order-1 xl:basis-[45%] xl:flex xl:justify-end">
-            <div className="h-full w-full relative bg-[#F3E0A399] shadow-md rounded-[20px] xl:w-[330px] xl:after:absolute xl:after:top-[48%] xl:after:-right-1 xl:after:translate-x-1/2 xl:after:rounded-full xl:after:w-1 xl:after:h-1 xl:after:p-[2px] xl:after:border-[3px] xl:after:border-[#F3E0A399] xl:after:shadow-md xl:before:absolute xl:before:top-1/2 xl:before:-right-14 xl:before:w-12 xl:before:h-[2px] xl:before:bg-[#F3E0A399]">
+            <div
+              onClick={() => openModal(3, course3)}
+              className="cursor-pointer h-full w-full relative bg-[#F3E0A399] shadow-md rounded-[20px] xl:w-[330px] xl:after:absolute xl:after:top-[48%] xl:after:-right-1 xl:after:translate-x-1/2 xl:after:rounded-full xl:after:w-1 xl:after:h-1 xl:after:p-[2px] xl:after:border-[3px] xl:after:border-[#F3E0A399] xl:after:shadow-md xl:before:absolute xl:before:top-1/2 xl:before:-right-14 xl:before:w-12 xl:before:h-[2px] xl:before:bg-[#F3E0A399]"
+            >
               <section className="relative">
                 <Image
                   src={vector85}
@@ -438,15 +444,12 @@ const Courses = () => {
                 </div>
               </section>
               <section className="px-5 pt-7 pb-5">
-                <div className="text-[14px] font-[500] leading-[16.8px] text-[#1A2434] ">
+                <div className="text-[14px] font-[500] leading-[16.8px] text-[#1A2434] lg:leading-[19.6px] ">
                   Monthly courses to raise the IQ of your child dramatically and
                   sow the seeds of EQ & SQ.
                 </div>
                 <section className="mt-4 flex gap-[10px] justify-end items-center">
-                  <div
-                    onClick={() => openModal(3, course3)}
-                    className="text-[14px] font-[600] leading-[16.94px] text-[#1A2434] cursor-pointer"
-                  >
+                  <div className="text-[14px] font-[600] leading-[16.94px] text-[#1A2434] ">
                     Learn More
                   </div>
                   <Image
@@ -459,12 +462,12 @@ const Courses = () => {
               <Image
                 src={footSteps3}
                 alt="Foot steps 3"
-                className="absolute bottom-[-150px] left-[35px] xl:hidden"
+                className="pointer-events-none absolute bottom-[-150px] left-[35px] xl:hidden"
               />
               <Image
                 src={longfootSteps3}
                 alt="Long Foot Step1"
-                className="hidden xl:block xl:absolute xl:w-[286.13px] xl:h-[514.08px] top-[30%] right-[-230%] "
+                className="pointer-events-none hidden xl:block xl:absolute xl:w-[286.13px] xl:h-[514.08px] top-[30%] right-[-230%] "
               />
             </div>
           </section>
@@ -485,7 +488,10 @@ const Courses = () => {
             />
           </section>
           <section className="w-[330px] xl:basis-1/2">
-            <div className="shadow-md rounded-[20px] bg-[#D1CCF366] relative w-[330px] xl:after:absolute xl:after:top-[48%] xl:after:-left-4 xl:after:translate-x-1/2 xl:after:rounded-full xl:after:w-1 xl:after:h-1 xl:after:p-[2px] xl:after:border-[3px] xl:after:border-[#D1CCF366] xl:after:shadow-md xl:before:absolute xl:before:top-1/2 xl:before:-left-14 xl:before:w-12 xl:before:h-[2px] xl:before:bg-[#D1CCF366]">
+            <div
+              onClick={() => openModal(4, course4)}
+              className="cursor-pointer shadow-md rounded-[20px] bg-[#D1CCF366] relative w-[330px] xl:after:absolute xl:after:top-[48%] xl:after:-left-4 xl:after:translate-x-1/2 xl:after:rounded-full xl:after:w-1 xl:after:h-1 xl:after:p-[2px] xl:after:border-[3px] xl:after:border-[#D1CCF366] xl:after:shadow-md xl:before:absolute xl:before:top-1/2 xl:before:-left-14 xl:before:w-12 xl:before:h-[2px] xl:before:bg-[#D1CCF366]"
+            >
               <section className="relative">
                 <Image
                   src={vector86}
@@ -497,14 +503,11 @@ const Courses = () => {
                 </div>
               </section>
               <section className="px-5 pt-7 pb-5">
-                <div className="text-[14px] font-[500] leading-[16.8px] text-[#1A2434] ">
+                <div className="text-[14px] font-[500] leading-[16.8px] text-[#1A2434] lg:leading-[19.6px] ">
                   Courses designed to maximise IQ, EQ, and SQ.
                 </div>
                 <section className="mt-4 flex gap-[10px] justify-end items-center">
-                  <div
-                    onClick={() => openModal(4, course4)}
-                    className="text-[14px] font-[600] leading-[16.94px] text-[#1A2434] cursor-pointer"
-                  >
+                  <div className="text-[14px] font-[600] leading-[16.94px] text-[#1A2434] ">
                     Learn More
                   </div>
                   <Image
@@ -517,12 +520,12 @@ const Courses = () => {
               <Image
                 src={footSteps4}
                 alt="Foot steps 4"
-                className="absolute bottom-[-150px] left-[35px] xl:hidden"
+                className="pointer-events-none absolute bottom-[-150px] left-[35px] xl:hidden"
               />
               <Image
                 src={longfootSteps4}
                 alt="Long Foot Steps 4"
-                className="hidden xl:block xl:absolute xl:w-[286.13px] xl:h-[514.18px] top-[40%] left-[-215%] "
+                className="pointer-events-none hidden xl:block xl:absolute xl:w-[286.13px] xl:h-[514.18px] top-[40%] left-[-215%] "
               />
             </div>
           </section>
@@ -537,12 +540,12 @@ const Courses = () => {
           <Image
             src={singleStep}
             alt="Single foot step"
-            className="hidden xl:block absolute top-[49%] left-[-57%] "
+            className="w-[71px] h-[87px] hidden xl:block absolute top-[49%] left-[-57%] "
           />
           <Image
             src={singleStep}
             alt="Single foot step"
-            className="hidden xl:block absolute top-[55%] left-[-30%] "
+            className="w-[71px] h-[87px] hidden xl:block absolute top-[55%] left-[-30%] "
           />
         </section>
 
@@ -553,7 +556,7 @@ const Courses = () => {
         <section className="w-[259px] h-[78px] text-[28px] relative mt-4 font-[700] leading-[39.2px] text-[#4D1435] text-center xl:w-[474px] mx-auto xl:text-[32px] xl:font-[800] xl:leading-[44.8px] xl:mt-[6px]">
           <span className="z-10 relative">A Genius Ready for the World!</span>
           <svg
-            className="absolute w-[106.08px] h-[40.94px] left-[27%] top-[16%] translate-x-[-50%] z-0 lg:top-1 lg:w-[188px] lg:h-[72px] lg:left-[24%]"
+            className="absolute w-[106.08px] h-[40.94px] left-[27%] top-[16%] translate-x-[-50%] z-0 lg:top-1 lg:w-[160px] lg:h-[72px] lg:left-[16%]"
             viewBox="0 0 345 41"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

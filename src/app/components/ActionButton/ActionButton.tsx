@@ -32,7 +32,7 @@ const ActionButton = () => {
       onClick={handleClick}
     >
       <a
-        className={`w-full h-full block px-4 py-2 pr-[13px] lg:flex lg:gap-[16px] items-center text-nowrap`}
+        className={`w-full h-full px-4 py-2 pr-[13px] flex lg:gap-[16px] items-center text-nowrap`}
       >
         <svg
           className="w-8 h-8 lg:basis-11 lg:shrink-0 lg:h-11"
@@ -90,7 +90,7 @@ const ActionButton = () => {
         </svg>
 
         <span
-          className={`w-[135px] h-[15px] flex gap-1 text-xs font-semibold leading-[14.52px] text-[#1A2434] lg:text-base lg:leading-[19.36px] lg:font-medium lg:w-full `}
+          className={`hidden w-[135px] h-[19px] lg:flex gap-1 text-xs font-semibold leading-[14.52px] text-[#1A2434] lg:text-base lg:leading-[19.36px] lg:font-medium lg:w-full `}
         >
           Call{" "}
           <span className={`${isOpen ? "block" : "hidden"}`}>

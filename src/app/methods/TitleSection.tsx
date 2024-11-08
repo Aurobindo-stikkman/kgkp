@@ -24,9 +24,9 @@ const TitleSection = () => {
     >
       <span className="z-10 relative">The KGKP Method</span>
       <svg
-        className={`absolute w-[226.08px] h-[60.94px] left-[57%] top-[12%] translate-x-[-50%] z-0 lg:w-[345.11px] ${
+        className={`absolute w-[226.08px] h-[60.94px] left-[57%] top-[12%] translate-x-[-50%] z-0 lg:w-[326.11px] ${
           isInView ? styles.chalkMark : ""
-        } lg:h-[93.76px] lg:left-[unset] lg:top-[5%] lg:right-[-52%]`}
+        } lg:h-[93.76px] lg:left-[unset] lg:top-[11%] lg:right-[-52%]`}
         viewBox="0 0 345 41"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

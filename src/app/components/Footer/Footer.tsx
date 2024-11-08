@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useState } from "react";
 
-import logo from "./assets/kgk_logo Open File 2.svg";
+import logo from "./assets/KGK logo SVG (2).svg";
 import facebookLogo from "./assets/Facebook.svg";
 import instagramLogo from "./assets/Instagram.svg";
 import youtubeLogo from "./assets/Youtube.svg";

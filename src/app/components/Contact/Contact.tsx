@@ -39,7 +39,7 @@ const Contact = () => {
           Ready to Begin Your Child's Journey to Becoming a Genius?
         </span>
         <svg
-          className={`absolute w-[104px] h-[25.94px] top-[37px] right-0 z-0 lg:w-[183.48px] lg:top-[51%] lg:right-[17%] lg:h-[73.94px] ${
+          className={`absolute w-[104px] h-[25.94px] top-[37px] right-0 z-0 lg:w-[183.48px] lg:top-[51%] lg:right-[20%] lg:h-[73.94px] ${
             isInView ? styles.chalkMark : ""
           }`}
           viewBox="0 0 345 41"
