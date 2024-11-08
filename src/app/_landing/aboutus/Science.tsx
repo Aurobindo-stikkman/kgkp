@@ -64,10 +64,12 @@ const Science = () => {
             className="h-[276px] rounded-tr-[40px] rounded-tl-[40px] w-full z-10 object-cover"
           />
           <div className="h-full w-full z-10 rounded-bl-[40px] rounded-br-[40px] bg-white">
-            <div className="w-[296px] h-auto mx-auto flex flex-grow py-6 text-[#4D1435] z-10 text-center text-[14px] font-[500] leading-[25.2px] lg:text-[16px] lg:leading-[28.8px] lg:relative lg:px-6 lg:max-w-[307px] lg:h-max lg:mx-auto ">
-              Integration of cutting edge technologies such as milestone
-              acceleration, brain development profile and multiple intelligences
-              to create a truly genius child
+            <div className="w-[296px] h-auto mx-auto flex flex-grow py-6 text-[#4D1435] text-balance z-10 text-center text-[14px] font-[500] leading-[25.2px] lg:text-[16px] lg:leading-[28.8px] lg:relative lg:px-6 lg:max-w-[307px] lg:h-max lg:mx-auto ">
+              <span className="opacity-[70%]">
+                Integration of cutting edge technologies such as milestone
+                acceleration, brain development profile and multiple
+                intelligences to create a truly genius child
+              </span>
               <div
                 style={{
                   background:
@@ -110,9 +112,11 @@ const Science = () => {
             className="h-[276px] rounded-tr-[40px] rounded-tl-[40px] z-10 w-full object-cover"
           />
           <div className="w-[296px] h-auto mx-auto flex flex-grow px-4 py-6 text-[#4D1435] text-center text-[14px] font-[500] leading-[25.2px] lg:text-[16px] lg:px-0 lg:leading-[28.8px] lg:max-w-[309px] lg:h-auto lg:mx-auto lg:relative">
-            Nurture a complete genius with high IQ, EQ & SQ through an
-            intellectually stimulating environment, emotional awareness,
-            spiritual values & positive parenting
+            <span className="opacity-[70%]">
+              Nurture a complete genius with high IQ, EQ & SQ through an
+              intellectually stimulating environment, emotional awareness,
+              spiritual values & positive parenting
+            </span>
             <div
               style={{
                 background:
@@ -150,9 +154,11 @@ const Science = () => {
             className="h-[276px] rounded-tr-[40px] rounded-tl-[40px] w-full object-cover"
           />
           <div className="w-[296px] h-auto mx-auto flex flex-grow py-6 text-[#4D1435] text-center text-[14px] font-[500] leading-[25.2px] lg:text-[16px] lg:leading-[28.8px] lg:max-w-[309px] lg:h-max lg:mx-auto lg:relative">
-            Personalized activity plan based on your child’s talent profile,
-            brain development & learning style found through the scientific
-            method of ridge analysis
+            <span className="opacity-[70%]">
+              Personalized activity plan based on your child’s talent profile,
+              brain development & learning style found through the scientific
+              method of ridge analysis
+            </span>
             <div
               style={{
                 background:

@@ -24,7 +24,7 @@ const FAQ: React.FC<Props> = ({ data }) => {
   }, [open]);
 
   return (
-    <div className="w-full p-3 border rounded-[12px] md:p-5 lg:p-8 ">
+    <div className="w-full p-3 border rounded-[12px] md:p-5 lg:p-8 lg:rounded-[20px] ">
       <section className="flex justify-between items-center">
         <div className="text-[12px] font-[400] leading-[14.4px] text-[#1A2434] md:text-[18px] md:leading-[18.4px] lg:text-[24px] lg:leading-[28.8px]">
           {data.q}

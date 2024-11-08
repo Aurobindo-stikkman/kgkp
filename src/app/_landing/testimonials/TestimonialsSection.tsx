@@ -165,7 +165,7 @@ const TestimonialsSection = () => {
           Real Experiences: Parents Testimonials and Child Outcomes
         </span>
         <svg
-          className="absolute w-[178.08px] h-[33px] left-[48%] rotate-[-2.07deg] -bottom-4 translate-x-[-50%] z-0 lg:bottom-[-20px] lg:left-[54%] lg:w-[293.11px] lg:h-[35px] lg:rotate-[-1.31deg]"
+          className="absolute w-[178.08px] h-[33px] left-[48%] -bottom-4 translate-x-[-50%] z-0 lg:bottom-[-20px] lg:left-[54%] lg:w-[293.11px] lg:h-[35px]"
           viewBox="0 0 176 19"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -185,7 +185,7 @@ const TestimonialsSection = () => {
       >
         {/* Video section */}
         <section
-          className="w-[296px] h-[189px] flex-grow-0 flex-shrink-0 rounded-[12px] relative lg:rotate-[-6.52deg] lg:order-2 lg:w-[335.35px] lg:h-[214.28px]"
+          className="w-[296px] h-[189px] flex-grow-0 flex-shrink-0 rounded-[12px] relative lg:rotate-[-6.52deg] lg:order-2 lg:w-[335.35px] lg:h-[214.28px] lg:top-5"
           data-volume-level="high"
         >
           <section
@@ -193,8 +193,8 @@ const TestimonialsSection = () => {
               videoPlay ? "opacity-0" : "opacity-100"
             }`}
           >
-            <div className="flex flex-col gap-1 bg-amber-400 p-2 pr-2.5 rounded-b-[12px]">
-              <div className="text-[10px] font-semibold leading-[12px] text-[#1A2434]">
+            <div className="flex flex-col gap-1 bg-[#F6DA51] p-2 pr-2.5 rounded-b-[12px]">
+              <div className="text-[10px] font-semibold opacity-[70%] tracking-[0.4px] leading-[12px] text-[#1A2434]">
                 2 years old recognising words after 30 days of KGKP
               </div>
 
@@ -227,7 +227,7 @@ const TestimonialsSection = () => {
                   )}
                 </div>
 
-                <div className="flex-grow text-[10px] font-[500] leading-[14px]">
+                <div className="flex-grow text-[10px] opacity-[70%] font-[500] leading-[14px]">
                   {timeRemaining}
                 </div>
 
@@ -325,7 +325,7 @@ const TestimonialsSection = () => {
         >
           <section className="flex gap-4 items-center">
             <Image src={image1} alt="Image 1" className="w-[74px] h-[74px] " />
-            <section className="grid gap-1 ">
+            <section className="grid gap-1 opacity-[70%] ">
               <div className="text-[16.55px] font-[700] leading-[19.86px] text-[#1A2434] ">
                 Sahana
               </div>
@@ -335,7 +335,7 @@ const TestimonialsSection = () => {
             </section>
           </section>
 
-          <section className="text-[13.24px] font-[400] leading-[18.53px] text-[#1A2434] ">
+          <section className="text-[13.24px] font-[400] opacity-[70%] tracking-[0.4px] leading-[18.53px] text-[#1A2434] ">
             I find it very good. When I see other kids, I can make out the
             difference in her. Her reading is much better.
           </section>
@@ -351,7 +351,7 @@ const TestimonialsSection = () => {
         >
           <section className="flex gap-4 items-center">
             <Image src={image2} alt="Image 2" className="w-[74px] h-[74px] " />
-            <section className="grid gap-1 ">
+            <section className="grid gap-1 opacity-[70%] ">
               <div className="text-[16.55px] font-[700] leading-[19.86px] text-[#1A2434] ">
                 Archana
               </div>
@@ -361,7 +361,7 @@ const TestimonialsSection = () => {
             </section>
           </section>
 
-          <section className="text-[13.24px] font-[400] leading-[18.53px] text-[#1A2434] ">
+          <section className="text-[13.24px] font-[400] opacity-[70%] tracking-[0.4px] leading-[18.53px] text-[#1A2434] ">
             She came to know so many country names and their capitals. She also
             asks me inquisitive questions.
           </section>

@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const AboutFounder = () => {
   return (
-    <div className="py-[42px] relative lg:pt-[120px] lg:pb-[128px] xl:pt-[173px]">
+    <div className="py-[42px] relative lg:pt-[120px] lg:pb-[105px] xl:pt-[173px]">
       <section className="text-[20px] font-[700] leading-[24px] text-[#F6E2D8] relative w-[213px] mx-auto md:text-[32px] md:leading-[38.4px] md:w-[340px]">
         <span className="z-10 relative block w-[213px] h-6 md:w-[340px] md:h-[38px]">
           Get to know About Us
@@ -78,11 +78,11 @@ const AboutFounder = () => {
           />
         </section>
 
-        <section className="w-[360px] mx-auto mt-14 text-center md:w-[704px] lg:text-justify xl:mx-0 xl:order-1">
+        <section className="w-[360px] mx-auto mt-14 text-center md:w-[704px] lg:text-justify xl:mx-0 xl:order-1 tracking-[0.4px] ">
           <div className="text-[#F6E2D8] font-[700] text-[14px] leading-[19.6px] inline mr-1 sm:text-[18px] lg:text-[24px] lg:leading-[33.12px] ">
             Kaushalya Genius Kid Program
           </div>{" "}
-          <div className="text-[#F6E2D8] inline font-[400] text-[14px] leading-[19.6px] sm:text-[18px] lg:text-[24px] lg:leading-[33.12px] ">
+          <div className="text-[#F6E2D8] inline font-[300] text-[14px] leading-[19.6px] sm:text-[18px] lg:text-[24px] lg:leading-[33.12px] ">
             is a time-tested & highly effective brain development program
             created by an amalgamation of cutting edge scientific discoveries
             with rich heritage of age-old cultural and spiritual wisdom. It’s an
@@ -96,7 +96,7 @@ const AboutFounder = () => {
             <div className="text-[#F6E2D8] font-[700] text-[14px] leading-[19.6px] inline mr-1 sm:text-[18px] lg:text-[24px] lg:leading-[33.12px] ">
               Mr. Ramesh Partani
             </div>{" "}
-            <div className="text-[#F6E2D8] inline font-[400] text-[14px] leading-[19.6px] sm:text-[18px] lg:text-[24px] lg:leading-[33.12px] ">
+            <div className="text-[#F6E2D8] inline font-[300] text-[14px] leading-[19.6px] sm:text-[18px] lg:text-[24px] lg:leading-[33.12px] ">
               is the chairman and director of Ru Education Pvt Ltd. He is an
               International Spiritual and Management Trainer, Coach, Counsellor
               and Consultant with over 3 decades of experience in Human Resource

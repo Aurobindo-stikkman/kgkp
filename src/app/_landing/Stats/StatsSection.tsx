@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 
-import { useState, useEffect, Dispatch, SetStateAction, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import playtime1 from "./playtime.svg";
 import trophy from "./trophy.svg";
@@ -59,10 +59,10 @@ const StatsSection = () => {
           className="w-8 h-8 mx-auto md:w-14 md:h-14 lg:w-20 lg:h-20 xl:w-[130px] xl:h-[130px]"
         />
         <div className="w-[68px] grid gap-2 lg:w-auto">
-          <div className="text-[18px] font-[700] leading-[21.6px] poetsen-one-regular text-center lg:h-[58px] lg:text-[48px] lg:leading-[57.6px]">
+          <div className="text-[18px] font-normal leading-[21.6px] poetsen-one-regular text-center lg:h-[58px] lg:text-[48px] lg:leading-[57.6px]">
             {childrenCount}K<span className="text-red-600">+</span>
           </div>
-          <div className="text-[10px] font-[400] leading-[14px] text-center tracking-[2%] text-[#1A2434] lg:h-8 lg:text-[18px] lg:leading-[32.4px] opacity-[70%]">
+          <div className="text-[10px] font-[400] leading-[14px] tracking-[0.4px] text-center text-[#1A2434] lg:h-8 lg:text-[18px] lg:leading-[32.4px] opacity-[70%]">
             Children Benefited
           </div>
         </div>
@@ -76,11 +76,11 @@ const StatsSection = () => {
           className="w-8 h-8 mx-auto md:w-14 md:h-14 lg:w-20 lg:h-20 xl:w-[130px] xl:h-[130px]"
         />
         <div className="w-[88px] grid gap-2 lg:w-auto">
-          <div className="text-[18px] font-[700] leading-[21.6px] poetsen-one-regular text-center lg:h-[58px] lg:text-[48px] lg:leading-[57.6px]">
+          <div className="text-[18px] font-normal leading-[21.6px] poetsen-one-regular text-center lg:h-[58px] lg:text-[48px] lg:leading-[57.6px]">
             {yearsCount}
             <span className="text-red-600">+</span>
           </div>
-          <div className="text-[10px] font-[400] leading-[14px] text-center tracking-[2%] text-[#1A2434] lg:h-8 lg:text-[18px] lg:leading-[32.4px] opacity-[70%]">
+          <div className="text-[10px] font-[400] leading-[14px] tracking-[0.4px] text-center text-[#1A2434] lg:h-8 lg:text-[18px] lg:leading-[32.4px] opacity-[70%]">
             Years of KGK Program
           </div>
         </div>
@@ -94,10 +94,10 @@ const StatsSection = () => {
           className="w-8 h-8 mx-auto md:w-14 md:h-14 lg:w-20 lg:h-20 xl:w-[130px] xl:h-[130px]"
         />
         <div className="w-[88px] grid gap-2 lg:w-auto">
-          <div className="text-[18px] font-[700] leading-[21.6px] poetsen-one-regular text-center lg:h-[58px] lg:text-[48px] lg:leading-[57.6px]">
+          <div className="text-[18px] font-normal leading-[21.6px] poetsen-one-regular text-center lg:h-[58px] lg:text-[48px] lg:leading-[57.6px]">
             {parentsCount}K<span className="text-red-600">+</span>
           </div>
-          <div className="text-[10px] font-[400] leading-[14px] text-center tracking-[2%] text-[#1A2434] lg:text-[18px] lg:leading-[32.4px] opacity-[70%]">
+          <div className="text-[10px] font-[400] leading-[14px] tracking-[0.4px] text-center text-[#1A2434] lg:text-[18px] lg:leading-[32.4px] opacity-[70%]">
             Parents benefited from Parenting Workshops
           </div>
         </div>
@@ -111,10 +111,10 @@ const StatsSection = () => {
           className="w-8 h-8 mx-auto md:w-14 md:h-14 lg:w-20 lg:h-20 xl:w-[130px] xl:h-[130px]"
         />
         <div className="w-[88px] grid gap-2 lg:w-auto">
-          <div className="text-[18px] font-[700] leading-[21.6px] poetsen-one-regular text-center lg:h-[58px] lg:text-[48px] lg:leading-[57.6px]">
+          <div className="text-[18px] font-normal leading-[21.6px] poetsen-one-regular text-center lg:h-[58px] lg:text-[48px] lg:leading-[57.6px]">
             {counsellingCount}K<span className="text-red-600">+</span>
           </div>
-          <div className="text-[10px] font-[400] leading-[14px] text-center tracking-[2%] text-[#1A2434] lg:text-[18px] lg:leading-[32.4px] opacity-[70%]">
+          <div className="text-[10px] font-[400] leading-[14px] tracking-[0.4px] text-center text-[#1A2434] lg:text-[18px] lg:leading-[32.4px] opacity-[70%]">
             Ridge Analysis Counsellings
           </div>
         </div>

@@ -3,8 +3,7 @@ import React from "react";
 import Slider from "react-slick";
 import Image from "next/image";
 
-import prePregnancy from "./pre-pregnancy.png";
-import clock from "./Clock.svg";
+import { carouselData, ICard } from "./carouselData";
 
 // Type definition for arrow props
 interface ArrowProps {
@@ -15,12 +14,11 @@ interface ArrowProps {
 const NextArrow: React.FC<ArrowProps> = ({ onClick }) => {
   return (
     <div
-      className="absolute top-1/2 right-0 z-10 rounded-full w-[52px] h-[52px] bg-white shadow-lg flex items-center justify-center cursor-pointer"
+      className="absolute top-1/2 -right-3 z-10 border rounded-full w-[52px] h-[52px] bg-white shadow-lg flex items-center justify-center cursor-pointer"
       onClick={onClick}
     >
       <svg
-        width="24"
-        height="24"
+        className="w-8 h-8"
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -41,12 +39,11 @@ const NextArrow: React.FC<ArrowProps> = ({ onClick }) => {
 const PrevArrow: React.FC<ArrowProps> = ({ onClick }) => {
   return (
     <div
-      className="absolute top-1/2 left-0 z-10 rounded-full w-[52px] h-[52px] bg-white shadow-lg flex items-center justify-center cursor-pointer"
+      className="absolute top-1/2 left-6 z-10 border rounded-full w-[52px] h-[52px] bg-white shadow-lg flex items-center justify-center cursor-pointer"
       onClick={onClick}
     >
       <svg
-        width="24"
-        height="24"
+        className="w-8 h-8"
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -63,32 +60,25 @@ const PrevArrow: React.FC<ArrowProps> = ({ onClick }) => {
   );
 };
 
-export default function SimpleSlider() {
+interface SimpleSliderProps {
+  data: ICard[];
+  activeState: string;
+}
+
+export default function SimpleSlider({ data, activeState }: SimpleSliderProps) {
   const settings = {
     dots: true,
     infinite: false,
     speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
+    slidesToShow: 3,
+    slidesToScroll: 3,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     responsive: [
       {
-        breakpoint: 1350, // Tailwind's 'xl' starts at 1280px
+        breakpoint: 1280,
         settings: {
           slidesToShow: 3,
-        },
-      },
-      {
-        breakpoint: 1124, // Tailwind's 'lg' starts at 1024px
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 1440, // Tailwind's '2xl' starts at 1536px
-        settings: {
-          slidesToShow: 4,
         },
       },
     ],
@@ -96,288 +86,42 @@ export default function SimpleSlider() {
 
   return (
     <Slider {...settings}>
-      <section className="h-[431px] rounded-[16px] bg-[#CFE9E4] flex flex-col gap-4 pb-4 ">
-        <Image
-          src={prePregnancy}
-          alt="Pre-Pregnant"
-          className="h-[240px] rounded-tl-[16px] rounded-tr-[16px] w-full "
-        />
-        <section className="flex-grow px-6 py-4 grid gap-6 ">
-          <div className="flex justify-between ">
-            <div className="text-[14px] font-[600] leading-[19.6px] text-[#1A2434]">
-              Pre-Pregnancy
-            </div>
-            <svg
-              className="w-4 h-4 lg:w-6 lg:h-6 custom-button-icon"
-              viewBox="0 0 17 17"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g id="icon-arrow-right">
-                <path
-                  id="Shape"
-                  d="M8.02843 3.36177C8.28878 3.10142 8.71089 3.10142 8.97124 3.36177L13.6379 8.02843C13.8983 8.28878 13.8983 8.71089 13.6379 8.97124L8.97124 13.6379C8.71089 13.8983 8.28878 13.8983 8.02843 13.6379C7.76808 13.3776 7.76808 12.9554 8.02843 12.6951L11.557 9.1665H3.83317C3.46498 9.1665 3.1665 8.86803 3.1665 8.49984C3.1665 8.13165 3.46498 7.83317 3.83317 7.83317H11.557L8.02843 4.30457C7.76808 4.04423 7.76808 3.62212 8.02843 3.36177Z"
-                  className="fill-current text-[#4D1435]"
-                />
-              </g>
-            </svg>
-          </div>
+      {data.map((ele, i) => {
+        return (
+          <div
+            key={ele.title + i}
+            className="border border-[#E5E5E5] bg-white rounded-2xl overflow-hidden xl:w-[360px] xl:pb-[60px] "
+          >
+            <section className="flex items-center p-[4px] pb-0 ">
+              <Image
+                width={165}
+                height={224}
+                src={ele.img}
+                alt={`Image ${ele.title}`}
+                className="basis-1/2 shrink-0 h-[224px] rounded-tl-2xl object-cover"
+              />
+              <section
+                style={{
+                  backgroundColor: activeState ? ele.bg : "",
+                }}
+                className={`basis-1/2 h-[224px] rounded-tr-2xl shrink-0 pl-2 py-[30px] pr-4 flex flex-col gap-8 items-end justify-end `}
+              >
+                <div className="w-[137px] text-2xl font-bold leading-[33.6px] text-end text-[#1A2434] ">
+                  {ele.planName}
+                </div>
 
-          <div className="text-[12px] font-[400] leading-[14.4px] text-[#1A2434] ">
-            Prepares the child for motor skills and learn from nature ..
-            Prepares the child for motor skills and learn from nature...
-          </div>
+                <div className="bg-white rounded-[20px] w-[86px] h-[25px] ml-auto px-2.5 py-[4px] text-xs font-bold leading-[16.8px] text-[#EF816C] text-center ">
+                  Phase-{ele.phase}
+                </div>
+              </section>
+            </section>
 
-          <div className="flex justify-between ">
-            <div className="flex gap-2 ">
-              <Image src={clock} alt="clock" className="w-[17px] h-[17px]" />
-              <div className="text-[14px] font-[500] leading-[16.8px] text-[#1A2434] ">
-                15 min/Day
-              </div>
-            </div>
-            <div className="h-[21px] w-[60px] px-[6px] py-[2px] bg-white rounded-[20px] ">
-              <div className="text-[12px] font-[600] leading-[16.8px] text-[#75C0B1] ">
-                Phase 1
-              </div>
-            </div>
+            <section className="mt-[60px] text-2xl font-bold leading-[33.6px] text-[#1A2434] text-center ">
+              {ele.categoryType} | {ele.title}
+            </section>
           </div>
-        </section>
-      </section>
-      <section className="h-[431px] rounded-[16px] bg-[#CFE9E4] flex flex-col gap-4 pb-4 ">
-        <Image
-          src={prePregnancy}
-          alt="Pre-Pregnant"
-          className="h-[240px] rounded-tl-[16px] rounded-tr-[16px] w-full "
-        />
-        <section className="flex-grow px-6 py-4 grid gap-6 ">
-          <div className="flex justify-between ">
-            <div className="text-[14px] font-[600] leading-[19.6px] text-[#1A2434]">
-              Pre-Pregnancy
-            </div>
-            <svg
-              className="w-4 h-4 lg:w-6 lg:h-6 custom-button-icon"
-              viewBox="0 0 17 17"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g id="icon-arrow-right">
-                <path
-                  id="Shape"
-                  d="M8.02843 3.36177C8.28878 3.10142 8.71089 3.10142 8.97124 3.36177L13.6379 8.02843C13.8983 8.28878 13.8983 8.71089 13.6379 8.97124L8.97124 13.6379C8.71089 13.8983 8.28878 13.8983 8.02843 13.6379C7.76808 13.3776 7.76808 12.9554 8.02843 12.6951L11.557 9.1665H3.83317C3.46498 9.1665 3.1665 8.86803 3.1665 8.49984C3.1665 8.13165 3.46498 7.83317 3.83317 7.83317H11.557L8.02843 4.30457C7.76808 4.04423 7.76808 3.62212 8.02843 3.36177Z"
-                  className="fill-current text-[#4D1435]"
-                />
-              </g>
-            </svg>
-          </div>
-
-          <div className="text-[12px] font-[400] leading-[14.4px] text-[#1A2434] ">
-            Prepares the child for motor skills and learn from nature ..
-            Prepares the child for motor skills and learn from nature...
-          </div>
-
-          <div className="flex justify-between ">
-            <div className="flex gap-2 ">
-              <Image src={clock} alt="clock" className="w-[17px] h-[17px]" />
-              <div className="text-[14px] font-[500] leading-[16.8px] text-[#1A2434] ">
-                15 min/Day
-              </div>
-            </div>
-            <div className="h-[21px] w-[60px] px-[6px] py-[2px] bg-white rounded-[20px] ">
-              <div className="text-[12px] font-[600] leading-[16.8px] text-[#75C0B1] ">
-                Phase 1
-              </div>
-            </div>
-          </div>
-        </section>
-      </section>
-      <section className="h-[431px] rounded-[16px] bg-[#CFE9E4] flex flex-col gap-4 pb-4 ">
-        <Image
-          src={prePregnancy}
-          alt="Pre-Pregnant"
-          className="h-[240px] rounded-tl-[16px] rounded-tr-[16px] w-full "
-        />
-        <section className="flex-grow px-6 py-4 grid gap-6 ">
-          <div className="flex justify-between ">
-            <div className="text-[14px] font-[600] leading-[19.6px] text-[#1A2434]">
-              Pre-Pregnancy
-            </div>
-            <svg
-              className="w-4 h-4 lg:w-6 lg:h-6 custom-button-icon"
-              viewBox="0 0 17 17"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g id="icon-arrow-right">
-                <path
-                  id="Shape"
-                  d="M8.02843 3.36177C8.28878 3.10142 8.71089 3.10142 8.97124 3.36177L13.6379 8.02843C13.8983 8.28878 13.8983 8.71089 13.6379 8.97124L8.97124 13.6379C8.71089 13.8983 8.28878 13.8983 8.02843 13.6379C7.76808 13.3776 7.76808 12.9554 8.02843 12.6951L11.557 9.1665H3.83317C3.46498 9.1665 3.1665 8.86803 3.1665 8.49984C3.1665 8.13165 3.46498 7.83317 3.83317 7.83317H11.557L8.02843 4.30457C7.76808 4.04423 7.76808 3.62212 8.02843 3.36177Z"
-                  className="fill-current text-[#4D1435]"
-                />
-              </g>
-            </svg>
-          </div>
-
-          <div className="text-[12px] font-[400] leading-[14.4px] text-[#1A2434] ">
-            Prepares the child for motor skills and learn from nature ..
-            Prepares the child for motor skills and learn from nature...
-          </div>
-
-          <div className="flex justify-between ">
-            <div className="flex gap-2 ">
-              <Image src={clock} alt="clock" className="w-[17px] h-[17px]" />
-              <div className="text-[14px] font-[500] leading-[16.8px] text-[#1A2434] ">
-                15 min/Day
-              </div>
-            </div>
-            <div className="h-[21px] w-[60px] px-[6px] py-[2px] bg-white rounded-[20px] ">
-              <div className="text-[12px] font-[600] leading-[16.8px] text-[#75C0B1] ">
-                Phase 1
-              </div>
-            </div>
-          </div>
-        </section>
-      </section>
-      <section className="h-[431px] rounded-[16px] bg-[#CFE9E4] flex flex-col gap-4 pb-4 ">
-        <Image
-          src={prePregnancy}
-          alt="Pre-Pregnant"
-          className="h-[240px] rounded-tl-[16px] rounded-tr-[16px] w-full "
-        />
-        <section className="flex-grow px-6 py-4 grid gap-6 ">
-          <div className="flex justify-between ">
-            <div className="text-[14px] font-[600] leading-[19.6px] text-[#1A2434]">
-              Pre-Pregnancy
-            </div>
-            <svg
-              className="w-4 h-4 lg:w-6 lg:h-6 custom-button-icon"
-              viewBox="0 0 17 17"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g id="icon-arrow-right">
-                <path
-                  id="Shape"
-                  d="M8.02843 3.36177C8.28878 3.10142 8.71089 3.10142 8.97124 3.36177L13.6379 8.02843C13.8983 8.28878 13.8983 8.71089 13.6379 8.97124L8.97124 13.6379C8.71089 13.8983 8.28878 13.8983 8.02843 13.6379C7.76808 13.3776 7.76808 12.9554 8.02843 12.6951L11.557 9.1665H3.83317C3.46498 9.1665 3.1665 8.86803 3.1665 8.49984C3.1665 8.13165 3.46498 7.83317 3.83317 7.83317H11.557L8.02843 4.30457C7.76808 4.04423 7.76808 3.62212 8.02843 3.36177Z"
-                  className="fill-current text-[#4D1435]"
-                />
-              </g>
-            </svg>
-          </div>
-
-          <div className="text-[12px] font-[400] leading-[14.4px] text-[#1A2434] ">
-            Prepares the child for motor skills and learn from nature ..
-            Prepares the child for motor skills and learn from nature...
-          </div>
-
-          <div className="flex justify-between ">
-            <div className="flex gap-2 ">
-              <Image src={clock} alt="clock" className="w-[17px] h-[17px]" />
-              <div className="text-[14px] font-[500] leading-[16.8px] text-[#1A2434] ">
-                15 min/Day
-              </div>
-            </div>
-            <div className="h-[21px] w-[60px] px-[6px] py-[2px] bg-white rounded-[20px] ">
-              <div className="text-[12px] font-[600] leading-[16.8px] text-[#75C0B1] ">
-                Phase 1
-              </div>
-            </div>
-          </div>
-        </section>
-      </section>
-      <section className="h-[431px] rounded-[16px] bg-[#CFE9E4] flex flex-col gap-4 pb-4 ">
-        <Image
-          src={prePregnancy}
-          alt="Pre-Pregnant"
-          className="h-[240px] rounded-tl-[16px] rounded-tr-[16px] w-full "
-        />
-        <section className="flex-grow px-6 py-4 grid gap-6 ">
-          <div className="flex justify-between ">
-            <div className="text-[14px] font-[600] leading-[19.6px] text-[#1A2434]">
-              Pre-Pregnancy
-            </div>
-            <svg
-              className="w-4 h-4 lg:w-6 lg:h-6 custom-button-icon"
-              viewBox="0 0 17 17"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g id="icon-arrow-right">
-                <path
-                  id="Shape"
-                  d="M8.02843 3.36177C8.28878 3.10142 8.71089 3.10142 8.97124 3.36177L13.6379 8.02843C13.8983 8.28878 13.8983 8.71089 13.6379 8.97124L8.97124 13.6379C8.71089 13.8983 8.28878 13.8983 8.02843 13.6379C7.76808 13.3776 7.76808 12.9554 8.02843 12.6951L11.557 9.1665H3.83317C3.46498 9.1665 3.1665 8.86803 3.1665 8.49984C3.1665 8.13165 3.46498 7.83317 3.83317 7.83317H11.557L8.02843 4.30457C7.76808 4.04423 7.76808 3.62212 8.02843 3.36177Z"
-                  className="fill-current text-[#4D1435]"
-                />
-              </g>
-            </svg>
-          </div>
-
-          <div className="text-[12px] font-[400] leading-[14.4px] text-[#1A2434] ">
-            Prepares the child for motor skills and learn from nature ..
-            Prepares the child for motor skills and learn from nature...
-          </div>
-
-          <div className="flex justify-between ">
-            <div className="flex gap-2 ">
-              <Image src={clock} alt="clock" className="w-[17px] h-[17px]" />
-              <div className="text-[14px] font-[500] leading-[16.8px] text-[#1A2434] ">
-                15 min/Day
-              </div>
-            </div>
-            <div className="h-[21px] w-[60px] px-[6px] py-[2px] bg-white rounded-[20px] ">
-              <div className="text-[12px] font-[600] leading-[16.8px] text-[#75C0B1] ">
-                Phase 1
-              </div>
-            </div>
-          </div>
-        </section>
-      </section>
-      <section className="h-[431px] rounded-[16px] bg-[#CFE9E4] flex flex-col gap-4 pb-4 ">
-        <Image
-          src={prePregnancy}
-          alt="Pre-Pregnant"
-          className="h-[240px] rounded-tl-[16px] rounded-tr-[16px] w-full "
-        />
-        <section className="flex-grow px-6 py-4 grid gap-6 ">
-          <div className="flex justify-between ">
-            <div className="text-[14px] font-[600] leading-[19.6px] text-[#1A2434]">
-              Pre-Pregnancy
-            </div>
-            <svg
-              className="w-4 h-4 lg:w-6 lg:h-6 custom-button-icon"
-              viewBox="0 0 17 17"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g id="icon-arrow-right">
-                <path
-                  id="Shape"
-                  d="M8.02843 3.36177C8.28878 3.10142 8.71089 3.10142 8.97124 3.36177L13.6379 8.02843C13.8983 8.28878 13.8983 8.71089 13.6379 8.97124L8.97124 13.6379C8.71089 13.8983 8.28878 13.8983 8.02843 13.6379C7.76808 13.3776 7.76808 12.9554 8.02843 12.6951L11.557 9.1665H3.83317C3.46498 9.1665 3.1665 8.86803 3.1665 8.49984C3.1665 8.13165 3.46498 7.83317 3.83317 7.83317H11.557L8.02843 4.30457C7.76808 4.04423 7.76808 3.62212 8.02843 3.36177Z"
-                  className="fill-current text-[#4D1435]"
-                />
-              </g>
-            </svg>
-          </div>
-
-          <div className="text-[12px] font-[400] leading-[14.4px] text-[#1A2434] ">
-            Prepares the child for motor skills and learn from nature ..
-            Prepares the child for motor skills and learn from nature...
-          </div>
-
-          <div className="flex justify-between ">
-            <div className="flex gap-2 ">
-              <Image src={clock} alt="clock" className="w-[17px] h-[17px]" />
-              <div className="text-[14px] font-[500] leading-[16.8px] text-[#1A2434] ">
-                15 min/Day
-              </div>
-            </div>
-            <div className="h-[21px] w-[60px] px-[6px] py-[2px] bg-white rounded-[20px] ">
-              <div className="text-[12px] font-[600] leading-[16.8px] text-[#75C0B1] ">
-                Phase 1
-              </div>
-            </div>
-          </div>
-        </section>
-      </section>
+        );
+      })}
     </Slider>
   );
 }

@@ -37,16 +37,16 @@ const HeroSection = () => {
         <section className="basis-[247px] pt-6 px-3 md:flex-grow md:flex-shrink md:basis-1/2 md:pl-8 md:pt-12 md:pr-0 lg:pl-[80px] lg:pt-[167px]">
           <div
             ref={sectionRef}
-            className="relative text-[28px] font-[700] leading-[36.4px] text-[#4D1435] text-center md:text-left lg:w-[668px] lg:h-[114px] lg:font-[700] lg:text-[38px] lg:leading-[56.62px]"
+            className="relative text-[28px] font-[700] leading-[36.4px] text-[#4D1435] text-center md:text-left lg:w-[668px] lg:h-[114px] lg:font-[700] lg:text-[38px] lg:leading-[56.62px] "
           >
-            <span className="w-[337px] mx-auto z-10 relative md:w-auto max-w-[668px] block">
+            <span className="w-[337px] mx-auto z-10 relative md:w-auto lg:w-[668px] lg:text-balance block">
               <span className="relative z-10">
                 Unlock your Child’s Intelligence with Kaushalya Genius Kid
                 Program
               </span>
               {/* Big Screen Chalk */}
               <svg
-                className={`hidden lg:block absolute w-[397.14px] h-[82.81px] top-[11px] right-24 ${
+                className={`hidden lg:block absolute w-[420.14px] h-[82.81px] top-[11px] right-16 ${
                   isInView ? styles.chalkMark : ""
                 }`}
                 viewBox="0 0 423 82"
@@ -115,13 +115,13 @@ const HeroSection = () => {
               </svg>
             </span>
           </div>
-          <div className="w-[325px] mx-auto text-[14px] font-[400] leading-[25.2px] text-[#4D1435] text-center pt-4 px-[6px] md:w-auto md:mx-0 md:text-left md:p-0 md:mt-7 lg:w-[572px] lg:h-[64px] lg:mt-[21px] lg:text-[20px] lg:leading-[32.4px]">
+          <div className="w-[325px] mx-auto text-[14px] tracking-[0.4px] font-[400] leading-[25.2px] text-[#4D1435] text-center pt-4 px-[6px] md:w-auto md:mx-0 md:text-left md:p-0 md:mt-7 lg:w-[572px] lg:h-[64px] lg:mt-[21px] lg:text-[20px] lg:leading-[32.4px]">
             Headstart your kid’s development right from the time of conception
             till the age of 15 years and beyond
           </div>
 
-          <button className="hidden w-[254px] h-[51px] absolute bottom-[66px] rounded-[50px] bg-[#4D1435] md:flex items-center gap-[14px] px-4 py-[28px] justify-center translate-x-[-50%] left-1/2 md:static md:translate-x-0 md:mt-10 cursor-pointer mt-[42px] lg:w-[395px] lg:h-[77px] lg:px-[60px] lg:py-[24px] custom-black-button">
-            <div className="text-[16px] font-[700] leading-[19.2px] text-white lg:w-[248px] lg:text-[18.8px] lg:leading-[28.8px] xl:text-2xl xl:leading-[28.8px] custom-button-icon">
+          <button className="hidden w-[254px] h-[51px] absolute bottom-[66px] rounded-[50px] bg-[#4D1435] md:flex items-center gap-[14px] px-4 py-[28px] justify-center translate-x-[-50%] left-1/2 md:static md:translate-x-0 md:mt-10 cursor-pointer mt-[42px] lg:w-[395px] lg:h-[77px] lg:px-[55px] lg:py-[24px] custom-black-button">
+            <div className="text-[16px] font-[600] leading-[19.2px] text-white lg:w-[248px] lg:text-[18.8px] lg:leading-[28.8px] xl:text-2xl xl:leading-[28.8px] xl:tracking-[0.2px] custom-button-icon">
               Explore Our Courses
             </div>
             <svg
@@ -174,13 +174,36 @@ const HeroSection = () => {
                 alt="Vector 71"
                 className="h-[27.69px] w-[23.02px] absolute top-16 right-12 z-0 lg:top-[135px] lg:right-[200px] lg:h-[61.34px] lg:w-[48.73px] "
               />
+              <svg
+                className="absolute -top-1.5 right-[-54px] w-[54px] h-[67px] lg:w-[179px] lg:h-[136px] lg:-right-16 "
+                viewBox="0 0 175 124"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="Group 5">
+                  <path
+                    id="Vector 72"
+                    d="M64.2356 68.3302L61.3237 91.7543C61.061 93.8676 58.1167 94.1611 57.442 92.1412L47.1197 61.2376C46.9743 60.8023 46.6836 60.4302 46.2964 60.1838L18.4545 42.4686C17.0352 41.5655 17.2971 39.4202 18.8921 38.8851L171.582 -12.3416M64.2356 68.3302L102.865 85.6292C103.749 86.0251 104.79 85.7304 105.335 84.9297L171.582 -12.3416M64.2356 68.3302L171.582 -12.3416"
+                    stroke="#F7C0B6"
+                    stroke-opacity="0.7"
+                    stroke-width="2"
+                  />
+                  <path
+                    id="Vector 73"
+                    d="M48.0596 61.634L170.922 -12.0897"
+                    stroke="#F7C0B6"
+                    stroke-opacity="0.7"
+                    stroke-width="2"
+                  />
+                </g>
+              </svg>
             </div>
 
             <section
               className={`hidden w-[285px] h-[58px] px-6 py-2 rounded-[20px] bg-white border-2 absolute top-20 right-[52px] z-20 xl:flex gap-4 items-center opacity-0 ${
                 isInView ? styles.animate : ""
               }`}
-              style={{ boxShadow: "0 0 12px 2px rgba(0, 0, 0, 0.1)" }}
+              style={{ boxShadow: "0px 2px 12.4px 1px rgba(0, 0, 0, 0.25)" }}
             >
               <Image
                 src={boostCognitiveAbilities}
@@ -287,7 +310,7 @@ const HeroSection = () => {
                 className={`hidden w-[240px] h-[58px] px-6 py-2 xl:flex gap-4 items-center absolute left-[-164px] -translate-y-1/2 top-[43%] bg-white rounded-[20px] border-2 opacity-0 ${
                   isInView ? styles.animate2 : ""
                 }`}
-                style={{ boxShadow: "0 0 12px 2px rgba(0, 0, 0, 0.1)" }}
+                style={{ boxShadow: "0px 2px 12.4px 1px rgba(0, 0, 0, 0.25)" }}
               >
                 <Image
                   src={spiritualGrounding}
@@ -304,7 +327,7 @@ const HeroSection = () => {
                 className={`hidden w-[254px] h-[58px] absolute bottom-48 right-[110px] z-50 xl:flex gap-4 items-center bg-white border-[1px] rounded-[20px] px-6 py-2 opacity-0 ${
                   isInView ? styles.animate3 : ""
                 }`}
-                style={{ boxShadow: "0 0 12px 2px rgba(0, 0, 0, 0.1)" }}
+                style={{ boxShadow: "0px 2px 12.4px 1px rgba(0, 0, 0, 0.25)" }}
               >
                 <Image
                   src={imotionalIntelligence}
