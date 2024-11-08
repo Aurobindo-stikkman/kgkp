@@ -77,7 +77,7 @@ const AffiliateForm = () => {
       .required("This is a required field"),
 
     planToPromote: Yup.array()
-      .of(Yup.string().oneOf(engageType))
+      .of(Yup.string().oneOf(planToPromote))
       .min(1, "Select at least One")
       .required("This is a required field"),
 
@@ -106,6 +106,14 @@ const AffiliateForm = () => {
       console.log("value submitted", value);
       setFileSubmitted(true);
       setPreventReload(false);
+      setProfessionDropdown({
+        isOpen: false,
+        value: "",
+      });
+      setapproxClientsDropdown({
+        isOpen: false,
+        value: "",
+      });
       resetForm();
     },
   });
@@ -303,11 +311,7 @@ const AffiliateForm = () => {
     <>
       {toggle ? (
         <div
-          className={`fixed inset-0 z-[99999] bg-white overflow-y-auto overflow-x-hidden  ${
-            !fileSubmitted
-              ? "md:z-[9999] md:inset-0"
-              : "md:z-[990] md:top-[102px]"
-          }`}
+          className={`fixed inset-0 z-[99999] bg-white overflow-y-auto overflow-x-hidden  `}
         >
           {fileSubmitted ? (
             <section className="relative h-dvh w-full flex flex-col justify-center items-center ">
