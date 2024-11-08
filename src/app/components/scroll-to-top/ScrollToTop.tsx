@@ -31,7 +31,7 @@ export default function ScrollToTopButton() {
     isVisible && (
       <svg
         onClick={scrollToTop}
-        className="h-10 w-10 cursor-pointer fixed bottom-[6.5rem] right-[3.2rem] z-[9999] lg:bottom-[8.5rem] xl:w-[50px] xl:h-[50px]"
+        className="h-10 w-10 cursor-pointer fixed bottom-[6.5rem] right-[0.7rem] z-[9999] lg:bottom-[8.5rem] xl:w-[50px] xl:h-[50px] lg:right-16 "
         viewBox="0 0 60 60"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

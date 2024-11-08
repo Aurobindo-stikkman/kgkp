@@ -26,17 +26,16 @@ const ActionButton = () => {
 
   return (
     <div
-      className={`fixed right-0 bottom-44 h-12 bg-white rounded-tl-[40px] rounded-bl-[40px] overflow-hidden transition-all duration-300 ease-in-out cursor-pointer z-[9999] lg:bottom-56 ${
-        isOpen ? "w-[211px]" : "w-14"
+      className={`fixed right-0 bottom-44 h-12 border border-r-0 border-[#0000001F] bg-white rounded-tl-[40px] rounded-bl-[40px] cursor-pointer z-[9999] lg:h-[60px] lg:bottom-56 transition-all duration-300 ease-in-out ${
+        isOpen ? "w-[211px] lg:w-[267px] " : "w-14 lg:w-[132px]"
       }`}
       onClick={handleClick}
     >
       <a
-        className={`w-full h-full block px-4 py-2 lg:flex lg:gap-3 items-center text-nowrap`}
+        className={`w-full h-full block px-4 py-2 pr-[13px] lg:flex lg:gap-[16px] items-center text-nowrap`}
       >
         <svg
-          width="32"
-          height="32"
+          className="w-8 h-8 lg:basis-11 lg:shrink-0 lg:h-11"
           viewBox="0 0 32 32"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -91,11 +90,12 @@ const ActionButton = () => {
         </svg>
 
         <span
-          className={`${
-            isOpen ? "block" : "hidden"
-          } w-[135px] h-[15px] text-xs font-semibold leading-[14.52px] text-[#1A2434] `}
+          className={`w-[135px] h-[15px] flex gap-1 text-xs font-semibold leading-[14.52px] text-[#1A2434] lg:text-base lg:leading-[19.36px] lg:font-medium lg:w-full `}
         >
-          Call +91 34839493784
+          Call{" "}
+          <span className={`${isOpen ? "block" : "hidden"}`}>
+            +91 34839493784
+          </span>
         </span>
       </a>
     </div>
