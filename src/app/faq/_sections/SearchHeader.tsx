@@ -41,7 +41,7 @@ const SearchHeader: React.FC<Props> = ({
           onChange={(e) => handleSearch(e.target.value)}
           autoComplete="off"
           placeholder="Type a search word here...  "
-          className="w-full h-full py-4 pl-4 placeholder:text-[14px] placeholder:font-[400] placeholder:leading-[16.8px] placeholder:text-[#4D1435] border-none focus:outline-none focus:ring-0 md:py-[23px] md:pl-8 md:placeholder:text-[16px] md:placeholder:leading-[19.2px]"
+          className="w-full h-full py-4 pl-4 text-sm text-[#1A2434] font-normal leading-[16.8px] placeholder:text-[14px] placeholder:font-[400] placeholder:leading-[16.8px] placeholder:text-[#4D1435] border-none focus:outline-none focus:ring-0 md:py-[23px] md:pl-8 md:placeholder:text-[16px] md:placeholder:leading-[19.2px] md:text-base md:leading-[19.2px] "
         />
         <section className="absolute right-0 top-0 bottom-0 w-[64px] bg-[#4D1435] cursor-pointer flex justify-center items-center rounded-[40px] lg:w-[88px]">
           <svg

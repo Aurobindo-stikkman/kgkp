@@ -50,22 +50,29 @@ const AffiliateForm = () => {
   const validationSchema = Yup.object({
     fullName: Yup.string().required("This is a required field").min(3),
     dob: Yup.date()
-      .required("Date of Birth is a required field")
+      .required("This is a required field.")
       .nullable()
       .min(new Date(1900, 0, 1), "Date of birth must be after January 1, 1900")
       .max(new Date(), "Date of birth cannot be in the future"),
 
-    email: Yup.string().email().required(),
-    phone: Yup.string().required(),
-    location: Yup.string().required(),
+    email: Yup.string()
+      .email("Enter a valid email")
+      .required("This is a required field."),
+    phone: Yup.string()
+      .matches(/^[0-9]+$/, "Enter a valid Phone Number.")
+      .min(10, "Phone number must be exactly 10 digits.")
+      .max(10, "Phone number must be exactly 10 digits.")
+      .required("This is a required field."),
+
+    location: Yup.string().required("This is a required field."),
 
     profession: Yup.string()
       .required("This is a required field")
       .oneOf(professions, "Please select a valid option"),
 
-    education: Yup.string().required(),
+    education: Yup.string().required("This is a required field."),
 
-    organizationName: Yup.string().required(),
+    organizationName: Yup.string().required("This is a required field."),
 
     approxClients: Yup.string()
       .required("This is a required field")
@@ -186,6 +193,14 @@ const AffiliateForm = () => {
     } else {
       formik.setFieldError("profession", "Please select a profession.");
     }
+
+    // Delay re-render with a short timeout
+    setTimeout(() => {
+      setProfessionDropdown((prevState) => ({
+        ...prevState,
+        value: value,
+      }));
+    }, 50);
   };
 
   const toggleapproxClientsDropdown = () => {
@@ -225,6 +240,14 @@ const AffiliateForm = () => {
     } else {
       formik.setFieldError("approxClients", "Please select a approxClients.");
     }
+
+    // Delay re-render with a short timeout
+    setTimeout(() => {
+      setapproxClientsDropdown((prevState) => ({
+        ...prevState,
+        value: value,
+      }));
+    }, 50);
   };
 
   const confirmNavigation = () => {
@@ -306,6 +329,26 @@ const AffiliateForm = () => {
       setPreventReload(false);
     }
   }, [formik.values]);
+
+  useEffect(() => {
+    if (professionDropdown.value) {
+      setProfessionDropdown((prevState) => ({
+        ...prevState,
+        isOpen: false,
+        value: formik.values.profession,
+      }));
+    }
+  }, [formik.values.profession]);
+
+  useEffect(() => {
+    if (approxClientsDropdown.value) {
+      setapproxClientsDropdown((prevState) => ({
+        ...prevState,
+        isOpen: false,
+        value: formik.values.approxClients,
+      }));
+    }
+  }, [formik.values.approxClients]);
 
   return (
     <>
@@ -479,10 +522,10 @@ const AffiliateForm = () => {
               </h1>
               <form
                 onSubmit={formik.handleSubmit}
-                className="max-w-[600px] mx-auto my-4 grid gap-4 xl:my-6 "
+                className="max-w-[605px] mx-auto my-4 grid gap-4 xl:my-6 "
               >
                 {/* Full Name */}
-                <div className="mx-4">
+                <div className="mx-4 md:mx-0">
                   <label
                     className="text-base font-medium leading-[18px] text-[#1A2434] "
                     htmlFor="fullName"
@@ -539,7 +582,7 @@ const AffiliateForm = () => {
                 </div>
 
                 {/* DOB */}
-                <div className="mx-4">
+                <div className="mx-4 md:mx-0">
                   <label
                     className="text-base font-medium leading-[18px] text-[#1A2434] "
                     htmlFor="dob"
@@ -571,7 +614,7 @@ const AffiliateForm = () => {
                 </div>
 
                 {/* Email */}
-                <div className="mx-4">
+                <div className="mx-4 md:mx-0">
                   <label
                     className="text-base font-medium leading-[18px] text-[#1A2434] "
                     htmlFor="email"
@@ -628,7 +671,7 @@ const AffiliateForm = () => {
                 </div>
 
                 {/* Phone */}
-                <div className="mx-4">
+                <div className="mx-4 md:mx-0">
                   <label
                     className="text-base font-medium leading-[18px] text-[#1A2434] "
                     htmlFor="phone"
@@ -685,7 +728,7 @@ const AffiliateForm = () => {
                 </div>
 
                 {/* Location */}
-                <div className="mx-4">
+                <div className="mx-4 md:mx-0">
                   <label
                     className="text-base font-medium leading-[18px] text-[#1A2434] "
                     htmlFor="location"
@@ -742,13 +785,13 @@ const AffiliateForm = () => {
                 </div>
 
                 {/* Profession */}
-                <div ref={professionalDropdownRef} className="mx-4">
+                <div ref={professionalDropdownRef} className="mx-4 md:mx-0">
                   <label className="text-base font-medium leading-[18px] text-[#1A2434] ">
                     Profession*
                   </label>
                   <div
                     onClick={toggleDropdown}
-                    className={`h-[42px] mt-2 rounded-lg border border-[#1A24341A] px-[13px] py-3 flex justify-between items-center relative cursor-pointer ${
+                    className={`h-[42px] mt-2 rounded-lg border border-[#1A24341A] px-[13px] py-3 flex justify-between items-center relative cursor-pointer text-sm font-normal leading-6 ${
                       professionDropdown.isOpen
                         ? "rounded-b-none border-[3px] border-[#75C0B1]"
                         : ""
@@ -756,7 +799,7 @@ const AffiliateForm = () => {
                   >
                     <span
                       className={` ${
-                        approxClientsDropdown.value
+                        formik.values.profession
                           ? "text-black"
                           : "text-[#1A243454]"
                       }`}
@@ -765,6 +808,7 @@ const AffiliateForm = () => {
                         ? professionDropdown.value
                         : "Select One"}
                     </span>
+
                     {professionDropdown.isOpen && (
                       <ul className="absolute bottom-[-160px] bg-white border border-t-0 border-[#1A24341A] left-[-3px] right-[-3px] z-10 rounded-b-lg overflow-hidden ">
                         {professions.map((profession) => (
@@ -831,7 +875,7 @@ const AffiliateForm = () => {
                 </div>
 
                 {/* Education */}
-                <div className="mx-4">
+                <div className="mx-4 md:mx-0">
                   <label
                     className="text-base font-medium leading-[18px] text-[#1A2434] "
                     htmlFor="education"
@@ -888,7 +932,7 @@ const AffiliateForm = () => {
                 </div>
 
                 {/* Organization */}
-                <div className="mx-4">
+                <div className="mx-4 md:mx-0">
                   <label
                     className="text-base font-medium leading-[18px] text-[#1A2434] "
                     htmlFor="organizationName"
@@ -946,13 +990,13 @@ const AffiliateForm = () => {
                 </div>
 
                 {/* ApproxClients */}
-                <div ref={approxClientDropdownRef} className="mx-4">
+                <div ref={approxClientDropdownRef} className="mx-4 md:mx-0">
                   <label className="text-base font-medium leading-[18px] text-[#1A2434] ">
                     Approximate Number of Clients/Parents in Your Network*
                   </label>
                   <div
                     onClick={toggleapproxClientsDropdown}
-                    className={`h-[42px] mt-2 rounded-lg border border-[#1A24341A] px-[13px] py-3 flex justify-between items-center relative cursor-pointer ${
+                    className={`h-[42px] mt-2 rounded-lg border border-[#1A24341A] px-[13px] py-3 flex justify-between items-center relative cursor-pointer text-sm font-normal leading-6 ${
                       approxClientsDropdown.isOpen
                         ? "rounded-b-none border-[3px] border-[#75C0B1]"
                         : ""
@@ -960,7 +1004,7 @@ const AffiliateForm = () => {
                   >
                     <span
                       className={` ${
-                        approxClientsDropdown.value
+                        formik.values.approxClients
                           ? "text-black"
                           : "text-[#1A243454]"
                       }`}
@@ -969,6 +1013,7 @@ const AffiliateForm = () => {
                         ? approxClientsDropdown.value
                         : "Select One"}
                     </span>
+
                     {approxClientsDropdown.isOpen && (
                       <ul className="absolute bottom-[-200px] bg-white border border-t-0 border-[#1A24341A] left-[-3px] right-[-3px] z-10 rounded-b-lg overflow-hidden ">
                         {approxClients.map((approxClient) => (
@@ -1035,7 +1080,7 @@ const AffiliateForm = () => {
                 </div>
 
                 {/* Engaged Type */}
-                <div className="mx-4">
+                <div className="mx-4 md:mx-0">
                   <label>
                     How Do You Currently Engage with Pregnant Women and/or
                     Parents of Children aged 0 to 15 years?
@@ -1099,7 +1144,7 @@ const AffiliateForm = () => {
                 </div>
 
                 {/* Plan to Promote */}
-                <div className="mx-4">
+                <div className="mx-4 md:mx-0">
                   <label>
                     How Do You Plan to Promote Kaushalya Genius Kid Program
                     (KGKP)?*
@@ -1164,7 +1209,7 @@ const AffiliateForm = () => {
                 </div>
 
                 {/* Message */}
-                <div className="mx-4">
+                <div className="mx-4 md:mx-0">
                   <label
                     className="text-base font-medium leading-[18px] text-[#1A2434] "
                     htmlFor="message"
