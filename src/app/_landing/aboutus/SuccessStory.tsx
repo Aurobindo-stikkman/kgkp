@@ -75,7 +75,7 @@ const SuccessStory = () => {
           the reading cards, the dot cards and my parents continuous efforts
           have upped my game. Until today, I've read about 7,000 books on
           various subjects...
-          <section className="mt-4 not-italic mx-auto text-[#F6E2D8] text-[11.8px] font-[600] leading-[14.4px] w-[147px] lg:text-[16px] lg:leading-[17.7px] lg:w-auto text-left xl:text-[18px] xl:leading-[21.6px] ">
+          <section className="mt-4 not-italic mx-auto text-[#F6E2D8] text-[12px] font-[600] leading-[14.4px] w-[147px] lg:text-[16px] lg:leading-[17.7px] lg:w-auto text-left xl:text-[18px] xl:leading-[21.6px] ">
             17 years old, Mitra Malani
           </section>
           <svg

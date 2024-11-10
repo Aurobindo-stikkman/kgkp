@@ -162,7 +162,7 @@ const Footer = () => {
               <section className="text-[17.5px] font-[600] leading-[25.2px] text-[#4D1435] lg:text-[27px] lg:leading-[37.8px]">
                 Social Media
               </section>
-              <div className="flex gap-2">
+              <div className="flex relative -left-2.5 lg:-left-3.5 ">
                 <a
                   href="https://www.facebook.com/KGeniusKidProg"
                   target="_blank"

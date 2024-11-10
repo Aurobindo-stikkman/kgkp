@@ -15,7 +15,7 @@ const Page = () => {
           </span>
 
           <svg
-            className="absolute bottom-[-15px] right-9 w-[241px] h-[31px] xl:w-[462px] xl:h-[82px] xl:bottom-[-41px] xl:right-5 "
+            className="absolute bottom-[-15px] right-9 w-[241px] h-[31px] xl:w-[462px] xl:h-[82px] xl:bottom-[-43px] xl:right-3.5 "
             viewBox="0 0 241 31"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

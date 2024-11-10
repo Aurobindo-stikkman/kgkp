@@ -112,7 +112,7 @@ const FaqSection = () => {
         <section className="relative mt-8 px-4 h-auto mx-auto lg:mt-[52px] xl:mx-20">
           <ListingFAQ data={obj[Object.keys(obj)[0]]} />
           <svg
-            className="hidden lg:block absolute left-[-111px] top-[-211px] w-[240px] h-[248px] "
+            className="hidden lg:block absolute left-[-128px] top-[-206px] w-[240px] h-[248px] "
             viewBox="0 0 263 263"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

@@ -69,7 +69,7 @@ const Header = () => {
           <nav
             className={`lg:flex ${
               toggle ? "flex" : "hidden"
-            } w-[90%] pt-[32px] pb-[24px] rounded-[40px] bg-white absolute top-[86px] left-1/2 translate-x-[-50%] grid items-center lg:static lg:translate-x-0 lg:block lg:w-[368px] h-[19px]lg:place-content-center`}
+            } w-[90%] pt-[32px] pb-[24px] rounded-[40px] bg-white absolute top-[86px] left-1/2 translate-x-[-50%] grid items-center lg:py-0 lg:static lg:translate-x-0 lg:block lg:w-[368px] h-[19px]lg:place-content-center`}
           >
             <ul className="flex flex-col gap-6 items-center justify-center relative lg:flex-row lg:gap-[40px]">
               <Link
@@ -134,8 +134,8 @@ const Header = () => {
               className="object-contain cursor-pointer"
             />
           </section>
-          <section className="hidden lg:flex w-[131px] h-[51px] rounded-[50px] px-[16px] py-[28px] gap-[14px] bg-[#4D1435] items-center justify-center cursor-pointer custom-black-button">
-            <div className="w-[45px] h-[19px] text-[16px] leading-[19.2px] font-[700] text-[#FFFFFF] custom-button-icon">
+          <button className="hidden lg:flex w-[127px] h-[43px] rounded-[50px] px-[18px] py-3 gap-2.5 bg-[#4D1435] items-center justify-center custom-black-button">
+            <div className="text-[16px] leading-[19.2px] font-[700] text-[#FFFFFF] custom-button-icon">
               Login
             </div>
             <svg
@@ -152,7 +152,7 @@ const Header = () => {
                 />
               </g>
             </svg>
-          </section>
+          </button>
         </section>
       </div>
     </header>

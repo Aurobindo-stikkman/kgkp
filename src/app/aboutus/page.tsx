@@ -11,7 +11,6 @@ import bookLibrary from "./assets/book-library.svg";
 import AboutFounder from "./AboutFounder";
 import offeringImage from "./assets/hand-shake.svg";
 import partner from "./assets/partner.svg";
-import arrowIcon from "./assets/icon-arrow-right.svg";
 
 import VisionSection from "./VisionSection";
 import TitleSection from "./TitleSection";
@@ -195,7 +194,7 @@ const About = () => {
 
         <section className="flex flex-col gap-6 mt-8 items-center md:flex-row md:justify-center lg:mt-[82px] mx-auto max-w-[1440px] xl:gap-[128px] 2xl:justify-center">
           {/* Card - 1 */}
-          <section className="w-[328px] h-[132px] bg-[#4D1435] rounded-[20px] relative px-6 py-8 xl:pt-20 xl:w-[575px] xl:h-[566px] xl:pb-14 xl:px-14">
+          <section className="w-[328px] h-[132px] bg-[#4D1435] rounded-[20px] relative px-6 py-8 xl:pt-20 xl:w-[575px] xl:h-[566px] xl:pb-14 xl:px-14 group xl:cursor-pointer xl:hover:scale-105 transition-all delay-100">
             <section className="flex gap-4 justify-around xl:flex-col ">
               <section className="basis-[100px] xl:w-[338px] xl:h-[230px] grid self-center">
                 <Image
@@ -215,17 +214,26 @@ const About = () => {
               </section>
             </section>
 
-            <section className="bg-[#7C4E6354] rounded-full absolute right-6 top-4 xl:w-16 xl:h-16 ">
-              <Image
-                src={arrowIcon}
-                alt="Arrow Icon"
-                className="h-full w-full"
-              />
+            <section className="bg-[#7C4E6354] rounded-full absolute right-6 top-4 xl:w-16 xl:h-16 group-hover:bg-[#F6E2D8] transition-colors">
+              <svg
+                className="w-full h-full text-[#F6E2D8] group-hover:text-[#4D1435] transition-colors"
+                viewBox="0 0 23 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="icon-arrow-right">
+                  <path
+                    id="Shape"
+                    fill="currentColor"
+                    d="M7.3455 8.39841C7.3455 8.03022 7.64398 7.73174 8.01217 7.73174L14.6118 7.73174C14.98 7.73174 15.2785 8.03022 15.2785 8.39841V14.9981C15.2785 15.3663 14.98 15.6647 14.6118 15.6647C14.2436 15.6647 13.9452 15.3663 13.9452 14.9981V10.0079L8.48358 15.4695C8.22323 15.7298 7.80112 15.7298 7.54077 15.4695C7.28042 15.2091 7.28042 14.787 7.54077 14.5267L13.0024 9.06508H8.01217C7.64398 9.06508 7.34551 8.7666 7.3455 8.39841Z"
+                  />
+                </g>
+              </svg>
             </section>
           </section>
 
           {/* Card - 2 */}
-          <section className="w-[328px] h-[132px] bg-[#4D1435] rounded-[20px] relative px-6 py-5 xl:pt-20 xl:w-[575px] xl:h-[566px] xl:pb-14 xl:px-14">
+          <section className="w-[328px] h-[132px] bg-[#4D1435] rounded-[20px] relative px-6 py-5 xl:pt-20 xl:w-[575px] xl:h-[566px] xl:pb-14 xl:px-14 group xl:cursor-pointer xl:hover:scale-105 transition-all delay-100">
             <section className="flex gap-4 justify-around xl:flex-col">
               <section className="basis-[100px] xl:w-[340px] xl:h-[230px] grid justify-center mx-auto">
                 <Image
@@ -244,12 +252,21 @@ const About = () => {
               </section>
             </section>
 
-            <section className="bg-[#7C4E6354] rounded-full absolute right-6 top-4 xl:w-16 xl:h-16">
-              <Image
-                src={arrowIcon}
-                alt="Arrow Icon"
-                className="h-full w-full xl:w-[260px]"
-              />
+            <section className="bg-[#7C4E6354] rounded-full absolute right-6 top-4 xl:w-16 xl:h-16 group-hover:bg-[#F6E2D8] transition-colors">
+              <svg
+                className="w-full h-full text-[#F6E2D8] group-hover:text-[#4D1435] transition-colors"
+                viewBox="0 0 23 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="icon-arrow-right">
+                  <path
+                    id="Shape"
+                    fill="currentColor"
+                    d="M7.3455 8.39841C7.3455 8.03022 7.64398 7.73174 8.01217 7.73174L14.6118 7.73174C14.98 7.73174 15.2785 8.03022 15.2785 8.39841V14.9981C15.2785 15.3663 14.98 15.6647 14.6118 15.6647C14.2436 15.6647 13.9452 15.3663 13.9452 14.9981V10.0079L8.48358 15.4695C8.22323 15.7298 7.80112 15.7298 7.54077 15.4695C7.28042 15.2091 7.28042 14.787 7.54077 14.5267L13.0024 9.06508H8.01217C7.64398 9.06508 7.34551 8.7666 7.3455 8.39841Z"
+                  />
+                </g>
+              </svg>
             </section>
           </section>
         </section>

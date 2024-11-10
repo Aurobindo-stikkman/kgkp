@@ -206,16 +206,16 @@ const Science = () => {
         </section>
 
         {/* Button */}
-        <button className="custom-black-button mt-6 rounded-[50px] mx-auto bg-[#4D1435] md:hidden">
+        <button className="custom-black-button w-[180px] h-[51px] block mt-6 rounded-[50px] mx-auto bg-[#4D1435] md:hidden">
           <Link
-            className="cursor-pointer w-[178px] h-[51px] flex items-center justify-center gap-[14px] px-7 py-4"
+            className="w-full h-full flex items-center justify-center gap-[14px] px-7 py-4"
             href="/methods"
           >
-            <div className="text-[15px] font-[700] leading-[19.2px] text-white group-hover:text-[#4D1435]">
+            <div className="custom-button-icon text-[15px] font-[700] leading-[19.2px] text-white group-hover:text-[#4D1435]">
               Learn More
             </div>
             <svg
-              className="w-4 h-4 lg:w-6 lg:h-6"
+              className="w-4 h-4 lg:w-6 lg:h-6 custom-button-icon"
               viewBox="0 0 17 17"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -312,7 +312,7 @@ const Science = () => {
 
       <button className="custom-black-button hidden w-[178px] h-[51px] mt-6 rounded-[50px] mx-auto md:block bg-[#4D1435] lg:w-[385px] lg:h-[77px] lg:mt-[152px]">
         <Link
-          className="w-full h-full px-7 py-4 justify-center items-center rounded-[50px] flex gap-[14px] lg:px-[60px] lg:py-[24px] cursor-pointer"
+          className="custom-button-icon w-full h-full px-7 py-4 justify-center items-center rounded-[50px] flex gap-[14px] lg:px-[60px] lg:py-[24px] cursor-pointer"
           href="/methods"
         >
           <div className="text-[16px] font-[700] leading-[19.2px] text-white lg:text-[24px] lg:leading-[28.8px] custom-button-icon">

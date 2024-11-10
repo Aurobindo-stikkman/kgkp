@@ -843,7 +843,7 @@ const FaqContainer = () => {
       scrollContainer.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", checkScrollable);
     };
-  }, [scrollContainerRef.current]);
+  }, [isMobile, scrollContainerRef.current]);
 
   useEffect(() => {
     if (search.length) {
@@ -882,7 +882,7 @@ const FaqContainer = () => {
       {(!isMobile || !showModal) && data.length ? (
         <section
           ref={scrollContainerRef}
-          className="mt-6 px-4 mx-auto flex justify-between gap-6 pb-2 relative overflow-x-auto h-20 md:h-[130px] md:gap-16 md:mt-[57px] lg:justify-start xl:gap-[96px] xl:justify-center"
+          className="mt-6 px-4 mx-auto flex justify-between gap-6 pb-2 relative overflow-x-auto h-20 md:h-[136px] md:gap-16 md:mt-[57px] lg:justify-start xl:gap-[96px] xl:justify-center"
         >
           {/* Category 1 */}
           <section
@@ -997,7 +997,7 @@ const FaqContainer = () => {
               category === "parentalInvolvementAndSupport"
                 ? "border-b-[4px] border-[#4D1435]"
                 : ""
-            } shrink-0 w-[122px] md:gap-4 md:basis-[206px]`}
+            } shrink-0 w-[125px] md:gap-4 md:basis-[206px]`}
           >
             <svg
               className="w-6 h-6 justify-self-center md:w-14 md:h-14 lg:w-[60px] lg:h-[60px]"
@@ -1137,14 +1137,8 @@ const FaqContainer = () => {
               category === "paymentAccess"
                 ? "border-b-[4px] border-[#4D1435]"
                 : ""
-            } shrink-0 w-[122px] md:gap-4 md:basis-[208px]`}
+            } shrink-0 w-[122px] md:gap-4 md:basis-[210px]`}
           >
-            {/* <Image
-            src={creditCardIcon}
-            alt="General Info icon"
-            className="w-6 h-6 justify-self-center md:w-14 md:h-14 lg:w-[60px] lg:h-[60px]"
-            /> */}
-
             <svg
               className="w-6 h-6 justify-self-center md:w-14 md:h-14 lg:w-[60px] lg:h-[60px]"
               viewBox="0 0 60 60"
@@ -1236,7 +1230,7 @@ const FaqContainer = () => {
       ) : null}
 
       {(!isMobile || !showModal) && (
-        <section className="w-[90%] mt-6 mb-[52px] mx-auto grid gap-4 lg:my-[52px] xl:w-[1280px]">
+        <section className="w-[90%] mt-6 mb-[52px] mx-auto grid gap-4 lg:my-[52px] xl:mx-20">
           {data.length > 0 ? (
             <>
               <ListingFAQ data={data} />
