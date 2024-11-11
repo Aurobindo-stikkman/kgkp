@@ -3,10 +3,10 @@ import Image from "next/image";
 
 import { useState, useEffect, useRef } from "react";
 
-import playtime1 from "./playtime.svg";
-import trophy from "./trophy.svg";
-import virtualClass from "./virtual-class.svg";
-import handPrint from "./hand-print.svg";
+import playtime1 from "./assets/playtime.svg";
+import trophy from "./assets/trophy.svg";
+import virtualClass from "./assets/virtual-class.svg";
+import handPrint from "./assets/hand-print.svg";
 import useInView from "@/app/components/useInView";
 
 const StatsSection = () => {
@@ -60,10 +60,7 @@ const StatsSection = () => {
         />
         <div className="w-[68px] grid gap-2 lg:w-auto">
           <div className="text-[18px] font-normal leading-[21.6px] poetsen-one-regular text-center lg:h-[58px] lg:text-[48px] lg:leading-[57.6px]">
-            {childrenCount}K
-            <span className="font-normal text-[18px] poetsen-one-regular leading-[21.6px] text-red-600 lg:h-[58px] lg:text-[48px] lg:leading-[57.6px]">
-              +
-            </span>
+            {childrenCount}K<span className="font-normal text-[18px] poetsen-one-regular leading-[21.6px] text-red-600 lg:h-[58px] lg:text-[48px] lg:leading-[57.6px]">+</span>
           </div>
           <div className="text-[10px] font-[400] leading-[14px] tracking-[0.2px] text-center text-[#1A2434] lg:h-8 lg:text-[18px] lg:leading-[32.4px] opacity-[70%]">
             Children Benefited
@@ -81,9 +78,7 @@ const StatsSection = () => {
         <div className="w-[88px] grid gap-2 lg:w-auto">
           <div className="text-[18px] font-normal leading-[21.6px] poetsen-one-regular text-center lg:h-[58px] lg:text-[48px] lg:leading-[57.6px]">
             {yearsCount}
-            <span className="font-normal text-[18px] poetsen-one-regular leading-[21.6px] text-red-600 lg:h-[58px] lg:text-[48px] lg:leading-[57.6px]">
-              +
-            </span>
+            <span className="font-normal text-[18px] poetsen-one-regular leading-[21.6px] text-red-600 lg:h-[58px] lg:text-[48px] lg:leading-[57.6px]">+</span>
           </div>
           <div className="text-[10px] font-[400] leading-[14px] tracking-[0.2px] text-center text-[#1A2434] lg:h-8 lg:text-[18px] lg:leading-[32.4px] opacity-[70%]">
             Years of KGK Program
@@ -100,10 +95,7 @@ const StatsSection = () => {
         />
         <div className="w-[88px] grid gap-2 lg:w-auto">
           <div className="text-[18px] font-normal leading-[21.6px] poetsen-one-regular text-center lg:h-[58px] lg:text-[48px] lg:leading-[57.6px]">
-            {parentsCount}K
-            <span className="font-normal text-[18px] poetsen-one-regular leading-[21.6px] text-red-600 lg:h-[58px] lg:text-[48px] lg:leading-[57.6px]">
-              +
-            </span>
+            {parentsCount}K<span className="font-normal text-[18px] poetsen-one-regular leading-[21.6px] text-red-600 lg:h-[58px] lg:text-[48px] lg:leading-[57.6px]">+</span>
           </div>
           <div className="text-[10px] font-[400] leading-[14px] tracking-[0.2px] text-center text-[#1A2434] lg:text-[18px] lg:leading-[32.4px] opacity-[70%]">
             Parents benefited from Parenting Workshops
@@ -120,10 +112,7 @@ const StatsSection = () => {
         />
         <div className="w-[88px] grid gap-2 lg:w-auto">
           <div className="text-[18px] font-normal leading-[21.6px] poetsen-one-regular text-center lg:h-[58px] lg:text-[48px] lg:leading-[57.6px]">
-            {counsellingCount}K
-            <span className="font-normal text-[18px] poetsen-one-regular leading-[21.6px] text-red-600 lg:h-[58px] lg:text-[48px] lg:leading-[57.6px]">
-              +
-            </span>
+            {counsellingCount}K<span className="font-normal text-[18px] poetsen-one-regular leading-[21.6px] text-red-600 lg:h-[58px] lg:text-[48px] lg:leading-[57.6px]">+</span>
           </div>
           <div className="text-[10px] font-[400] leading-[14px] tracking-[0.2px] text-center text-[#1A2434] lg:text-[18px] lg:leading-[32.4px] opacity-[70%]">
             Ridge Analysis Counsellings

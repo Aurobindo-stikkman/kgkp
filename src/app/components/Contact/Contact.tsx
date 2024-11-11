@@ -25,7 +25,7 @@ const Contact = () => {
     }
   }, [isInView, pathName]);
 
-  if (pathName === "/contact" || pathName === "/affiliate") {
+  if (pathName === "/contact" || pathName === "/affiliate" || pathName === "/b2b-offerings") {
     return null;
   }
 
