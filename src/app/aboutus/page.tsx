@@ -214,7 +214,7 @@ const About = () => {
               </section>
             </section>
 
-            <section className="bg-[#7C4E6354] rounded-full absolute right-6 top-4 xl:w-16 xl:h-16 group-hover:bg-[#F6E2D8] transition-colors">
+            <section className="w-6 h-6 bg-[#7C4E6354] rounded-full absolute right-6 top-4 xl:w-16 xl:h-16 group-hover:bg-[#F6E2D8] transition-colors">
               <svg
                 className="w-full h-full text-[#F6E2D8] group-hover:text-[#4D1435] transition-colors"
                 viewBox="0 0 23 24"
@@ -252,7 +252,7 @@ const About = () => {
               </section>
             </section>
 
-            <section className="bg-[#7C4E6354] rounded-full absolute right-6 top-4 xl:w-16 xl:h-16 group-hover:bg-[#F6E2D8] transition-colors">
+            <section className="w-6 h-6 bg-[#7C4E6354] rounded-full absolute right-6 top-4 xl:w-16 xl:h-16 group-hover:bg-[#F6E2D8] transition-colors">
               <svg
                 className="w-full h-full text-[#F6E2D8] group-hover:text-[#4D1435] transition-colors"
                 viewBox="0 0 23 24"
