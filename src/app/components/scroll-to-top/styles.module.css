@@ -1,6 +1,9 @@
-.bounce {
-    animation: bounceAnimation 3s infinite;
+@media (min-width: 1024px) {
+    .bounce {
+        animation: bounceAnimation 3s infinite;
+    }
 }
+
 
 @keyframes bounceAnimation {
 

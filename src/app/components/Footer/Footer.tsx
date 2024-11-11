@@ -152,7 +152,9 @@ const Footer = () => {
                   </Link>
                 </section>
                 <section className="text-[12px] font-[400] leading-[21.6px] text-[#4D1435] lg:text-[20px] lg:leading-[28px] cursor-pointer">
-                  B2B Offerings
+                  <Link className="cursor-pointer" href="/b2b-offerings">
+                    B2B Offerings
+                  </Link>
                 </section>
               </section>
             </section>

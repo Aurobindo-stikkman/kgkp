@@ -17,26 +17,29 @@
   font-optical-sizing: auto;
 }
 
-/* black button */
-.custom-black-button:hover {
-  background-color: #F6E2D7;
-  border: 2px solid #4D1435;
-}
+@media (min-width: 1024px) {
 
-.custom-black-button:hover .custom-button-icon path,
-.custom-black-button:hover .custom-button-icon {
-  color: #4D1435;
-}
+  /* black button */
+  .custom-black-button:hover {
+    background-color: #F6E2D7;
+    border: 2px solid #4D1435;
+  }
 
-/* white button */
-.custom-white-button:hover {
-  border: 2px solid #F6E2D8;
-  background-color: #4D1435;
-}
+  .custom-black-button:hover .custom-button-icon path,
+  .custom-black-button:hover .custom-button-icon {
+    color: #4D1435;
+  }
 
-.custom-white-button:hover .custom-button-icon path,
-.custom-white-button:hover .custom-button-icon {
-  color: white;
+  /* white button */
+  .custom-white-button:hover {
+    border: 2px solid #F6E2D8;
+    background-color: #4D1435;
+  }
+
+  .custom-white-button:hover .custom-button-icon path,
+  .custom-white-button:hover .custom-button-icon {
+    color: white;
+  }
 }
 
 .poetsen-one-regular {
