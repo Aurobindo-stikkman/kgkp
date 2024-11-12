@@ -4,8 +4,8 @@ import educatorImage from "./assets/educator.png";
 
 const EmpoweringEducatiors = () => {
   return (
-    <div className="my-[52px] w-[360px] mx-auto ">
-      <h1 className="w-[272px] h-[52px] mx-auto relative text-xl font-bold leading-[26px] text-[#1A2434] text-center ">
+    <div className="my-[52px] w-[360px] mx-auto md:w-auto md:mx-10 lg:py-[124px] lg:mx-auto lg:max-w-[987px] ">
+      <h1 className="w-[272px] h-[52px] mx-auto relative text-xl font-bold leading-[26px] text-[#1A2434] text-center lg:w-auto lg:h-[59px] lg:text-[42px] lg:leading-[58.8px] ">
         <span className="relative z-10 ">
           Empowering Educators to Shape Future Leaders
         </span>
@@ -27,15 +27,15 @@ const EmpoweringEducatiors = () => {
         </svg>
       </h1>
 
-      <section className="mt-6 mx-auto flex flex-col items-center gap-6 ">
+      <section className="mt-6 mx-auto flex flex-col items-center gap-6 md:flex-row md:gap-0 md:justify-between md:max-w-[768px] lg:mt-[66px] lg:w-full lg:justify-between lg:mx-0 lg:max-w-none lg:px-7 ">
         <Image
           src={educatorImage}
           alt="Educator Image"
-          className="w-[200px] h-[200px] object-cover "
+          className="w-[200px] h-[200px] object-cover md:order-2 lg:w-[323px] lg:h-[340px] "
         />
 
-        <section>
-          <p className="text-sm font-normal leading-[25.2px] text-[#1A2434] text-center ">
+        <section className="md:order-1">
+          <p className="text-sm font-normal leading-[25.2px] text-[#1A2434] text-center md:w-[416px] md:text-left lg:text-[18px] lg:leading-7 ">
             Our program ensures that teachers are not just instructors but also
             mentors, fostering a holistic development environment.
             <span className="block mt-5 ">
@@ -43,11 +43,11 @@ const EmpoweringEducatiors = () => {
             </span>
           </p>
 
-          <section className="mt-6 w-[312px] mx-auto grid grid-cols-2 gap-x-6 gap-y-4 ">
+          <section className="mt-6 w-[312px] mx-auto grid grid-cols-2 gap-x-6 gap-y-4 md:w-auto md:grid-cols-1 ">
             {/* bullet - 1 */}
-            <section className="flex items-start gap-2 ">
+            <section className="flex items-start gap-2 md:order-1 lg:gap-3 lg:items-center ">
               <svg
-                className="w-3.5 h-3.5 mt-1.5 shrink-0 grow-0 "
+                className="w-3.5 h-3.5 mt-1.5 shrink-0 grow-0 lg:w-6 lg:h-6 lg:mt-0 "
                 viewBox="0 0 16 16"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -72,15 +72,15 @@ const EmpoweringEducatiors = () => {
                 </g>
               </svg>
 
-              <p className="text-sm font-medium leading-[25.2px] text-[#1A2434] text-balance ">
+              <p className="text-sm font-medium leading-[25.2px] text-[#1A2434] text-balance lg:text-xl ">
                 Interpreting Ridge Analysis reports
               </p>
             </section>
 
             {/* bullet - 2 */}
-            <section className="flex items-start gap-2 ">
+            <section className="flex items-start gap-2 md:order-4 lg:gap-3 lg:items-center ">
               <svg
-                className="w-3.5 h-3.5 mt-1.5 shrink-0 grow-0 "
+                className="w-3.5 h-3.5 mt-1.5 shrink-0 grow-0 lg:w-6 lg:h-6 lg:mt-0 "
                 viewBox="0 0 16 16"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -105,15 +105,15 @@ const EmpoweringEducatiors = () => {
                 </g>
               </svg>
 
-              <p className="text-sm font-medium leading-[25.2px] text-[#1A2434] text-balance ">
+              <p className="text-sm font-medium leading-[25.2px] text-[#1A2434] text-balance lg:text-xl ">
                 Empowering Parents!
               </p>
             </section>
 
             {/* bullet - 3 */}
-            <section className="flex items-start gap-2 ">
+            <section className="flex items-start gap-2 md:order-2 lg:gap-3 lg:items-center ">
               <svg
-                className="w-3.5 h-3.5 mt-1.5 shrink-0 grow-0 "
+                className="w-3.5 h-3.5 mt-1.5 shrink-0 grow-0 lg:w-6 lg:h-6 lg:mt-0 "
                 viewBox="0 0 16 16"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -138,15 +138,15 @@ const EmpoweringEducatiors = () => {
                 </g>
               </svg>
 
-              <p className="text-sm font-medium leading-[25.2px] text-[#1A2434] text-balance ">
+              <p className="text-sm font-medium leading-[25.2px] text-[#1A2434] text-balance lg:text-xl ">
                 Creating individualized co-curricular activities
               </p>
             </section>
 
             {/* bullet - 4 */}
-            <section className="flex items-start gap-2 ">
+            <section className="flex items-start gap-2 md:order-3 lg:gap-3 lg:items-center ">
               <svg
-                className="w-3.5 h-3.5 mt-1.5 shrink-0 grow-0 "
+                className="w-3.5 h-3.5 mt-1.5 shrink-0 grow-0 lg:w-6 lg:h-6 lg:mt-0 "
                 viewBox="0 0 16 16"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -171,7 +171,7 @@ const EmpoweringEducatiors = () => {
                 </g>
               </svg>
 
-              <p className="text-sm font-medium leading-[25.2px] text-[#1A2434] text-balance ">
+              <p className="text-sm font-medium leading-[25.2px] text-[#1A2434] text-balance lg:text-xl ">
                 Building the Children’s personality & character
               </p>
             </section>

@@ -3,8 +3,8 @@ import promiseImage from "./Group 187.png";
 
 const PromiseSection = () => {
   return (
-    <div className="py-[52px] w-[328px] mx-auto ">
-      <h1 className="relative mx-auto w-[230px] text-xl font-bold leading-7 text-center text-[#1A2434] ">
+    <div className="py-[52px] w-[328px] mx-auto md:w-auto md:mx-10 lg:py-[124px] ">
+      <h1 className="relative mx-auto w-[230px] text-xl font-bold leading-7 text-center text-[#1A2434] lg:w-[748px] lg:text-[42px] lg:leading-[58.8px] ">
         The KGKP Promise:
         <span className="block relative z-10">
           Increased IQ, EQ, & SQ of every Child
@@ -29,14 +29,14 @@ const PromiseSection = () => {
         </svg>
       </h1>
 
-      <section className="flex gap-6 flex-col justify-center items-center mt-6 w-[328px] mx-auto ">
+      <section className="flex gap-6 flex-col justify-center items-center mt-6 w-[328px] mx-auto md:w-auto md:flex-row-reverse lg:mt-12 lg:max-w-[990px] lg:gap-0 lg:justify-between ">
         <Image
           src={promiseImage}
           alt="Promise Image"
-          className="w-[200px] h-[200px] object-cover "
+          className="w-[200px] h-[200px] object-cover lg:w-[323.71px] lg:h-[315.77px] "
         />
 
-        <p className="w-[328px] text-sm font-normal leading-[25.2px] text-center text-[#1A2434] ">
+        <p className="w-[328px] text-sm font-normal leading-[25.2px] text-center text-[#1A2434] md:w-[387px] md:text-left lg:w-[487px] lg:text-xl ">
           We promise to enhance every child’s IQ, EQ, and SQ through our unique,
           research-based program. Our commitment extends to providing ongoing
           support to ensure lasting results.
