@@ -5,9 +5,9 @@ import pic3 from "./assets/pic-3.png";
 
 const MethodSection = () => {
   return (
-    <div className="bg-[#F6E2D7] ">
-      <div className="py-[52px] mx-4 ">
-        <h1 className="relative w-[178px] mx-auto h-7 text-xl font-bold leading-7 text-[#460C04] text-center ">
+    <div className="bg-[#F6E2D7] lg:rounded-[100px] ">
+      <div className="py-[52px] mx-4 lg:py-[124px] ">
+        <h1 className="relative w-[178px] mx-auto h-7 text-xl font-bold leading-7 text-[#460C04] text-center lg:w-[338px] lg:h-[53px] lg:text-[38px] lg:leading-[53.2px] ">
           <span className="relative z-10 ">The KGKP Method</span>
           <svg
             className="absolute bottom-[-19px] left-[-19px] w-[219px] h-10 "
@@ -29,61 +29,56 @@ const MethodSection = () => {
           </svg>
         </h1>
 
-        <p className="mt-5 w-[299px] mx-auto text-sm font-normal leading-[25.2px] text-[#460C04] text-center ">
+        <p className="mt-5 w-[299px] mx-auto text-sm font-normal leading-[25.2px] text-[#460C04] text-center md:w-[490px] lg:mt-8 lg:w-[659px] lg:text-[18px] lg:leading-[25.2px] ">
           In any school across the world, about 10% children are academically
           brilliant. The rest are average or thereabouts. The only difference
           between these two groups is that
           <span className="font-bold "> the brilliant children -</span>
         </p>
 
-        <section className="flex flex-col mt-6 gap-12 items-center ">
+        <section className="grid grid-rows-3 mt-6 gap-12 md:grid-rows-1 md:grid-cols-3 md:items-start md:justify-center md:w-fit md:mx-auto lg:mt-16 xl:w-[1091px] lg:place-items-center ">
           {/* card - 1 */}
-          <section className="w-full grid justify-center justify-items-center ">
-            <div className="w-[194.64px] h-[195.45px] ">
-              <Image
-                src={pic1}
-                alt="Picture 1 "
-                className="w-full h-full object-cover "
-              />
-            </div>
+          <section className="w-full flex flex-col items-center justify-center justify-items-center md:w-auto xl:w-[267px] ">
+            <Image
+              src={pic1}
+              alt="Picture 1 "
+              className="w-[194.64px] h-[195.45px] xl:w-[267px] xl:h-[268px] object-cover "
+            />
 
-            <div className="w-[199px] text-base font-bold leading-[22.4px] text-[#460C04] text-center ">
+            <div className="w-[199px] text-base font-bold leading-[22.4px] text-[#460C04] text-center xl:w-auto xl:text-xl ">
               Read Better
             </div>
           </section>
 
           {/* card - 2 */}
-          <section className="w-full grid justify-center justify-items-center ">
-            <div className="w-[194.64px] h-[195.45px] ">
-              <Image
-                src={pic2}
-                alt="Picture 2 "
-                className="w-full h-full object-cover "
-              />
-            </div>
+          <section className="w-full flex flex-col items-center justify-center justify-items-center md:w-auto xl:w-[356px] ">
+            {/* w-[270.64px] h-[235.45px] */}
+            <Image
+              src={pic2}
+              alt="Picture 2 "
+              className="w-[194.64px] h-[195.45px] xl:w-[267px] xl:h-[268px] object-cover "
+            />
 
-            <div className="w-[241px] text-base font-bold leading-[22.4px] text-[#460C04] text-center ">
+            <div className="w-[241px] text-base font-bold leading-[22.4px] text-[#460C04] text-center xl:w-auto xl:text-xl ">
               Have more encyclopedic knowledge
             </div>
           </section>
 
           {/* card - 3 */}
-          <section className="w-full grid justify-center justify-items-center ">
-            <div className="w-[194.64px] h-[195.45px] ">
-              <Image
-                src={pic3}
-                alt="Picture 3 "
-                className="w-full h-full object-cover "
-              />
-            </div>
+          <section className="w-full flex flex-col items-center justify-center justify-items-center md:w-auto xl:w-[267px] ">
+            <Image
+              src={pic3}
+              alt="Picture 3 "
+              className="w-[194.64px] h-[195.45px] xl:w-[267px] xl:h-[268px] object-cover "
+            />
 
-            <div className="w-[146px] text-base font-bold leading-[22.4px] text-[#460C04] text-center ">
+            <div className="w-[146px] text-base font-bold leading-[22.4px] text-[#460C04] text-center xl:w-auto xl:text-xl ">
               Do math better
             </div>
           </section>
         </section>
 
-        <p className="w-[328px] mt-6 mx-auto text-sm font-normal leading-[25.2px] text-center text-[#460C04] ">
+        <p className="w-[328px] mt-6 mx-auto text-sm font-normal leading-[25.2px] text-center text-[#460C04] md:w-[490px] lg:mt-[59px] lg:w-[757px] lg:text-base lg:leading-[22.4px] ">
           The Kaushalya Genius Kid Program builds these three capabilities in
           the children at preschool level itself, thus significantly improving
           the academic profile of the school.
@@ -98,9 +93,9 @@ const MethodSection = () => {
           </span>
         </p>
 
-        <button className="custom-black-button mt-6 w-[150px] h-[43px] rounded-[40px] bg-[#4D1435] block mx-auto ">
-          <span className="w-full h-full flex gap-2.5 justify-center items-center py-3 px-[18px] ">
-            <span className="custom-button-icon text-base font-semibold leading-[19.36px] text-white ">
+        <button className="custom-black-button mt-6 w-[150px] h-[43px] rounded-[40px] bg-[#4D1435] block mx-auto lg:mt-[88px] lg:w-[390px] lg:h-[77px] ">
+          <span className="w-full h-full flex gap-2.5 justify-center items-center py-3 px-[18px] lg:py-6 lg:px-[60px] ">
+            <span className="custom-button-icon text-base font-semibold leading-[19.36px] text-white lg:text-2xl lg:leading-[28.8px] ">
               Know More
             </span>
 
@@ -114,7 +109,7 @@ const MethodSection = () => {
                 <path
                   id="Shape"
                   d="M7.5299 3.42646C7.79025 3.16611 8.21236 3.16611 8.47271 3.42646L13.1394 8.09313C13.3997 8.35348 13.3997 8.77559 13.1394 9.03594L8.47271 13.7026C8.21236 13.963 7.79025 13.963 7.5299 13.7026C7.26955 13.4423 7.26955 13.0201 7.5299 12.7598L11.0585 9.2312H3.33464C2.96645 9.2312 2.66797 8.93272 2.66797 8.56453C2.66797 8.19634 2.96645 7.89787 3.33464 7.89787H11.0585L7.5299 4.36927C7.26955 4.10892 7.26955 3.68681 7.5299 3.42646Z"
-                  fill="white"
+                  className="fill-current text-white"
                 />
               </g>
             </svg>
