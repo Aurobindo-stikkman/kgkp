@@ -33,7 +33,7 @@ const Footer = () => {
               className="w-[79px] h-[50.55px] lg:hidden "
             />
 
-            <div className="flex justify-end gap-2 md:hidden">
+            <div className="relative right-[-5px] flex justify-end gap-2 md:hidden">
               <a href="https://www.facebook.com/KGeniusKidProg" target="_blank">
                 <Image
                   src={facebookLogo}
@@ -70,7 +70,7 @@ const Footer = () => {
 
           <section className="flex flex-wrap gap-6 items-start w-full justify-between lg:gap-2 lg:w-auto xl:gap-0 xl:grow xl:justify-between max-w-[780px] 2xl:gap-[35px] ">
             {/* First */}
-            <section className="w-24 grid gap-6 lg:w-[143px]">
+            <section className="w-24 grid gap-4 md:gap-6 lg:w-[143px]">
               <section className="text-[17.5px] font-[600] leading-[25.2px] text-[#4D1435] lg:text-[27px] lg:leading-[37.8px]">
                 Quick links
               </section>
@@ -91,7 +91,7 @@ const Footer = () => {
             </section>
 
             {/* Second */}
-            <section className="w-[92px] grid gap-6 lg:w-[138px]">
+            <section className="w-[92px] grid gap-4 md:gap-6 lg:w-[138px]">
               <section className="text-[17.5px] font-[600] leading-[25.2px] text-[#4D1435] lg:text-[27px] lg:leading-[37.8px]">
                 Resourses
               </section>
@@ -141,7 +141,7 @@ const Footer = () => {
             </section>
 
             {/* Third */}
-            <section className="w-[152px] grid gap-6 lg:w-[228px]">
+            <section className="w-[152px] grid gap-4 md:gap-6 lg:w-[228px]">
               <section className="text-[17.5px] font-[600] leading-[25.2px] text-[#4D1435] lg:text-[27px] lg:leading-[37.8px]">
                 Channel Partners
               </section>

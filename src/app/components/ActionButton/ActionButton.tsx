@@ -26,7 +26,7 @@ const ActionButton = () => {
 
   return (
     <div
-      className={`fixed right-0 bottom-44 h-12 border border-r-0 border-[#0000001F] bg-white rounded-tl-[40px] rounded-bl-[40px] cursor-pointer z-[9999] lg:h-[60px] lg:bottom-40 transition-all duration-300 ease-in-out ${
+      className={`fixed right-0 bottom-40 h-12 border border-r-0 border-[#0000001F] bg-white rounded-tl-[40px] rounded-bl-[40px] cursor-pointer z-[9999] lg:h-[60px] lg:bottom-40 transition-all duration-300 ease-in-out ${
         isOpen ? "w-[211px] lg:w-[267px] " : "w-14 lg:w-[132px]"
       }`}
       onClick={handleClick}

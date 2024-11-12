@@ -49,7 +49,7 @@ const SuccessStory = () => {
 
       {/* Video section */}
       <section className="flex flex-col items-center md:flex-row md:p-4 lg:px-[100px] lg:mt-[120px] lg:gap-16 xl:mx-auto xl:w-fit xl:gap-[128px] ">
-        <section className="w-[328px] h-auto rounded-[24.56px] mt-8 mx-auto border border-[transparent] md:basis-1/2 md:h-[250px] lg:w-[520px] lg:basis-auto lg:h-[300px] xl:w-[520px] xl:flex-shrink-0 xl:basis-[520px] xl:h-[329px] xl:rounded-[40px]">
+        <section className="w-[328px] h-[207px] rounded-[24.56px] mt-8 mx-auto border border-[transparent] md:basis-1/2 md:h-[250px] lg:w-[520px] lg:basis-auto lg:h-[300px] xl:w-[520px] xl:flex-shrink-0 xl:basis-[520px] xl:h-[329px] xl:rounded-[40px]">
           <div className="relative h-full w-full z-10">
             <iframe
               className="w-full h-full z-10 rounded-[24.56px]"
@@ -70,7 +70,7 @@ const SuccessStory = () => {
           </div>
         </section>
 
-        <section className="italic text-[17px] font-[400] leading-[21.8px] text-[#F6E2D8] text-center w-[328px] mx-4 relative mt-[54px] md:basis-1/2 lg:mt-0 lg:text-left xl:w-[508px] max-w-[508px] xl:h-[120px] xl:mx-0 xl:text-[20px] xl:leading-[26px] ">
+        <section className="italic text-sm font-normal leading-[16.8px] text-[#F6E2D8] text-center w-[328px] mx-4 relative mt-[54px] md:basis-1/2 lg:mt-0 lg:text-left xl:w-[508px] max-w-[508px] xl:h-[120px] xl:mx-0 xl:text-[20px] xl:leading-[26px] ">
           14 years ago, I was exactly where you are today. This simple program,
           the reading cards, the dot cards and my parents continuous efforts
           have upped my game. Until today, I've read about 7,000 books on
@@ -92,7 +92,7 @@ const SuccessStory = () => {
         </section>
       </section>
 
-      <section className="mt-8 mx-auto text-white text-[14px] font-[500] leading-[16.8px] w-[231px] text-center md:text-[20px] md:leading-[28.9px] md:w-[600px] lg:mt-20 lg:text-[24px] lg:leading-[28.8px] xl:mt-[147px] ">
+      <section className="mt-8 mx-auto text-white text-sm font-[500] leading-[16.8px] w-[231px] text-center md:text-[20px] md:leading-[28.9px] md:w-[600px] lg:mt-20 lg:text-[24px] lg:leading-[28.8px] xl:mt-[147px] ">
         Ready to give your child the gift of a brighter future?
       </section>
 

@@ -10,7 +10,7 @@ const WhatsApp = () => {
 
   return (
     <div
-      className="cursor-pointer fixed w-11 h-11 rounded-full bg-white right-[0.5rem] lg:w-[82px] lg:h-[82px] bottom-10 lg:right-[2.8rem] z-[9999] "
+      className="cursor-pointer fixed w-11 h-11 bottom-[5.5rem] right-[0.5rem] rounded-full bg-white lg:w-[82px] lg:h-[82px] lg:right-[2.8rem] z-[9999] "
       style={{
         boxShadow: "0px 3px 10px rgba(0, 0, 0, 0.18)",
         borderWidth: "0.77px",

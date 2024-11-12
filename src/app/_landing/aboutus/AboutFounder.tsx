@@ -27,8 +27,9 @@ const AboutFounder = () => {
           />
         </svg>
 
+        {/* Stars */}
         <svg
-          className="hidden lg:block w-14 h-14 absolute -top-4 -left-16 "
+          className="w-9 h-9 -top-2 left-[-42px] lg:w-14 lg:h-14 absolute lg:-top-4 lg:-left-16 "
           viewBox="0 0 51 51"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +41,7 @@ const AboutFounder = () => {
           />
         </svg>
         <svg
-          className="hidden lg:block w-6 h-6 absolute bottom-[-2rem] left-[-1.5rem] "
+          className="w-5 h-5 absolute -left-3 -bottom-6 lg:bottom-[-2rem] lg:w-6 lg:h-6 lg:left-[-1.5rem] "
           viewBox="0 0 51 51"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +53,7 @@ const AboutFounder = () => {
           />
         </svg>
         <svg
-          className="hidden lg:block w-6 h-6 absolute top-[-2rem] left-[-1.5rem] "
+          className="w-5 h-5 absolute -left-3 -top-6 lg:top-[-2rem] lg:w-6 lg:h-6 lg:left-[-1.5rem] "
           viewBox="0 0 51 51"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +69,7 @@ const AboutFounder = () => {
       <section className="flex flex-col xl:mt-28 xl:flex-row xl:mx-auto xl:gap-[51px] max-w-[1440px] justify-center">
         <section
           style={{ borderRadius: "40% 60% 63% 37% / 26% 66% 34% 74%" }}
-          className="mt-[56px] bg-[#A16E5738] h-[257px] w-[251.79px] p-6 overflow-hidden mx-auto xl:h-[520.24px] xl:mx-0 xl:w-[520.24px] xl:order-2 "
+          className="mt-[56px] bg-[#A16E5738] h-[257px] w-[251.79px] p-4 md:p-6 overflow-hidden mx-auto xl:h-[520.24px] xl:mx-0 xl:w-[520.24px] xl:order-2 "
         >
           <Image
             src={rameshPartani}
@@ -78,7 +79,7 @@ const AboutFounder = () => {
           />
         </section>
 
-        <section className="w-[360px] mx-auto mt-14 text-center md:w-[704px] lg:text-justify xl:mx-0 xl:order-1 tracking-[0.4px] ">
+        <section className="w-[328px] mx-auto mt-14 text-center md:w-[704px] lg:text-justify xl:mx-0 xl:order-1 tracking-[0.4px] ">
           <div className="text-[#F6E2D8] font-[700] text-[14px] leading-[19.6px] inline mr-1 sm:text-[18px] lg:text-[24px] lg:leading-[33.12px] ">
             Kaushalya Genius Kid Program
           </div>{" "}
@@ -108,7 +109,10 @@ const AboutFounder = () => {
       </section>
 
       <section className="hidden w-[385px] h-[77px] rounded-[50px] bg-[#F6E2D8] sm:block mx-auto mt-12 xl:mt-[140px] custom-white-button">
-        <Link className="cursor-pointer w-full h-full px-[80px] py-6 flex gap-[14px] justify-center items-center" href="/aboutus">
+        <Link
+          className="cursor-pointer w-full h-full px-[80px] py-6 flex gap-[14px] justify-center items-center"
+          href="/aboutus"
+        >
           <div className="text-[24px] font-[700] leading-[28.8px] text-[#4D1435] custom-button-icon">
             Read More
           </div>

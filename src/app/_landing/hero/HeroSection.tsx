@@ -1,20 +1,20 @@
 "use client";
+import Image from "next/image";
 import { useEffect, useRef } from "react";
 import useInView from "@/app/components/useInView";
 
-import Image from "next/image";
-import arrowMark from "./Arrow mark.svg";
-import bg from "./BG.png";
-import bg2 from "./BG2 1.png";
-import boyReading from "./Boy reading.svg";
-import girlPlaying from "./girl playing.png";
-import vector60 from "./Vector 60.png";
-import vector65 from "./Vector 65.svg";
-import vector68 from "./Vector 68.svg";
-import vector71 from "./Vector 71.svg";
-import spiritualGrounding from "./praying.svg";
-import boostCognitiveAbilities from "./cognitive-function 1.svg";
-import imotionalIntelligence from "./lotus-flower.svg";
+import arrowMark from "./assets/Arrow mark.svg";
+import bg from "./assets/BG.png";
+import bg2 from "./assets/BG2 1.png";
+import boyReading from "./assets/Boy reading.svg";
+import girlPlaying from "./assets/girl playing.png";
+import vector60 from "./assets/Vector 60.png";
+import vector65 from "./assets/Vector 65.svg";
+import vector68 from "./assets/Vector 68.svg";
+import vector71 from "./assets/Vector 71.svg";
+import spiritualGrounding from "./assets/praying.svg";
+import boostCognitiveAbilities from "./assets/cognitive-function 1.svg";
+import imotionalIntelligence from "./assets/lotus-flower.svg";
 
 import styles from "./style.module.css";
 
@@ -117,7 +117,10 @@ const HeroSection = () => {
           </div>
           <div className="w-[325px] mx-auto text-[14px] tracking-[0.4px] font-[400] leading-[25.2px] text-[#4D1435] text-center pt-4 px-[6px] md:w-auto md:mx-0 md:text-left md:p-0 md:mt-7 lg:w-[572px] lg:h-[64px] lg:mt-[21px] lg:text-[20px] lg:leading-[32.4px]">
             Headstart your kid’s development right from the time of conception
-            till the age of 15 years and beyond
+            <span className="hidden md:inline ">
+              till the age of 15 years
+            </span>{" "}
+            and beyond
           </div>
 
           <button className="hidden w-[254px] h-[51px] absolute bottom-[66px] rounded-[50px] bg-[#4D1435] md:flex items-center gap-[14px] px-4 py-[28px] justify-center translate-x-[-50%] left-1/2 md:static md:translate-x-0 md:mt-10 cursor-pointer mt-[42px] lg:w-[395px] lg:h-[77px] lg:px-[55px] lg:py-[24px] custom-black-button">
@@ -175,7 +178,7 @@ const HeroSection = () => {
                 className="h-[27.69px] w-[23.02px] absolute top-16 right-12 z-0 lg:top-[135px] lg:right-[200px] lg:h-[61.34px] lg:w-[48.73px] "
               />
               <svg
-                className="absolute -top-1.5 right-[-54px] w-[54px] h-[67px] lg:w-[179px] lg:h-[136px] lg:-right-16 "
+                className="absolute -top-4 right-[-70px] w-[78px] h-[75px] lg:w-[179px] lg:h-[136px] lg:-right-16 "
                 viewBox="0 0 175 124"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -343,7 +346,7 @@ const HeroSection = () => {
           </section>
 
           {/* Button for smaller screen */}
-          <section className="w-[254px] h-[51px] absolute bottom-[66px] rounded-[50px] bg-[#4D1435] flex gap-[14px] px-4 py-[28px] items-center justify-center custom-black-button translate-x-[-50%] left-1/2 md:hidden">
+          <button className="custom-black-button w-[254px] h-[51px] absolute bottom-[66px] translate-x-[-50%] left-1/2 rounded-[50px] bg-[#4D1435] flex gap-[14px] px-4 py-[28px] items-center justify-center md:hidden">
             <div className="text-[16px] font-[700] leading-[19.2px] text-white custom-button-icon">
               Explore Our Courses
             </div>
@@ -361,7 +364,28 @@ const HeroSection = () => {
                 />
               </g>
             </svg>
-          </section>
+          </button>
+
+          <svg
+            width="24"
+            height="24"
+            className={`absolute bottom-[28px] left-1/2 -translate-x-1/2 mx-auto ${styles.bounce}`}
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="left-arrow 1">
+              <g id="Group">
+                <g id="Group_2">
+                  <path
+                    id="Vector"
+                    d="M12.0051 14.3118L3.02634 5.33351C2.77971 5.08629 2.44995 4.95029 2.09834 4.95029C1.74654 4.95029 1.41698 5.08629 1.16995 5.33351L0.38361 6.12024C0.136195 6.36707 0 6.69702 0 7.04863C0 7.40024 0.136195 7.7298 0.38361 7.97682L11.0736 18.667C11.3214 18.915 11.6525 19.0508 12.0045 19.0498C12.358 19.0508 12.6888 18.9152 12.9368 18.667L23.6164 7.98678C23.8638 7.73975 24 7.41019 24 7.05839C24 6.70678 23.8638 6.37721 23.6164 6.13L22.83 5.34346C22.3182 4.83165 21.4851 4.83165 20.9735 5.34346L12.0051 14.3118Z"
+                    fill="#F8DB4A"
+                  />
+                </g>
+              </g>
+            </g>
+          </svg>
         </section>
       </div>
     </section>

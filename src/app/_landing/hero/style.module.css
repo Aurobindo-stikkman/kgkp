@@ -1,7 +1,7 @@
 /* ChalkMark.module.css */
 
 .chalkMark rect {
-  animation: reveal .5s linear forwards;
+  animation: reveal 0.5s linear forwards;
 }
 
 @keyframes reveal {
@@ -12,6 +12,25 @@
   to {
     width: 423px;
     /* Adjust to match the width of your SVG's viewBox */
+  }
+}
+
+.bounce {
+  animation: bounceAnimation 1.25s infinite;
+}
+
+@keyframes bounceAnimation {
+  0% {
+    transform: translateY(0);
+  }
+
+  30% {
+    transform: translateY(10px);
+  }
+
+  40%,
+  100% {
+    transform: translateY(0px);
   }
 }
 
