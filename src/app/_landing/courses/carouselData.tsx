@@ -29,7 +29,7 @@ export const allCards: ICard[] = [
     categoryType: "Infant",
     category: "0 - 6 years",
     bg: "#F3E0A3",
-    planName: "Birth to 1month",
+    planName: "Birth to 1 month",
     phase: 1,
     img: "/Rectangle 5759.png",
   },

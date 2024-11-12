@@ -1,12 +1,13 @@
 "use client";
-import { useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useRef } from "react";
 
 import useInView from "@/app/components/useInView";
 
-import bulb from "./assets/science/bulb.svg";
-import equation from "./assets/science/equation.svg";
-import science from "./assets/science/science.svg";
+import bulb from "./assets/science/bulb.png";
+import equation from "./assets/science/equation.png";
+import science from "./assets/science/science.png";
 import rocketIcon from "./assets/science/rocket.svg";
 import vector9 from "./assets/science/Vector 9.png";
 import vector10 from "./assets/science/Vector 10.png";
@@ -16,7 +17,6 @@ import vector12 from "./assets/science/Vector 12.png";
 import vector13 from "./assets/science/Vector 13.png";
 
 import "./science.css";
-import Link from "next/link";
 
 const Science = () => {
   const sectionRef = useRef(null);
@@ -105,7 +105,7 @@ const Science = () => {
         </section>
 
         {/* Card 2 */}
-        <section className="h-[420px] w-[328px] rounded-[40px] bg-white flex z-10 flex-col lg:h-auto lg:w-[356px] lg:relative">
+        <section className="h-[448px] w-[328px] rounded-[40px] bg-white flex z-10 flex-col lg:h-auto lg:w-[356px] lg:relative">
           <Image
             src={equation}
             alt="Equation"
@@ -237,7 +237,7 @@ const Science = () => {
           </section>
           {/* Bullet points */}
           <section className="mt-[57px] flex gap-[37px] h-[571px] md:basis-1/2">
-            <section className="grid gap-6 basis-[30px]">
+            <section className="relative top-[-4px] grid gap-6 basis-[30px]">
               <section className="w-7 h-7 border-4 shadow-md border-white rounded-full bg-[#A696F7] relative after:absolute after:top-[177%] after:w-[1px] after:left-1/2 after:transform after:-translate-x-1/2 after:bg-[#4D143526] after:h-[35px] "></section>
               <section className="w-7 h-7 border-4 shadow-md border-white rounded-full bg-[#F2B095] relative after:absolute after:top-[177%] after:w-[1px] after:left-1/2 after:transform after:-translate-x-1/2 after:bg-[#4D143526] after:h-[35px] "></section>
               <section className="w-7 h-7 border-4 shadow-md border-white rounded-full bg-[#A696F7] relative after:absolute after:top-[177%] after:w-[1px] after:left-1/2 after:transform after:-translate-x-1/2 after:bg-[#4D143526] after:h-[35px] "></section>
