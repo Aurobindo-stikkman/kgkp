@@ -369,7 +369,7 @@ const HeroSection = () => {
           <svg
             width="24"
             height="24"
-            className={`absolute bottom-[28px] left-1/2 -translate-x-1/2 mx-auto ${styles.bounce}`}
+            className={`absolute bottom-[28px] left-1/2 -translate-x-1/2 mx-auto ${styles.bounce} md:hidden`}
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
