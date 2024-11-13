@@ -12,7 +12,7 @@ const PromiseSection = () => {
         <svg
           width="176"
           height="30"
-          className="w-[175px] h-[30px] absolute bottom-3.5 right-1.5 "
+          className="w-[175px] h-[30px] absolute bottom-3.5 right-1.5 lg:right-auto lg:left-[-17px] lg:w-[491px] lg:h-[82px] lg:bottom-[-46px] "
           viewBox="0 0 176 30"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

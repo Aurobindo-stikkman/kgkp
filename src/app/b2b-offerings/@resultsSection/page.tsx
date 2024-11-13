@@ -27,7 +27,7 @@ const ResultsSection = () => {
           </span>
 
           <svg
-            className="w-[170px] h-[22px] absolute bottom-[-8px] left-[39px] "
+            className="w-[170px] h-[22px] absolute bottom-[-8px] left-[39px] lg:left-auto lg:right-[11px] lg:w-[293px] lg:h-[42px] lg:bottom-[-18px] "
             viewBox="0 0 175 20"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

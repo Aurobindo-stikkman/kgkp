@@ -14,72 +14,250 @@ const FaqSection = () => {
   const obj: IFaq = {
     generalInfo: [
       {
-        q: "What is the Kaushalya Genius Kid Program (KGKP)?",
-        ans: `The Kaushalya Genius Kid Program (KGKP) is a unique online program designed to make every child a genius. "Kaushalya" means an expert or genius whose body, mind, and spirit are perfectly aligned. The programme is inspired by the Bhagavad Gita's teaching that says “ yogah karmasu kaushalam ” implies "yoga is excellence in action," KGKP helps children achieve excellence by aligning their body, mind, and spirit with their actions.`,
-      },
-      {
-        q: "What age groups is the KGKP suitable for?",
+        q: "How does KGKP customize the learning experience for each student?",
         ans: (
           <>
             <div>
-              The Kaushalya Genius Kid Program (KGKP) is suitable for various
-              age groups, starting with parents and extending to children up to
-              15 years old.
+              Every child , at the moment of birth, has a potential to become a
+              genius in some area or the other. The earlier the child joins the
+              program, the more is the possibility of enhancement of his IQ.{" "}
             </div>
             <div className="mt-5">
-              The first two programs are designed for parents. Thereafter, The
-              program is divided into two segments for children. The first
-              segment is for infants, babies, toddlers, and preschoolers aged
-              0-6 years. The second segment is for primary, middle, and high
-              schoolers aged 6-15 years.
+              The first step is to understand every child’s unique talent
+              profile. This is done by conducting the ridge analysis test for
+              the children. The report of this test gives clear information
+              about the innate talent profile of the child with assessment of
+              everyone of the 8 different intelligences. Based on this , the
+              children are grouped into different Co curricular activities
+              available in the school, thus providing for customised exposure to
+              everyone of the children .
             </div>
           </>
         ),
       },
       {
-        q: "How much time do I need to commit to the courses each day?",
+        q: "What training do teachers receive as part of the KGKP implementation in our school?",
         ans: (
-          <div>
-            The time commitment for the Kaushalya Genius Kid Program (KGKP)
-            varies by programs:
-            <ul className="list-disc list-inside pl-6">
-              <li>
-                <strong>Pre-Pregnancy and Pregnancy Program: </strong>
-                About 2 hours each day.
-              </li>
-              <li>
-                <strong>0-6 Years: </strong>
-                <ul className="list-[circle] list-inside pl-6">
-                  <li>30-40 minutes per day for activities with your child.</li>
-                  <li>
-                    About 10 minutes per day for the online reading, maths, and
-                    encyclopaedic knowledge programs. This 10 minutes is divided
-                    into several short sessions of about 20-60 seconds each.
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <strong>6-15 Years: </strong>
-                The sessions are pre-recorded and can be done at any time during
-                the day or night, allowing for flexible scheduling.
-              </li>
-            </ul>
-            This structure ensures that the program can fit into your daily
-            routine effectively.
-          </div>
+          <>
+            <div>
+              Pre school teachers are trained in the entire 7 stage brain
+              development process in the first 6 years of age. They are also
+              trained in handling the access and delivery of reading, math and
+              encyclopaedic knowledge programs of the KGKP course using the
+              online learning management system.
+            </div>
+            <div className="mt-5">
+              Nursery to Xth class teachers are trained on understanding the
+              ridge analysis reports and planning out customised activity plan
+              for the children based on the multiple intelligence matrix. This
+              plan when executed well, results in enhancement of the IQ. They
+              are also trained on accessing , delivering and monitoring the EQ
+              and SQ enhancement program by using the online KGKP learning
+              management system.
+            </div>
+          </>
         ),
       },
       {
-        q: "How do I evaluate my child’s progress?",
-        ans: `For children aged 0-6 years, you can evaluate your child's growth through problem-solving activities, with guidance provided at appropriate stages in the program.For children aged 6-15 years, progress is generally reflected in their behaviour and lifestyle. You also receive guidance on how to observe specific improvements over time.`,
+        q: "How does KGKP help in improving our school students' IQ, EQ, and SQ?",
+        ans: (
+          <>
+            <div>
+              KGK program has two distinct parts. One part is for the preschool
+              level from 0-6 years age group wherein 80% focus is on enhancing
+              the IQ of the children and 20% focus is on sowing the seeds of EQ
+              and SQ at the sub conscious level.
+              <span className="block">
+                IQ is enhanced by specific activities to accelerate the
+                milestones of brain development. Also, the children are exposed
+                to scientific, well designed reading, math and encyclopaedic
+                knowledge programs. This results into high academic excellence
+                in the children in the medium term. Additionally, the children
+                are put through the ridge analysis test to determine their
+                unique talent profile, based on which they grouped into
+                different activities for planned and targeted IQ enhancement.
+              </span>
+            </div>
+            <div className="mt-5">
+              The second part is for children between 6-15 years age. This
+              program also includes the ridge analysis test for every child
+              followed by specific, customised activity plan for IQ enhancement.
+              EQ and SQ enhancement is achieved by delivery of very high quality
+              video content @ two periods per week through the online KGKP
+              learning management system. Hundreds of these videos on a wide
+              range of subjects impart deep lessons which are further
+              internalised through assignments and closely monitored
+              teacher-parents support.
+            </div>
+          </>
+        ),
       },
       {
-        q: "Are there any parent-expert conferences or feedback sessions?",
-        ans: `Yes, the experts conduct an annual review session for each child with their parents. This review assesses the implementation of the KGKP, evaluates the program's impact, and provides parents with advice on how to achieve improved results moving forward.`,
+        q: "What role do parents play in the KGKP implementation in our school?",
+        ans: `Parents are given a monthly brief of the EQ and SQ enhancement program delivered at the school , the follow up internalisation assignments and the expected behavioural improvement in the children. Their role is to monitor and support the growth in the child at home.`,
       },
       {
-        q: "How do I enrol my child in the program?",
-        ans: `To enrol your child in the program you have to select the first course of the current age of your child. After selecting the course, you have to make the payment and get enrolled. `,
+        q: "How can we measure student progress and outcomes from the KGKP implementation?",
+        ans: (
+          <>
+            <div>
+              IQ enhancement at the preschool level is very high and can be seen
+              in a few months in the areas of reading, math and encyclopaedic
+              knowledge. Brachiation and other milestones acceleration
+              activities also improve physical and mental fitness. Accelerated
+              milestones can be measured in related performance tests.
+              <span className="block">
+                EQ and SQ enhancement shows up in behavioural improvement ,
+                lifestyle choices and personality development.
+              </span>
+            </div>
+          </>
+        ),
+      },
+      {
+        q: "How long does it take to see results from the KGKP implementation?",
+        ans: (
+          <>
+            <div>
+              At the preschool level, initial results can be seen in about 6
+              months, if the KGK program is used consistently. Further
+              enhancement can be seen gradually.
+              <span className="block">
+                At the primary level and above, year on year improvement can be
+                plotted in academic , multiple intelligence as well as
+                behavioural areas.
+              </span>
+            </div>
+          </>
+        ),
+      },
+      {
+        q: "What resources are provided to teachers and schools as part of the KGKP partnership?",
+        ans: (
+          <>
+            <div>
+              Ridge analysis test is administered for every child to begin with.
+              Reports are generated and delivered to the school for their record
+              and follow up action. The preschool online KGK program resources
+              include daily videos on reading, math , encyclopaedic knowledge
+              and milestones acceleration.
+              <span className="block mt-5">
+                1st to 10th class KGK program resources include 2 videos per
+                week on a wide range of subjects like health, life style,
+                communication, ashtanga yoga, emotional intelligence, values,
+                life lessons, patriotism, Indian culture, spirituality,
+                relationships, shlokas, gender sensitisation, generation gap,
+                time management, public speaking , prioritisation and many other
+                subjects.
+              </span>
+            </div>
+          </>
+        ),
+      },
+      {
+        q: "What does the course curriculum include once the Ridge Analysis is complete?",
+        ans: (
+          <>
+            <div>
+              The report of the ridge analysis test gives a clear understanding
+              of the multiple intelligence profile of every child. Teachers
+              trained by us use this information to form groups of children for
+              exposing them in various activities to enhance specific
+              intelligences.
+              <span className="block ">
+                Other IQ, EQ and SQ enhancement programs are delivered by
+                trained teachers by accessing online content on the KGKP
+                learning management system.
+              </span>
+            </div>
+          </>
+        ),
+      },
+      {
+        q: "What kind of ongoing support does KGKP provide after the program is implemented?",
+        ans: `Online content is regularly updated to keep it relevant to the latest trends in education. Webinars are conducted from time to time as and when required. The teachers can ask clarifications in the WhatsApp groups created for continuous guidance.`,
+      },
+      {
+        q: "Is the KGKP adaptable for different school sizes and educational environments?",
+        ans: `KGKP program can be effectively delivered in any size and environment of the school. The only requirement is good internet connectivity, av equipment and brachiation ladder (optional). All other resources are made available online.`,
+      },
+      {
+        q: "What is the role of KGKP in guiding students' future career choices?",
+        ans: `One of the pages in the ridge analysis report gives the possible higher education and career choices based on the talent profile of the child. Teachers are also trained on suggesting career choices based on the improvements achieved consequent to the exposure to the KGK program.`,
+      },
+      {
+        q: "How can schools get started with the KGKP?",
+        ans: (
+          <>
+            <div>
+              The implementation of the KGK program at the school involves the
+              following steps:
+              <ul className="ml-4">
+                <li>a. Initial enquiry and proposal submission </li>
+                <li>b. Signing of contract </li>
+                <li>c. Payment </li>
+                <li>d. Ridge analysis test on a mutually convenient date </li>
+                <li>e. Multiple intelligence activities </li>
+                <li>f. Online KGKP content delivery. </li>
+                <li>g. Plotting the results </li>
+              </ul>
+            </div>
+          </>
+        ),
+      },
+      {
+        q: "What is the time commitment for implementing the KGKP in a school?",
+        ans: (
+          <>
+            <div>
+              Time commitment needed for effective implementation of the KGKP at
+              school is as follows:
+              <ul className="ml-4">
+                <li>a. Teachers training:- 1 day</li>
+                <li>b. Ridge analysis:- 100 children per day</li>
+                <li>
+                  c. Preschool course:- Reading, math, encyclopaedic knowledge
+                  courses - 20 minutes/ day
+                </li>
+                <li>d. Brachiation:- 1 minute/ child.</li>
+                <li>e. 1st - 10th standard:- 2 periods/ week.</li>
+              </ul>
+            </div>
+          </>
+        ),
+      },
+      {
+        q: "What is the Kaushalya Genius Kid Program (KGKP)?",
+        ans: `The Kaushalya Genius Kid Program (KGKP) is a unique online program designed to make every child a genius. "Kaushalya" means an expert or genius whose body, mind, and spirit are perfectly aligned. The programme is inspired by the Bhagavad Gita's teaching that says “ yogah karmasu kaushalam ” implies "yoga is excellence in action," KGKP helps children achieve excellence by aligning their body, mind, and spirit with their actions.`,
+      },
+      {
+        q: "How does the Ridge Analysis Test work, and what information does it provide?",
+        ans: `Ridge Analysis is a scientific method that helps to understand the inborn intelligences and learning styles by analysing fingerprints. This report gives clear information about the child’s strengths & weaknesses, growth rate of every brain lobe, and learning style of the child. This report is then used to identify where the highest potential genius of the child lies and create a unique activity plan that parents can use to help their child actualise their potential genius.`,
+      },
+      {
+        q: "What are Howard Gardner’s 8 Multiple Intelligences, and how does KGKP address them?",
+        ans: (
+          <>
+            <div>
+              The concept of multiple intelligences is a theory proposed by
+              Howard Gardner, a psychologist and a professor of education to
+              propose that human brain is capable of different types of
+              intelligences. These multiple intelligences include logical,
+              linguistic, spatial, kinesthetic, interpersonal, intrapersonal,
+              musical and naturalistic intelligences. Every child at the moment
+              of birth has the potential intelligence to become a genius in onr
+              or more of these intelligences.
+              <span className="block mt-5">
+                These intelligences are functions of different lobes in the
+                brain and our Ridge Analysis report mentions critical
+                information about the intelligence profile of the child. This
+                information is used in our age appropriate activity plan for the
+                child and parents are also counselled to practise some
+                activities at home or through other available resources.
+              </span>
+            </div>
+          </>
+        ),
       },
     ],
   };

@@ -29,7 +29,7 @@ const BannerSection = () => {
           <svg
             width="175"
             height="20"
-            className={`absolute bottom-[-9px] left-[74px] w-[175px] h-[20px] ${
+            className={`absolute bottom-[-9px] left-[74px] w-[175px] h-[20px] lg:left-auto lg:right-[91px] lg:w-[326px] lg:h-9 lg:bottom-[-20px] lg:-rotate-2 ${
               isInView ? styles.chalkMark : ""
             }`}
             viewBox="0 0 175 20"

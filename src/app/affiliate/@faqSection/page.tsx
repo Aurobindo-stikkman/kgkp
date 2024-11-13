@@ -14,72 +14,127 @@ interface IFaq {
 const allFaqs: IFaq = {
   generalInfo: [
     {
-      q: "What is the Kaushalya Genius Kid Program (KGKP)?",
-      ans: `The Kaushalya Genius Kid Program (KGKP) is a unique online program designed to make every child a genius. "Kaushalya" means an expert or genius whose body, mind, and spirit are perfectly aligned. The programme is inspired by the Bhagavad Gita's teaching that says “ yogah karmasu kaushalam ” implies "yoga is excellence in action," KGKP helps children achieve excellence by aligning their body, mind, and spirit with their actions.`,
+      q: "What is the KGKP Affiliate Program?",
+      ans: `KGKP is an online, scientific program for children between 0 and 15 years age. The benefit of the program is that it raises the IQ, EQ and SQ of children significantly. `,
     },
     {
-      q: "What age groups is the KGKP suitable for?",
+      q: "Who can join the KGKP Affiliate Program?",
+      ans: `The affiliate program is offered to teachers, paediatricians and gynaecologists who can understand this cutting edge technology driven program and can recommend it to the parents community in the area of their influence. The referral fee from this initiative can build a very attractive second source of income for the affiliates.`,
+    },
+    {
+      q: "What is the process for signing up for the Affiliate Program?",
+      ans: (
+        <div>
+          There are some simple steps.
+          <ul className="ml-4">
+            <li>
+              a). Fill up the application form here and give some basic
+              information about your profession.
+            </li>
+            <li>
+              b). Your application will be screened within 3 working days. Upon
+              approval, details for payment of affiliate registration fee of Rs
+              5000/- shall be sent to you by by our support team.
+            </li>
+            <li>
+              c). After registration, a unique referral code shall be given to
+              you.
+            </li>
+            <li>
+              d). A short online training will be given at a mutually convenient
+              time. KGKP brochures and posters shall be given in adequate
+              quantity for display and distribution.
+            </li>
+            <li>e). Recommend the KGK program to your network of parents.</li>
+            <li>f). Track your income using the unique referral code.</li>
+          </ul>
+        </div>
+      ),
+    },
+    {
+      q: "How does the referral process work?",
       ans: (
         <>
           <div>
-            The Kaushalya Genius Kid Program (KGKP) is suitable for various age
-            groups, starting with parents and extending to children up to 15
-            years old.
-          </div>
-          <div className="mt-5">
-            The first two programs are designed for parents. Thereafter, The
-            program is divided into two segments for children. The first segment
-            is for infants, babies, toddlers, and preschoolers aged 0-6 years.
-            The second segment is for primary, middle, and high schoolers aged
-            6-15 years.
+            RU education offers 4 types of online courses.
+            <ul className="ml-4">
+              <li>a). For couples who are planning a child.</li>
+              <li>b). For pregnant women who are expecting a child.</li>
+              <li>c). For children between 0 and 6 years age.</li>
+              <li>d). For children between 6 and 15 years age.</li>
+            </ul>
+            <span className="block">
+              For best results, parents should join the program before
+              conception or during early pregnancy and continue the program
+              daily until the child is 15 years of age.
+            </span>
+            <span className="block">
+              Children joining the KGKP phases 1-7 ( birth to 6 years) have to
+              be shown the program either on a tv screen or a laptop.
+            </span>
+            <span className="block">
+              Children joining Phases 8-11 can be shown the program on a
+              smartphone screen.
+            </span>
           </div>
         </>
       ),
     },
     {
-      q: "How much time do I need to commit to the courses each day?",
-      ans: (
-        <div>
-          The time commitment for the Kaushalya Genius Kid Program (KGKP) varies
-          by programs:
-          <ul className="list-disc list-inside pl-6">
-            <li>
-              <strong>Pre-Pregnancy and Pregnancy Program: </strong>
-              About 2 hours each day.
-            </li>
-            <li>
-              <strong>0-6 Years: </strong>
-              <ul className="list-[circle] list-inside pl-6">
-                <li>30-40 minutes per day for activities with your child.</li>
-                <li>
-                  About 10 minutes per day for the online reading, maths, and
-                  encyclopaedic knowledge programs. This 10 minutes is divided
-                  into several short sessions of about 20-60 seconds each.
-                </li>
-              </ul>
-            </li>
-            <li>
-              <strong>6-15 Years: </strong>
-              The sessions are pre-recorded and can be done at any time during
-              the day or night, allowing for flexible scheduling.
-            </li>
-          </ul>
-          This structure ensures that the program can fit into your daily
-          routine effectively.
-        </div>
-      ),
+      q: "What kind of support does KGKP provide to affiliates?",
+      ans: `The support team can be contacted on mobile, SMS or WhatsApp at +91 9394360040.`,
     },
     {
-      q: "How do I evaluate my child’s progress?",
-      ans: `For children aged 0-6 years, you can evaluate your child's growth through problem-solving activities, with guidance provided at appropriate stages in the program.For children aged 6-15 years, progress is generally reflected in their behaviour and lifestyle. You also receive guidance on how to observe specific improvements over time.`,
+      q: "How are commissions calculated and paid out?",
+      ans: `Depending on the type of Affiliate Program the channel partner has signed up for, the commissions will be calculated (₹500 per enrolment per month for Channel Partner 1 & ₹350 per enrolment per month for Channel Partner 2) and paid out by the 9th day of the next month.`,
     },
     {
-      q: "Are there any parent-expert conferences or feedback sessions?",
-      ans: `Yes, the experts conduct an annual review session for each child with their parents. This review assesses the implementation of the KGKP, evaluates the program's impact, and provides parents with advice on how to achieve improved results moving forward.`,
+      q: "How do I track my referrals and earnings?",
+      ans: `There is absolutely no limit to your earnings in the affiliate program of KGKP. The more the referrals, the more are the earnings.`,
     },
     {
-      q: "How do I enrol my child in the program?",
-      ans: `To enrol your child in the program you have to select the first course of the current age of your child. After selecting the course, you have to make the payment and get enrolled. `,
+      q: "Is there a limit to how much I can earn?",
+      ans: `You will be given a unique affiliate code. All your references use this code in their access password. You can use the same code to access the LMS and track the progress of every reference as well as your earnings.`,
+    },
+    {
+      q: "Can I promote KGKP through social media?",
+      ans: `Yes. You can promote the KGKP through social media or any other means. The only condition is that you should not distort the logo, the promise or the methodology of the KGKP in your communication.`,
+    },
+    {
+      q: "What happens if a parent doesn't use my referral code?",
+      ans: `Your unique referral code is the means by which the reference gets included in your lot  and is visible to you for tracking. If the referral code is wrong, different or not mentioned, the reference will not be included in your account and will be difficult to track and retrieve later.`,
+    },
+    {
+      q: "Are there any fees to join the Affiliate Program?",
+      ans: `There is an initial affiliate registration fees of Rs 5000/-. You get promotional materials free of cost, after the registration. There are no other charges before or after this.`,
+    },
+    {
+      q: "How long does it take to start earning commissions?",
+      ans: `Your earnings start the moment your reference makes the first payment in the KGKP. Settlement happens at the end of every calendar month within 7 working days.`,
+    },
+    {
+      q: "Can I use KGKP branding and logos in my promotions?",
+      ans: `Yes. You can display the KGKP posters, distribute the brochures and use the logo and brand in your promotions as long as you don’t distort the logo and make it clear that the brand is the property of ru education Pvt ltd.`,
+    },
+    {
+      q: "What kind of training & material is provided to affiliates?",
+      ans: `The KGKP training includes the  subjects of relationships, pregnancy program, child brain development processes, ridge analysis technology, multiple intelligence theory, KGKP curriculum, child psychology, parenting and other related aspects. The materials provided includes posters, brochures, soft copies of training content.`,
+    },
+    {
+      q: "Can I be an affiliate if I’m located outside of India?",
+      ans: `Yes. The KGKP and the affiliate program is available internationally.`,
+    },
+    {
+      q: "What if I have questions or need help during the program?",
+      ans: `A helpline is available between 11 am and 5 pm IST Monday to Friday on all working days. Details are given in answer to FAQ number 5.`,
+    },
+    {
+      q: "How do I cancel my participation in the Affiliate Program?",
+      ans: `You need to give a notice in writing if you wish to terminate your affiliate status. The status will be terminated at the end of the calendar month with full and final settlement.`,
+    },
+    {
+      q: "Can I refer other professionals to join the Affiliate Program?",
+      ans: `Yes. You can refer other professionals to affiliate with the KGKP. You will be eligible to get a one time reward of Rs 2500/- for every successful affiliate registration referred by you. This reward will be settled at the end of the calendar month.`,
     },
   ],
 };
