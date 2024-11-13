@@ -5,7 +5,12 @@ import AffiliateForm from "./components/AffiliateForm";
 
 import objectImage from "./assets/OBJECTS.png";
 
-const Page = () => {
+interface FaqContainerProps {
+  toggle: boolean;
+  toggleStateFalse: () => void;
+}
+
+const EnrollSection = ({ toggle, toggleStateFalse }: FaqContainerProps) => {
   return (
     <div className="bg-[#FAEFB6] py-[52px] xl:py-[100px] xl:flex xl:justify-center xl:gap-[60px] xl:items-center xl:bg-[#FAEFB63D] ">
       <section>
@@ -34,7 +39,7 @@ const Page = () => {
           </svg>
         </h1>
 
-        <AffiliateForm />
+        <AffiliateForm isToggle={toggle} toggleStateFalse={toggleStateFalse} />
       </section>
       <Image
         src={objectImage}
@@ -45,4 +50,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default EnrollSection;

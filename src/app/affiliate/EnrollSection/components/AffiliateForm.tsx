@@ -29,8 +29,13 @@ const planToPromote = [
 const professions = ["Teacher", "Paediatrician", "Gynaecologist", "Other"];
 const approxClients = ["0 - 1", "10 - 50", "100 - 200", "200 - 500", "500+"];
 
-const AffiliateForm = () => {
-  const [toggle, setToggle] = useState(false);
+interface AffiliateFormProps {
+  isToggle: boolean;
+  toggleStateFalse: () => void;
+}
+
+const AffiliateForm = ({ isToggle, toggleStateFalse }: AffiliateFormProps) => {
+  const [toggle, setToggle] = useState(isToggle || false);
   const [fileSubmitted, setFileSubmitted] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [preventReload, setPreventReload] = useState(false);
@@ -155,6 +160,7 @@ const AffiliateForm = () => {
       formik.resetForm();
       handleToggle();
       setShowModal(false);
+      toggleStateFalse();
       setFileSubmitted(false);
     }
   };
@@ -267,6 +273,10 @@ const AffiliateForm = () => {
   };
 
   const cancelNavigation = () => setShowModal(false);
+
+  useEffect(() => {
+    setToggle(isToggle);
+  }, [isToggle]);
 
   // Handle browser refresh/close
   useEffect(() => {
