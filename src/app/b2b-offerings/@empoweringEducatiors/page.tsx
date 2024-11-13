@@ -10,7 +10,7 @@ const EmpoweringEducatiors = () => {
           Empowering Educators to Shape Future Leaders
         </span>
         <svg
-          className="w-[173px] h-[30px] absolute -bottom-4 right-6 "
+          className="w-[173px] h-[30px] absolute -bottom-4 right-6 lg:w-[332px] lg:h-[57px] lg:right-2 lg:bottom-[-27px] "
           viewBox="0 0 176 30"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

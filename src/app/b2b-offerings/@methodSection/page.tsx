@@ -10,7 +10,7 @@ const MethodSection = () => {
         <h1 className="relative w-[178px] mx-auto h-7 text-xl font-bold leading-7 text-[#460C04] text-center lg:w-[338px] lg:h-[53px] lg:text-[38px] lg:leading-[53.2px] ">
           <span className="relative z-10 ">The KGKP Method</span>
           <svg
-            className="absolute bottom-[-19px] left-[-19px] w-[219px] h-10 "
+            className="absolute bottom-[-19px] left-[-19px] w-[219px] h-10 lg:w-[305px] lg:h-[4rem] lg:left-[51px] lg:bottom-[-26px] "
             viewBox="0 0 210 42"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
