@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import incomeImg from "./assets/indian-rupee-investment-concept 1.png";
+import AffiliateForm from "../EnrollSection/components/AffiliateForm";
 
 const Page = () => {
   return (
@@ -178,26 +179,28 @@ const Page = () => {
         </section>
       </section>
 
-      <button className="custom-black-button hidden mx-auto mt-20 w-[390px] h-[77px] rounded-[50px] bg-[#4D1435] xl:flex gap-3.5 justify-center items-center px-[60px] py-6 ">
-        <span className="custom-button-icon text-2xl leading-[29px] font-semibold text-white ">
-          Become An Affiliate
-        </span>
+      <AffiliateForm>
+        <button className="custom-black-button hidden mx-auto mt-20 w-[390px] h-[77px] rounded-[50px] bg-[#4D1435] xl:flex gap-3.5 justify-center items-center px-[60px] py-6 ">
+          <span className="custom-button-icon text-2xl leading-[29px] font-semibold text-white ">
+            Become An Affiliate
+          </span>
 
-        <svg
-          className="custom-button-icon w-4 h-4 xl:w-6 xl:h-6"
-          viewBox="0 0 16 17"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g id="icon-arrow-right">
-            <path
-              id="Shape"
-              className="fill-current text-white"
-              d="M7.5299 3.36177C7.79025 3.10142 8.21236 3.10142 8.47271 3.36177L13.1394 8.02843C13.3997 8.28878 13.3997 8.71089 13.1394 8.97124L8.47271 13.6379C8.21236 13.8983 7.79025 13.8983 7.5299 13.6379C7.26955 13.3776 7.26955 12.9554 7.5299 12.6951L11.0585 9.1665H3.33464C2.96645 9.1665 2.66797 8.86803 2.66797 8.49984C2.66797 8.13165 2.96645 7.83317 3.33464 7.83317H11.0585L7.5299 4.30457C7.26955 4.04423 7.26955 3.62212 7.5299 3.36177Z"
-            />
-          </g>
-        </svg>
-      </button>
+          <svg
+            className="custom-button-icon w-4 h-4 xl:w-6 xl:h-6"
+            viewBox="0 0 16 17"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="icon-arrow-right">
+              <path
+                id="Shape"
+                className="fill-current text-white"
+                d="M7.5299 3.36177C7.79025 3.10142 8.21236 3.10142 8.47271 3.36177L13.1394 8.02843C13.3997 8.28878 13.3997 8.71089 13.1394 8.97124L8.47271 13.6379C8.21236 13.8983 7.79025 13.8983 7.5299 13.6379C7.26955 13.3776 7.26955 12.9554 7.5299 12.6951L11.0585 9.1665H3.33464C2.96645 9.1665 2.66797 8.86803 2.66797 8.49984C2.66797 8.13165 2.96645 7.83317 3.33464 7.83317H11.0585L7.5299 4.30457C7.26955 4.04423 7.26955 3.62212 7.5299 3.36177Z"
+              />
+            </g>
+          </svg>
+        </button>
+      </AffiliateForm>
     </div>
   );
 };
