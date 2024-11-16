@@ -1,8 +1,11 @@
 "use client";
+import Image from "next/image";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, cloneElement } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+
+import qrCode from "./QR-Code.jpeg";
 
 import "./styles.css";
 
@@ -17,7 +20,7 @@ const engageType = [
   "Other",
 ];
 
-const planToPromote = [
+const Plan_To_Promote = [
   "In-person consultations",
   "Website/blog",
   "Community events",
@@ -27,14 +30,26 @@ const planToPromote = [
   "Other",
 ];
 const professions = ["Teacher", "Paediatrician", "Gynaecologist", "Other"];
-const approxClients = ["0 - 1", "10 - 50", "100 - 200", "200 - 500", "500+"];
+const Approx_number_clients = [
+  "0 - 1",
+  "10 - 50",
+  "100 - 200",
+  "200 - 500",
+  "500+",
+];
 
 interface AffiliateFormProps {
-  isToggle: boolean;
-  toggleStateFalse: () => void;
+  isToggle?: boolean;
+  toggleStateFalse?: () => void;
+  children?: React.ReactNode;
 }
 
-const AffiliateForm = ({ isToggle, toggleStateFalse }: AffiliateFormProps) => {
+const AffiliateForm = ({
+  isToggle,
+  toggleStateFalse,
+  children,
+}: AffiliateFormProps) => {
+  const [makingRequest, setMakingRequest] = useState(false);
   const [toggle, setToggle] = useState(isToggle || false);
   const [fileSubmitted, setFileSubmitted] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -49,106 +64,138 @@ const AffiliateForm = ({ isToggle, toggleStateFalse }: AffiliateFormProps) => {
   });
   const professionalDropdownRef = useRef<HTMLDivElement>(null);
   const approxClientDropdownRef = useRef<HTMLDivElement>(null);
+  const [selectedValue, setSelectedValue] = useState<string>("cp1");
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSelectedValue(event.target.value);
+  };
 
   const handleToggle = () => setToggle(!toggle);
 
   const validationSchema = Yup.object({
-    fullName: Yup.string().required("This is a required field").min(3),
-    dob: Yup.date()
+    Full_Name: Yup.string().required("This is a required field").min(3),
+    DOB: Yup.date()
       .required("This is a required field.")
       .nullable()
       .min(new Date(1900, 0, 1), "Date of birth must be after January 1, 1900")
       .max(new Date(), "Date of birth cannot be in the future"),
 
-    email: Yup.string()
-      .email("Enter a valid email")
+    Email: Yup.string()
+      .email("Enter a valid Email")
       .required("This is a required field."),
-    phone: Yup.string()
+    Phone: Yup.string()
       .matches(/^[0-9]+$/, "Enter a valid Phone Number.")
       .min(10, "Phone number must be exactly 10 digits.")
       .max(10, "Phone number must be exactly 10 digits.")
       .required("This is a required field."),
 
-    location: Yup.string().required("This is a required field."),
+    Location: Yup.string().required("This is a required field."),
 
-    profession: Yup.string()
+    Profession: Yup.string()
       .required("This is a required field")
       .oneOf(professions, "Please select a valid option"),
 
-    education: Yup.string().required("This is a required field."),
+    Education: Yup.string().required("This is a required field."),
 
-    organizationName: Yup.string().required("This is a required field."),
+    Organization_Name: Yup.string().required("This is a required field."),
 
-    approxClients: Yup.string()
+    Approx_number_clients: Yup.string()
       .required("This is a required field")
-      .oneOf(approxClients, "Please select a valid option"),
+      .oneOf(Approx_number_clients, "Please select a valid option"),
 
-    engagedType: Yup.array()
+    Engagement_Type: Yup.array()
       .of(Yup.string().oneOf(engageType))
       .min(1, "Select at least One")
       .required("This is a required field"),
 
-    planToPromote: Yup.array()
-      .of(Yup.string().oneOf(planToPromote))
+    Plan_To_Promote: Yup.array()
+      .of(Yup.string().oneOf(Plan_To_Promote))
       .min(1, "Select at least One")
       .required("This is a required field"),
 
-    message: Yup.string(),
+    Message: Yup.string(),
   });
 
   const initialValues = {
-    fullName: "",
-    dob: "",
-    email: "",
-    phone: "",
-    location: "",
-    profession: "",
-    education: "",
-    organizationName: "",
-    approxClients: "",
-    engagedType: [],
-    planToPromote: [],
-    message: "",
+    Full_Name: "",
+    DOB: "",
+    Email: "",
+    Phone: "",
+    Location: "",
+    Profession: "",
+    Education: "",
+    Organization_Name: "",
+    Approx_number_clients: "",
+    Engagement_Type: [],
+    Plan_To_Promote: [],
+    Message: "",
   };
 
   const formik = useFormik({
     initialValues,
     validationSchema,
-    onSubmit: (value: any, { resetForm }) => {
-      console.log("value submitted", value);
-      setFileSubmitted(true);
-      setPreventReload(false);
-      setProfessionDropdown({
-        isOpen: false,
-        value: "",
-      });
-      setapproxClientsDropdown({
-        isOpen: false,
-        value: "",
-      });
-      resetForm();
+    onSubmit: async (value: any, { resetForm }) => {
+      const data = [];
+      for (let key in value) {
+        data.push(key + "=" + (value[key as keyof typeof value] ?? ""));
+      }
+      data.push(`Category=${selectedValue}`);
+      console.log("data", data.join("&"));
+
+      const URL =
+        "https://script.google.com/macros/s/AKfycbyU2DHDG2sEwBOTOmT1BuByIIFeet1vs598lMAsPF94Cci5lMWU05ztnqNb4RXYta4/exec";
+      try {
+        setMakingRequest(true);
+        const response = await fetch(URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "text/plain;charset=utf-8",
+          },
+          body: data.join("&"),
+        });
+
+        if (response.ok) {
+          setFileSubmitted(true);
+          setPreventReload(false);
+          setProfessionDropdown({
+            isOpen: false,
+            value: "",
+          });
+          setapproxClientsDropdown({
+            isOpen: false,
+            value: "",
+          });
+          resetForm();
+          setMakingRequest(false);
+        } else {
+          setMakingRequest(false);
+        }
+      } catch (error) {
+        console.log("Error happened", error);
+        setMakingRequest(false);
+      }
     },
   });
 
   const handleEngageType = (value: string) => {
-    const engagedTypes = [...formik.values.engagedType];
+    const engagedTypes = [...formik.values.Engagement_Type];
 
     if (engagedTypes.includes(value)) {
       const updatedTypes = engagedTypes.filter((ele: string) => ele !== value);
-      formik.setFieldValue("engagedType", updatedTypes);
+      formik.setFieldValue("Engagement_Type", updatedTypes);
     } else {
-      formik.setFieldValue("engagedType", [...engagedTypes, value]);
+      formik.setFieldValue("Engagement_Type", [...engagedTypes, value]);
     }
   };
 
   const handlePromoteType = (value: string) => {
-    const engagedTypes = [...formik.values.planToPromote];
+    const engagedTypes = [...formik.values.Plan_To_Promote];
 
     if (engagedTypes.includes(value)) {
       const updatedTypes = engagedTypes.filter((ele: string) => ele !== value);
-      formik.setFieldValue("planToPromote", updatedTypes);
+      formik.setFieldValue("Plan_To_Promote", updatedTypes);
     } else {
-      formik.setFieldValue("planToPromote", [...engagedTypes, value]);
+      formik.setFieldValue("Plan_To_Promote", [...engagedTypes, value]);
     }
   };
 
@@ -160,7 +207,7 @@ const AffiliateForm = ({ isToggle, toggleStateFalse }: AffiliateFormProps) => {
       formik.resetForm();
       handleToggle();
       setShowModal(false);
-      toggleStateFalse();
+      if (toggleStateFalse) toggleStateFalse();
       setFileSubmitted(false);
     }
   };
@@ -171,8 +218,8 @@ const AffiliateForm = ({ isToggle, toggleStateFalse }: AffiliateFormProps) => {
       return;
     }
 
-    if (!formik.values.profession) {
-      formik.handleBlur({ target: { name: "profession" } });
+    if (!formik.values.Profession) {
+      formik.handleBlur({ target: { name: "Profession" } });
     }
 
     setProfessionDropdown((prev) => ({
@@ -189,15 +236,15 @@ const AffiliateForm = ({ isToggle, toggleStateFalse }: AffiliateFormProps) => {
       value: value,
     });
 
-    formik.setFieldValue("profession", value);
-    formik.setFieldTouched("profession", true, true);
+    formik.setFieldValue("Profession", value);
+    formik.setFieldTouched("Profession", true, true);
 
     if (value) {
       setTimeout(() => {
-        formik.setFieldError("profession", "");
+        formik.setFieldError("Profession", "");
       }, 0);
     } else {
-      formik.setFieldError("profession", "Please select a profession.");
+      formik.setFieldError("Profession", "Please select a Profession.");
     }
 
     // Delay re-render with a short timeout
@@ -215,8 +262,8 @@ const AffiliateForm = ({ isToggle, toggleStateFalse }: AffiliateFormProps) => {
       return;
     }
 
-    if (!formik.values.approxClients) {
-      formik.handleBlur({ target: { name: "approxClients" } });
+    if (!formik.values.Approx_number_clients) {
+      formik.handleBlur({ target: { name: "Approx_number_clients" } });
     }
 
     setapproxClientsDropdown((prev) => ({
@@ -236,15 +283,18 @@ const AffiliateForm = ({ isToggle, toggleStateFalse }: AffiliateFormProps) => {
       value: value,
     });
 
-    formik.setFieldValue("approxClients", value);
-    formik.setFieldTouched("approxClients", true, true);
+    formik.setFieldValue("Approx_number_clients", value);
+    formik.setFieldTouched("Approx_number_clients", true, true);
 
     if (value) {
       setTimeout(() => {
-        formik.setFieldError("approxClients", "");
+        formik.setFieldError("Approx_number_clients", "");
       }, 0);
     } else {
-      formik.setFieldError("approxClients", "Please select a approxClients.");
+      formik.setFieldError(
+        "Approx_number_clients",
+        "Please select a Approx_number_clients."
+      );
     }
 
     // Delay re-render with a short timeout
@@ -275,7 +325,7 @@ const AffiliateForm = ({ isToggle, toggleStateFalse }: AffiliateFormProps) => {
   const cancelNavigation = () => setShowModal(false);
 
   useEffect(() => {
-    setToggle(isToggle);
+    if (isToggle) setToggle(isToggle);
   }, [isToggle]);
 
   // Handle browser refresh/close
@@ -345,26 +395,26 @@ const AffiliateForm = ({ isToggle, toggleStateFalse }: AffiliateFormProps) => {
       setProfessionDropdown((prevState) => ({
         ...prevState,
         isOpen: false,
-        value: formik.values.profession,
+        value: formik.values.Profession,
       }));
     }
-  }, [formik.values.profession]);
+  }, [formik.values.Profession]);
 
   useEffect(() => {
     if (approxClientsDropdown.value) {
       setapproxClientsDropdown((prevState) => ({
         ...prevState,
         isOpen: false,
-        value: formik.values.approxClients,
+        value: formik.values.Approx_number_clients,
       }));
     }
-  }, [formik.values.approxClients]);
+  }, [formik.values.Approx_number_clients]);
 
   return (
     <>
       {toggle ? (
         <div
-          className={`fixed inset-0 z-[99999] bg-white overflow-y-auto overflow-x-hidden  `}
+          className={`fixed inset-0 z-[99999] bg-white overflow-y-auto overflow-x-hidden `}
         >
           {fileSubmitted ? (
             <section className="relative h-dvh w-full flex flex-col justify-center items-center ">
@@ -534,32 +584,70 @@ const AffiliateForm = ({ isToggle, toggleStateFalse }: AffiliateFormProps) => {
                 onSubmit={formik.handleSubmit}
                 className="max-w-[605px] mx-auto my-4 grid gap-4 xl:my-6 "
               >
+                {/* Radio Buttons */}
+                <label className="block text-base font-medium leading-[18px] text-[#1A2434]">
+                  Select Affiliate Program
+                </label>
+                <div className="mx-4 md:mx-0 flex gap-12">
+                  <div className="radio-container">
+                    <input
+                      type="radio"
+                      id="cp1"
+                      name="category"
+                      value="cp1"
+                      className="radio-input cursor-pointer"
+                      checked={selectedValue === "cp1"}
+                      onChange={handleChange}
+                    />
+                    <span className="custom-radio"></span>
+                    <label className="cursor-pointer" htmlFor="cp1">
+                      CP - 1
+                    </label>
+                  </div>
+
+                  <div className="radio-container">
+                    <input
+                      type="radio"
+                      id="cp2"
+                      name="category"
+                      value="cp2"
+                      className="radio-input cursor-pointer"
+                      checked={selectedValue === "cp2"}
+                      onChange={handleChange}
+                    />
+                    <span className="custom-radio"></span>
+                    <label className="cursor-pointer" htmlFor="cp2">
+                      CP - 2
+                    </label>
+                  </div>
+                </div>
+
                 {/* Full Name */}
                 <div className="mx-4 md:mx-0">
                   <label
                     className="text-base font-medium leading-[18px] text-[#1A2434] "
-                    htmlFor="fullName"
+                    htmlFor="Full_Name"
                   >
                     Full Name*
                   </label>
                   <div className="relative mt-2">
                     <input
                       type="text"
-                      name="fullName"
-                      id="fullName"
+                      name="Full_Name"
+                      id="Full_Name"
                       placeholder="Type here"
                       className={`w-full px-4 py-2 focus:border-[#75C0B1] focus:border-[2.5px] focus:outline-none rounded-lg border border-[#1A24341A] text-sm font-normal leading-6 text-[#1A2434] placeholder:text-[#1A243454] placeholder:text-sm placeholder:font-normal placeholder:leading-6 ${
-                        formik.errors.fullName && formik.touched.fullName
+                        formik.errors.Full_Name && formik.touched.Full_Name
                           ? "border-[2.5px] border-[#D61D25] focus:border-[#D61D25]"
                           : ""
                       }`}
-                      value={formik.values.fullName}
+                      value={formik.values.Full_Name}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
                     />
 
-                    {formik.touched.fullName &&
-                      typeof formik.errors.fullName === "string" && (
+                    {formik.touched.Full_Name &&
+                      typeof formik.errors.Full_Name === "string" && (
                         <svg
                           width="24"
                           height="24"
@@ -583,10 +671,10 @@ const AffiliateForm = ({ isToggle, toggleStateFalse }: AffiliateFormProps) => {
                         </svg>
                       )}
                   </div>
-                  {formik.touched.fullName &&
-                  typeof formik.errors.fullName === "string" ? (
+                  {formik.touched.Full_Name &&
+                  typeof formik.errors.Full_Name === "string" ? (
                     <div className="mt-2 text-xs font-normal leading-[18px] text-[#D61D25]">
-                      {formik.errors.fullName}
+                      {formik.errors.Full_Name}
                     </div>
                   ) : null}
                 </div>
@@ -595,30 +683,30 @@ const AffiliateForm = ({ isToggle, toggleStateFalse }: AffiliateFormProps) => {
                 <div className="mx-4 md:mx-0">
                   <label
                     className="text-base font-medium leading-[18px] text-[#1A2434] "
-                    htmlFor="dob"
+                    htmlFor="DOB"
                   >
                     Date Of Birth*
                   </label>
                   <div className="relative mt-2">
                     <input
                       type="date"
-                      name="dob"
-                      id="dob"
+                      name="DOB"
+                      id="DOB"
                       placeholder="Select a Date"
                       className={`w-full px-4 py-2 rounded-lg border border-[#1A24341A] text-sm font-normal leading-6 text-[#1A2434] placeholder:text-[#1A243454] placeholder:text-sm placeholder:font-normal placeholder:leading-6 focus:border-[#75C0B1] focus:border-[2.5px] focus:outline-none ${
-                        formik.errors.dob && formik.touched.dob
+                        formik.errors.DOB && formik.touched.DOB
                           ? "border-[2.5px] border-[#D61D25] focus:border-[#D61D25]"
                           : ""
                       }`}
-                      value={formik.values.dob}
+                      value={formik.values.DOB}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
                     />
                   </div>
-                  {formik.touched.dob &&
-                  typeof formik.errors.dob === "string" ? (
+                  {formik.touched.DOB &&
+                  typeof formik.errors.DOB === "string" ? (
                     <div className="mt-2 text-xs font-normal leading-[18px] text-[#D61D25]">
-                      {formik.errors.dob}
+                      {formik.errors.DOB}
                     </div>
                   ) : null}
                 </div>
@@ -627,28 +715,28 @@ const AffiliateForm = ({ isToggle, toggleStateFalse }: AffiliateFormProps) => {
                 <div className="mx-4 md:mx-0">
                   <label
                     className="text-base font-medium leading-[18px] text-[#1A2434] "
-                    htmlFor="email"
+                    htmlFor="Email"
                   >
                     Email Address*
                   </label>
                   <div className="relative mt-2">
                     <input
                       type="text"
-                      name="email"
-                      id="email"
+                      name="Email"
+                      id="Email"
                       placeholder="Type here"
                       className={`w-full px-4 py-2 rounded-lg border border-[#1A24341A] text-sm font-normal leading-6 text-[#1A2434] placeholder:text-[#1A243454] placeholder:text-sm placeholder:font-normal placeholder:leading-6 focus:border-[#75C0B1] focus:border-[2.5px] focus:outline-none ${
-                        formik.errors.email && formik.touched.email
+                        formik.errors.Email && formik.touched.Email
                           ? "border-[2.5px] border-[#D61D25] focus:border-[#D61D25]"
                           : ""
                       }`}
-                      value={formik.values.email}
+                      value={formik.values.Email}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
                     />
 
-                    {formik.touched.email &&
-                      typeof formik.errors.email === "string" && (
+                    {formik.touched.Email &&
+                      typeof formik.errors.Email === "string" && (
                         <svg
                           width="24"
                           height="24"
@@ -672,10 +760,10 @@ const AffiliateForm = ({ isToggle, toggleStateFalse }: AffiliateFormProps) => {
                         </svg>
                       )}
                   </div>
-                  {formik.touched.email &&
-                  typeof formik.errors.email === "string" ? (
+                  {formik.touched.Email &&
+                  typeof formik.errors.Email === "string" ? (
                     <div className="mt-2 text-xs font-normal leading-[18px] text-[#D61D25]">
-                      {formik.errors.email}
+                      {formik.errors.Email}
                     </div>
                   ) : null}
                 </div>
@@ -684,28 +772,28 @@ const AffiliateForm = ({ isToggle, toggleStateFalse }: AffiliateFormProps) => {
                 <div className="mx-4 md:mx-0">
                   <label
                     className="text-base font-medium leading-[18px] text-[#1A2434] "
-                    htmlFor="phone"
+                    htmlFor="Phone"
                   >
                     Phone Number*
                   </label>
                   <div className="relative mt-2">
                     <input
                       type="text"
-                      name="phone"
-                      id="phone"
+                      name="Phone"
+                      id="Phone"
                       placeholder="Type here"
                       className={`w-full px-4 py-2 rounded-lg border border-[#1A24341A] text-sm font-normal leading-6 text-[#1A2434] placeholder:text-[#1A243454] placeholder:text-sm placeholder:font-normal placeholder:leading-6 focus:border-[#75C0B1] focus:border-[2.5px] focus:outline-none ${
-                        formik.errors.phone && formik.touched.phone
+                        formik.errors.Phone && formik.touched.Phone
                           ? "border-[2.5px] border-[#D61D25] focus:border-[#D61D25]"
                           : ""
                       }`}
-                      value={formik.values.phone}
+                      value={formik.values.Phone}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
                     />
 
-                    {formik.touched.phone &&
-                      typeof formik.errors.phone === "string" && (
+                    {formik.touched.Phone &&
+                      typeof formik.errors.Phone === "string" && (
                         <svg
                           width="24"
                           height="24"
@@ -729,10 +817,10 @@ const AffiliateForm = ({ isToggle, toggleStateFalse }: AffiliateFormProps) => {
                         </svg>
                       )}
                   </div>
-                  {formik.touched.phone &&
-                  typeof formik.errors.phone === "string" ? (
+                  {formik.touched.Phone &&
+                  typeof formik.errors.Phone === "string" ? (
                     <div className="mt-2 text-xs font-normal leading-[18px] text-[#D61D25]">
-                      {formik.errors.phone}
+                      {formik.errors.Phone}
                     </div>
                   ) : null}
                 </div>
@@ -741,28 +829,28 @@ const AffiliateForm = ({ isToggle, toggleStateFalse }: AffiliateFormProps) => {
                 <div className="mx-4 md:mx-0">
                   <label
                     className="text-base font-medium leading-[18px] text-[#1A2434] "
-                    htmlFor="location"
+                    htmlFor="Location"
                   >
                     Location*
                   </label>
                   <div className="relative mt-2">
                     <input
                       type="text"
-                      name="location"
-                      id="location"
+                      name="Location"
+                      id="Location"
                       placeholder="Type here"
                       className={`w-full px-4 py-2 rounded-lg border border-[#1A24341A] text-sm font-normal leading-6 text-[#1A2434] placeholder:text-[#1A243454] placeholder:text-sm placeholder:font-normal placeholder:leading-6 focus:border-[#75C0B1] focus:border-[2.5px] focus:outline-none ${
-                        formik.errors.location && formik.touched.location
+                        formik.errors.Location && formik.touched.Location
                           ? "border-[2.5px] border-[#D61D25] focus:border-[#D61D25]"
                           : ""
                       }`}
-                      value={formik.values.location}
+                      value={formik.values.Location}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
                     />
 
-                    {formik.touched.location &&
-                      typeof formik.errors.location === "string" && (
+                    {formik.touched.Location &&
+                      typeof formik.errors.Location === "string" && (
                         <svg
                           width="24"
                           height="24"
@@ -786,10 +874,10 @@ const AffiliateForm = ({ isToggle, toggleStateFalse }: AffiliateFormProps) => {
                         </svg>
                       )}
                   </div>
-                  {formik.touched.location &&
-                  typeof formik.errors.location === "string" ? (
+                  {formik.touched.Location &&
+                  typeof formik.errors.Location === "string" ? (
                     <div className="mt-2 text-xs font-normal leading-[18px] text-[#D61D25]">
-                      {formik.errors.location}
+                      {formik.errors.Location}
                     </div>
                   ) : null}
                 </div>
@@ -801,15 +889,21 @@ const AffiliateForm = ({ isToggle, toggleStateFalse }: AffiliateFormProps) => {
                   </label>
                   <div
                     onClick={toggleDropdown}
-                    className={`h-[42px] mt-2 rounded-lg border border-[#1A24341A] px-[13px] py-3 flex justify-between items-center relative cursor-pointer text-sm font-normal leading-6 ${
+                    className={`h-[42px] mt-2 rounded-lg border px-[13px] py-3 flex justify-between items-center relative cursor-pointer text-sm font-normal leading-6 ${
                       professionDropdown.isOpen
                         ? "rounded-b-none border-[3px] border-[#75C0B1]"
                         : ""
+                    } ${
+                      formik.touched.Profession &&
+                      typeof formik.errors.Profession === "string" &&
+                      !professionDropdown.value
+                        ? "border-[2.5px] border-[#D61D25] focus:border-[#D61D25]"
+                        : "border-[#1A24341A]"
                     }`}
                   >
                     <span
                       className={` ${
-                        formik.values.profession
+                        formik.values.Profession
                           ? "text-black"
                           : "text-[#1A243454]"
                       }`}
@@ -821,15 +915,15 @@ const AffiliateForm = ({ isToggle, toggleStateFalse }: AffiliateFormProps) => {
 
                     {professionDropdown.isOpen && (
                       <ul className="absolute bottom-[-160px] bg-white border border-t-0 border-[#1A24341A] left-[-3px] right-[-3px] z-10 rounded-b-lg overflow-hidden ">
-                        {professions.map((profession) => (
+                        {professions.map((Profession) => (
                           <li
                             onClick={(event) =>
-                              selectProfession(event, profession)
+                              selectProfession(event, Profession)
                             }
                             className="h-10 px-[13px] py-[11px] text-[#1A2434] text-sm font-normal leading-6 hover:bg-[#75C0B1] hover:text-white cursor-pointer border-t border-t-[#1A24341A]"
-                            key={profession}
+                            key={Profession}
                           >
-                            {profession}
+                            {Profession}
                           </li>
                         ))}
                       </ul>
@@ -850,8 +944,8 @@ const AffiliateForm = ({ isToggle, toggleStateFalse }: AffiliateFormProps) => {
                       </svg>
                     )}
 
-                    {formik.touched.profession &&
-                      typeof formik.errors.profession === "string" &&
+                    {formik.touched.Profession &&
+                      typeof formik.errors.Profession === "string" &&
                       !professionDropdown.value && (
                         <svg
                           width="24"
@@ -876,10 +970,10 @@ const AffiliateForm = ({ isToggle, toggleStateFalse }: AffiliateFormProps) => {
                         </svg>
                       )}
                   </div>
-                  {formik.touched.profession &&
-                  typeof formik.errors.profession === "string" ? (
+                  {formik.touched.Profession &&
+                  typeof formik.errors.Profession === "string" ? (
                     <div className="mt-2 text-xs font-normal leading-[18px] text-[#D61D25]">
-                      {formik.errors.profession}
+                      {formik.errors.Profession}
                     </div>
                   ) : null}
                 </div>
@@ -888,28 +982,28 @@ const AffiliateForm = ({ isToggle, toggleStateFalse }: AffiliateFormProps) => {
                 <div className="mx-4 md:mx-0">
                   <label
                     className="text-base font-medium leading-[18px] text-[#1A2434] "
-                    htmlFor="education"
+                    htmlFor="Education"
                   >
                     Educational Qualification*
                   </label>
                   <div className="relative mt-2">
                     <input
                       type="text"
-                      name="education"
-                      id="education"
+                      name="Education"
+                      id="Education"
                       placeholder="Type here"
                       className={`w-full px-4 py-2 rounded-lg border border-[#1A24341A] text-sm font-normal leading-6 text-[#1A2434] placeholder:text-[#1A243454] placeholder:text-sm placeholder:font-normal placeholder:leading-6 focus:border-[#75C0B1] focus:border-[2.5px] focus:outline-none ${
-                        formik.errors.education && formik.touched.education
+                        formik.errors.Education && formik.touched.Education
                           ? "border-[2.5px] border-[#D61D25] focus:border-[#D61D25]"
                           : ""
                       }`}
-                      value={formik.values.education}
+                      value={formik.values.Education}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
                     />
 
-                    {formik.touched.education &&
-                      typeof formik.errors.education === "string" && (
+                    {formik.touched.Education &&
+                      typeof formik.errors.Education === "string" && (
                         <svg
                           width="24"
                           height="24"
@@ -933,10 +1027,10 @@ const AffiliateForm = ({ isToggle, toggleStateFalse }: AffiliateFormProps) => {
                         </svg>
                       )}
                   </div>
-                  {formik.touched.education &&
-                  typeof formik.errors.education === "string" ? (
+                  {formik.touched.Education &&
+                  typeof formik.errors.Education === "string" ? (
                     <div className="mt-2 text-xs font-normal leading-[18px] text-[#D61D25]">
-                      {formik.errors.education}
+                      {formik.errors.Education}
                     </div>
                   ) : null}
                 </div>
@@ -945,29 +1039,29 @@ const AffiliateForm = ({ isToggle, toggleStateFalse }: AffiliateFormProps) => {
                 <div className="mx-4 md:mx-0">
                   <label
                     className="text-base font-medium leading-[18px] text-[#1A2434] "
-                    htmlFor="organizationName"
+                    htmlFor="Organization_Name"
                   >
                     Institution or Organization Name
                   </label>
                   <div className="relative mt-2">
                     <input
                       type="text"
-                      name="organizationName"
-                      id="organizationName"
+                      name="Organization_Name"
+                      id="Organization_Name"
                       placeholder="Type here"
                       className={`w-full px-4 py-2 rounded-lg border border-[#1A24341A] text-sm font-normal leading-6 text-[#1A2434] placeholder:text-[#1A243454] placeholder:text-sm placeholder:font-normal placeholder:leading-6 focus:border-[#75C0B1] focus:border-[2.5px] focus:outline-none ${
-                        formik.errors.organizationName &&
-                        formik.touched.organizationName
+                        formik.errors.Organization_Name &&
+                        formik.touched.Organization_Name
                           ? "border-[2.5px] border-[#D61D25] focus:border-[#D61D25]"
                           : ""
                       }`}
-                      value={formik.values.organizationName}
+                      value={formik.values.Organization_Name}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
                     />
 
-                    {formik.touched.organizationName &&
-                      typeof formik.errors.organizationName === "string" && (
+                    {formik.touched.Organization_Name &&
+                      typeof formik.errors.Organization_Name === "string" && (
                         <svg
                           width="24"
                           height="24"
@@ -991,10 +1085,10 @@ const AffiliateForm = ({ isToggle, toggleStateFalse }: AffiliateFormProps) => {
                         </svg>
                       )}
                   </div>
-                  {formik.touched.organizationName &&
-                  typeof formik.errors.organizationName === "string" ? (
+                  {formik.touched.Organization_Name &&
+                  typeof formik.errors.Organization_Name === "string" ? (
                     <div className="mt-2 text-xs font-normal leading-[18px] text-[#D61D25]">
-                      {formik.errors.organizationName}
+                      {formik.errors.Organization_Name}
                     </div>
                   ) : null}
                 </div>
@@ -1010,11 +1104,17 @@ const AffiliateForm = ({ isToggle, toggleStateFalse }: AffiliateFormProps) => {
                       approxClientsDropdown.isOpen
                         ? "rounded-b-none border-[3px] border-[#75C0B1]"
                         : ""
+                    } ${
+                      formik.touched.Approx_number_clients &&
+                      typeof formik.errors.Approx_number_clients === "string" &&
+                      !approxClientsDropdown.value
+                        ? "border-[2.5px] border-[#D61D25] focus:border-[#D61D25]"
+                        : "border-[#1A24341A]"
                     }`}
                   >
                     <span
                       className={` ${
-                        formik.values.approxClients
+                        formik.values.Approx_number_clients
                           ? "text-black"
                           : "text-[#1A243454]"
                       }`}
@@ -1026,7 +1126,7 @@ const AffiliateForm = ({ isToggle, toggleStateFalse }: AffiliateFormProps) => {
 
                     {approxClientsDropdown.isOpen && (
                       <ul className="absolute bottom-[-200px] bg-white border border-t-0 border-[#1A24341A] left-[-3px] right-[-3px] z-10 rounded-b-lg overflow-hidden ">
-                        {approxClients.map((approxClient) => (
+                        {Approx_number_clients.map((approxClient) => (
                           <li
                             onClick={(event) =>
                               selectApproxClientsDropdown(event, approxClient)
@@ -1055,8 +1155,8 @@ const AffiliateForm = ({ isToggle, toggleStateFalse }: AffiliateFormProps) => {
                       </svg>
                     )}
 
-                    {formik.touched.approxClients &&
-                      typeof formik.errors.approxClients === "string" &&
+                    {formik.touched.Approx_number_clients &&
+                      typeof formik.errors.Approx_number_clients === "string" &&
                       !approxClientsDropdown.value && (
                         <svg
                           width="24"
@@ -1081,10 +1181,10 @@ const AffiliateForm = ({ isToggle, toggleStateFalse }: AffiliateFormProps) => {
                         </svg>
                       )}
                   </div>
-                  {formik.touched.approxClients &&
-                  typeof formik.errors.approxClients === "string" ? (
+                  {formik.touched.Approx_number_clients &&
+                  typeof formik.errors.Approx_number_clients === "string" ? (
                     <div className="mt-2 text-xs font-normal leading-[18px] text-[#D61D25]">
-                      {formik.errors.approxClients}
+                      {formik.errors.Approx_number_clients}
                     </div>
                   ) : null}
                 </div>
@@ -1100,10 +1200,12 @@ const AffiliateForm = ({ isToggle, toggleStateFalse }: AffiliateFormProps) => {
                       <div key={engage} className="flex items-center gap-3">
                         <input
                           type="checkbox"
-                          name="engagedType"
+                          name="Engagement_Type"
                           id={engage}
                           value={engage}
-                          checked={formik.values.engagedType.includes(engage)}
+                          checked={formik.values.Engagement_Type.includes(
+                            engage
+                          )}
                           onChange={formik.handleChange}
                           onBlur={formik.handleBlur}
                           className="hidden"
@@ -1112,7 +1214,7 @@ const AffiliateForm = ({ isToggle, toggleStateFalse }: AffiliateFormProps) => {
                           onClick={() => handleEngageType(engage)}
                           className={`w-5 h-5 flex justify-center items-center border-[#CCCCCC] bg-white rounded-md border cursor-pointer`}
                         >
-                          {formik.values.engagedType.includes(engage) ? (
+                          {formik.values.Engagement_Type.includes(engage) ? (
                             <svg
                               width="20"
                               height="20"
@@ -1145,10 +1247,10 @@ const AffiliateForm = ({ isToggle, toggleStateFalse }: AffiliateFormProps) => {
                     ))}
                   </div>
 
-                  {formik.touched.engagedType &&
-                  typeof formik.errors.engagedType === "string" ? (
+                  {formik.touched.Engagement_Type &&
+                  typeof formik.errors.Engagement_Type === "string" ? (
                     <div className="mt-2 text-xs font-normal leading-[18px] text-[#D61D25]">
-                      {formik.errors.engagedType}
+                      {formik.errors.Engagement_Type}
                     </div>
                   ) : null}
                 </div>
@@ -1160,14 +1262,16 @@ const AffiliateForm = ({ isToggle, toggleStateFalse }: AffiliateFormProps) => {
                     (KGKP)?*
                   </label>
                   <div className="mt-2 space-y-2 xl:grid xl:grid-cols-2">
-                    {planToPromote.map((engage) => (
+                    {Plan_To_Promote.map((engage) => (
                       <div key={engage} className="flex items-center gap-3">
                         <input
                           type="checkbox"
-                          name="planToPromote"
+                          name="Plan_To_Promote"
                           id={`${engage}-ptp`}
                           value={engage}
-                          checked={formik.values.planToPromote.includes(engage)}
+                          checked={formik.values.Plan_To_Promote.includes(
+                            engage
+                          )}
                           onChange={formik.handleChange}
                           onBlur={formik.handleBlur}
                           className="hidden"
@@ -1176,7 +1280,7 @@ const AffiliateForm = ({ isToggle, toggleStateFalse }: AffiliateFormProps) => {
                           onClick={() => handlePromoteType(engage)}
                           className={`w-5 h-5 flex justify-center items-center border-[#CCCCCC] bg-white rounded-md border cursor-pointer`}
                         >
-                          {formik.values.planToPromote.includes(engage) ? (
+                          {formik.values.Plan_To_Promote.includes(engage) ? (
                             <svg
                               width="20"
                               height="20"
@@ -1210,10 +1314,10 @@ const AffiliateForm = ({ isToggle, toggleStateFalse }: AffiliateFormProps) => {
                     ))}
                   </div>
 
-                  {formik.touched.planToPromote &&
-                  typeof formik.errors.planToPromote === "string" ? (
+                  {formik.touched.Plan_To_Promote &&
+                  typeof formik.errors.Plan_To_Promote === "string" ? (
                     <div className="mt-2 text-xs font-normal leading-[18px] text-[#D61D25]">
-                      {formik.errors.planToPromote}
+                      {formik.errors.Plan_To_Promote}
                     </div>
                   ) : null}
                 </div>
@@ -1222,30 +1326,56 @@ const AffiliateForm = ({ isToggle, toggleStateFalse }: AffiliateFormProps) => {
                 <div className="mx-4 md:mx-0">
                   <label
                     className="text-base font-medium leading-[18px] text-[#1A2434] "
-                    htmlFor="message"
+                    htmlFor="Message"
                   >
                     How did you find out about the KGKP Affiliate Program?{" "}
                   </label>
                   <div className="relative mt-2">
                     <input
                       type="text"
-                      name="message"
-                      id="message"
+                      name="Message"
+                      id="Message"
                       placeholder="Type here"
                       className={`w-full px-4 py-2 rounded-lg border border-[#1A24341A] text-sm font-normal leading-6 text-[#1A2434] placeholder:text-[#1A243454] placeholder:text-sm placeholder:font-normal placeholder:leading-6 focus:border-[#75C0B1] focus:border-[2.5px] focus:outline-none ${
-                        formik.errors.message && formik.touched.message
+                        formik.errors.Message && formik.touched.Message
                           ? "border-[2.5px] border-[#D61D25] focus:border-[#D61D25]"
                           : ""
                       }`}
-                      value={formik.values.message}
+                      value={formik.values.Message}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
                     />
                   </div>
                 </div>
 
+                {/* QR Code */}
+                {selectedValue === "cp1" && (
+                  <div className="mx-4 md:mx-0 text-base font-medium leading-[18px] text-[#1A2434]">
+                    <label>
+                      Complete the payment of INR 5000/- via the QR Code or bank
+                      transfer.
+                    </label>
+                    <label className="block ">QR Code-</label>
+
+                    <Image
+                      src={qrCode}
+                      alt="QR Code"
+                      className="my-5 rounded-lg object-cover "
+                    />
+
+                    <div className="mt-3">
+                      <span className="block">Bank Transfer Details -</span>
+                      <span className="block">Ru Education Pvt Ltd</span>
+                      <span className="block">ICICI bank</span>
+                      <span className="block">A/c no 777705180853</span>
+                      <span className="block">IFSC Code ICIC0001121</span>
+                    </div>
+                  </div>
+                )}
+
                 <section className="mt-8 py-4 border-t border-t-[#DCDCDC] xl:border-none xl:m-0 xl:p-0 ">
                   <button
+                    disabled={makingRequest}
                     type="submit"
                     className="custom-black-button mx-auto w-[144px] h-[42px] flex items-center justify-center gap-3.5 px-7 py-4 rounded-[50px] bg-[#4D1435] xl:mx-0 justify-self-end xl:w-[135px] xl:h-[43px] "
                   >
@@ -1321,53 +1451,35 @@ const AffiliateForm = ({ isToggle, toggleStateFalse }: AffiliateFormProps) => {
         </div>
       ) : (
         <>
-          <button
-            onClick={handleToggle}
-            className="custom-black-button mt-11 mx-auto w-[247px] h-[51px] flex items-center justify-center gap-3.5 px-7 py-4 rounded-[50px] bg-[#4D1435] xl:hidden "
-          >
-            <span className="custom-button-icon text-[16px] font-[700] leading-[19.2px] text-white xl:text-2xl xl:leading-[29.05px] ">
-              Explore Our Courses
-            </span>
-
-            <svg
-              className="custom-button-icon w-4 h-4 xl:w-6 xl:h-6"
-              viewBox="0 0 16 17"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+          {children ? (
+            cloneElement(children as React.ReactElement, {
+              onClick: handleToggle,
+            })
+          ) : (
+            <button
+              onClick={handleToggle}
+              className="custom-black-button custom-black-button w-[247px] h-[51px] flex px-7 py-4 mt-11 mx-auto items-center justify-center gap-3.5 rounded-[50px] bg-[#4D1435] xl:w-[390px] xl:h-[77px] xl:px-[60px] xl:py-6 "
             >
-              <g id="icon-arrow-right">
-                <path
-                  id="Shape"
-                  className="fill-current text-white"
-                  d="M7.5299 3.36177C7.79025 3.10142 8.21236 3.10142 8.47271 3.36177L13.1394 8.02843C13.3997 8.28878 13.3997 8.71089 13.1394 8.97124L8.47271 13.6379C8.21236 13.8983 7.79025 13.8983 7.5299 13.6379C7.26955 13.3776 7.26955 12.9554 7.5299 12.6951L11.0585 9.1665H3.33464C2.96645 9.1665 2.66797 8.86803 2.66797 8.49984C2.66797 8.13165 2.96645 7.83317 3.33464 7.83317H11.0585L7.5299 4.30457C7.26955 4.04423 7.26955 3.62212 7.5299 3.36177Z"
-                />
-              </g>
-            </svg>
-          </button>
+              <span className="custom-button-icon text-[16px] font-[700] leading-[19.2px] text-white xl:text-2xl xl:leading-[29.05px] ">
+                Sign Up Now
+              </span>
 
-          <button
-            onClick={handleToggle}
-            className="custom-black-button hidden mt-11 mx-auto xl:flex items-center justify-center gap-3.5 rounded-[50px] bg-[#4D1435] xl:w-[390px] xl:h-[77px] xl:px-[60px] xl:py-6 "
-          >
-            <span className="custom-button-icon text-[16px] font-[700] leading-[19.2px] text-white xl:text-2xl xl:leading-[29.05px] ">
-              Sign Up Now
-            </span>
-
-            <svg
-              className="custom-button-icon w-4 h-4 xl:w-6 xl:h-6"
-              viewBox="0 0 16 17"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g id="icon-arrow-right">
-                <path
-                  id="Shape"
-                  className="fill-current text-white"
-                  d="M7.5299 3.36177C7.79025 3.10142 8.21236 3.10142 8.47271 3.36177L13.1394 8.02843C13.3997 8.28878 13.3997 8.71089 13.1394 8.97124L8.47271 13.6379C8.21236 13.8983 7.79025 13.8983 7.5299 13.6379C7.26955 13.3776 7.26955 12.9554 7.5299 12.6951L11.0585 9.1665H3.33464C2.96645 9.1665 2.66797 8.86803 2.66797 8.49984C2.66797 8.13165 2.96645 7.83317 3.33464 7.83317H11.0585L7.5299 4.30457C7.26955 4.04423 7.26955 3.62212 7.5299 3.36177Z"
-                />
-              </g>
-            </svg>
-          </button>
+              <svg
+                className="custom-button-icon w-4 h-4 xl:w-6 xl:h-6"
+                viewBox="0 0 16 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="icon-arrow-right">
+                  <path
+                    id="Shape"
+                    className="fill-current text-white"
+                    d="M7.5299 3.36177C7.79025 3.10142 8.21236 3.10142 8.47271 3.36177L13.1394 8.02843C13.3997 8.28878 13.3997 8.71089 13.1394 8.97124L8.47271 13.6379C8.21236 13.8983 7.79025 13.8983 7.5299 13.6379C7.26955 13.3776 7.26955 12.9554 7.5299 12.6951L11.0585 9.1665H3.33464C2.96645 9.1665 2.66797 8.86803 2.66797 8.49984C2.66797 8.13165 2.96645 7.83317 3.33464 7.83317H11.0585L7.5299 4.30457C7.26955 4.04423 7.26955 3.62212 7.5299 3.36177Z"
+                  />
+                </g>
+              </svg>
+            </button>
+          )}
         </>
       )}
     </>
