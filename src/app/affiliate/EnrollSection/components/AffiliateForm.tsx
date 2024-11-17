@@ -5,6 +5,7 @@ import { useState, useEffect, useRef, cloneElement } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
+import LoadingScreen from "@/app/components/Loading/Loading";
 import qrCode from "./QR-Code.jpeg";
 
 import "./styles.css";
@@ -143,7 +144,7 @@ const AffiliateForm = ({
       console.log("data", data.join("&"));
 
       const URL =
-        "https://script.google.com/macros/s/AKfycbyU2DHDG2sEwBOTOmT1BuByIIFeet1vs598lMAsPF94Cci5lMWU05ztnqNb4RXYta4/exec";
+        "https://script.google.com/macros/s/AKfycbzNg7E3KK3znHSAl6MiYbI11l-Yk9TMBjpIomBO-mzfVzp0OFTZOTW0uKdYqa3NU6pR/exec";
       try {
         setMakingRequest(true);
         const response = await fetch(URL, {
@@ -412,6 +413,7 @@ const AffiliateForm = ({
 
   return (
     <>
+      {makingRequest && <LoadingScreen />}
       {toggle ? (
         <div
           className={`fixed inset-0 z-[99999] bg-white overflow-y-auto overflow-x-hidden `}
@@ -492,6 +494,9 @@ const AffiliateForm = ({
 
               <button
                 onClick={() => {
+                  window.scrollTo({
+                    top: 0,
+                  });
                   handleToggle();
                   setFileSubmitted(false);
                 }}
@@ -519,6 +524,9 @@ const AffiliateForm = ({
 
               <button
                 onClick={() => {
+                  window.scrollTo({
+                    top: 0,
+                  });
                   handleToggle();
                   setFileSubmitted(false);
                 }}
@@ -585,7 +593,7 @@ const AffiliateForm = ({
                 className="max-w-[605px] mx-auto my-4 grid gap-4 xl:my-6 "
               >
                 {/* Radio Buttons */}
-                <label className="block text-base font-medium leading-[18px] text-[#1A2434]">
+                <label className="mx-4 md:mx-0 block text-base font-medium leading-[18px] text-[#1A2434]">
                   Select Affiliate Program
                 </label>
                 <div className="mx-4 md:mx-0 flex gap-12">
@@ -1355,7 +1363,7 @@ const AffiliateForm = ({
                       Complete the payment of INR 5000/- via the QR Code or bank
                       transfer.
                     </label>
-                    <label className="block ">QR Code-</label>
+                    <label className="block mt-4">QR Code-</label>
 
                     <Image
                       src={qrCode}
@@ -1377,14 +1385,28 @@ const AffiliateForm = ({
                   <button
                     disabled={makingRequest}
                     type="submit"
-                    className="custom-black-button mx-auto w-[144px] h-[42px] flex items-center justify-center gap-3.5 px-7 py-4 rounded-[50px] bg-[#4D1435] xl:mx-0 justify-self-end xl:w-[135px] xl:h-[43px] "
+                    className={`mx-auto w-[144px] h-[42px] flex items-center justify-center gap-3.5 px-7 py-4 rounded-[50px] xl:mx-0 justify-self-end xl:w-[140px] xl:h-[43px] ${
+                      makingRequest
+                        ? "bg-[#1A24341A]"
+                        : "custom-black-button bg-[#4D1435]"
+                    }`}
                   >
-                    <span className="custom-button-icon text-[16px] font-[700] leading-[19.2px] text-white ">
+                    <span
+                      className={`text-[16px] font-[700] leading-[19.2px] ${
+                        makingRequest
+                          ? "text-[#686E79]"
+                          : "custom-button-icon text-white"
+                      }`}
+                    >
                       Submit
                     </span>
 
                     <svg
-                      className="custom-button-icon w-4 h-4"
+                      className={`${
+                        makingRequest
+                          ? "text-[#686E79]"
+                          : "custom-button-icon text-white"
+                      } w-4 h-4 lg:w-6 lg:h-6`}
                       viewBox="0 0 16 17"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -1392,7 +1414,7 @@ const AffiliateForm = ({
                       <g id="icon-arrow-right">
                         <path
                           id="Shape"
-                          className="fill-current text-white"
+                          className={`fill-current text-white`}
                           d="M7.5299 3.36177C7.79025 3.10142 8.21236 3.10142 8.47271 3.36177L13.1394 8.02843C13.3997 8.28878 13.3997 8.71089 13.1394 8.97124L8.47271 13.6379C8.21236 13.8983 7.79025 13.8983 7.5299 13.6379C7.26955 13.3776 7.26955 12.9554 7.5299 12.6951L11.0585 9.1665H3.33464C2.96645 9.1665 2.66797 8.86803 2.66797 8.49984C2.66797 8.13165 2.96645 7.83317 3.33464 7.83317H11.0585L7.5299 4.30457C7.26955 4.04423 7.26955 3.62212 7.5299 3.36177Z"
                         />
                       </g>
