@@ -116,10 +116,8 @@ const HeroSection = () => {
             </span>
           </div>
           <div className="w-[325px] mx-auto text-[14px] tracking-[0.4px] font-[400] leading-[25.2px] text-[#4D1435] text-center pt-4 px-[6px] md:w-auto md:mx-0 md:text-left md:p-0 md:mt-7 lg:w-[572px] lg:h-[64px] lg:mt-[21px] lg:text-[20px] lg:leading-[32.4px]">
-            Headstart your kid’s development right from the time of conception
-            <span className="hidden md:inline ">
-              till the age of 15 years
-            </span>{" "}
+            Headstart your kid’s development right from the time of conception{" "}
+            <span className="hidden md:inline ">till the age of 15 years</span>{" "}
             and beyond
           </div>
 
