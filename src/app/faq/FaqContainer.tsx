@@ -882,16 +882,12 @@ const FaqContainer = () => {
       {(!isMobile || !showModal) && data.length ? (
         <section
           ref={scrollContainerRef}
-          className="mt-6 px-4 mx-auto flex justify-between gap-6 pb-2 relative overflow-x-auto h-20 md:h-[136px] md:gap-16 md:mt-[57px] lg:justify-start xl:gap-[96px] xl:justify-center"
+          className="mt-6 px-4 mx-auto flex justify-between gap-6 pb-2 relative overflow-x-auto h-20 md:h-[136px] md:gap-16 md:mt-[57px] lg:justify-start xl:gap-[96px] xl:justify-center methods-container"
         >
           {/* Category 1 */}
           <section
             onClick={() => toggleCategory(Object.keys(faq)[0])}
-            className={`pb-2 grid gap-2 cursor-pointer ${
-              category === "generalInfo"
-                ? "border-b-[4px] border-[#4D1435]"
-                : ""
-            } w-[80px] shrink-0 md:gap-4 md:basis-[158px]`}
+            className={`relative pb-2 grid gap-2 cursor-pointer w-[80px] shrink-0 md:gap-4 md:basis-[158px]`}
           >
             <svg
               className="w-6 h-6 justify-self-center md:w-14 md:h-14 lg:w-[60px] lg:h-[60px]"
@@ -939,16 +935,18 @@ const FaqContainer = () => {
             >
               General Information
             </section>
+
+            {category === "generalInfo" && (
+              <span
+                className={`absolute bottom-0 left-0 right-0 h-1 bg-[#4D1435] lg:h-1.5 rounded-md `}
+              ></span>
+            )}
           </section>
 
           {/* Category 2 */}
           <section
             onClick={() => toggleCategory(Object.keys(faq)[1])}
-            className={`pb-2 grid gap-2 cursor-pointer ${
-              category === "courseStructureAndContent"
-                ? "border-b-[4px] border-[#4D1435]"
-                : ""
-            } w-[121px] shrink-0 md:gap-4 md:basis-[179px]`}
+            className={`relative pb-2 grid gap-2 cursor-pointer w-[121px] shrink-0 md:gap-4 md:basis-[179px]`}
           >
             <svg
               className="w-6 h-6 justify-self-center md:w-14 md:h-14 lg:w-[60px] lg:h-[60px]"
@@ -988,16 +986,18 @@ const FaqContainer = () => {
             >
               Course Structure and Content
             </section>
+
+            {category === "courseStructureAndContent" && (
+              <span
+                className={`absolute bottom-0 left-0 right-0 h-1 bg-[#4D1435] lg:h-1.5 rounded-md `}
+              ></span>
+            )}
           </section>
 
           {/* Category 3 */}
           <section
             onClick={() => toggleCategory(Object.keys(faq)[2])}
-            className={`pb-2 grid gap-2 cursor-pointer ${
-              category === "parentalInvolvementAndSupport"
-                ? "border-b-[4px] border-[#4D1435]"
-                : ""
-            } shrink-0 w-[125px] md:gap-4 md:basis-[206px]`}
+            className={`relative pb-2 grid gap-2 cursor-pointer shrink-0 w-[125px] md:gap-4 md:basis-[206px]`}
           >
             <svg
               className="w-6 h-6 justify-self-center md:w-14 md:h-14 lg:w-[60px] lg:h-[60px]"
@@ -1075,16 +1075,18 @@ const FaqContainer = () => {
             >
               Parental Involvement and Support
             </section>
+
+            {category === "parentalInvolvementAndSupport" && (
+              <span
+                className={`absolute bottom-0 left-0 right-0 h-1 bg-[#4D1435] lg:h-1.5 rounded-md `}
+              ></span>
+            )}
           </section>
 
           {/* Category 4 */}
           <section
             onClick={() => toggleCategory(Object.keys(faq)[3])}
-            className={`pb-2 grid gap-2 cursor-pointer ${
-              category === "outcomesAndBenefits"
-                ? "border-b-[4px] border-[#4D1435]"
-                : ""
-            } shrink-0 w-[122px] md:gap-4 md:basis-[153px]`}
+            className={`relative pb-2 grid gap-2 cursor-pointer shrink-0 w-[122px] md:gap-4 md:basis-[153px]`}
           >
             <svg
               className="w-6 h-6 justify-self-center md:w-14 md:h-14 lg:w-[60px] lg:h-[60px]"
@@ -1128,16 +1130,18 @@ const FaqContainer = () => {
             >
               Outcomes and Benefits
             </section>
+
+            {category === "outcomesAndBenefits" && (
+              <span
+                className={`absolute bottom-0 left-0 right-0 h-1 bg-[#4D1435] lg:h-1.5 rounded-md `}
+              ></span>
+            )}
           </section>
 
           {/* Category 5 */}
           <section
             onClick={() => toggleCategory(Object.keys(faq)[4])}
-            className={`pb-2 grid gap-2 cursor-pointer ${
-              category === "paymentAccess"
-                ? "border-b-[4px] border-[#4D1435]"
-                : ""
-            } shrink-0 w-[122px] md:gap-4 md:basis-[210px]`}
+            className={`relative pb-2 grid gap-2 cursor-pointer shrink-0 w-[122px] md:gap-4 md:basis-[210px]`}
           >
             <svg
               className="w-6 h-6 justify-self-center md:w-14 md:h-14 lg:w-[60px] lg:h-[60px]"
@@ -1202,6 +1206,12 @@ const FaqContainer = () => {
             >
               Enrolment, Payment and Access
             </section>
+
+            {category === "paymentAccess" && (
+              <span
+                className={`absolute bottom-0 left-0 right-0 h-1 bg-[#4D1435] lg:h-1.5 rounded-md `}
+              ></span>
+            )}
           </section>
 
           {isScrollable && !isScrolledToEnd && (

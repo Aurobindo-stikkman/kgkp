@@ -17,7 +17,7 @@ const MobileSearch: React.FC<Props> = ({
 }) => {
   return (
     <div className="fixed inset-0 bg-white z-[9999] overflow-auto">
-      <section className="flex gap04 items-center px-4 py-[14px]">
+      <section className="flex gap-3 items-center px-4 pt-[14px]">
         <svg
           className="w-4 h-4"
           onClick={() => {
@@ -37,7 +37,7 @@ const MobileSearch: React.FC<Props> = ({
           </g>
         </svg>
 
-        <section className="mx-auto w-[90%] rounded-[40px] border bg-white relative overflow-hidden">
+        <section className="mx-auto w-[90%] h-10 rounded-[40px] border bg-white relative overflow-hidden">
           <input
             type="text"
             name="search"
@@ -45,14 +45,14 @@ const MobileSearch: React.FC<Props> = ({
             onChange={(e) => handleSearch(e.target.value)}
             autoComplete="off"
             placeholder="Type a search word here...  "
-            className="w-full h-full py-4 placeholder:text-[14px] placeholder:font-[400] placeholder:leading-[16.8px] placeholder:text-[#4D1435] border-none focus:outline-none focus:ring-0 "
+            className="w-full h-full pt-[11px] pb-3 text-[#7D7F81] text-sm font-normal leading-[16.8px] placeholder:text-[14px] placeholder:font-[400] placeholder:leading-[16.8px] placeholder:text-[#7D7F81] border-none focus:outline-none focus:ring-0 "
             style={{ paddingLeft: value ? "40px" : "12px" }}
           />
           {value && (
             <svg
               width="24"
               height="24"
-              className="w-4 h-4 absolute left-4 top-[18px]"
+              className="w-4 h-4 absolute left-4 -translate-y-1/2 top-1/2 "
               viewBox="0 0 24 24"
               fill="#97989A"
               xmlns="http://www.w3.org/2000/svg"
@@ -71,7 +71,7 @@ const MobileSearch: React.FC<Props> = ({
           {value && (
             <svg
               onClick={clearSearch}
-              className="w-4 h-4 absolute right-4 top-[18px]"
+              className="w-4 h-4 absolute right-4  -translate-y-1/2 top-1/2 "
               width="16"
               height="16"
               viewBox="0 0 16 16"

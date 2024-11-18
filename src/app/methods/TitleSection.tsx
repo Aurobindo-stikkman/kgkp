@@ -2,7 +2,7 @@
 import { useEffect, useRef } from "react";
 import useInView from "../components/useInView";
 
-import styles from "./style.module.css";
+import "./styles.css";
 
 const TitleSection = () => {
   const sectionRef = useRef(null);
@@ -23,10 +23,11 @@ const TitleSection = () => {
       className="relative mx-auto text-[28px] font-[700] leading-[36.4px] text-[#4D1435] text-center w-max lg:text-[42px] lg:leading-[50.4px]"
     >
       <span className="z-10 relative">The KGKP Method</span>
+      {/* Small Screen */}
       <svg
-        className={`absolute w-[226.08px] h-[60.94px] left-[57%] top-[12%] translate-x-[-50%] z-0 lg:w-[326.11px] ${
-          isInView ? styles.chalkMark : ""
-        } lg:h-[93.76px] lg:left-[unset] lg:top-[11%] lg:right-[-52%]`}
+        className={`absolute w-[226.08px] h-[60.94px] left-[57%] top-[12%] translate-x-[-50%] z-0 lg:w-[326.11px] lg:h-[93.76px] lg:left-[unset] lg:top-[11%] lg:right-[-52%] ${
+          isInView ? "chalkMark" : ""
+        }`}
         viewBox="0 0 345 41"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

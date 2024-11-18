@@ -1,12 +1,31 @@
+"use client";
+import { useRef, useEffect } from "react";
+import useInView from "@/app/components/useInView";
+
 import FaqContainer from "./FaqContainer";
+
 import styles from "./style.module.css";
 
 const FAQ = () => {
+  const chalkStrokeRef = useRef(null);
+  const isChalkStrokeInView = useInView(chalkStrokeRef);
+
+  useEffect(() => {
+    if (isChalkStrokeInView) {
+      const clipRect = document.getElementById("clipRect");
+      if (clipRect) {
+        clipRect.classList.add("revealed");
+      }
+    }
+  }, [isChalkStrokeInView]);
+
   return (
     <div>
       <section className="pt-6 pb-8 lg:pt-14 lg:pb-[62px]">
         <div className="relative text-[20px] font-[700] leading-[24px] text-[#1A2434] w-[278px] mx-auto lg:text-[32px] lg:leading-[38.4px] lg:w-fit ">
-          <span className="z-10 relative">Frequently Asked Questions</span>
+          <span ref={chalkStrokeRef} className="z-10 relative">
+            Frequently Asked Questions
+          </span>
           <svg
             className={`absolute w-[181.08px] h-[23px] right-[-88px] bottom-[-13px] translate-x-[-50%] z-0 lg:bottom-[-2.3rem] lg:right-[-185px] lg:w-[333.4px] lg:h-[66.76px] ${styles.chalkMark} `}
             viewBox="0 0 345 41"

@@ -26,7 +26,7 @@ const FAQ: React.FC<Props> = ({ data }) => {
   return (
     <div className="w-full p-3 border rounded-[12px] md:p-5 lg:p-8 lg:rounded-[20px] ">
       <section className="flex justify-between items-center">
-        <div className="text-[12px] font-[400] leading-[14.4px] text-[#1A2434] md:text-[18px] md:leading-[18.4px] lg:text-[24px] lg:leading-[28.8px]">
+        <div className="text-[14px] font-[400] leading-[17.4px] text-[#1A2434] md:text-[18px] md:leading-[18.4px] lg:text-[24px] lg:leading-[28.8px]">
           {data.q}
         </div>
         <Image
@@ -46,7 +46,7 @@ const FAQ: React.FC<Props> = ({ data }) => {
           open ? "mt-3 lg:mt-8" : ""
         } transition-all duration-200 ease-in-out`}
       >
-        <section className="text-[10px] font-[400] leading-[18px] text-[#1A2434] md:text-[13px] md:leading-[22.8px] lg:text-[16px] lg:leading-[28.8px]">
+        <section className="text-[12px] font-[400] leading-[18px] text-[#1A2434] md:text-[13px] md:leading-[22.8px] lg:text-[16px] lg:leading-[28.8px]">
           {data.ans}
         </section>
       </div>

@@ -1,8 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
 
-function useInView(ref: any) {
+function useInView(ref: any, time?: number) {
   const [isInView, setIsInView] = useState(false);
+  const threshold = time || 0.2;
 
   useEffect(() => {
     if (ref.current) {
@@ -13,7 +14,7 @@ function useInView(ref: any) {
             observer.disconnect();
           }
         },
-        { threshold: 0.2 }
+        { threshold }
       );
       observer.observe(ref.current);
 

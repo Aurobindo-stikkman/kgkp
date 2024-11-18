@@ -17,6 +17,20 @@
   font-optical-sizing: auto;
 }
 
+.chalkMark rect {
+  animation: reveal .5s linear forwards;
+}
+
+@keyframes reveal {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 345px;
+  }
+}
+
 @media (min-width: 1024px) {
 
   /* black button */
@@ -97,7 +111,8 @@
   scrollbar-width: none;
 }
 
-@keyframes animate-idea {
+/* Methods page */
+/* @keyframes animate-idea {
   0% {
     transform: scale(.5);
   }
@@ -110,4 +125,4 @@
 .animate-idea-svg {
   animation: animate-idea 1s;
   transform-origin: center center;
-}
+} */
