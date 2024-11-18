@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import useInView from "../components/useInView";
+import useInView from "../../components/useInView";
 
 const DetailsSection = () => {
   const [isLoaded, setIsLoaded] = useState(false);

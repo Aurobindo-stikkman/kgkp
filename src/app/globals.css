@@ -97,7 +97,8 @@
   scrollbar-width: none;
 }
 
-@keyframes animate-idea {
+/* Methods page */
+/* @keyframes animate-idea {
   0% {
     transform: scale(.5);
   }
@@ -110,4 +111,4 @@
 .animate-idea-svg {
   animation: animate-idea 1s;
   transform-origin: center center;
-}
+} */
