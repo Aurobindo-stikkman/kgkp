@@ -3,8 +3,6 @@
 import { useRef, useEffect } from "react";
 import useInView from "@/app/components/useInView";
 
-import "../styles.css";
-
 const Title = () => {
   const chalkStrokeRef = useRef(null);
   const isChalkStrokeInView = useInView(chalkStrokeRef);

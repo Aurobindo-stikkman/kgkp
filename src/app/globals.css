@@ -17,6 +17,20 @@
   font-optical-sizing: auto;
 }
 
+.chalkMark rect {
+  animation: reveal .5s linear forwards;
+}
+
+@keyframes reveal {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 345px;
+  }
+}
+
 @media (min-width: 1024px) {
 
   /* black button */
