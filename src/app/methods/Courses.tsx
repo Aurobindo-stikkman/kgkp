@@ -343,7 +343,7 @@ const Courses = () => {
               <Image
                 src={footSteps1}
                 alt="Foot Steps"
-                className="pointer-events-none absolute bottom-[-78%] left-[40px] z-10 xl:hidden "
+                className="pointer-events-none absolute w-[259px] bottom-[-78%] left-[40px] z-10 xl:hidden "
               />
               <Image
                 src={longfootSteps1}
@@ -403,7 +403,7 @@ const Courses = () => {
               <Image
                 src={footSteps2}
                 alt="Foot Steps 2"
-                className="pointer-events-none absolute bottom-[-78%] left-[35px] xl:hidden"
+                className="pointer-events-none absolute w-[259px] bottom-[-78%] left-[35px] xl:hidden"
               />
               <Image
                 src={longfootSteps2}
@@ -462,7 +462,7 @@ const Courses = () => {
               <Image
                 src={footSteps3}
                 alt="Foot steps 3"
-                className="pointer-events-none absolute bottom-[-150px] left-[35px] xl:hidden"
+                className="pointer-events-none absolute w-[287px] bottom-[-150px] left-[35px] xl:hidden"
               />
               <Image
                 src={longfootSteps3}
@@ -520,7 +520,7 @@ const Courses = () => {
               <Image
                 src={footSteps4}
                 alt="Foot steps 4"
-                className="pointer-events-none absolute bottom-[-150px] left-[35px] xl:hidden"
+                className="pointer-events-none absolute w-[287px] bottom-[-150px] left-[35px] xl:hidden"
               />
               <Image
                 src={longfootSteps4}
