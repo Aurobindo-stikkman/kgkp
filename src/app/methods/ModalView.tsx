@@ -48,9 +48,19 @@ const ModalView: React.FC<Props> = ({
     };
   }, []);
 
+  // Scroll to top when pageNumber changes
+  useEffect(() => {
+    if (modalContentRef.current) {
+      modalContentRef.current.scrollTop = 0;
+    }
+  }, [pageNumber]);
+
   return (
     <Modal isOpen={isModalOpen} onClose={closeModal}>
-      <div ref={modalContentRef} className="w-full h-full overflow-auto methods-container">
+      <div
+        ref={modalContentRef}
+        className={`w-full h-full pb-[91px] overflow-auto methods-container lg:pb-[60px] `}
+      >
         {/* Heading */}
         <section
           className={`sticky top-0 flex gap-3 py-3 pl-4 bg-white lg:px-[60px] lg:min-h-[90px] lg:justify-between items-end overflow-auto ${
@@ -418,7 +428,8 @@ const ModalView: React.FC<Props> = ({
           </section>
         </section>
 
-        <footer className="relative bottom-0 h-[91px] border-t lg:border-0 lg:px-[60px]">
+        {/* footer */}
+        <section className="fixed left-0 right-0 bottom-0 bg-white h-[91px] border-t lg:h-[43px] lg:relative lg:rounded-b-[100px] lg:border-0 lg:px-[60px]">
           {/* Mobile Footer */}
           <section className="flex py-6 px-4 gap-[23px] items-center justify-between lg:hidden">
             <section
@@ -463,7 +474,7 @@ const ModalView: React.FC<Props> = ({
           </section>
 
           {/* Desktop Footer */}
-          <section className="hidden lg:flex py-6 px-4 gap-[23px] items-center justify-between lg:pb-14">
+          <section className="hidden lg:flex py-6 px-4 gap-[23px] items-center justify-between lg:p-0">
             <section>{pageNumber} / 4</section>
 
             <section className="flex gap-4">
@@ -506,7 +517,7 @@ const ModalView: React.FC<Props> = ({
               )}
             </section>
           </section>
-        </footer>
+        </section>
       </div>
     </Modal>
   );

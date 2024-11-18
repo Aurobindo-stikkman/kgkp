@@ -11,3 +11,19 @@
 .scaleUp {
     animation: scaleUp .7s ease-out forwards;
 }
+
+/* ChalkMark.module.css */
+.chalkMark rect {
+    animation: reveal 0.7s linear forwards;
+}
+
+@keyframes reveal {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 423px;
+        /* Adjust to match the width of your SVG's viewBox */
+    }
+}

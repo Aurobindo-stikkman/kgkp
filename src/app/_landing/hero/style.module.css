@@ -1,7 +1,7 @@
 /* ChalkMark.module.css */
 
 .chalkMark rect {
-  animation: reveal 0.5s linear forwards;
+  animation: reveal 0.7s linear forwards;
 }
 
 @keyframes reveal {

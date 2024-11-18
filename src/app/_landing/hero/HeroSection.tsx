@@ -46,7 +46,7 @@ const HeroSection = () => {
               </span>
               {/* Big Screen Chalk */}
               <svg
-                className={`hidden lg:block absolute w-[420.14px] h-[82.81px] top-[11px] right-16 ${
+                className={`hidden lg:block absolute w-[388.14px] h-[82.81px] top-[12px] right-[6rem] ${
                   isInView ? styles.chalkMark : ""
                 }`}
                 viewBox="0 0 423 82"
@@ -79,7 +79,9 @@ const HeroSection = () => {
 
               {/* Small Screen Chalk */}
               <svg
-                className={`absolute w-[170.08px] h-[39px] left-[41%] top-[34%] translate-x-[-50%] z-0 md:w-[239px] md:h-[39px] md:top-[38%] md:left-[32%] ${styles.chalkMark} lg:hidden`}
+                className={`absolute w-[178.08px] h-[39px] left-[40%] top-[34%] translate-x-[-50%] z-0 md:w-[239px] md:h-[39px] md:top-[38%] md:left-[32%] lg:hidden ${
+                  isInView ? styles.chalkMark : ""
+                }`}
                 width="191"
                 height="37"
                 viewBox="0 0 191 37"
