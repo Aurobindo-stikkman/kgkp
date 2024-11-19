@@ -193,7 +193,7 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="mt-[10px] text-[12px] font-[400] leading-[14.4px] text-[#D61D25] lg:text-[14px] lg:leading-[16.8px]">
+                <div className="mt-[10px] text-[12px] font-[400] leading-[14.4px] text-[#D61D25] lg:ml-9 lg:text-[14px] lg:leading-[16.8px]">
                   {fileError}
                 </div>
               </div>
@@ -231,20 +231,70 @@ const Contact = () => {
                       style={{ width: `${calculateUsedPercentage()}%` }}
                     ></div>
                   </div> */}
-                  <p className="text-[#1A2434] text-[12px] text-end mt-2">
+                  {/* <p className="text-[#1A2434] text-[12px] text-end mt-2">
                     {displayFileSize(fileSize)} / 5 MB
-                  </p>
+                  </p> */}
                 </div>
               )
             )}
 
-            <div className="relative mt-6 w-[328px] mx-auto h-20 rounded-[20px] border bg-[#F3F4F6] flex items-center justify-center text-center sm:self-center lg:h-[102px] lg:w-full lg:mt-8">
+            <div className="relative mt-6 w-[328px] mx-auto h-20 rounded-[20px] bg-[#D9D9D93D] flex items-center justify-center text-center sm:self-center lg:h-[102px] lg:w-full lg:mt-8">
+              {/* Small Screen svg */}
+              <svg
+                width="329"
+                height="81"
+                className="absolute -left-0.5 inset-0 bg-transparent pointer-events-none lg:hidden "
+                viewBox="0 0 328 82"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  width="330"
+                  height="81"
+                  rx="20"
+                  fill="transparent"
+                  fill-opacity="0.24"
+                />
+                <rect
+                  x="0.5"
+                  y="0.5"
+                  width="330"
+                  height="80"
+                  rx="19.5"
+                  stroke="#1A2434"
+                  stroke-opacity="0.2"
+                  stroke-dasharray="11 11"
+                />
+              </svg>
+
+              {/* Big screen svg */}
+              <svg
+                className="hidden lg:block absolute -top-1 inset-0 bg-transparent pointer-events-none h-[104%] w-full "
+                viewBox="0 0 634 102"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  className="w-full h-[104%] "
+                  rx="20"
+                  fill="transparent"
+                  fill-opacity="0.24"
+                />
+                <rect
+                  className="w-full h-[104%] "
+                  x="0.5"
+                  y="0.5"
+                  rx="19.5"
+                  stroke="#1A2434"
+                  stroke-opacity="0.2"
+                  stroke-dasharray="11 11"
+                />
+              </svg>
               <input
                 type="file"
                 className="absolute opacity-0 w-full h-full cursor-pointer"
                 onChange={handleFileUpload}
               />
-
               <p className="text-[#1A2434A8] text-[14px] font-[500] lg:hidden">
                 Choose a file <br />
                 <span className="text-[12px]">Size limit: 5 MB</span>
