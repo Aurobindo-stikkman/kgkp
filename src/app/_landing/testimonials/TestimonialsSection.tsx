@@ -29,6 +29,11 @@ const TestimonialsSection = () => {
   const isInViewOne = useInView(sectionOneRef);
   const isInViewTwo = useInView(sectionTwoRef);
 
+  //carousel state
+  const carouselIndex = useRef(1);
+  const [currentCarouselIndex, setCurrentCarouselIndex] = useState(1);
+  const [thresholdValue, setThresholdValue] = useState(0.95);
+
   // Chalk stroke view
   const chalkStrokeRef = useRef(null);
   const isChalkStrokeInView = useInView(chalkStrokeRef);
@@ -118,6 +123,49 @@ const TestimonialsSection = () => {
     }
   }, [videoPlay]);
 
+  //carousel scroll with mouse or touch
+  useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach((entry) => {
+        if(entry.isIntersecting){
+          const element = entry.target as HTMLDivElement;
+          const index = Number(element.dataset.id);
+          carouselIndex.current = index;
+          setCurrentCarouselIndex(index);
+        }
+      })
+    }, { threshold: thresholdValue });
+  
+    const videoArr = Array.from(document.querySelectorAll('.observe'));
+    videoArr.map(video => observer.observe(video));
+
+    return () => {
+      videoArr.map(video => observer.unobserve(video));
+      observer.disconnect();
+    }
+  }, [])
+
+  //carousel Scroll with buttons
+  const handleScrollLeft = () => {
+    if(carouselIndex.current > 1){
+      setThresholdValue(0.05);
+      carouselIndex.current -= 1;
+      setCurrentCarouselIndex(prev => prev - 1);
+      const element = document.querySelector(`.video-${carouselIndex.current}`);
+      element?.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+    };
+  }
+  const handleScrollRight = () => {
+    if(carouselIndex.current < 3){
+      setThresholdValue(0.95);
+      carouselIndex.current += 1;
+      setCurrentCarouselIndex(prev => prev + 1);
+      const element = document.querySelector(`.video-${carouselIndex.current}`);
+      element?.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+    }
+  }
+
+
   const handleVolumeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (videoPlayer.current) {
       const value = Number(event.target.value);
@@ -200,8 +248,8 @@ const TestimonialsSection = () => {
             </clipPath>
           </defs>
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             fill="#F6D94A"
             stroke="transparent"
             strokeWidth="3"
@@ -214,213 +262,218 @@ const TestimonialsSection = () => {
 
       <section
         ref={scrollContainerRef}
-        className="mt-8 px-4 flex overflow-x-scroll gap-3 relative lg:mt-[57px] lg:justify-around lg:h-[352px] lg:items-center lg:overflow-hidden xl:gap-[112px] xl:justify-center xl:pl-[67px]"
+        className="mt-8 relative overflow-hidden lg:mt-[57px] lg:justify-around lg:h-[352px] lg:items-center lg:overflow-hidden xl:gap-[112px] xl:justify-center xl:pl-[67px]"
       >
         {/* Video section */}
-        <section
-          className="w-[296px] h-[189px] flex-grow-0 flex-shrink-0 rounded-[12px] relative lg:rotate-[-6.52deg] lg:order-2 lg:w-[335.35px] lg:h-[214.28px] lg:top-5"
-          data-volume-level="high"
-        >
+        <div className="carousel w-full h-full flex overflow-x-scroll gap-3 px-4">
           <section
-            className={`absolute left-0 right-0 bottom-0 z-50 opacity-0 transition-opacity duration-150 ease-in-out hover:opacity-100 ${
-              videoPlay ? "opacity-0" : "opacity-100"
-            }`}
+            data-id={1}
+            className="observe observe video-1 w-[296px] h-[189px] flex-grow-0 flex-shrink-0 rounded-[12px] relative lg:rotate-[-6.52deg] lg:order-2 lg:w-[335.35px] lg:h-[214.28px] lg:top-5"
+            data-volume-level="high"
           >
-            <div className="flex flex-col gap-1 bg-[#F6DA51] p-2 pr-2.5 rounded-b-[12px]">
-              <div className="text-[10px] font-semibold opacity-[70%] tracking-[0.4px] leading-[12px] text-[#1A2434]">
-                2 years old recognising words after 30 days of KGKP
-              </div>
+            <section
+              className={`absolute left-0 right-0 bottom-0 z-50 opacity-0 transition-opacity duration-150 ease-in-out hover:opacity-100 ${
+                videoPlay ? "opacity-0" : "opacity-100"
+              }`}
+            >
+              <div className="flex flex-col gap-1 bg-[#F6DA51] p-2 pr-2.5 rounded-b-[12px]">
+                <div className="text-[10px] font-semibold opacity-[70%] tracking-[0.4px] leading-[12px] text-[#1A2434]">
+                  2 years old recognising words after 30 days of KGKP
+                </div>
 
-              <div className="mt-[10px] pr-1 flex items-center gap-5 ">
-                <div
-                  onClick={() => setVideoPlay(!videoPlay)}
-                  className="cursor-pointer text-sm"
-                >
-                  {videoPlay ? (
-                    <svg
-                      className="w-3.5 h-3.5 lg:w-4 lg:h-4"
-                      viewBox="0 0 12 12"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fill="#1A2434"
-                        d="M4.875 1.875V10.125C4.875 10.4234 4.75647 10.7095 4.5455 10.9205C4.33452 11.1315 4.04837 11.25 3.75 11.25H3.375C3.07663 11.25 2.79048 11.1315 2.5795 10.9205C2.36853 10.7095 2.25 10.4234 2.25 10.125V1.875C2.25 1.57663 2.36853 1.29048 2.5795 1.0795C2.79048 0.868526 3.07663 0.75 3.375 0.75H3.75C4.04837 0.75 4.33452 0.868526 4.5455 1.0795C4.75647 1.29048 4.875 1.57663 4.875 1.875ZM8.625 0.75H8.25C7.95163 0.75 7.66548 0.868526 7.4545 1.0795C7.24353 1.29048 7.125 1.57663 7.125 1.875V10.125C7.125 10.4234 7.24353 10.7095 7.4545 10.9205C7.66548 11.1315 7.95163 11.25 8.25 11.25H8.625C8.92337 11.25 9.20952 11.1315 9.4205 10.9205C9.63147 10.7095 9.75 10.4234 9.75 10.125V1.875C9.75 1.57663 9.63147 1.29048 9.4205 1.0795C9.20952 0.868526 8.92337 0.75 8.625 0.75Z"
-                      />
-                    </svg>
-                  ) : (
-                    <>
+                <div className="mt-[10px] pr-1 flex items-center gap-5 ">
+                  <div
+                    onClick={() => setVideoPlay(!videoPlay)}
+                    className="cursor-pointer text-sm"
+                  >
+                    {videoPlay ? (
                       <svg
-                        className="w-[14.11px] rotate-6 h-[14.11px] lg:w-4 lg:h-4"
-                        width="11"
-                        height="12"
-                        viewBox="0 0 11 12"
+                        className="w-3.5 h-3.5 lg:w-4 lg:h-4"
+                        viewBox="0 0 12 12"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          id="Polygon 2"
-                          d="M9.29339 3.50849C10.7055 4.12191 10.924 6.03397 9.68673 6.95019L4.11889 11.0732C2.88159 11.9894 1.11644 11.2226 0.941617 9.69299L0.154919 2.80959C-0.0199022 1.27995 1.52672 0.134672 2.93884 0.748093L9.29339 3.50849Z"
                           fill="#1A2434"
+                          d="M4.875 1.875V10.125C4.875 10.4234 4.75647 10.7095 4.5455 10.9205C4.33452 11.1315 4.04837 11.25 3.75 11.25H3.375C3.07663 11.25 2.79048 11.1315 2.5795 10.9205C2.36853 10.7095 2.25 10.4234 2.25 10.125V1.875C2.25 1.57663 2.36853 1.29048 2.5795 1.0795C2.79048 0.868526 3.07663 0.75 3.375 0.75H3.75C4.04837 0.75 4.33452 0.868526 4.5455 1.0795C4.75647 1.29048 4.875 1.57663 4.875 1.875ZM8.625 0.75H8.25C7.95163 0.75 7.66548 0.868526 7.4545 1.0795C7.24353 1.29048 7.125 1.57663 7.125 1.875V10.125C7.125 10.4234 7.24353 10.7095 7.4545 10.9205C7.66548 11.1315 7.95163 11.25 8.25 11.25H8.625C8.92337 11.25 9.20952 11.1315 9.4205 10.9205C9.63147 10.7095 9.75 10.4234 9.75 10.125V1.875C9.75 1.57663 9.63147 1.29048 9.4205 1.0795C9.20952 0.868526 8.92337 0.75 8.625 0.75Z"
                         />
                       </svg>
-                    </>
-                  )}
-                </div>
+                    ) : (
+                      <>
+                        <svg
+                          className="w-[14.11px] rotate-6 h-[14.11px] lg:w-4 lg:h-4"
+                          width="11"
+                          height="12"
+                          viewBox="0 0 11 12"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            id="Polygon 2"
+                            d="M9.29339 3.50849C10.7055 4.12191 10.924 6.03397 9.68673 6.95019L4.11889 11.0732C2.88159 11.9894 1.11644 11.2226 0.941617 9.69299L0.154919 2.80959C-0.0199022 1.27995 1.52672 0.134672 2.93884 0.748093L9.29339 3.50849Z"
+                            fill="#1A2434"
+                          />
+                        </svg>
+                      </>
+                    )}
+                  </div>
 
-                <div className="flex-grow text-[10px] opacity-[70%] font-[500] leading-[14px]">
-                  {timeRemaining}
-                </div>
+                  <div className="flex-grow text-[10px] opacity-[70%] font-[500] leading-[14px]">
+                    {timeRemaining}
+                  </div>
 
-                <div className="relative volume-control group flex items-center">
-                  <input
-                    type="range"
-                    min="0"
-                    max="1"
-                    step="0.01"
-                    value={volume}
-                    onChange={handleVolumeChange}
-                    className="sound-range bg-[#1A243426] mr-2 rounded-full appearance-none"
-                    style={{
-                      background: `linear-gradient(to right, rgb(64 63 59) ${
-                        volume * 100
-                      }%, #1A243426 ${volume * 100}%)`,
-                    }}
-                  />
+                  <div className="relative volume-control group flex items-center">
+                    <input
+                      type="range"
+                      min="0"
+                      max="1"
+                      step="0.01"
+                      value={volume}
+                      onChange={handleVolumeChange}
+                      className="sound-range bg-[#1A243426] mr-2 rounded-full appearance-none"
+                      style={{
+                        background: `linear-gradient(to right, rgb(64 63 59) ${
+                          volume * 100
+                        }%, #1A243426 ${volume * 100}%)`,
+                      }}
+                    />
+
+                    <svg
+                      className="w-4 h-4 cursor-pointer hover:scale-125"
+                      viewBox="0 0 15 15"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g clipPath="url(#clip0_3276_36838)">
+                        <path
+                          d="M12.173 2.70376C11.9434 2.4741 11.5711 2.47405 11.3415 2.70366C11.1118 2.93326 11.1118 3.30557 11.3414 3.53523C12.3335 4.52762 12.8909 5.87343 12.8909 7.2767C12.8909 8.67997 12.3336 10.0258 11.3415 11.0182C11.112 11.2479 11.112 11.6202 11.3417 11.8498C11.5714 12.0794 11.9437 12.0793 12.1733 11.8497C13.3858 10.6367 14.067 8.99178 14.0669 7.27667C14.0669 5.56156 13.3857 3.91668 12.173 2.70376Z"
+                          fill="#1A2434"
+                        />
+                        <path
+                          d="M10.0974 4.77949C9.86782 4.54983 9.49551 4.54978 9.26585 4.77938C9.03619 5.00898 9.03614 5.38129 9.26574 5.61095C9.70669 6.05201 9.95441 6.65015 9.95443 7.27383C9.95444 7.8975 9.70675 8.49565 9.26582 8.93674C9.03623 9.16641 9.0363 9.53872 9.26597 9.76831C9.49564 9.9979 9.86795 9.99783 10.0975 9.76816C10.7589 9.10654 11.1305 8.20931 11.1304 7.2738C11.1304 6.33829 10.7588 5.44108 10.0974 4.77949Z"
+                          fill="#1A2434"
+                        />
+                        <path
+                          fillRule="evenodd"
+                          clipRule="evenodd"
+                          d="M7.59996 3.16076C7.59995 2.93473 7.47038 2.7287 7.26665 2.63079C7.06293 2.53288 6.82111 2.56042 6.64461 2.70162L3.86568 4.92488L1.7199 4.92493C1.39515 4.92494 1.1319 5.1882 1.13191 5.51295L1.13199 9.04101C1.132 9.36576 1.39526 9.62901 1.72001 9.62901L3.86579 9.62896L6.64483 11.8521C6.82133 11.9933 7.06315 12.0208 7.26687 11.9229C7.4706 11.825 7.60016 11.6189 7.60015 11.3929L7.59996 3.16076ZM4.43929 5.97203L6.42397 4.38422L6.4241 10.1695L4.43935 8.58177C4.33509 8.49837 4.20554 8.45293 4.07202 8.45293L2.308 8.45297L2.30794 6.10093L4.07197 6.10089C4.20549 6.10089 4.33503 6.05544 4.43929 5.97203Z"
+                          fill="#1A2434"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_3276_36838">
+                          <rect
+                            width="14.1122"
+                            height="14.1122"
+                            fill="white"
+                            transform="translate(0.543945 0.220703)"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </div>
 
                   <svg
-                    className="w-4 h-4 cursor-pointer hover:scale-125"
-                    viewBox="0 0 15 15"
+                    className="cursor-pointer w-4 h-4 text-sm hover:scale-125"
+                    onClick={handleFullScreen}
+                    width="18"
+                    height="18"
+                    viewBox="0 0 18 18"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <g clip-path="url(#clip0_3276_36838)">
-                      <path
-                        d="M12.173 2.70376C11.9434 2.4741 11.5711 2.47405 11.3415 2.70366C11.1118 2.93326 11.1118 3.30557 11.3414 3.53523C12.3335 4.52762 12.8909 5.87343 12.8909 7.2767C12.8909 8.67997 12.3336 10.0258 11.3415 11.0182C11.112 11.2479 11.112 11.6202 11.3417 11.8498C11.5714 12.0794 11.9437 12.0793 12.1733 11.8497C13.3858 10.6367 14.067 8.99178 14.0669 7.27667C14.0669 5.56156 13.3857 3.91668 12.173 2.70376Z"
-                        fill="#1A2434"
-                      />
-                      <path
-                        d="M10.0974 4.77949C9.86782 4.54983 9.49551 4.54978 9.26585 4.77938C9.03619 5.00898 9.03614 5.38129 9.26574 5.61095C9.70669 6.05201 9.95441 6.65015 9.95443 7.27383C9.95444 7.8975 9.70675 8.49565 9.26582 8.93674C9.03623 9.16641 9.0363 9.53872 9.26597 9.76831C9.49564 9.9979 9.86795 9.99783 10.0975 9.76816C10.7589 9.10654 11.1305 8.20931 11.1304 7.2738C11.1304 6.33829 10.7588 5.44108 10.0974 4.77949Z"
-                        fill="#1A2434"
-                      />
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M7.59996 3.16076C7.59995 2.93473 7.47038 2.7287 7.26665 2.63079C7.06293 2.53288 6.82111 2.56042 6.64461 2.70162L3.86568 4.92488L1.7199 4.92493C1.39515 4.92494 1.1319 5.1882 1.13191 5.51295L1.13199 9.04101C1.132 9.36576 1.39526 9.62901 1.72001 9.62901L3.86579 9.62896L6.64483 11.8521C6.82133 11.9933 7.06315 12.0208 7.26687 11.9229C7.4706 11.825 7.60016 11.6189 7.60015 11.3929L7.59996 3.16076ZM4.43929 5.97203L6.42397 4.38422L6.4241 10.1695L4.43935 8.58177C4.33509 8.49837 4.20554 8.45293 4.07202 8.45293L2.308 8.45297L2.30794 6.10093L4.07197 6.10089C4.20549 6.10089 4.33503 6.05544 4.43929 5.97203Z"
-                        fill="#1A2434"
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_3276_36838">
-                        <rect
-                          width="14.1122"
-                          height="14.1122"
-                          fill="white"
-                          transform="translate(0.543945 0.220703)"
-                        />
-                      </clipPath>
-                    </defs>
+                    <path
+                      d="M15.75 6.75C15.4394 6.75 15.1875 6.49814 15.1875 6.1875V3.375C15.1875 3.06492 14.9351 2.8125 14.625 2.8125H11.8125C11.5019 2.8125 11.25 2.56064 11.25 2.25C11.25 1.93936 11.5019 1.6875 11.8125 1.6875H14.625C15.5555 1.6875 16.3125 2.44448 16.3125 3.375V6.1875C16.3125 6.49814 16.0606 6.75 15.75 6.75ZM2.8125 6.1875V3.375C2.8125 3.06492 3.06492 2.8125 3.375 2.8125H6.1875C6.49814 2.8125 6.75 2.56064 6.75 2.25C6.75 1.93936 6.49814 1.6875 6.1875 1.6875H3.375C2.44448 1.6875 1.6875 2.44448 1.6875 3.375V6.1875C1.6875 6.49814 1.93936 6.75 2.25 6.75C2.56064 6.75 2.8125 6.49814 2.8125 6.1875ZM16.3125 14.625V11.8125C16.3125 11.5019 16.0606 11.25 15.75 11.25C15.4394 11.25 15.1875 11.5019 15.1875 11.8125V14.625C15.1875 14.9351 14.9351 15.1875 14.625 15.1875H11.8125C11.5019 15.1875 11.25 15.4394 11.25 15.75C11.25 16.0606 11.5019 16.3125 11.8125 16.3125H14.625C15.5555 16.3125 16.3125 15.5555 16.3125 14.625ZM6.75 15.75C6.75 15.4394 6.49814 15.1875 6.1875 15.1875H3.375C3.06492 15.1875 2.8125 14.9351 2.8125 14.625V11.8125C2.8125 11.5019 2.56064 11.25 2.25 11.25C1.93936 11.25 1.6875 11.5019 1.6875 11.8125V14.625C1.6875 15.5555 2.44448 16.3125 3.375 16.3125H6.1875C6.49814 16.3125 6.75 16.0606 6.75 15.75Z"
+                      fill="black"
+                    />
                   </svg>
                 </div>
 
-                <svg
-                  className="cursor-pointer w-4 h-4 text-sm hover:scale-125"
-                  onClick={handleFullScreen}
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M15.75 6.75C15.4394 6.75 15.1875 6.49814 15.1875 6.1875V3.375C15.1875 3.06492 14.9351 2.8125 14.625 2.8125H11.8125C11.5019 2.8125 11.25 2.56064 11.25 2.25C11.25 1.93936 11.5019 1.6875 11.8125 1.6875H14.625C15.5555 1.6875 16.3125 2.44448 16.3125 3.375V6.1875C16.3125 6.49814 16.0606 6.75 15.75 6.75ZM2.8125 6.1875V3.375C2.8125 3.06492 3.06492 2.8125 3.375 2.8125H6.1875C6.49814 2.8125 6.75 2.56064 6.75 2.25C6.75 1.93936 6.49814 1.6875 6.1875 1.6875H3.375C2.44448 1.6875 1.6875 2.44448 1.6875 3.375V6.1875C1.6875 6.49814 1.93936 6.75 2.25 6.75C2.56064 6.75 2.8125 6.49814 2.8125 6.1875ZM16.3125 14.625V11.8125C16.3125 11.5019 16.0606 11.25 15.75 11.25C15.4394 11.25 15.1875 11.5019 15.1875 11.8125V14.625C15.1875 14.9351 14.9351 15.1875 14.625 15.1875H11.8125C11.5019 15.1875 11.25 15.4394 11.25 15.75C11.25 16.0606 11.5019 16.3125 11.8125 16.3125H14.625C15.5555 16.3125 16.3125 15.5555 16.3125 14.625ZM6.75 15.75C6.75 15.4394 6.49814 15.1875 6.1875 15.1875H3.375C3.06492 15.1875 2.8125 14.9351 2.8125 14.625V11.8125C2.8125 11.5019 2.56064 11.25 2.25 11.25C1.93936 11.25 1.6875 11.5019 1.6875 11.8125V14.625C1.6875 15.5555 2.44448 16.3125 3.375 16.3125H6.1875C6.49814 16.3125 6.75 16.0606 6.75 15.75Z"
-                    fill="black"
-                  />
-                </svg>
-              </div>
-
-              <input
-                type="range"
-                min="0"
-                max="100"
-                step="0.1"
-                value={progress}
-                onChange={handleSeek}
-                className="w-full h-1 bg-[#1A243426] rounded-full appearance-none cursor-pointer mt-[10px]"
-                style={{
-                  background: `linear-gradient(to right, rgb(64 63 59) ${progress}%, #1A243426 ${progress}%)`,
-                }}
-              />
-            </div>
-          </section>
-
-          <video
-            ref={videoPlayer}
-            className="w-full h-full rounded-[12px] object-cover"
-            src="/KGKP - 2yo reading (1).mp4"
-            onTimeUpdate={updateProgress}
-          ></video>
-
-          <section className="hidden lg:block absolute -bottom-5 -right-5 z-10 rotate-[0.92deg] rounded-br-3xl border-b-4 border-r-4 h-[104px] w-[166px] border-[#F6D94A]"></section>
-        </section>
-
-        <section
-          ref={sectionOneRef}
-          className={`w-[296px] lg:relative py-4 px-4 grid gap-4 bg-slate-50 flex-grow-0 flex-shrink-0 rounded-[12px] lg:rotate-[9.88deg] lg:order-1 xl:p-8 xl:w-[335.35px] ${
-            isInViewOne ? "animate-slide-in-left" : ""
-          }`}
-        >
-          <section className="flex gap-4 items-center">
-            <Image src={image1} alt="Image 1" className="w-[74px] h-[74px] " />
-            <section className="grid gap-1 opacity-[70%] ">
-              <div className="text-[16.55px] font-[700] leading-[19.86px] text-[#1A2434] ">
-                Sahana
-              </div>
-              <div className="text-[13.24px] font-[500] leading-[15.89px] text-[#1A2434] ">
-                Mother of 4 years old
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  step="0.1"
+                  value={progress}
+                  onChange={handleSeek}
+                  className="w-full h-1 bg-[#1A243426] rounded-full appearance-none cursor-pointer mt-[10px]"
+                  style={{
+                    background: `linear-gradient(to right, rgb(64 63 59) ${progress}%, #1A243426 ${progress}%)`,
+                  }}
+                />
               </div>
             </section>
+
+            <video
+              ref={videoPlayer}
+              className="w-full h-full rounded-[12px] object-cover"
+              src="/KGKP - 2yo reading (1).mp4"
+              onTimeUpdate={updateProgress}
+            ></video>
+
+            <section className="hidden lg:block absolute -bottom-5 -right-5 z-10 rotate-[0.92deg] rounded-br-3xl border-b-4 border-r-4 h-[104px] w-[166px] border-[#F6D94A]"></section>
           </section>
 
-          <section className="text-[13.24px] font-[300] tracking-[0.4px] leading-[18.53px] text-[#1A2434] ">
-            I find it very good. When I see other kids, I can make out the
-            difference in her. Her reading is much better.
-          </section>
-
-          <section className="hidden lg:block absolute -bottom-5 -left-5 z-10 rotate-[0.92deg] rounded-bl-3xl border-b-4 border-l-4 h-[104px] w-[166px] border-[#F6D94A]"></section>
-        </section>
-
-        <section
-          ref={sectionTwoRef}
-          className={`w-[296px] lg:relative py-4 px-4 grid gap-4 bg-slate-50 flex-grow-0 flex-shrink-0 rounded-[12px] lg:rotate-[4.92deg] lg:order-3 xl:p-8 xl:w-[335.35px] ${
-            isInViewTwo ? "animate-slide-in-right" : ""
-          }`}
-        >
-          <section className="flex gap-4 items-center">
-            <Image src={image2} alt="Image 2" className="w-[74px] h-[74px] " />
-            <section className="grid gap-1 opacity-[70%] ">
-              <div className="text-[16.55px] font-[700] leading-[19.86px] text-[#1A2434] ">
-                Archana
-              </div>
-              <div className="text-[13.24px] font-[500] leading-[15.89px] text-[#1A2434] ">
-                Mother of 7 years old
-              </div>
+          <section
+            ref={sectionOneRef}
+            data-id={2}
+            className={`observe video-2 w-[296px] lg:relative py-4 px-4 grid gap-4 bg-slate-50 flex-grow-0 flex-shrink-0 rounded-[12px] lg:rotate-[9.88deg] lg:order-1 xl:p-8 xl:w-[335.35px] ${
+              isInViewOne ? "animate-slide-in-left" : ""
+            }`}
+          >
+            <section className="flex gap-4 items-center">
+              <Image src={image1} alt="Image 1" className="w-[74px] h-[74px] " />
+              <section className="grid gap-1 opacity-[70%] ">
+                <div className="text-[16.55px] font-[700] leading-[19.86px] text-[#1A2434] ">
+                  Sahana
+                </div>
+                <div className="text-[13.24px] font-[500] leading-[15.89px] text-[#1A2434] ">
+                  Mother of 4 years old
+                </div>
+              </section>
             </section>
+
+            <section className="text-[13.24px] font-[300] tracking-[0.4px] leading-[18.53px] text-[#1A2434] ">
+              I find it very good. When I see other kids, I can make out the
+              difference in her. Her reading is much better.
+            </section>
+
+            <section className="hidden lg:block absolute -bottom-5 -left-5 z-10 rotate-[0.92deg] rounded-bl-3xl border-b-4 border-l-4 h-[104px] w-[166px] border-[#F6D94A]"></section>
           </section>
 
-          <section className="text-[13.24px] font-[300] tracking-[0.4px] leading-[18.53px] text-[#1A2434] ">
-            She came to know so many country names and their capitals. She also
-            asks me inquisitive questions.
+          <section
+            ref={sectionTwoRef}
+            data-id={3}
+            className={`observe video-3 w-[296px] lg:relative py-4 px-4 grid gap-4 bg-slate-50 flex-grow-0 flex-shrink-0 rounded-[12px] lg:rotate-[4.92deg] lg:order-3 xl:p-8 xl:w-[335.35px] ${
+              isInViewTwo ? "animate-slide-in-right" : ""
+            }`}
+          >
+            <section className="flex gap-4 items-center">
+              <Image src={image2} alt="Image 2" className="w-[74px] h-[74px] " />
+              <section className="grid gap-1 opacity-[70%] ">
+                <div className="text-[16.55px] font-[700] leading-[19.86px] text-[#1A2434] ">
+                  Archana
+                </div>
+                <div className="text-[13.24px] font-[500] leading-[15.89px] text-[#1A2434] ">
+                  Mother of 7 years old
+                </div>
+              </section>
+            </section>
+
+            <section className="text-[13.24px] font-[300] tracking-[0.4px] leading-[18.53px] text-[#1A2434] ">
+              She came to know so many country names and their capitals. She also
+              asks me inquisitive questions.
+            </section>
+
+            <section className="hidden lg:block absolute -top-5 -right-5 z-10 rotate-[0.92deg] rounded-tr-3xl border-t-4 border-r-4 h-[104px] w-[166px] border-[#F6D94A]"></section>
+
+            <Image
+              src={vector4}
+              alt="Vector 4 "
+              className="hidden lg:block absolute bottom-[-73px] right-[-5.25rem]"
+            />
           </section>
-
-          <section className="hidden lg:block absolute -top-5 -right-5 z-10 rotate-[0.92deg] rounded-tr-3xl border-t-4 border-r-4 h-[104px] w-[166px] border-[#F6D94A]"></section>
-
-          <Image
-            src={vector4}
-            alt="Vector 4 "
-            className="hidden lg:block absolute bottom-[-73px] right-[-5.25rem]"
-          />
-        </section>
+        </div>
 
         <svg
           className="hidden lg:block absolute top-1/2 -translate-y-1/2"
@@ -437,11 +490,41 @@ const TestimonialsSection = () => {
             strokeDasharray="8 8"
           />
         </svg>
-
-        {isScrollable && !isScrolledToEnd && (
-          <div
-            className="shadow-md h-7 w-7 flex justify-center items-center absolute top-1/2 transform -translate-y-1/2 bg-white rounded-full lg:hidden"
-            style={{ right: `calc(${-arrowPosition}px + 10%)` }}
+        
+        {/* carousel scroll buttons */}
+        <>
+        {
+          currentCarouselIndex > 1
+          && (
+            <button
+            onClick={ handleScrollLeft }
+            className="shadow-md h-7 w-7 flex justify-center items-center absolute top-1/2 left-5 transform -translate-y-1/2 bg-white rounded-full lg:hidden"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 16 16"
+                fill="none"
+                transform="scale(-1, 1)"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="icon-chevron-left">
+                  <path
+                    id="Shape"
+                    d="M6.47157 3.52851C6.21122 3.26816 5.78911 3.26816 5.52876 3.52851C5.26841 3.78886 5.26841 4.21097 5.52876 4.47132L9.05735 7.99992L5.52876 11.5285C5.26841 11.7889 5.26841 12.211 5.52876 12.4713C5.78911 12.7317 6.21122 12.7317 6.47157 12.4713L10.4716 8.47132C10.7319 8.21097 10.7319 7.78886 10.4716 7.52851L6.47157 3.52851Z"
+                    fill="#460C04"
+                  />
+                </g>
+              </svg>
+            </button>
+          )
+        }
+        {
+          currentCarouselIndex < 3
+          &&
+          <button
+            onClick={ handleScrollRight }
+            className="shadow-md h-7 w-7 flex justify-center items-center absolute top-1/2 right-5 transform -translate-y-1/2 bg-white rounded-full lg:hidden"
           >
             <svg
               width="20"
@@ -458,8 +541,9 @@ const TestimonialsSection = () => {
                 />
               </g>
             </svg>
-          </div>
-        )}
+          </button>
+        }
+        </>
       </section>
 
       <Image
