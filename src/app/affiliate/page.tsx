@@ -28,7 +28,7 @@ const Page = () => {
               Monetise Your Parent Connect!
             </div>
 
-            <div className="relative text-[28px] font-[700] leading-[36.4px] text-[#4D1435] text-balance text-center xl:text-left xl:text-[38px] xl:leading-[56.6px] ">
+            <div className="relative text-[28px] font-[700] leading-[36.4px] text-[#4D1435] text-balance text-center lg:text-[#1A2434] xl:text-left xl:text-[38px] xl:leading-[56.6px] ">
               Affiliate with KGKP & Create an{" "}
               <span className="xl:block relative z-10">
                 Income of ₹10 Lakhs per Month
