@@ -447,7 +447,7 @@ const TestimonialsSection = () => {
               </section>
             </section>
 
-            <section className="text-[13.24px] font-[300] tracking-[0.4px] leading-[18.53px] text-[#1A2434] ">
+            <section className="text-[13.24px] font-normal opacity-[70%] tracking-[0.4px] leading-[18.53px] text-[#1A2434] ">
               I find it very good. When I see other kids, I can make out the
               difference in her. Her reading is much better.
             </section>
@@ -478,7 +478,7 @@ const TestimonialsSection = () => {
               </section>
             </section>
 
-            <section className="text-[13.24px] font-[300] tracking-[0.4px] leading-[18.53px] text-[#1A2434] ">
+            <section className="text-[13.24px] font-normal opacity-[70%] tracking-[0.4px] leading-[18.53px] text-[#1A2434] ">
               She came to know so many country names and their capitals. She
               also asks me inquisitive questions.
             </section>

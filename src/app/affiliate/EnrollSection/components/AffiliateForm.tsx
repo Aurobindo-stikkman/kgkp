@@ -79,7 +79,12 @@ const AffiliateForm = ({
       .required("This is a required field.")
       .nullable()
       .min(new Date(1900, 0, 1), "Date of birth must be after January 1, 1900")
-      .max(new Date(), "Date of birth cannot be in the future"),
+      .max(new Date(), "Date of birth cannot be in the future")
+      .test("year", "Year must be 1900 or later", (value) => {
+        if (!value) return false;
+        const year = value.getFullYear();
+        return year >= 1900; // Ensure year is 1900 or greater
+      }),
 
     Email: Yup.string()
       .email("Enter a valid Email")
@@ -177,6 +182,43 @@ const AffiliateForm = ({
       }
     },
   });
+
+  // Handle input change and allow only numbers
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+
+    const onlyNumbers = value.replace(/[^0-9]/g, "").slice(0, 10);
+    formik.setFieldValue(name, onlyNumbers);
+  };
+
+  const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+
+    // Check if the value matches the correct format (yyyy-mm-dd)
+    const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+
+    if (name === "DOB" && value) {
+      if (!dateRegex.test(value)) {
+        // If the input doesn't match the format, set a manual error
+        formik.setFieldError(
+          "DOB",
+          "Enter a valid date in the format yyyy-mm-dd."
+        );
+        return;
+      }
+
+      // Extract the year from the input value
+      const year = parseInt(value.split("-")[0], 10);
+
+      // Check if the year is less than 1900
+      if (year < 1900) {
+        formik.setFieldError("DOB", "Year must be 1900 or later.");
+      } else {
+        // If valid, update Formik's state
+        formik.setFieldValue(name, value);
+      }
+    }
+  };
 
   const handleEngageType = (value: string) => {
     const engagedTypes = [...formik.values.Engagement_Type];
@@ -707,7 +749,7 @@ const AffiliateForm = ({
                           : ""
                       }`}
                       value={formik.values.DOB}
-                      onChange={formik.handleChange}
+                      onChange={handleDateChange}
                       onBlur={formik.handleBlur}
                     />
                   </div>
@@ -796,7 +838,7 @@ const AffiliateForm = ({
                           : ""
                       }`}
                       value={formik.values.Phone}
-                      onChange={formik.handleChange}
+                      onChange={handlePhoneChange}
                       onBlur={formik.handleBlur}
                     />
 
@@ -937,9 +979,37 @@ const AffiliateForm = ({
                       </ul>
                     )}
 
-                    {professionDropdown.isOpen && (
+                    {formik.touched.Profession &&
+                    typeof formik.errors.Profession === "string" &&
+                    !professionDropdown.value ? (
                       <svg
-                        className="w-3 h-3 absolute top-1/2 -translate-y-1/2 right-4 rotate-180 "
+                        width="24"
+                        height="24"
+                        className="absolute top-1/2 -translate-y-1/2 right-4 pointer-events-none "
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g id="icon" clip-path="url(#clip0_3355_4697)">
+                          <path
+                            id="Vector"
+                            d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z"
+                            fill="#D61D25"
+                          />
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_3355_4697">
+                            <rect width="24" height="24" fill="white" />
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    ) : (
+                      <svg
+                        width="12"
+                        height="8"
+                        className={`transition-transform duration-300 ${
+                          professionDropdown.isOpen ? "rotate-0" : "rotate-180"
+                        } `}
                         viewBox="0 0 12 8"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -947,36 +1017,16 @@ const AffiliateForm = ({
                         <path
                           id="Vector"
                           d="M1.41 8L6 3.05533L10.59 8L12 6.47773L6 0L0 6.47773L1.41 8Z"
-                          fill="#75C0B1"
+                          fill={
+                            professionDropdown.isOpen
+                              ? "#75C0B1"
+                              : professionDropdown.value
+                              ? "black"
+                              : "#1A24341A"
+                          }
                         />
                       </svg>
                     )}
-
-                    {formik.touched.Profession &&
-                      typeof formik.errors.Profession === "string" &&
-                      !professionDropdown.value && (
-                        <svg
-                          width="24"
-                          height="24"
-                          className="absolute top-1/2 -translate-y-1/2 right-4 pointer-events-none "
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <g id="icon" clip-path="url(#clip0_3355_4697)">
-                            <path
-                              id="Vector"
-                              d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z"
-                              fill="#D61D25"
-                            />
-                          </g>
-                          <defs>
-                            <clipPath id="clip0_3355_4697">
-                              <rect width="24" height="24" fill="white" />
-                            </clipPath>
-                          </defs>
-                        </svg>
-                      )}
                   </div>
                   {formik.touched.Profession &&
                   typeof formik.errors.Profession === "string" ? (
@@ -1148,9 +1198,39 @@ const AffiliateForm = ({
                       </ul>
                     )}
 
-                    {approxClientsDropdown.isOpen && (
+                    {formik.touched.Approx_number_clients &&
+                    typeof formik.errors.Approx_number_clients === "string" &&
+                    !approxClientsDropdown.value ? (
                       <svg
-                        className="w-3 h-3 absolute top-1/2 -translate-y-1/2 right-4 rotate-180 "
+                        width="24"
+                        height="24"
+                        className="absolute top-1/2 -translate-y-1/2 right-4 pointer-events-none "
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g id="icon" clip-path="url(#clip0_3355_4697)">
+                          <path
+                            id="Vector"
+                            d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z"
+                            fill="#D61D25"
+                          />
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_3355_4697">
+                            <rect width="24" height="24" fill="white" />
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    ) : (
+                      <svg
+                        width="12"
+                        height="8"
+                        className={`transition-transform duration-300 ${
+                          approxClientsDropdown.isOpen
+                            ? "rotate-0"
+                            : "rotate-180"
+                        } `}
                         viewBox="0 0 12 8"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -1158,36 +1238,16 @@ const AffiliateForm = ({
                         <path
                           id="Vector"
                           d="M1.41 8L6 3.05533L10.59 8L12 6.47773L6 0L0 6.47773L1.41 8Z"
-                          fill="#75C0B1"
+                          fill={
+                            approxClientsDropdown.isOpen
+                              ? "#75C0B1"
+                              : approxClientsDropdown.value
+                              ? "black"
+                              : "#1A24341A"
+                          }
                         />
                       </svg>
                     )}
-
-                    {formik.touched.Approx_number_clients &&
-                      typeof formik.errors.Approx_number_clients === "string" &&
-                      !approxClientsDropdown.value && (
-                        <svg
-                          width="24"
-                          height="24"
-                          className="absolute top-1/2 -translate-y-1/2 right-4 pointer-events-none "
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <g id="icon" clip-path="url(#clip0_3355_4697)">
-                            <path
-                              id="Vector"
-                              d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z"
-                              fill="#D61D25"
-                            />
-                          </g>
-                          <defs>
-                            <clipPath id="clip0_3355_4697">
-                              <rect width="24" height="24" fill="white" />
-                            </clipPath>
-                          </defs>
-                        </svg>
-                      )}
                   </div>
                   {formik.touched.Approx_number_clients &&
                   typeof formik.errors.Approx_number_clients === "string" ? (
