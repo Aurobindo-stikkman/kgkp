@@ -41,13 +41,13 @@ export default function RootLayout({
         />
       </head>
       <body>
-        {/* <Header /> */}
+        <Header />
         {children}
-        {/* <ScrollToTopButton />
+        <ScrollToTopButton />
         <ActionButton />
         <WhatsApp />
         <Contact />
-        <Footer /> */}
+        <Footer />
       </body>
     </html>
   );

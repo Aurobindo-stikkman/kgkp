@@ -125,46 +125,56 @@ const TestimonialsSection = () => {
 
   //carousel scroll with mouse or touch
   useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach((entry) => {
-        if(entry.isIntersecting){
-          const element = entry.target as HTMLDivElement;
-          const index = Number(element.dataset.id);
-          carouselIndex.current = index;
-          setCurrentCarouselIndex(index);
-        }
-      })
-    }, { threshold: thresholdValue });
-  
-    const videoArr = Array.from(document.querySelectorAll('.observe'));
-    videoArr.map(video => observer.observe(video));
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const element = entry.target as HTMLDivElement;
+            const index = Number(element.dataset.id);
+            carouselIndex.current = index;
+            setCurrentCarouselIndex(index);
+          }
+        });
+      },
+      { threshold: thresholdValue }
+    );
+
+    const videoArr = Array.from(document.querySelectorAll(".observe"));
+    videoArr.map((video) => observer.observe(video));
 
     return () => {
-      videoArr.map(video => observer.unobserve(video));
+      videoArr.map((video) => observer.unobserve(video));
       observer.disconnect();
-    }
-  }, [])
+    };
+  }, []);
 
   //carousel Scroll with buttons
   const handleScrollLeft = () => {
-    if(carouselIndex.current > 1){
+    if (carouselIndex.current > 1) {
       setThresholdValue(0.05);
       carouselIndex.current -= 1;
-      setCurrentCarouselIndex(prev => prev - 1);
+      setCurrentCarouselIndex((prev) => prev - 1);
       const element = document.querySelector(`.video-${carouselIndex.current}`);
-      element?.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
-    };
-  }
+      element?.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "center",
+      });
+    }
+  };
   const handleScrollRight = () => {
-    if(carouselIndex.current < 3){
+    if (carouselIndex.current < 3) {
       setThresholdValue(0.95);
       carouselIndex.current += 1;
-      setCurrentCarouselIndex(prev => prev + 1);
+      setCurrentCarouselIndex((prev) => prev + 1);
       const element = document.querySelector(`.video-${carouselIndex.current}`);
-      element?.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+      element?.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "center",
+      });
     }
-  }
-
+  };
 
   const handleVolumeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (videoPlayer.current) {
@@ -265,7 +275,7 @@ const TestimonialsSection = () => {
         className="mt-8 relative overflow-hidden lg:mt-[57px] lg:justify-around lg:h-[352px] lg:items-center lg:overflow-hidden xl:gap-[112px] xl:justify-center xl:pl-[67px]"
       >
         {/* Video section */}
-        <div className="carousel w-full h-full flex overflow-x-scroll gap-3 px-4">
+        <div className="carousel w-full h-full flex overflow-x-scroll gap-3 px-4 lg:justify-around lg:h-[352px] lg:items-center lg:overflow-hidden xl:gap-[112px] xl:justify-center ">
           <section
             data-id={1}
             className="observe observe video-1 w-[296px] h-[189px] flex-grow-0 flex-shrink-0 rounded-[12px] relative lg:rotate-[-6.52deg] lg:order-2 lg:w-[335.35px] lg:h-[214.28px] lg:top-5"
@@ -422,7 +432,11 @@ const TestimonialsSection = () => {
             }`}
           >
             <section className="flex gap-4 items-center">
-              <Image src={image1} alt="Image 1" className="w-[74px] h-[74px] " />
+              <Image
+                src={image1}
+                alt="Image 1"
+                className="w-[74px] h-[74px] "
+              />
               <section className="grid gap-1 opacity-[70%] ">
                 <div className="text-[16.55px] font-[700] leading-[19.86px] text-[#1A2434] ">
                   Sahana
@@ -449,7 +463,11 @@ const TestimonialsSection = () => {
             }`}
           >
             <section className="flex gap-4 items-center">
-              <Image src={image2} alt="Image 2" className="w-[74px] h-[74px] " />
+              <Image
+                src={image2}
+                alt="Image 2"
+                className="w-[74px] h-[74px] "
+              />
               <section className="grid gap-1 opacity-[70%] ">
                 <div className="text-[16.55px] font-[700] leading-[19.86px] text-[#1A2434] ">
                   Archana
@@ -461,8 +479,8 @@ const TestimonialsSection = () => {
             </section>
 
             <section className="text-[13.24px] font-[300] tracking-[0.4px] leading-[18.53px] text-[#1A2434] ">
-              She came to know so many country names and their capitals. She also
-              asks me inquisitive questions.
+              She came to know so many country names and their capitals. She
+              also asks me inquisitive questions.
             </section>
 
             <section className="hidden lg:block absolute -top-5 -right-5 z-10 rotate-[0.92deg] rounded-tr-3xl border-t-4 border-r-4 h-[104px] w-[166px] border-[#F6D94A]"></section>
@@ -473,32 +491,30 @@ const TestimonialsSection = () => {
               className="hidden lg:block absolute bottom-[-73px] right-[-5.25rem]"
             />
           </section>
+
+          <svg
+            className="hidden lg:block absolute top-1/2 -translate-y-1/2"
+            width="616"
+            height="80"
+            viewBox="0 0 616 80"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1.00146 58.4995L11.371 65.3783C36.0154 81.7266 67.7272 82.9399 93.5487 68.5224V68.5224C105.32 61.95 118.577 58.4995 132.059 58.4995L144.5 58.4995M472.5 10L513.101 6.4694C523.903 5.53014 534.624 9.00791 542.817 16.1088V16.1088C557.188 28.5631 578.332 29.2025 593.429 17.6392L614.5 1.5"
+              stroke="#F6D94A"
+              strokeWidth="2"
+              strokeDasharray="8 8"
+            />
+          </svg>
         </div>
 
-        <svg
-          className="hidden lg:block absolute top-1/2 -translate-y-1/2"
-          width="616"
-          height="80"
-          viewBox="0 0 616 80"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M1.00146 58.4995L11.371 65.3783C36.0154 81.7266 67.7272 82.9399 93.5487 68.5224V68.5224C105.32 61.95 118.577 58.4995 132.059 58.4995L144.5 58.4995M472.5 10L513.101 6.4694C523.903 5.53014 534.624 9.00791 542.817 16.1088V16.1088C557.188 28.5631 578.332 29.2025 593.429 17.6392L614.5 1.5"
-            stroke="#F6D94A"
-            strokeWidth="2"
-            strokeDasharray="8 8"
-          />
-        </svg>
-        
         {/* carousel scroll buttons */}
         <>
-        {
-          currentCarouselIndex > 1
-          && (
+          {currentCarouselIndex > 1 && (
             <button
-            onClick={ handleScrollLeft }
-            className="shadow-md h-7 w-7 flex justify-center items-center absolute top-1/2 left-5 transform -translate-y-1/2 bg-white rounded-full lg:hidden"
+              onClick={handleScrollLeft}
+              className="shadow-md h-7 w-7 flex justify-center items-center absolute top-1/2 left-5 transform -translate-y-1/2 bg-white rounded-full lg:hidden"
             >
               <svg
                 width="20"
@@ -517,32 +533,29 @@ const TestimonialsSection = () => {
                 </g>
               </svg>
             </button>
-          )
-        }
-        {
-          currentCarouselIndex < 3
-          &&
-          <button
-            onClick={ handleScrollRight }
-            className="shadow-md h-7 w-7 flex justify-center items-center absolute top-1/2 right-5 transform -translate-y-1/2 bg-white rounded-full lg:hidden"
-          >
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 16 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+          )}
+          {currentCarouselIndex < 3 && (
+            <button
+              onClick={handleScrollRight}
+              className="shadow-md h-7 w-7 flex justify-center items-center absolute top-1/2 right-5 transform -translate-y-1/2 bg-white rounded-full lg:hidden"
             >
-              <g id="icon-chevron-right">
-                <path
-                  id="Shape"
-                  d="M6.47157 3.52851C6.21122 3.26816 5.78911 3.26816 5.52876 3.52851C5.26841 3.78886 5.26841 4.21097 5.52876 4.47132L9.05735 7.99992L5.52876 11.5285C5.26841 11.7889 5.26841 12.211 5.52876 12.4713C5.78911 12.7317 6.21122 12.7317 6.47157 12.4713L10.4716 8.47132C10.7319 8.21097 10.7319 7.78886 10.4716 7.52851L6.47157 3.52851Z"
-                  fill="#460C04"
-                />
-              </g>
-            </svg>
-          </button>
-        }
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="icon-chevron-right">
+                  <path
+                    id="Shape"
+                    d="M6.47157 3.52851C6.21122 3.26816 5.78911 3.26816 5.52876 3.52851C5.26841 3.78886 5.26841 4.21097 5.52876 4.47132L9.05735 7.99992L5.52876 11.5285C5.26841 11.7889 5.26841 12.211 5.52876 12.4713C5.78911 12.7317 6.21122 12.7317 6.47157 12.4713L10.4716 8.47132C10.7319 8.21097 10.7319 7.78886 10.4716 7.52851L6.47157 3.52851Z"
+                    fill="#460C04"
+                  />
+                </g>
+              </svg>
+            </button>
+          )}
         </>
       </section>
 
